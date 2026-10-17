@@ -1,29 +1,48 @@
 # Willkommen {.unnumbered}
 
-::: {.callout-note appearance="minimal"}
-**Hinweis (Schablone):** Diese Datei ist ein Platzhalter — beim Anlegen eines neuen Kurses durch konkreten Inhalt ersetzen. Stilregeln: Wir-Form, Callouts, Analogien aus dem Berufsalltag. Detail-Vorgaben: AGENTS.md im Repo-Root.
+Ein Agent kann Anfragen sortieren, Antwortentwürfe schreiben, Quellen umwandeln und Übersichten pflegen. Verlässlich wird diese Arbeit erst durch eine Umgebung, in der er sich zurechtfindet: ein Ordner mit dem Material, eine kurze Hausordnung, aufgeschriebene Abläufe und bei Bedarf Anschlüsse an andere Systeme. Dieses Buch zeigt, wie wir diese Umgebung Schritt für Schritt aufbauen.
+
+Mit **Agent** meinen wir ein KI-Programm, das auf unserem Rechner in einem Ordner arbeitet: Es liest Dateien, legt neue an, ändert bestehende und führt Befehle aus, jeweils nach Rückfrage. Solche Werkzeuge heißen oft **Coding-Agenten**, weil sie für die Arbeit an Programmcode entstanden sind. Programmieren müssen wir dafür nicht. Alles in diesem Buch funktioniert mit Text, Tabellen und PDFs.
+
+Ein Beispiel zieht sich durch alle Kapitel: die **Kundenanfragen eines kleinen Betriebs**. Eine Person beantwortet täglich Terminwünsche, Preisfragen, Beschwerden und Rückrufbitten, die per E-Mail und Kontaktformular eingehen. Der Agent hilft, die Anfragen einzusortieren, Entwürfe zu schreiben und eine Übersicht zu führen. Der Projektordner dazu heißt `kundenanfragen` und wächst von Kapitel zu Kapitel. Am Ende liegt ein vollständiger Ordner vor, den wir für jedes eigene Vorhaben abwandeln können.
+
+## Vier Bilder
+
+Vier Bilder tragen durch das Buch. Jedes steht für einen Baustein der Arbeitsumgebung.
+
+| Bild | Bedeutung | Kapitel |
+|---|---|---|
+| **Ordner = Material** | Alles, was der Agent kennen soll, liegt als Datei im Projektordner. | [Der Projektordner](agent-arbeitsumgebung/projektordner.qmd), [Kontext bereitstellen](agent-arbeitsumgebung/kontext-bereitstellen.qmd), [PDFs als Quellen](agent-arbeitsumgebung/pdf-als-quelle.qmd), [Laufend neue Dateien](agent-arbeitsumgebung/laufend-neue-dateien.qmd) |
+| **AGENTS.md = Hausordnung** | Kurze, prüfbare Regeln, die in jeder Sitzung gelten. | [AGENTS.md: die Hausordnung](agent-arbeitsumgebung/agents-md.qmd) |
+| **Skills = Rezepte** | Abläufe mit mehreren Schritten, die der Agent bei Bedarf holt. | [Skills](agent-arbeitsumgebung/skills.qmd) |
+| **MCP = Steckdose** | Ein genormter Anschluss, über den der Agent andere Systeme erreicht. | [MCP](agent-arbeitsumgebung/mcp.qmd), [Konnektoren und Plugins](agent-arbeitsumgebung/konnektoren-plugins.qmd) |
+
+Eine **Sitzung** ist eine Unterhaltung mit dem Agenten, vom Start bis zum Schließen. Eine neue Sitzung beginnt ohne Erinnerung an die vorige. Genau deshalb legen wir alles Wichtige als Datei ab.
+
+## Was der Agent können muss
+
+Das Buch schreibt kein Werkzeug vor. Es setzt einen installierten Agenten voraus, der drei Dinge kann:
+
+1. Er arbeitet in einem Ordner auf dem eigenen Rechner: Dateien lesen, anlegen und ändern.
+2. Er fragt vor Änderungen und vor dem Ausführen von Befehlen nach oder zeigt die Änderungen zur Prüfung.
+3. Er liest eine Anweisungsdatei im Projektordner: `AGENTS.md` oder den Namen, den das Werkzeug dafür nutzt.
+
+Wie wir das eigene Werkzeug darauf prüfen, zeigt das Kapitel [Chat oder Agent?](agent-arbeitsumgebung/chat-oder-agent.qmd). Dort stehen auch die Links zu den Installationsanleitungen der Hersteller.
+
+::: {.callout-note title="Werkzeugneutral geschrieben"}
+Die Kapitel erklären offene Formate und Begriffe: Ordner, Markdown, `AGENTS.md`, Skills und MCP. Menüs, Buttons und Speicherorte einzelner Produkte ändern sich schnell und kommen im Text nicht vor. Produktdetails stehen an genau einer Stelle, in der [Übersicht nach Werkzeug](agent-arbeitsumgebung/chat-oder-agent.qmd#uebersicht-nach-werkzeug) mit Stand-Datum. Hängt ein Detail vom Werkzeug ab, fragen wir den Agenten selbst. Jedes Kapitel enthält dafür eine Frage zum Kopieren.
 :::
 
-Willkommen zum Einstieg in das Thema dieses Kurses. Dieses Buch bietet eine schrittweise Einführung in den Kerngegenstand.
+## Aufbau
 
-Hier ein bis zwei Sätze zum Buch — wer es geschrieben hat, welcher Kurs damit verbunden ist, was am Ende erreicht ist. Diese Schablone wird beim Anlegen eines neuen Kurses durch konkreten Inhalt ersetzt.
+Das Buch hat zwei Teile.
 
-Beispiele für den Einsatz des Themas:
+**Mit einem Agenten arbeiten.** Acht Kapitel bauen den Projektordner auf. Wir klären, wann ein Agent dem Chat überlegen ist, lernen Markdown als gemeinsames Format von Mensch und Agent kennen, legen den Ordner mit sprechenden Namen an und geben ihm eine Hausordnung. Danach stellen wir Kontext bereit, nehmen PDFs als Quellen auf, richten einen festen Ablauf für neue Dateien ein und schreiben diesen Ablauf als ersten Skill auf.
 
-1. **Bereich 1:** konkrete Anwendung
-2. **Bereich 2:** konkrete Anwendung
-3. **Bereich 3:** konkrete Anwendung
+**Den Agenten erweitern.** Zwei Kapitel zeigen, wie ein Agent über MCP, Konnektoren und Plugins andere Systeme erreicht und welche Regeln dafür gelten. Diese Kapitel richten nichts ein. Sie helfen bei der Entscheidung, ob eine Anbindung für den eigenen Fall nötig ist.
 
-Ein Absatz: Wie das Buch strukturiert ist, welcher Demo-Pfad sich durchzieht.
+Jedes Kapitel enthält einen **Auftrag zum Kopieren** und ein **Prüfkriterium**. Den Auftrag senden wir an den eigenen Agenten, das Kriterium zeigt, ob das Ergebnis stimmt. Interaktive **Nachbauten eines Agenten** zeigen vorher, wie der Ablauf aussieht. Sie stellen ein typisches Werkzeug nach und sind kein echtes Produkt.
 
-::: {.callout-note}
-Die hier vermittelten Fähigkeiten sind branchenübergreifend einsetzbar:
-
-- Bereich 1
-- Bereich 2
-- Bereich 3
-:::
-
-::: {.callout-tip}
-Lernempfehlung: Die Kapitel sind aufeinander aufbauend angelegt. Wer den größten Nutzen mitnehmen möchte, arbeitet die Module in der Reihenfolge durch und baut den Demo-Workflow Schritt für Schritt mit.
+::: {.callout-tip title="Lernempfehlung"}
+Die Kapitel bauen aufeinander auf, weil der Ordner `kundenanfragen` mit jedem Auftrag wächst. Wer die Aufträge der Reihe nach mit dem eigenen Agenten ausführt, hat am Ende des ersten Teils eine vollständige Arbeitsumgebung.
 :::

@@ -1,14 +1,16 @@
 project:
   type: book
   output-dir: _book
-  # Mono-Repo: Slides liegen unter slides/ als eigenständige Reveal.js-Decks
-  # mit eigenem Frontmatter und _metadata.yml. Slides werden NICHT vom
-  # Buch-Build erfasst.
+  # Der Buchteil liegt komplett in agent-arbeitsumgebung/. Kursbücher binden
+  # genau diesen Ordner per git subtree ein (Branch `teil`, siehe README).
+  # Alle Pfade im Teil sind relativ, damit sie in jedem Kursbuch gelten.
   render:
     - "*.qmd"
-    - "beispiel-modul/*.qmd"
-    # Pro neuem Modul eine Zeile ergänzen:
-    # - "<modul-2-slug>/*.qmd"
+    - "agent-arbeitsumgebung/*.qmd"
+  resources:
+    - "agent-arbeitsumgebung/widgets/*"
+    - "agent-arbeitsumgebung/downloads/*"
+    - "agent-arbeitsumgebung/images/*"
 
 lang: de
 
@@ -16,9 +18,11 @@ execute:
   freeze: auto
 
 book:
-  title: "Kurs-Titel"
-  description: "Schablone — auf konkreten Kurs anpassen"
+  title: "Produktiv mit einem Agenten arbeiten"
+  description: "Projektordner, Markdown, AGENTS.md, Skills und MCP für Coding-Agenten, unabhängig vom Werkzeug"
   author: "Jan Kirenz"
+  # Navigation läuft über die Plattform, nicht über das eingebettete Buch.
+  page-navigation: false
 
   search:
     type: overlay
@@ -28,30 +32,30 @@ book:
 
   chapters:
     - index.qmd
-    - introduction.qmd
 
-    - part: beispiel-modul/index.qmd
+    - part: agent-arbeitsumgebung/index.qmd
       chapters:
-        - beispiel-modul/beispiel-lesson.qmd
+        - agent-arbeitsumgebung/chat-oder-agent.qmd
+        - agent-arbeitsumgebung/markdown.qmd
+        - agent-arbeitsumgebung/projektordner.qmd
+        - agent-arbeitsumgebung/agents-md.qmd
+        - agent-arbeitsumgebung/kontext-bereitstellen.qmd
+        - agent-arbeitsumgebung/pdf-als-quelle.qmd
+        - agent-arbeitsumgebung/laufend-neue-dateien.qmd
+        - agent-arbeitsumgebung/skills.qmd
 
-    # Pro neuem Modul einen Part-Block:
-    # - part: <modul-2-slug>/index.qmd
-    #   chapters:
-    #     - <modul-2-slug>/<lesson-1>.qmd
-    #     - <modul-2-slug>/<lesson-2>.qmd
+    - part: agent-arbeitsumgebung/erweitern.qmd
+      chapters:
+        - agent-arbeitsumgebung/mcp.qmd
+        - agent-arbeitsumgebung/konnektoren-plugins.qmd
 
 format:
   html:
     toc: true
-    # Theme-Stack: cosmo als Bootstrap-Basis, book-theme.scss zieht den
-    # Plattform-Mirror-Look (Geist, Cream-Paper, Ink, Ochre, Terracotta) durch.
-    # Schwester-Datei zu slides/redesign/variant-a-pure.scss — gleiche DNA für
-    # Buch und Slides.
     theme:
       - cosmo
       - book-theme.scss
     code-copy: true
-    # github (light) statt github-dark — passt zum Cream-Paper-Hintergrund.
     highlight-style: github
     code-overflow: wrap
     author-meta: "Jan Kirenz"

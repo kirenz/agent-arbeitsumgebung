@@ -1,4 +1,13 @@
-# AGENTS.md — Mono-Repo für Lernplattform-Kurse
+# AGENTS.md — Buch „Produktiv mit einem Agenten arbeiten“
+
+> **Gilt für dieses Repo zuerst:** Es gibt nur das Buch, keine Slides. Der
+> Buchteil liegt komplett in `agent-arbeitsumgebung/` und wird per Subtree in
+> Kursbücher eingebunden (README). Dort nur relative Pfade verwenden.
+> Werkzeugneutral schreiben: Produktnamen nur in der Übersichtstabelle im
+> Kapitel „Chat oder Agent?“. Inhaltliche Vorgaben:
+> `~/code/hdm/lernplattform/docs/agent-arbeitsumgebung-konzept.md`. Die
+> allgemeinen Buch-Stilregeln unten (aus der Schablone) gelten weiter;
+> Abschnitte zu Slides entfallen.
 
 Dieses Dokument ist die **kanonische Quelle der Wahrheit** für jede KI, die in diesem Repo arbeitet. Wenn andere Dokumente widersprechen, gilt AGENTS.md.
 
