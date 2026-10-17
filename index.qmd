@@ -6,11 +6,11 @@ Mit **Agent** meinen wir ein KI-Programm, das auf unserem Rechner in einem Ordne
 
 Ein Beispiel zieht sich durch alle Kapitel: die **Kundenanfragen eines kleinen Betriebs**. Eine Person beantwortet täglich Terminwünsche, Preisfragen, Beschwerden und Rückrufbitten, die per E-Mail und Kontaktformular eingehen. Der Agent hilft, die Anfragen einzusortieren, Entwürfe zu schreiben und eine Übersicht zu führen. Der Projektordner dazu heißt `kundenanfragen` und wächst von Kapitel zu Kapitel. Am Ende liegt ein vollständiger Ordner vor, den wir für jedes eigene Vorhaben abwandeln können.
 
-## Vier Bilder
+## Vier Bausteine
 
-Vier Bilder tragen durch das Buch. Jedes steht für einen Baustein der Arbeitsumgebung.
+Vier Bausteine tragen durch das Buch. Für jeden nutzen wir einen Vergleich aus dem Alltag, der zeigt, wofür er da ist.
 
-| Bild | Bedeutung | Kapitel |
+| Baustein = Vergleich | Bedeutung | Kapitel |
 |---|---|---|
 | **Ordner = Material** | Alles, was der Agent kennen soll, liegt als Datei im Projektordner. | [Der Projektordner](agent-arbeitsumgebung/projektordner.qmd), [Kontext bereitstellen](agent-arbeitsumgebung/kontext-bereitstellen.qmd), [PDFs als Quellen](agent-arbeitsumgebung/pdf-als-quelle.qmd), [Excel-Tabellen als Quelle](agent-arbeitsumgebung/excel-als-quelle.qmd), [Laufend neue Dateien](agent-arbeitsumgebung/laufend-neue-dateien.qmd) |
 | **AGENTS.md = Hausordnung** | Kurze, prüfbare Regeln, die in jeder Sitzung gelten. | [AGENTS.md: die Hausordnung](agent-arbeitsumgebung/agents-md.qmd) |
