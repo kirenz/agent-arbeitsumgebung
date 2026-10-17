@@ -12,7 +12,7 @@ Vier Bilder tragen durch das Buch. Jedes steht für einen Baustein der Arbeitsum
 
 | Bild | Bedeutung | Kapitel |
 |---|---|---|
-| **Ordner = Material** | Alles, was der Agent kennen soll, liegt als Datei im Projektordner. | [Der Projektordner](agent-arbeitsumgebung/projektordner.qmd), [Kontext bereitstellen](agent-arbeitsumgebung/kontext-bereitstellen.qmd), [PDFs als Quellen](agent-arbeitsumgebung/pdf-als-quelle.qmd), [Laufend neue Dateien](agent-arbeitsumgebung/laufend-neue-dateien.qmd) |
+| **Ordner = Material** | Alles, was der Agent kennen soll, liegt als Datei im Projektordner. | [Der Projektordner](agent-arbeitsumgebung/projektordner.qmd), [Kontext bereitstellen](agent-arbeitsumgebung/kontext-bereitstellen.qmd), [PDFs als Quellen](agent-arbeitsumgebung/pdf-als-quelle.qmd), [Excel-Tabellen als Quelle](agent-arbeitsumgebung/excel-als-quelle.qmd), [Laufend neue Dateien](agent-arbeitsumgebung/laufend-neue-dateien.qmd) |
 | **AGENTS.md = Hausordnung** | Kurze, prüfbare Regeln, die in jeder Sitzung gelten. | [AGENTS.md: die Hausordnung](agent-arbeitsumgebung/agents-md.qmd) |
 | **Skills = Rezepte** | Abläufe mit mehreren Schritten, die der Agent bei Bedarf holt. | [Skills](agent-arbeitsumgebung/skills.qmd) |
 | **MCP = Steckdose** | Ein genormter Anschluss, über den der Agent andere Systeme erreicht. | [MCP](agent-arbeitsumgebung/mcp.qmd), [Konnektoren und Plugins](agent-arbeitsumgebung/konnektoren-plugins.qmd) |
@@ -37,7 +37,7 @@ Die Kapitel erklären offene Formate und Begriffe: Ordner, Markdown, `AGENTS.md`
 
 Das Buch hat zwei Teile.
 
-**Mit einem Agenten arbeiten.** Acht Kapitel bauen den Projektordner auf. Wir klären, wann ein Agent dem Chat überlegen ist, lernen Markdown als gemeinsames Format von Mensch und Agent kennen, legen den Ordner mit sprechenden Namen an und geben ihm eine Hausordnung. Danach stellen wir Kontext bereit, nehmen PDFs als Quellen auf, richten einen festen Ablauf für neue Dateien ein und schreiben diesen Ablauf als ersten Skill auf.
+**Mit einem Agenten arbeiten.** Neun Kapitel bauen den Projektordner auf. Wir klären, wann ein Agent dem Chat überlegen ist, lernen Markdown als gemeinsames Format von Mensch und Agent kennen, legen den Ordner mit sprechenden Namen an und geben ihm eine Hausordnung. Danach stellen wir Kontext bereit, nehmen PDFs und Excel-Tabellen als Quellen auf, richten einen festen Ablauf für neue Dateien ein und schreiben diesen Ablauf als ersten Skill auf.
 
 **Den Agenten erweitern.** Zwei Kapitel zeigen, wie ein Agent über MCP, Konnektoren und Plugins andere Systeme erreicht und welche Regeln dafür gelten. Diese Kapitel richten nichts ein. Sie helfen bei der Entscheidung, ob eine Anbindung für den eigenen Fall nötig ist.
 
