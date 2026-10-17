@@ -1,0 +1,55 @@
+direction: right
+
+agenda: {
+  label: "Agenda"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#3b82f6"
+    border-radius: 8
+  }
+}
+
+template: {
+  label: "Template Repo"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#10a37f"
+    border-radius: 8
+  }
+}
+
+generator: {
+  label: "KI schreibt\nvideo-<slug>.qmd"
+  shape: rectangle
+  style: {
+    fill: "#ffffff"
+    stroke: "#111111"
+    border-radius: 8
+  }
+}
+
+validation: {
+  label: "Validierung"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#f97316"
+    border-radius: 8
+  }
+}
+
+tts: {
+  label: "Notes Export\nfuer TTS"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#d292ff"
+    border-radius: 8
+  }
+}
+
+agenda -> generator
+template -> generator
+generator -> validation -> tts

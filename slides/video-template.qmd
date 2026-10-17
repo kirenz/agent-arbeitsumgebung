@@ -1,0 +1,182 @@
+---
+title: "Video-Titel"
+subtitle: "Kurze Unterzeile für das Deck"
+author: "Jan Kirenz"
+book:
+  chapter_slug: "beispiel-modul/beispiel-lesson"
+---
+
+# Einstieg ins Thema {.stage background-image="images/hero-einstieg.png" background-color="#0a0a0f" background-opacity="0.75"}
+
+<!-- image: profile="stage-hero" file="hero-einstieg.png"
+A quiet professional workspace at dawn — polished oak workbench with open notebook and a single brass gear, soft natural light from a tall window. No people, no text.
+-->
+
+::: {.notes}
+Willkommen. Dieses Video zeigt, wie aus einer Agenda in wenigen Minuten ein fertiges Lernvideo entsteht.
+:::
+
+## Die Kernidee in einem Satz
+
+::: {.formula}
+Agenda + Template + Notes = Lernvideo
+:::
+
+::: {.notes}
+Die Kernidee lässt sich in einem einzigen Satz zusammenfassen: Aus einer klaren Agenda, einem bewährten Template und vollständigen Speaker Notes entsteht automatisch ein fertiges Lernvideo.
+:::
+
+## Was das Template leistet
+
+:::: {.features}
+
+::: {.feature}
+[{{< fa cubes >}}]{.accent-blue}
+**Struktur**
+
+Konsistent über alle Decks.
+:::
+
+::: {.feature}
+[{{< fa robot >}}]{.accent-green}
+**KI-fähig**
+
+Von der Agenda zum Deck.
+:::
+
+::: {.feature}
+[{{< fa microphone >}}]{.accent-violet}
+**TTS-ready**
+
+Notes direkt vertonbar.
+:::
+
+::::
+
+::: {.notes}
+Das Template leistet drei Dinge auf einen Blick: eine konsistente Struktur über alle Decks hinweg, eine KI-Fähigkeit, die aus einer Agenda direkt ein Deck macht, und eine Vertonbarkeit, weil die Speaker Notes sofort in der Text-to-Speech-Pipeline landen.
+:::
+
+## Die Pipeline im Überblick
+
+```{.d2 file="includes/content-pipeline.d2"}
+```
+
+::: {.notes}
+Das Diagramm zeigt den kompletten Fluss von der Agenda bis zum fertigen Video.
+:::
+
+## So entsteht ein Bild-Prompt
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+::: {.codewindow .python width="420px"}
+
+```python
+def assemble_prompt(user_prompt: str, profile: dict) -> str:
+    parts = [f"Subject: {user_prompt.strip()}"]
+    for key in ("style_instructions", "composition", "mood", "negative"):
+        value = (profile.get(key) or "").strip()
+        if value:
+            parts.append(f"{key.replace('_', ' ').title()}: {value}")
+    return "\n\n".join(parts)
+```
+
+:::
+
+:::
+
+::: {.column width="55%"}
+
+- <span class="neon-pill">2.</span> `Subject` aus dem Folien-Prompt
+- <span class="neon-pill">3.</span> Vier Profil-Felder werden geprüft
+- <span class="neon-pill">4-6.</span> Nur ausgefüllte Felder kommen in den Prompt
+- <span class="neon-pill">7.</span> Doppelte Newlines trennen die Abschnitte
+
+:::
+
+::::
+
+::: {.notes}
+Die Prompt-Assembly bildet den Kern beider Bild-Pfade — sowohl Gemini als auch der Codex-Export rufen diese Funktion auf. Die Logik bleibt bewusst klein: nimm den Folien-Prompt als Subject, hänge die nicht-leeren Profil-Felder als Zeilen an, trenne mit doppeltem Newline. Mehr passiert nicht — und genau das macht das Pipeline-Verhalten vorhersagbar.
+:::
+
+# Der Handwerker am Morgen {.stage .anschauung background-color="#0a0a0f"}
+
+::: {.notes}
+Ein Handwerker legt am Morgen seine Werkzeuge aus der Kiste auf den Tisch — in genau der Reihenfolge, in der sie später gebraucht werden. Ein Deck-Template ist genau das: eine vorbereitete Werkstatt, in der jedes Werkzeug an seinem Platz liegt.
+:::
+
+## Drei Rollen im Workflow
+
+:::: {.features}
+
+::: {.feature}
+[{{< fa brain >}}]{.accent-blue}
+**Autor:in**
+
+Setzt die Richtung.
+:::
+
+::: {.feature}
+[{{< fa robot >}}]{.accent-green}
+**KI**
+
+Baut das Deck.
+:::
+
+::: {.feature}
+[{{< fa microphone >}}]{.accent-violet}
+**TTS**
+
+Gibt die Stimme.
+:::
+
+::::
+
+::: {.notes}
+Die Autorin oder der Autor setzt die Richtung. Die KI baut daraus das Deck auf Basis der Pattern-Bibliothek. Und die Text-to-Speech-Pipeline gibt dem Ganzen am Ende die Stimme, die das Video hörbar macht.
+:::
+
+## Was bleibt {.stage .closing background-color="#0a0a0f"}
+
+Ein gutes Template ersetzt kein Denken — aber es räumt den Tisch ab, damit das Denken sichtbar wird.
+
+::: {.notes}
+Das ist der Kerngedanke dieses Videos: ein Template reduziert nicht die Arbeit, es reduziert die Reibung zwischen Idee und Ergebnis.
+:::
+
+## Weiter im Buch {.book-bridge}
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![](images/section-background.svg)
+:::
+
+::: {.column width="70%"}
+::: {.chapter-title}
+Kapitel: Beispiel-Lesson
+:::
+
+Im Online-Buch liegen ausformulierte Definitionen, weiterführende Beispiele und Übungsaufgaben bereit.
+
+[→ Zum Kapitel](../beispiel-modul/beispiel-lesson.html)
+:::
+
+::::
+
+::: {.notes}
+Das zugehörige Online-Buch-Kapitel enthält die Details in ausformulierter Form und bietet Übungsaufgaben zur Vertiefung.
+:::
+
+## Literatur
+
+::: {#refs}
+:::
+
+::: {.notes}
+Das Literaturverzeichnis wird automatisch aus den Zitationen im Deck gefüllt.
+:::

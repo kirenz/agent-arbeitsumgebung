@@ -1,0 +1,56 @@
+direction: down
+
+start: {
+  label: "Agenda vorhanden"
+  shape: rectangle
+  style: {
+    fill: "#ffffff"
+    stroke: "#111111"
+    border-radius: 8
+  }
+}
+
+check: {
+  label: "Pattern gewaehlt?"
+  shape: diamond
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#3b82f6"
+    border-radius: 8
+  }
+}
+
+build: {
+  label: "Deck schreiben"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#10a37f"
+    border-radius: 8
+  }
+}
+
+review: {
+  label: "Notes pruefen"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#f97316"
+    border-radius: 8
+  }
+}
+
+render: {
+  label: "Render + Export"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#d292ff"
+    border-radius: 8
+  }
+}
+
+start -> check
+check -> build: "ja"
+check -> start: "nein"
+build -> review -> render

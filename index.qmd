@@ -1,0 +1,29 @@
+# Willkommen {.unnumbered}
+
+::: {.callout-note appearance="minimal"}
+**Hinweis (Schablone):** Diese Datei ist ein Platzhalter — beim Anlegen eines neuen Kurses durch konkreten Inhalt ersetzen. Stilregeln: Wir-Form, Callouts, Analogien aus dem Berufsalltag. Detail-Vorgaben: AGENTS.md im Repo-Root.
+:::
+
+Willkommen zum Einstieg in das Thema dieses Kurses. Dieses Buch bietet eine schrittweise Einführung in den Kerngegenstand.
+
+Hier ein bis zwei Sätze zum Buch — wer es geschrieben hat, welcher Kurs damit verbunden ist, was am Ende erreicht ist. Diese Schablone wird beim Anlegen eines neuen Kurses durch konkreten Inhalt ersetzt.
+
+Beispiele für den Einsatz des Themas:
+
+1. **Bereich 1:** konkrete Anwendung
+2. **Bereich 2:** konkrete Anwendung
+3. **Bereich 3:** konkrete Anwendung
+
+Ein Absatz: Wie das Buch strukturiert ist, welcher Demo-Pfad sich durchzieht.
+
+::: {.callout-note}
+Die hier vermittelten Fähigkeiten sind branchenübergreifend einsetzbar:
+
+- Bereich 1
+- Bereich 2
+- Bereich 3
+:::
+
+::: {.callout-tip}
+Lernempfehlung: Die Kapitel sind aufeinander aufbauend angelegt. Wer den größten Nutzen mitnehmen möchte, arbeitet die Module in der Reihenfolge durch und baut den Demo-Workflow Schritt für Schritt mit.
+:::

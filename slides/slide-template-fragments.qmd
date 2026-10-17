@@ -1,0 +1,222 @@
+---
+title: "Video-Titel"
+subtitle: "Kurze Unterzeile für das Deck"
+author: "Jan Kirenz"
+format:
+  revealjs:
+    pdf-separate-fragments: true
+---
+
+# Einstieg ins Thema {background-image="images/section-background.svg" background-opacity="0.5"}
+
+::: {.notes}
+Willkommen im Template-Deck.
+
+Diese erste Folie ist als Abschnittsfolie gedacht. Sie markiert einen neuen Erzählabschnitt und setzt den Rahmen für die nächsten Inhaltsfolien.
+:::
+
+## Die Kernidee kompakt erklärt
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+Mit diesem Template bauen Sie neue Lernplattform-Folien im Stil der Referenzpräsentationen.
+
+- [Wiederverwendbare Folienmuster]{.fragment .fade-up data-fragment-index="1"}
+- [Zentrale RevealJS-Konfiguration]{.fragment .fade-up data-fragment-index="2"}
+- [Pflicht-Notes für TTS und Sprechertext]{.fragment .fade-up data-fragment-index="3"}
+
+:::
+
+::: {.column width="45%"}
+
+<br>
+
+[**Konsistente Struktur:** Alle neuen Decks starten mit derselben Quarto-Konfiguration und derselben Ordnerlogik.]{.fragment .fade-up data-fragment-index="1"}
+
+[**Direkt KI-fähig:** Agenda plus Template reichen aus, damit die KI ein renderbares Deck schreiben kann.]{.fragment .fade-up data-fragment-index="2"}
+
+[**Speaker Notes inklusive:** Jede Folie enthält direkt den Sprechtext für späteres Text-to-Voice.]{.fragment .fade-up data-fragment-index="3"}
+
+:::
+
+::::
+
+::: {.notes}
+Mit diesem Template bauen Sie neue Lernplattform-Folien im Stil der Referenzpräsentationen.
+
+[KLICK] Der erste Baustein ist die konsistente Struktur. Alle neuen Decks starten mit derselben Quarto-Konfiguration und derselben Ordnerlogik.
+
+[KLICK] Der zweite Baustein ist die direkte KI-Fähigkeit. Eine Agenda und dieses Template reichen aus, damit die KI ein renderbares Deck schreiben kann.
+
+[KLICK] Der dritte Baustein sind die Speaker Notes. Jede Folie enthält direkt den Sprechtext für das spätere Text-to-Voice.
+:::
+
+## Belege und Kennzahlen sichtbar machen
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Die Kombination aus kurzer Erklärung, sichtbaren Kennzahlen und Quellenblock eignet sich für:
+
+- Marktdaten
+- Studienergebnisse
+- Business Cases
+- Vorher-Nachher-Vergleiche
+
+:::
+
+::: {.column width="50%"}
+
+:::: {.metrics-grid}
+
+::: {.metric}
+[4]{.number}
+[erlaubte Kernartefakte]{.label}
+:::
+
+::: {.metric}
+[1 Repo]{.number}
+[für Struktur, Stil und Regeln]{.label}
+:::
+
+::: {.metric}
+[1x]{.number}
+[Notes-Block pro Folie]{.label}
+:::
+
+::: {.metric}
+[0]{.number}
+[neue CSS-Klassen ohne Freigabe]{.label}
+:::
+
+::::
+
+:::
+
+::::
+
+:::{.sources}
+Quelle: @kirenzQuartoTemplate2026
+:::
+
+::: {.notes}
+Diese Folie zeigt das Standardmuster für evidenzorientierte Inhalte.
+
+Links steht die Einordnung, rechts stehen die Kennzahlen, und unten verweist der Quellenblock auf die Herkunft der Zahlen.
+:::
+
+## So entsteht später ein neues Deck
+
+```{.d2 file="includes/content-pipeline.d2"}
+```
+
+::: {.notes}
+Das D2-Diagramm zeigt die Pipeline von der Agenda bis zum fertigen Deck.
+
+Zuerst kommt die Eingabe aus Agenda und Template, dann die Deck-Erzeugung durch die KI, und am Ende stehen Validierung und Notes-Export für die Text-to-Speech-Vertonung.
+:::
+
+# Was das Template leistet {.center}
+
+::: {.notes}
+Diese zentrierte Abschnittsfolie setzt einen kurzen Taktwechsel vor der nächsten Etappe.
+
+Sie eignet sich als Kapitelwechsel oder als stille Pause zwischen zwei inhaltlich dichten Abschnitten.
+:::
+
+## Drei Rollen im Agenten-Workflow
+
+:::: {.features}
+
+::: {.feature .fragment .fade-up data-fragment-index="1"}
+[ {{< fa brain >}} ]{.accent-blue}
+**Autor:in**
+
+Definiert Agenda, Zielgruppe und Storyline.
+:::
+
+::: {.feature .fragment .fade-up data-fragment-index="2"}
+[ {{< fa toolbox >}} ]{.accent-green}
+**KI**
+
+Schreibt das Deck auf Basis der Pattern-Bibliothek.
+:::
+
+::: {.feature .fragment .fade-up data-fragment-index="3"}
+[ {{< fa database >}} ]{.accent-violet}
+**TTS-Pipeline**
+
+Liest die Speaker Notes pro Folie ein.
+:::
+
+::::
+
+::: {.notes}
+In diesem Workflow gibt es drei Rollen, die sauber voneinander getrennt sind.
+
+[KLICK] Die erste Rolle ist die der Autorin oder des Autors. Sie definiert die Agenda, beschreibt die Zielgruppe und legt die Storyline fest.
+
+[KLICK] Die zweite Rolle übernimmt die KI. Sie schreibt das Deck auf Basis der Pattern-Bibliothek und hält sich strikt an die vorgegebenen Muster.
+
+[KLICK] Die dritte Rolle übernimmt die Text-to-Speech-Pipeline. Sie liest die Speaker Notes jeder Folie ein und erzeugt daraus die Audiospur des Videos.
+:::
+
+## Die nächsten Schritte
+
+:::: {.numbered-sections-container}
+
+::: {.numbered-section .fragment .fade-up data-fragment-index="1"}
+[01]{.section-number}
+[Agenda schärfen]{.section-title}
+[Inhalt und Zielbild fixieren]{.section-subtitle}
+
+- Thema
+- Zielgruppe
+- Storyline
+:::
+
+::: {.numbered-section .fragment .fade-up data-fragment-index="2"}
+[02]{.section-number}
+[Deck erzeugen]{.section-title}
+[Mit bestehendem Pattern arbeiten]{.section-subtitle}
+
+- Pattern wählen
+- Folien schreiben
+- Notes ergänzen
+:::
+
+::: {.numbered-section .fragment .fade-up data-fragment-index="3"}
+[03]{.section-number}
+[Output prüfen]{.section-title}
+[Vor Render und TTS absichern]{.section-subtitle}
+
+- Validieren
+- Rendern
+- Notes exportieren
+:::
+
+::::
+
+::: {.notes}
+Diese Abschlussfolie fasst den Weg zu einem fertigen Deck in drei Schritten zusammen.
+
+[KLICK] Zuerst wird die Agenda geschärft. Thema, Zielgruppe und Storyline werden festgelegt.
+
+[KLICK] Dann erzeugt die KI das Deck. Pattern wählen, Folien schreiben, Notes ergänzen.
+
+[KLICK] Am Ende wird der Output geprüft. Validieren, rendern, Notes exportieren.
+:::
+
+## Literatur
+
+::: {#refs}
+:::
+
+::: {.notes}
+Das Literaturverzeichnis wird automatisch aus den Zitationen im Deck gefüllt.
+
+Voraussetzung ist, dass die zitierten Einträge in der zentralen Bibliografie existieren.
+:::

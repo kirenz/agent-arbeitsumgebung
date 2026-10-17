@@ -1,0 +1,44 @@
+direction: right
+
+user: {
+  label: "Agenda"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#3b82f6"
+    border-radius: 8
+  }
+}
+
+deck: {
+  label: "Quarto Deck"
+  shape: rectangle
+  style: {
+    fill: "#ffffff"
+    stroke: "#111111"
+    border-radius: 8
+  }
+}
+
+notes: {
+  label: "Speaker Notes"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#10a37f"
+    border-radius: 8
+  }
+}
+
+export: {
+  label: "TTS JSON Export"
+  shape: rectangle
+  style: {
+    fill: "#f7f7f8"
+    stroke: "#f97316"
+    border-radius: 8
+  }
+}
+
+user -> deck
+deck -> notes -> export

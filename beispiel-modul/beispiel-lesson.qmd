@@ -1,0 +1,63 @@
+# Beispiel-Lesson
+
+<!--
+SCHABLONE — Lesson-Kapitel im Erstentwurf.
+Stilregeln: AGENTS.md im Repo-Root.
+Wir-Form, Callouts, Analogien aus dem Berufsalltag.
+Den H1 auf den echten Lesson-Titel setzen.
+-->
+
+::: {.callout-note title="Status — Erstentwurf"}
+Erstentwurf — wird in Stufe B vom User auf Vollausbau-Niveau gehoben.
+:::
+
+Ein bis zwei Sätze Einleitung in Wir-Form. Was lernen wir in dieser Lesson, und warum lohnt es sich? Diese Schablone wird beim Anlegen eines neuen Kurses durch konkreten Inhalt ersetzt.
+
+## Was wir vorbereiten
+
+Wir-Form-Prosa, die zum ersten konkreten Schritt hinführt. Drei bis fünf Sätze reichen, um den Hauptaspekt zu rahmen.
+
+| Komponente | Aufgabe | Wann nutzen |
+|---|---|---|
+| Bauteil A | kurze Rolle | typischer Kontext |
+| Bauteil B | kurze Rolle | typischer Kontext |
+| Bauteil C | kurze Rolle | typischer Kontext |
+
+::: {.callout-tip title="Faustregel" collapse="true"}
+Eine handlungsleitende Faustregel aus dem Erfahrungswissen, die das Tabellen-Wissen zur Anwendbarkeit verdichtet.
+:::
+
+## Wie wir den ersten Schritt umsetzen
+
+Wir-Form-Prosa, die den Schritt einleitet. Danach das konkrete Beispiel, gefolgt von einer Erklärung im Callout.
+
+```yaml
+# Beispielhafte Konfiguration — auf konkretes Tool anpassen
+schluessel: wert
+liste:
+  - eintrag-1
+  - eintrag-2
+```
+
+::: {.callout-note title="Was hier passiert"}
+Erklärung des Codes in zwei bis drei Sätzen. Welche Zeile macht was, worauf zu achten ist, welche Variante alternativ möglich wäre.
+:::
+
+## Wo das in der Praxis hilft
+
+Wir-Form-Prosa, die das Gelernte in einen Anwendungskontext einbettet.
+
+::: {.callout-tip title="Analogie aus der Werkstatt" collapse="true"}
+Analogie aus der Berufsalltagswelt — Werkstatt, Bibliothek, Assistenz, Küche, Labor. Beispiel: „Wer eine Werkbank zum ersten Mal einrichtet, legt zuerst die Werkzeuge nach Häufigkeit der Nutzung aus, nicht nach Alphabet."
+:::
+
+::: {.callout-important title="Häufige Stolperfalle"}
+Eine konkrete Falle, in die viele auf den ersten zwei Schritten tappen. Plus Hinweis, wie sie vermieden wird.
+:::
+
+## Was als Nächstes ausgebaut werden muss
+
+- Konkreter TODO-Punkt 1, etwa: Schritt-für-Schritt-Anleitung mit Screenshots
+- Konkreter TODO-Punkt 2, etwa: vollständiges Konfigurations-Beispiel mit Erklärung
+- Konkreter TODO-Punkt 3, etwa: zweite Analogie für komplementäre Sicht
+- Konkreter TODO-Punkt 4, etwa: Vergleichstabelle mit Alternativen

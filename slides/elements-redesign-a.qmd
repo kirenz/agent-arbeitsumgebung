@@ -1,0 +1,27 @@
+---
+title: "Variante A: Pure Platform-Mirror"
+subtitle: "1:1-Port der Lernplattform-DNA: OKLch · Geist · editorial-rise"
+author: "Design-Mockup"
+title-slide-attributes:
+  data-background-iframe: ""
+format:
+  revealjs:
+    theme:
+      - default
+      - redesign/tokens-platform.scss
+      - redesign/motion-editorial.scss
+      - redesign/variant-a-pure.scss
+    include-in-header: []
+    include-after-body: []
+    template-partials: []
+    incremental: true
+    transition: none
+    background-transition: fade
+    transition-speed: slow
+    smaller: false
+    scrollable: true
+    slide-number: false
+    footer: "Design-Mockup · Variante A"
+---
+
+{{< include redesign/_shared-content.qmd >}}
