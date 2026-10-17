@@ -211,6 +211,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#willkommen" id="toc-willkommen" class="nav-link active" data-scroll-target="#willkommen">Willkommen</a>
   <ul class="collapse">
+  <li><a href="#was-ki-agenten-tun" id="toc-was-ki-agenten-tun" class="nav-link" data-scroll-target="#was-ki-agenten-tun">Was KI-Agenten tun</a></li>
+  <li><a href="#worum-es-in-diesem-buch-geht" id="toc-worum-es-in-diesem-buch-geht" class="nav-link" data-scroll-target="#worum-es-in-diesem-buch-geht">Worum es in diesem Buch geht</a></li>
   <li><a href="#vier-bausteine" id="toc-vier-bausteine" class="nav-link" data-scroll-target="#vier-bausteine">Vier Bausteine</a></li>
   <li><a href="#was-der-agent-können-muss" id="toc-was-der-agent-können-muss" class="nav-link" data-scroll-target="#was-der-agent-können-muss">Was der Agent können muss</a></li>
   <li><a href="#aufbau" id="toc-aufbau" class="nav-link" data-scroll-target="#aufbau">Aufbau</a></li>
@@ -253,9 +255,18 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="willkommen" class="level1 unnumbered">
 <h1 class="unnumbered">Willkommen</h1>
-<p>Ein Agent kann Anfragen sortieren, Antwortentwürfe schreiben, Quellen umwandeln und Übersichten pflegen. Verlässlich wird diese Arbeit erst durch eine Umgebung, in der er sich zurechtfindet: ein Ordner mit dem Material, eine kurze Hausordnung, aufgeschriebene Abläufe und bei Bedarf Anschlüsse an andere Systeme. Dieses Buch zeigt, wie wir diese Umgebung Schritt für Schritt aufbauen.</p>
-<p>Mit <strong>Agent</strong> meinen wir ein KI-Programm, das auf unserem Rechner in einem Ordner arbeitet: Es liest Dateien, legt neue an, ändert bestehende und führt Befehle aus, jeweils nach Rückfrage. Solche Werkzeuge heißen oft <strong>Coding-Agenten</strong>, weil sie für die Arbeit an Programmcode entstanden sind. Programmieren müssen wir dafür nicht. Alles in diesem Buch funktioniert mit Text, Tabellen und PDFs.</p>
+<section id="was-ki-agenten-tun" class="level2">
+<h2 class="anchored" data-anchor-id="was-ki-agenten-tun">Was KI-Agenten tun</h2>
+<p>Ein Chatbot beantwortet eine Frage und wartet dann auf die nächste. Ein <strong>KI-Agent</strong> bekommt eine Aufgabe und arbeitet sie in mehreren Schritten ab. Er überlegt, welche Schritte nötig sind, nutzt dafür <strong>Werkzeuge</strong> (etwa: eine Datei öffnen, im Web suchen, eine E-Mail entwerfen), schaut sich das Ergebnis jedes Schritts an und entscheidet, was als Nächstes kommt. Das wiederholt er, bis die Aufgabe erledigt ist oder er eine Rückfrage braucht.</p>
+<p>Ein Beispiel: „Sortiere die neuen Kundenanfragen nach Dringlichkeit.“ Ein Chatbot braucht dafür den Text jeder Anfrage im Eingabefeld. Ein Agent sucht die Anfragen selbst heraus, liest sie nacheinander, legt eine sortierte Übersicht an und meldet, was er getan hat.</p>
+<p>KI-Agenten begegnen uns an verschiedenen Stellen: in Chat-Apps, die für eine Recherche selbstständig mehrere Webseiten lesen; als Baustein in Automatisierungen, etwa in einem Workflow, der eingehende E-Mails einordnet; und als Werkzeug auf dem eigenen Rechner, das in einem Ordner mitarbeitet.</p>
+</section>
+<section id="worum-es-in-diesem-buch-geht" class="level2">
+<h2 class="anchored" data-anchor-id="worum-es-in-diesem-buch-geht">Worum es in diesem Buch geht</h2>
+<p>Dieses Buch behandelt die dritte Form: <strong>Coding-Agenten</strong> wie Claude Code (Anthropic), Codex (OpenAI) oder Antigravity (Google). Sie arbeiten in einem Ordner auf unserem Rechner: Sie lesen Dateien, legen neue an, ändern bestehende und führen Befehle aus, jeweils nach Rückfrage. Entstanden sind sie für die Arbeit an Programmcode. Programmieren müssen wir trotzdem nicht. Alles in diesem Buch funktioniert mit Text, Tabellen und PDFs.</p>
+<p>Ein solcher Agent kann Anfragen sortieren, Antwortentwürfe schreiben, Quellen umwandeln und Übersichten pflegen. Verlässlich wird diese Arbeit erst durch eine Umgebung, in der er sich zurechtfindet: ein Ordner mit dem Material, eine kurze Hausordnung, aufgeschriebene Abläufe und bei Bedarf Anschlüsse an andere Systeme. Dieses Buch zeigt, wie wir diese Umgebung Schritt für Schritt aufbauen.</p>
 <p>Ein Beispiel zieht sich durch alle Kapitel: die <strong>Kundenanfragen eines kleinen Betriebs</strong>. Eine Person beantwortet täglich Terminwünsche, Preisfragen, Beschwerden und Rückrufbitten, die per E-Mail und Kontaktformular eingehen. Der Agent hilft, die Anfragen einzusortieren, Entwürfe zu schreiben und eine Übersicht zu führen. Der Projektordner dazu heißt <code>kundenanfragen</code> und wächst von Kapitel zu Kapitel. Am Ende liegt ein vollständiger Ordner vor, den wir für jedes eigene Vorhaben abwandeln können.</p>
+</section>
 <section id="vier-bausteine" class="level2">
 <h2 class="anchored" data-anchor-id="vier-bausteine">Vier Bausteine</h2>
 <p>Vier Bausteine tragen durch das Buch. Für jeden nutzen wir einen Vergleich aus dem Alltag, der zeigt, wofür er da ist.</p>
