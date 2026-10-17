@@ -3,8 +3,8 @@
 > **Gilt für dieses Repo zuerst:** Es gibt nur das Buch, keine Slides. Der
 > Buchteil liegt komplett in `agent-arbeitsumgebung/` und wird per Subtree in
 > Kursbücher eingebunden (README). Dort nur relative Pfade verwenden.
-> Werkzeugneutral schreiben: Produktnamen nur in der Übersichtstabelle im
-> Kapitel „Chat oder Agent?“. Inhaltliche Vorgaben:
+> Werkzeugneutral schreiben: Produktnamen nur im Abschnitt „Was hier mit
+> Agent gemeint ist“ und in der Übersichtstabelle, beide im Kapitel „Chat oder Agent?“. Inhaltliche Vorgaben:
 > `~/code/hdm/lernplattform/docs/agent-arbeitsumgebung-konzept.md`. Die
 > allgemeinen Buch-Stilregeln unten (aus der Schablone) gelten weiter;
 > Abschnitte zu Slides entfallen.
