@@ -1,8 +1,18 @@
 # Willkommen {.unnumbered}
 
-Ein Agent kann Anfragen sortieren, Antwortentwürfe schreiben, Quellen umwandeln und Übersichten pflegen. Verlässlich wird diese Arbeit erst durch eine Umgebung, in der er sich zurechtfindet: ein Ordner mit dem Material, eine kurze Hausordnung, aufgeschriebene Abläufe und bei Bedarf Anschlüsse an andere Systeme. Dieses Buch zeigt, wie wir diese Umgebung Schritt für Schritt aufbauen.
+## Was KI-Agenten tun
 
-Mit **Agent** meinen wir ein KI-Programm, das auf unserem Rechner in einem Ordner arbeitet: Es liest Dateien, legt neue an, ändert bestehende und führt Befehle aus, jeweils nach Rückfrage. Solche Werkzeuge heißen oft **Coding-Agenten**, weil sie für die Arbeit an Programmcode entstanden sind. Programmieren müssen wir dafür nicht. Alles in diesem Buch funktioniert mit Text, Tabellen und PDFs.
+Ein Chatbot beantwortet eine Frage und wartet dann auf die nächste. Ein **KI-Agent** bekommt eine Aufgabe und arbeitet sie in mehreren Schritten ab. Er überlegt, welche Schritte nötig sind, nutzt dafür **Werkzeuge** (etwa: eine Datei öffnen, im Web suchen, eine E-Mail entwerfen), schaut sich das Ergebnis jedes Schritts an und entscheidet, was als Nächstes kommt. Das wiederholt er, bis die Aufgabe erledigt ist oder er eine Rückfrage braucht.
+
+Ein Beispiel: „Sortiere die neuen Kundenanfragen nach Dringlichkeit.“ Ein Chatbot braucht dafür den Text jeder Anfrage im Eingabefeld. Ein Agent sucht die Anfragen selbst heraus, liest sie nacheinander, legt eine sortierte Übersicht an und meldet, was er getan hat.
+
+KI-Agenten begegnen uns an verschiedenen Stellen: in Chat-Apps, die für eine Recherche selbstständig mehrere Webseiten lesen; als Baustein in Automatisierungen, etwa in einem Workflow, der eingehende E-Mails einordnet; und als Werkzeug auf dem eigenen Rechner, das in einem Ordner mitarbeitet.
+
+## Worum es in diesem Buch geht
+
+Dieses Buch behandelt die dritte Form: **Coding-Agenten** wie Claude Code (Anthropic), Codex (OpenAI) oder Antigravity (Google). Sie arbeiten in einem Ordner auf unserem Rechner: Sie lesen Dateien, legen neue an, ändern bestehende und führen Befehle aus, jeweils nach Rückfrage. Entstanden sind sie für die Arbeit an Programmcode. Programmieren müssen wir trotzdem nicht. Alles in diesem Buch funktioniert mit Text, Tabellen und PDFs.
+
+Ein solcher Agent kann Anfragen sortieren, Antwortentwürfe schreiben, Quellen umwandeln und Übersichten pflegen. Verlässlich wird diese Arbeit erst durch eine Umgebung, in der er sich zurechtfindet: ein Ordner mit dem Material, eine kurze Hausordnung, aufgeschriebene Abläufe und bei Bedarf Anschlüsse an andere Systeme. Dieses Buch zeigt, wie wir diese Umgebung Schritt für Schritt aufbauen.
 
 Ein Beispiel zieht sich durch alle Kapitel: die **Kundenanfragen eines kleinen Betriebs**. Eine Person beantwortet täglich Terminwünsche, Preisfragen, Beschwerden und Rückrufbitten, die per E-Mail und Kontaktformular eingehen. Der Agent hilft, die Anfragen einzusortieren, Entwürfe zu schreiben und eine Übersicht zu führen. Der Projektordner dazu heißt `kundenanfragen` und wächst von Kapitel zu Kapitel. Am Ende liegt ein vollständiger Ordner vor, den wir für jedes eigene Vorhaben abwandeln können.
 
