@@ -14,7 +14,7 @@ Dieses Buch behandelt die dritte Form: **Coding-Agenten** wie Claude Code (Anthr
 
 Ein solcher Agent kann Anfragen sortieren, Antwortentwürfe schreiben, Quellen umwandeln und Übersichten pflegen. Verlässlich wird diese Arbeit erst durch eine Umgebung, in der er sich zurechtfindet. Dieses Buch zeigt, wie wir diese Umgebung Schritt für Schritt aufbauen.
 
-Ein Bild trägt durch alle Kapitel: Der Agent ist ein **neuer Mitarbeiter**. Er ist fachlich fit, weiß aber nichts über unseren Betrieb. Und er kommt jeden Morgen ohne Erinnerung an gestern, denn jede neue Unterhaltung mit ihm beginnt leer. Darum steht alles Wichtige schriftlich in seiner Einarbeitung, dem **Onboarding** (so heißt die Einarbeitung neuer Mitarbeitender). Die Arbeitsumgebung, die wir aufbauen, ist dieses Onboarding.
+Ein Vergleich trägt durch alle Kapitel: Der Agent ist ein **neuer Mitarbeiter**. Er ist fachlich fit, weiß aber nichts über unseren Betrieb. Und er kommt jeden Morgen ohne Erinnerung an gestern, denn jede neue Unterhaltung mit ihm beginnt leer. Darum steht alles Wichtige schriftlich in seiner Einarbeitung, dem **Onboarding** (so heißt die Einarbeitung neuer Mitarbeitender). Die Arbeitsumgebung, die wir aufbauen, ist dieses Onboarding.
 
 Ein Beispiel zieht sich durch alle Kapitel: die **Kundenanfragen eines kleinen Betriebs**. Eine Person beantwortet täglich Terminwünsche, Preisfragen, Beschwerden und Rückrufbitten, die per E-Mail und Kontaktformular eingehen. Der Agent hilft, die Anfragen einzusortieren, Entwürfe zu schreiben und eine Übersicht zu führen. Der Projektordner dazu heißt `kundenanfragen` und wächst von Kapitel zu Kapitel. Am Ende liegt ein vollständiger Ordner vor, den wir für jedes eigene Vorhaben abwandeln können.
 
@@ -53,7 +53,7 @@ Das Buch hat zwei Teile.
 
 **Den Agenten erweitern.** Zwei Kapitel zeigen, wie ein Agent über MCP, Konnektoren und Plugins andere Systeme erreicht und welche Regeln dafür gelten. Diese Kapitel richten nichts ein. Sie helfen bei der Entscheidung, ob eine Anbindung für den eigenen Fall nötig ist.
 
-Jedes Kapitel enthält einen **Auftrag zum Kopieren** und ein **Prüfkriterium**. Den Auftrag senden wir an den eigenen Agenten, das Kriterium zeigt, ob das Ergebnis stimmt. Interaktive **Nachbauten eines Agenten** zeigen vorher, wie der Ablauf aussieht. Sie stellen ein typisches Werkzeug nach und sind kein echtes Produkt.
+Jedes Kapitel besteht aus zwei bis vier **Schritten am eigenen Agenten**. Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren mit Prüfkriterium, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung am eigenen Ergebnis und ein Abschnitt „Wenn es anders aussieht“. An einigen Stellen ergänzen interaktive **Nachbauten eines Agenten** einen Ablauf, der im eigenen Ordner noch nicht möglich ist. Sie stellen ein typisches Werkzeug nach und sind kein echtes Produkt.
 
 ::: {.callout-tip title="Lernempfehlung"}
 Die Kapitel bauen aufeinander auf, weil der Ordner `kundenanfragen` mit jedem Auftrag wächst. Wer die Aufträge der Reihe nach mit dem eigenen Agenten ausführt, hat am Ende des ersten Teils eine vollständige Arbeitsumgebung.
