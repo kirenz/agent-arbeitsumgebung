@@ -45,13 +45,13 @@ Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugre
 
 Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse.
 
-Welches Werkzeug wir nutzen, hängt am einfachsten an dem Abo, das wir schon haben. Mit einem ChatGPT-Abo nehmen wir Codex, mit einem Claude-Abo Claude Code; beide sind im Abo enthalten. Ohne Abo nehmen wir Antigravity von Google: Die Anmeldung mit einem privaten Google-Konto genügt, und die Nutzung ist kostenlos, mit Nutzungsgrenzen. Wer schon mit Cursor arbeitet, bleibt dabei.
+Für den Einstieg empfiehlt sich das Werkzeug, das im vorhandenen Abo bereits enthalten ist: Codex gehört zu ChatGPT Plus und höher, Claude Code zu Claude Pro und höher. Ohne Abo bietet sich Antigravity an, das Google mit einem privaten Google-Konto kostenlos bereitstellt, mit begrenztem Kontingent. Wer bereits mit Cursor arbeitet, kann dabei bleiben.
 
 | Werkzeug | Anbieter | Zugang | App | Anleitung |
 |---|---|---|---|---|
 | Codex | OpenAI | im ChatGPT-Abo (Plus oder höher) | [Codex-App](https://learn.chatgpt.com/docs/app) | [Codex-Dokumentation](https://learn.chatgpt.com/docs) |
 | Claude Code | Anthropic | im Claude-Abo (Pro oder höher) | [Claude-Desktop-App](https://claude.com/download), Bereich „Code“ | [Claude Code in der Desktop-App](https://code.claude.com/docs/en/desktop) |
-| Antigravity | Google | kostenlos mit privatem Google-Konto, mit Nutzungsgrenzen | [Antigravity-App](https://antigravity.google/download) | [Antigravity-Dokumentation](https://antigravity.google/docs) |
+| Antigravity | Google | kostenlos mit privatem Google-Konto, begrenztes Kontingent | [Antigravity-App](https://antigravity.google/download) | [Antigravity-Dokumentation](https://antigravity.google/docs) |
 | Cursor | Anysphere | eigenes Abo, kostenloser Einstieg | [Cursor-App](https://cursor.com/download) | [Cursor-Dokumentation](https://cursor.com/docs) |
 
 : Stand: 18.10.2026. Abos und Grenzen ändern sich, maßgeblich sind die Seiten der Anbieter.
