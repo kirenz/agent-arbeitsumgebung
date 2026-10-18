@@ -45,7 +45,7 @@ Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugre
 
 Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse.
 
-Codex ist in ChatGPT Plus und höher enthalten, Claude Code in Claude Pro und höher. Antigravity stellt Google kostenlos bereit; dafür genügt ein privates Google-Konto, das Kontingent ist begrenzt.
+Am schnellsten gelingt der Einstieg mit dem Agenten, der im eigenen Abo bereits enthalten ist: Codex in ChatGPT Plus und höher, Claude Code in Claude Pro und höher. Ohne Abo empfiehlt sich Antigravity, weil Google ein begrenztes Kontingent kostenlos bereitstellt; dafür genügt ein privates Google-Konto.
 
 | Werkzeug | Anbieter | Zugang | App | Anleitung |
 |---|---|---|---|---|
