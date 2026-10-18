@@ -246,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#was-ein-ki-agent-tut" id="toc-was-ein-ki-agent-tut" class="nav-link active" data-scroll-target="#was-ein-ki-agent-tut"><span class="header-section-number">1.1</span> Was ein KI-Agent tut</a></li>
   <li><a href="#das-modell-führt-nichts-aus-die-app-fragt-uns" id="toc-das-modell-führt-nichts-aus-die-app-fragt-uns" class="nav-link" data-scroll-target="#das-modell-führt-nichts-aus-die-app-fragt-uns"><span class="header-section-number">1.2</span> Das Modell führt nichts aus, die App fragt uns</a></li>
-  <li><a href="#drei-formen-von-agenten-eine-davon-in-diesem-buch" id="toc-drei-formen-von-agenten-eine-davon-in-diesem-buch" class="nav-link" data-scroll-target="#drei-formen-von-agenten-eine-davon-in-diesem-buch"><span class="header-section-number">1.3</span> Drei Formen von Agenten, eine davon in diesem Buch</a></li>
+  <li><a href="#wo-ein-agent-arbeitet-drei-formen" id="toc-wo-ein-agent-arbeitet-drei-formen" class="nav-link" data-scroll-target="#wo-ein-agent-arbeitet-drei-formen"><span class="header-section-number">1.3</span> Wo ein Agent arbeitet: drei Formen</a></li>
   <li><a href="#schritt-1-app-installieren-und-ordner-öffnen" id="toc-schritt-1-app-installieren-und-ordner-öffnen" class="nav-link" data-scroll-target="#schritt-1-app-installieren-und-ordner-öffnen"><span class="header-section-number">1.4</span> Schritt 1: App installieren und Ordner öffnen</a>
   <ul class="collapse">
   <li><a href="#das-sollten-wir-jetzt-sehen" id="toc-das-sollten-wir-jetzt-sehen" class="nav-link" data-scroll-target="#das-sollten-wir-jetzt-sehen"><span class="header-section-number">1.4.1</span> Das sollten wir jetzt sehen</a></li>
@@ -349,13 +349,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Das <strong>Sprachmodell</strong> (das KI-Modell, das den Text erzeugt) liest den bisherigen Verlauf und schreibt Text. Mehr kann es nicht. Will es ein Werkzeug nutzen, schreibt es diesen Wunsch als Text auf, etwa „Lies die Datei anfragen/2026-10-07-beschwerde.md“. Der <strong>Rahmen</strong> (englisch: Agent Harness) ist die Software um das Modell herum, bei einem Agenten auf dem eigenen Rechner die App. Sie erkennt den Werkzeugwunsch, führt ihn aus, legt das Ergebnis dem Modell wieder vor und startet die nächste Runde. Vor Änderungen und Befehlen hält sie an und fragt uns. Die Rückfrage „antworten/2026-10-07-beschwerde-antwort.md anlegen?“ stellt also der Rahmen. Ein Agent ist Modell plus Werkzeuge plus Schleife, dazu alles, was das Modell gerade vorliegen hat (der Kontext).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Der Fachbegriff für diesen Wechsel aus Überlegen und Handeln lautet ReAct (kurz für Reasoning and Acting).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Der Unterschied zum Chat liegt im Rahmen. Der Rahmen eines Chat-Assistenten reicht dem Modell das Eingabefeld und gibt die Antwort zurück. Der Rahmen eines Agenten gibt dem Modell zusätzlich Werkzeuge und lässt die Schleife laufen, bis das Ziel erreicht ist. Welche Werkzeuge es gibt und wann wir gefragt werden, legt darum der Rahmen fest, also die App, die wir wählen.</p>
 </section>
-<section id="drei-formen-von-agenten-eine-davon-in-diesem-buch" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="drei-formen-von-agenten-eine-davon-in-diesem-buch"><span class="header-section-number">1.3</span> Drei Formen von Agenten, eine davon in diesem Buch</h2>
-<p>Agenten begegnen uns in drei Formen. Alle drei arbeiten in derselben Schleife, Rahmen und Werkzeuge unterscheiden sich.</p>
+<section id="wo-ein-agent-arbeitet-drei-formen" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="wo-ein-agent-arbeitet-drei-formen"><span class="header-section-number">1.3</span> Wo ein Agent arbeitet: drei Formen</h2>
+<p>Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugreifen. Die Schleife ist überall dieselbe. Oft bietet eine App mehrere dieser Formen an: Die Claude-Desktop-App hat etwa einen Chat und den Bereich „Code“.</p>
 <ol type="1">
-<li>In Chat-Apps als Agentenmodus oder persönlicher Assistent: Der Rahmen ist die Chat-App des Anbieters, die Werkzeuge sind Websuche, Browser oder verbundene Konten.</li>
-<li>Als Baustein in Automatisierungen (etwa in n8n): Der Rahmen ist der Workflow, der Agent übernimmt einen Schritt darin.</li>
-<li>Als <strong>Coding-Agent</strong> auf dem eigenen Rechner: Der Rahmen ist eine App, die Werkzeuge arbeiten in einem Ordner (Dateien lesen, anlegen, ändern, Befehle ausführen).</li>
+<li>Beim Anbieter im Netz: Der Agent arbeitet auf den Rechnern des Anbieters. Seine Werkzeuge sind Websuche, ein eigener Browser oder verbundene Konten wie E-Mail und Kalender. Die Ergebnisse erscheinen im Chat oder in den verbundenen Diensten. Ein Beispiel ist der Agentenmodus von ChatGPT, der Hotels im Browser vergleicht.</li>
+<li>In einem Workflow (etwa in n8n): Der Agent übernimmt einen festen Schritt in einem automatischen Ablauf.</li>
+<li>Auf dem eigenen Rechner in einem Ordner: Das ist der <strong>Coding-Agent</strong>. Seine Werkzeuge lesen, anlegen und ändern Dateien in diesem Ordner und führen Befehle aus. Die Ergebnisse liegen als Dateien im Ordner.</li>
 </ol>
 <p>Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse. Bekannte Beispiele:</p>
 <table class="caption-top table">
