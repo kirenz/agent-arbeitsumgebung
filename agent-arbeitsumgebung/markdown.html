@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#das-sollten-wir-jetzt-sehen-1" id="toc-das-sollten-wir-jetzt-sehen-1" class="nav-link" data-scroll-target="#das-sollten-wir-jetzt-sehen-1"><span class="header-section-number">2.2.1</span> Das sollten wir jetzt sehen</a></li>
   <li><a href="#was-gerade-passiert-ist-1" id="toc-was-gerade-passiert-ist-1" class="nav-link" data-scroll-target="#was-gerade-passiert-ist-1"><span class="header-section-number">2.2.2</span> Was gerade passiert ist</a></li>
   </ul></li>
-  <li><a href="#schritt-3-selbst-ändern-dann-den-agenten-ändern-lassen" id="toc-schritt-3-selbst-ändern-dann-den-agenten-ändern-lassen" class="nav-link" data-scroll-target="#schritt-3-selbst-ändern-dann-den-agenten-ändern-lassen"><span class="header-section-number">2.3</span> Schritt 3: Selbst ändern, dann den Agenten ändern lassen</a>
+  <li><a href="#schritt-3-ändern-lassen-und-die-änderung-prüfen" id="toc-schritt-3-ändern-lassen-und-die-änderung-prüfen" class="nav-link" data-scroll-target="#schritt-3-ändern-lassen-und-die-änderung-prüfen"><span class="header-section-number">2.3</span> Schritt 3: Ändern lassen und die Änderung prüfen</a>
   <ul class="collapse">
   <li><a href="#das-sollten-wir-jetzt-sehen-2" id="toc-das-sollten-wir-jetzt-sehen-2" class="nav-link" data-scroll-target="#das-sollten-wir-jetzt-sehen-2"><span class="header-section-number">2.3.1</span> Das sollten wir jetzt sehen</a></li>
   <li><a href="#was-gerade-passiert-ist-2" id="toc-was-gerade-passiert-ist-2" class="nav-link" data-scroll-target="#was-gerade-passiert-ist-2"><span class="header-section-number">2.3.2</span> Was gerade passiert ist</a></li>
@@ -290,44 +290,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Agenten lesen und schreiben Markdown ohne Umweg. Fast alle Dateien, die in den folgenden Kapiteln entstehen, sind Markdown-Dateien: die Anfragen, die Antwortentwürfe, die Übersicht und die Hausordnung des Agenten. In diesem Kapitel legen wir mit dem eigenen Agenten Schritt für Schritt solche Dateien an. Die Erklärung folgt jeweils am eigenen Ergebnis.</p>
 <p>Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.</p>
-<p><strong>Voraussetzung:</strong> Der Ordner <code>agent-test</code> aus dem Kapitel <a href="../agent-arbeitsumgebung/chat-oder-agent.html">Chat oder Agent?</a> ist in der App des Agenten geöffnet. Darin liegt die Datei <code>hallo.md</code> aus dem Selbsttest.</p>
+<p><strong>Voraussetzung:</strong> Der Ordner <code>agent-test</code> aus dem Kapitel <a href="../agent-arbeitsumgebung/chat-oder-agent.html">Chat oder Agent?</a> ist in der App des Agenten gewählt. Darin liegt die Datei <code>hallo.md</code> aus dem Selbsttest. Alle Aufträge und Prüfungen laufen im Chat; eine Datei zeigt uns der Agent auf Nachfrage einmal mit allen Zeichen und einmal formatiert.</p>
 <section id="schritt-1-die-erste-datei" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="schritt-1-die-erste-datei"><span class="header-section-number">2.1</span> Schritt 1: Die erste Datei</h2>
 <ol type="1">
 <li><p>Diesen Auftrag senden:</p>
 <pre class="text"><code>Lege in diesem Ordner die Datei terminwunsch.md an. Inhalt: die Überschrift „Terminwunsch“, darunter eine Liste mit drei Punkten: Datum: 2026-10-05, Kanal: E-Mail, Anliegen: Termin für eine Reparatur. Frage, bevor du die Datei anlegst.</code></pre></li>
 <li><p>Das Anlegen freigeben.</p></li>
-<li><p><code>terminwunsch.md</code> in der App öffnen, so dass der Inhalt mit allen Zeichen sichtbar ist.</p></li>
+<li><p>Diese Frage senden:</p>
+<pre class="text"><code>Zeig mir den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.</code></pre></li>
 <li><p>Prüfen: Zeile 1 beginnt mit <code>#</code>. Drei Zeilen beginnen mit <code>-</code>.</p></li>
 <li><p>Diese Frage senden:</p>
-<pre class="text"><code>Wie öffne ich in dieser App die Vorschau einer .md-Datei, also die formatierte Ansicht? Nur antworten, nichts ändern.</code></pre></li>
-<li><p>Die Vorschau so öffnen, wie der Agent es beschreibt.</p></li>
-<li><p>Prüfen: Die Vorschau zeigt eine Überschrift und drei Listenpunkte. Die Zeichen <code>#</code> und <code>-</code> sind ausgeblendet.</p></li>
+<pre class="text"><code>Gib den Inhalt von terminwunsch.md jetzt formatiert wieder, so wie ein Leser ihn sehen soll.</code></pre></li>
+<li><p>Prüfen: Die Antwort zeigt eine Überschrift und drei Listenpunkte. Die Zeichen <code>#</code> und <code>-</code> sind nicht zu sehen.</p></li>
 <li><p>Diese Frage senden:</p>
 <pre class="text"><code>Über welchen Kanal kam der Terminwunsch in terminwunsch.md? Nur antworten.</code></pre></li>
 <li><p>Prüfen: Die Antwort lautet „E-Mail“.</p></li>
 </ol>
 <section id="das-sollten-wir-jetzt-sehen" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen"><span class="header-section-number">2.1.1</span> Das sollten wir jetzt sehen</h3>
-<p>Die Datei <code>terminwunsch.md</code> mit allen Zeichen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Terminwunsch</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Datum: 2026-10-05</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Kanal: E-Mail</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Anliegen: Termin für eine Reparatur</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Dieselbe Datei in der Vorschau:</p>
-<div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">terminwunsch.md · Vorschau</div>
-<div style="padding:12px 18px 14px;line-height:1.5">
-<div style="font-size:1.5rem;font-weight:700;margin:0 0 8px">Terminwunsch</div>
-<ul style="margin:0;padding-left:22px"><li>Datum: 2026-10-05</li><li>Kanal: E-Mail</li><li>Anliegen: Termin für eine Reparatur</li></ul>
+<p>Dieselbe Datei zweimal im Chat, einmal mit allen Zeichen, einmal formatiert:</p>
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
+<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+<div style="padding:12px;display:grid;gap:8px">
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Inhalt von <code>terminwunsch.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Terminwunsch
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Datum: 2026-10-05
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Kanal: E-Mail
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Anliegen: Termin für eine Reparatur</pre></div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Gib den Inhalt von terminwunsch.md jetzt formatiert wieder, so wie ein Leser ihn sehen soll.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Terminwunsch</div><ul style="margin:0;padding-left:20px"><li>Datum: 2026-10-05</li><li>Kanal: E-Mail</li><li>Anliegen: Termin für eine Reparatur</li></ul></div>
 </div>
 </div>
 </section>
 <section id="was-gerade-passiert-ist" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="was-gerade-passiert-ist"><span class="header-section-number">2.1.2</span> Was gerade passiert ist</h3>
 <p>Wir haben dem Agenten nur Überschrift und Liste genannt. Die Zeichen <code>#</code> und <code>-</code> hat er von selbst gesetzt. Das ist Markdown, das Dateiformat aus dem Kapitel <a href="../agent-arbeitsumgebung/chat-oder-agent.html">Chat oder Agent?</a>.</p>
-<p>Der Inhalt der Datei genau so, wie er gespeichert ist, heißt <strong>Rohtext</strong>. <code>#</code> am Zeilenanfang macht eine Überschrift, <code>-</code> einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile <code>- Kanal: E-Mail</code> und antwortet „E-Mail“. Die <strong>Vorschau</strong> ist die formatierte Ansicht derselben Datei. Die App blendet <code>#</code> und <code>-</code> aus und zeigt Überschrift und Liste. Wo die Vorschau liegt, ist je App verschieden, deshalb die Frage an den Agenten.</p>
+<p>Der Inhalt der Datei genau so, wie er gespeichert ist, heißt <strong>Rohtext</strong>. <code>#</code> am Zeilenanfang macht eine Überschrift, <code>-</code> einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile <code>- Kanal: E-Mail</code> und antwortet „E-Mail“. Die <strong>Vorschau</strong> ist die formatierte Ansicht desselben Textes: Die Zeichen <code>#</code> und <code>-</code> verschwinden, übrig bleiben Überschrift und Liste. Der Chat zeigt Markdown meist so an. Darum ist die zweite Antwort die Vorschau unserer Datei.</p>
 <p>Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen Aufbau nutzen alle Anfragen in den folgenden Kapiteln, weil der Agent die drei Angaben so direkt abliest.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
@@ -342,8 +342,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>*</code> statt <code>-</code> am Zeilenanfang: Beide Zeichen machen einen Listenpunkt. Die Vorschau zeigt dasselbe.</li>
 <li>Eine Leerzeile mehr oder weniger: In der Vorschau ändert sich meist nichts. Erst zwei Zeilenumbrüche hintereinander trennen Absätze.</li>
-<li>Der Chat des Agenten zeigt Markdown oft schon formatiert. Gemeint ist in Schritt 6 die Vorschau der Datei im Ordner, nicht der Chat.</li>
+<li>Beide Antworten zeigen die Zeichen: „Gib den Text ohne Codeblock wieder, damit der Chat ihn formatiert.“ Ein Codeblock ist ein Kasten im Chat, der Text unverändert mit allen Zeichen zeigt.</li>
+<li>Beide Antworten sind formatiert: „Zeig mir den Inhalt in einem Codeblock, Zeile für Zeile.“</li>
 <li>Die Datei heißt <code>terminwunsch.txt</code> oder liegt in einem Unterordner: „Benenne die Datei in terminwunsch.md um und lege sie direkt in diesen Ordner.“</li>
+<li>Wer die Datei selbst sehen will: im Chat auf den Dateipfad klicken oder den Ordner <code>agent-test</code> im Finder oder Explorer öffnen.</li>
 </ul>
 </div>
 </div>
@@ -356,45 +358,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Diesen Auftrag senden:</p>
 <pre class="text"><code>Lege in diesem Ordner die Datei uebersicht-test.md an. Inhalt: die Überschrift „Übersicht“, darunter eine Tabelle mit den Spalten „Datei“ und „Anliegen“ und zwei Zeilen: hallo.md mit dem Anliegen „Test“, terminwunsch.md mit dem Anliegen „Termin für eine Reparatur“. Frage, bevor du die Datei anlegst.</code></pre></li>
 <li><p>Das Anlegen freigeben.</p></li>
-<li><p>Den Rohtext von <code>uebersicht-test.md</code> öffnen.</p></li>
-<li><p>Prüfen: Drei Zeilen enthalten senkrechte Striche <code>|</code>. Unter der ersten davon steht eine Zeile aus Strichen wie <code>|---|---|</code>.</p></li>
-<li><p>Die Vorschau von <code>uebersicht-test.md</code> öffnen.</p></li>
-<li><p>Prüfen: Die Vorschau zeigt eine Tabelle mit Kopfzeile und zwei Zeilen.</p></li>
+<li><p>Diese Frage senden:</p>
+<pre class="text"><code>Zeig mir den Inhalt von uebersicht-test.md zuerst mit allen Zeichen, so wie er in der Datei steht, und danach formatiert.</code></pre></li>
+<li><p>Prüfen: In der ersten Ansicht enthalten vier Zeilen senkrechte Striche <code>|</code>. Die zweite davon besteht aus Strichen wie <code>|---|---|</code>.</p></li>
+<li><p>Prüfen: Die zweite Ansicht zeigt eine Tabelle mit Kopfzeile und zwei Zeilen.</p></li>
 </ol>
 <section id="das-sollten-wir-jetzt-sehen-1" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen-1"><span class="header-section-number">2.2.1</span> Das sollten wir jetzt sehen</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Übersicht</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Datei <span class="pp">|</span> Anliegen <span class="pp">|</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> hallo.md <span class="pp">|</span> Test <span class="pp">|</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> terminwunsch.md <span class="pp">|</span> Termin für eine Reparatur <span class="pp">|</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">uebersicht-test.md · Vorschau</div>
-<div style="padding:12px 18px 14px;line-height:1.5">
-<div style="font-size:1.5rem;font-weight:700;margin:0 0 8px">Übersicht</div>
-
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
+<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+<div style="padding:12px;display:grid;gap:8px">
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von uebersicht-test.md zuerst mit allen Zeichen, so wie er in der Datei steht, und danach formatiert.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Mit allen Zeichen:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Übersicht
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> Datei <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Anliegen <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span><i style="color:#23417a;font-style:normal;font-weight:700">|---|---|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> hallo.md <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Test <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> terminwunsch.md <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Termin für eine Reparatur <i style="color:#23417a;font-style:normal;font-weight:700">|</i></pre><p style="margin-top:10px">Formatiert:</p><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Übersicht</div>
 <table class="caption-top table">
 <thead>
-<tr class="header" style="border-bottom:2px solid #dcd9d2;text-align:left">
-<th data-quarto-table-cell-role="th" style="padding: 6px 8px">Datei</th>
-<th data-quarto-table-cell-role="th" style="padding: 6px 8px">Anliegen</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border: 1px solid #dcd9d2; padding: 4px 8px; background: #f4f2ed;">Datei</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; border: 1px solid #dcd9d2; padding: 4px 8px; background: #f4f2ed;">Anliegen</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd" style="border-bottom:1px solid #dcd9d2">
-<td style="padding: 6px 8px">hallo.md</td>
-<td style="padding: 6px 8px">Test</td>
+<tr class="odd">
+<td style="text-align: left; border: 1px solid #dcd9d2; padding: 4px 8px;">hallo.md</td>
+<td style="text-align: left; border: 1px solid #dcd9d2; padding: 4px 8px;">Test</td>
 </tr>
 <tr class="even">
-<td style="padding: 6px 8px">terminwunsch.md</td>
-<td style="padding: 6px 8px">Termin für eine Reparatur</td>
+<td style="text-align: left; border: 1px solid #dcd9d2; padding: 4px 8px;">terminwunsch.md</td>
+<td style="text-align: left; border: 1px solid #dcd9d2; padding: 4px 8px;">Termin für eine Reparatur</td>
 </tr>
 </tbody>
 </table>
-
 </div>
 </div>
+</div>
+<p>Zeile 4 ist die Trennzeile. Sie erscheint in der formatierten Ansicht nicht, macht aber aus den Zeilen mit Strichen eine Tabelle.</p>
 </section>
 <section id="was-gerade-passiert-ist-1" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-1"><span class="header-section-number">2.2.2</span> Was gerade passiert ist</h3>
@@ -419,42 +421,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="schritt-3-selbst-ändern-dann-den-agenten-ändern-lassen" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="schritt-3-selbst-ändern-dann-den-agenten-ändern-lassen"><span class="header-section-number">2.3</span> Schritt 3: Selbst ändern, dann den Agenten ändern lassen</h2>
+<section id="schritt-3-ändern-lassen-und-die-änderung-prüfen" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="schritt-3-ändern-lassen-und-die-änderung-prüfen"><span class="header-section-number">2.3</span> Schritt 3: Ändern lassen und die Änderung prüfen</h2>
 <p><strong>Voraussetzung:</strong> <code>terminwunsch.md</code> aus Schritt 1 liegt im Ordner <code>agent-test</code>.</p>
 <ol type="1">
-<li><p>Den Rohtext von <code>terminwunsch.md</code> im Editor der App öffnen.</p></li>
-<li><p>Unter den dritten Listenpunkt die Zeile <code>- Rückruf: ja</code> schreiben.</p></li>
-<li><p>Die Datei speichern.</p></li>
-<li><p>Prüfen: Die Vorschau zeigt vier Listenpunkte.</p></li>
+<li><p>Diesen Auftrag senden:</p>
+<pre class="text"><code>Ergänze in terminwunsch.md unter dem dritten Listenpunkt die Zeile „- Rückruf: ja“. Frage, bevor du speicherst.</code></pre></li>
+<li><p>Das Speichern freigeben.</p></li>
 <li><p>Diesen Auftrag senden:</p>
 <pre class="text"><code>Ändere in terminwunsch.md den Kanal von E-Mail auf Telefon. Lass alle anderen Zeilen unverändert. Zeige mir die Änderung Zeile für Zeile und frage, bevor du speicherst.</code></pre></li>
 <li><p>Prüfen: Der Agent zeigt die Zeile mit dem Kanal alt und neu und fragt vor dem Speichern.</p></li>
 <li><p>Das Speichern freigeben.</p></li>
-<li><p>Den Rohtext von <code>terminwunsch.md</code> öffnen.</p></li>
+<li><p>Diese Frage senden:</p>
+<pre class="text"><code>Zeig mir den Inhalt von terminwunsch.md mit allen Zeichen.</code></pre></li>
 <li><p>Prüfen: Die Zeile lautet <code>- Kanal: Telefon</code>. Die Zeile <code>- Rückruf: ja</code> steht noch in der Datei.</p></li>
 </ol>
 <section id="das-sollten-wir-jetzt-sehen-2" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen-2"><span class="header-section-number">2.3.1</span> Das sollten wir jetzt sehen</h3>
-<p>Die Änderung, wie der Agent sie vor dem Speichern zeigt:</p>
-<div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Änderung an terminwunsch.md</div>
-<pre style="margin:0;padding:10px 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;background:transparent;border:0">  - Datum: 2026-10-05
+<p>Die Änderung, wie der Agent sie vor dem Speichern zeigt, und die Datei danach:</p>
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
+<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+<div style="padding:12px;display:grid;gap:8px">
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Ändere in terminwunsch.md den Kanal von E-Mail auf Telefon. Lass alle anderen Zeilen unverändert. Zeige mir die Änderung Zeile für Zeile und frage, bevor du speicherst.</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Eine Zeile ändert sich, alle anderen bleiben:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word">  - Datum: 2026-10-05
 <span style="display:block;background:#f7e3c3;text-decoration:line-through;text-decoration-color:#5b6170">- - Kanal: E-Mail</span><span style="display:block;background:#d9e4f5">+ - Kanal: Telefon</span>  - Anliegen: Termin für eine Reparatur
-  - Rückruf: ja</pre>
+  - Rückruf: ja</pre>Darf ich speichern?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>terminwunsch.md geändert</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von terminwunsch.md mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span># Terminwunsch
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span>- Datum: 2026-10-05
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span>- Kanal: <i style="color:#23417a;font-style:normal;font-weight:700">Telefon</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span>- Anliegen: Termin für eine Reparatur
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span>- Rückruf: ja</pre></div>
 </div>
-<p>Die Datei danach:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Terminwunsch</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Datum: 2026-10-05</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Kanal: Telefon</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Anliegen: Termin für eine Reparatur</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rückruf: ja</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="was-gerade-passiert-ist-2" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-2"><span class="header-section-number">2.3.2</span> Was gerade passiert ist</h3>
-<p>Zwei Änderungen an derselben Datei: unsere Zeile von Hand, die Zeile des Agenten nach Rückfrage. Beide stehen jetzt im Rohtext.</p>
-<p>Der <strong>Editor</strong> ist der Bereich der App, in dem wir eine Datei selbst bearbeiten (ein Programm zum Bearbeiten von Text). Wir und der Agent schreiben in dieselbe Datei. Nach dem Speichern sieht der Agent unsere Zeile beim nächsten Lesen; darum blieb <code>- Rückruf: ja</code> stehen, obwohl der Agent danach die Datei geändert hat. Der <strong>Zeilenvergleich</strong> zeigt eine Änderung als alte und neue Zeile, oft mit <code>-</code> und <code>+</code> davor (in vielen Werkzeugen „Diff“ genannt). So prüfen wir vor der Freigabe genau die eine Zeile, die sich ändert. Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile in der Anzeige des Agenten.</p>
+<p>Zwei Aufträge, zwei Änderungen an derselben Datei. Beim zweiten haben wir vor dem Speichern genau die eine Zeile gesehen, die sich ändert.</p>
+<p>Der <strong>Zeilenvergleich</strong> zeigt eine Änderung als alte und neue Zeile, oft mit <code>-</code> und <code>+</code> davor (in vielen Werkzeugen „Diff“ genannt). So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: <code>- Kanal: E-Mail</code> wird zu <code>- Kanal: Telefon</code>, die Zeile <code>- Rückruf: ja</code> bleibt. Die <strong>Änderungsansicht</strong> ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.</p>
+<p>Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile im Zeilenvergleich. Wir können die Datei auch selbst ändern. Ein Klick auf den Dateipfad im Chat öffnet sie in vielen Apps zum Bearbeiten; unsere Zeile sieht der Agent beim nächsten Lesen.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -468,7 +475,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Der Agent beschreibt die Änderung nur in Worten: „Zeige mir die alte und die neue Zeile.“</li>
 <li>Die Zeile <code>- Rückruf: ja</code> fehlt nach der Änderung: Der Agent hat die Datei neu geschrieben. Beim nächsten Mal ablehnen, wenn der Zeilenvergleich mehr als die eine Zeile zeigt, und den Auftrag wiederholen.</li>
-<li>Der Editor zeigt noch den alten Stand: Die Datei schließen und erneut öffnen. Die meisten Apps laden geänderte Dateien von selbst neu.</li>
+<li>Statt einer Frage erscheint die Änderungsansicht: Das ist die Freigabe. Prüfen, dass nur die Zeile mit dem Kanal markiert ist, und annehmen.</li>
+<li>Der Agent ändert ohne Rückfrage: den Modus mit Rückfragen wählen, siehe Kapitel <a href="../agent-arbeitsumgebung/chat-oder-agent.html">Chat oder Agent?</a>, Schritt 2, „Wenn es anders aussieht“.</li>
 </ul>
 </div>
 </div>
@@ -485,28 +493,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Bei Markdown und Textdateien steht ja. Steht bei PDF ein Nein, ist das Kapitel <a href="../agent-arbeitsumgebung/pdf-als-quelle.html">PDFs als Quellen</a> besonders wichtig.</p>
 <section id="was-die-drei-schritte-gezeigt-haben" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="was-die-drei-schritte-gezeigt-haben"><span class="header-section-number">2.4.1</span> Was die drei Schritte gezeigt haben</h3>
-<p>Wir haben Dateien gelesen, von Hand geändert und den Agenten ändern lassen, alles in derselben Datei und ohne Spezialprogramm. Das geht, weil Markdown reiner Text ist. Zum Vergleich dieselbe Datei als Word-Datei:</p>
+<p>Wir haben Dateien anlegen, anzeigen und ändern lassen, alles über den Chat und ohne Spezialprogramm. Das geht, weil Markdown reiner Text ist. Zum Vergleich dieselbe Datei als Word-Datei:</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>terminwunsch.docx, Inhalt der Datei (Ausschnitt)</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:pPr</span>&gt;&lt;<span class="kw">w:pStyle</span><span class="ot"> w:val=</span><span class="st">"Heading1"</span>/&gt;</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:pPr</span>&gt;&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt;Terminwunsch&lt;/<span class="kw">w:t</span>&gt;</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:r</span>&gt;&lt;/<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:pPr</span>&gt;&lt;<span class="kw">w:numPr</span>&gt;</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">w:ilvl</span><span class="ot"> w:val=</span><span class="st">"0"</span>/&gt;&lt;/<span class="kw">w:numPr</span>&gt;&lt;/<span class="kw">w:pPr</span>&gt;</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt;Kanal: Telefon&lt;/<span class="kw">w:t</span>&gt;&lt;/<span class="kw">w:r</span>&gt;</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt;Anliegen:&lt;/<span class="kw">w:t</span>&gt;</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt; Termin für eine</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>Reparatur&lt;/<span class="kw">w:t</span>&gt;&lt;/<span class="kw">w:r</span>&gt;&lt;/<span class="kw">w:p</span>&gt;</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:pPr</span>&gt;&lt;<span class="kw">w:pStyle</span><span class="ot"> w:val=</span><span class="st">"Heading1"</span>/&gt;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:pPr</span>&gt;&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt;Terminwunsch&lt;/<span class="kw">w:t</span>&gt;</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:r</span>&gt;&lt;/<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:pPr</span>&gt;&lt;<span class="kw">w:numPr</span>&gt;</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">w:ilvl</span><span class="ot"> w:val=</span><span class="st">"0"</span>/&gt;&lt;/<span class="kw">w:numPr</span>&gt;&lt;/<span class="kw">w:pPr</span>&gt;</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt;Kanal: Telefon&lt;/<span class="kw">w:t</span>&gt;&lt;/<span class="kw">w:r</span>&gt;</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:p</span>&gt;&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt;Anliegen:&lt;/<span class="kw">w:t</span>&gt;</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:r</span>&gt;&lt;<span class="kw">w:t</span>&gt; Termin für eine</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>Reparatur&lt;/<span class="kw">w:t</span>&gt;&lt;/<span class="kw">w:r</span>&gt;&lt;/<span class="kw">w:p</span>&gt;</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>terminwunsch.md, unsere Datei aus Schritt 3</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Terminwunsch</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Datum: 2026-10-05</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Kanal: Telefon</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Anliegen: Termin für eine Reparatur</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rückruf: ja</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Terminwunsch</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Datum: 2026-10-05</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Kanal: Telefon</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Anliegen: Termin für eine Reparatur</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rückruf: ja</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
