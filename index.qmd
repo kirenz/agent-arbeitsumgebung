@@ -42,7 +42,7 @@ Das Buch schreibt kein Werkzeug vor. Es setzt einen installierten Agenten voraus
 Wie wir das eigene Werkzeug darauf prüfen, zeigt das Kapitel [Chat oder Agent?](agent-arbeitsumgebung/chat-oder-agent.qmd). Dort stehen auch die Links zu den Apps und zu den Anleitungen der Hersteller.
 
 ::: {.callout-note title="Werkzeugneutral geschrieben"}
-Die Kapitel erklären offene Formate und Begriffe: Ordner, Markdown, `AGENTS.md`, Skills und MCP. Menüs, Buttons und Speicherorte einzelner Produkte ändern sich schnell und kommen im Text nicht vor. Produktdetails stehen an genau einer Stelle, in der [Übersicht nach Werkzeug](agent-arbeitsumgebung/chat-oder-agent.qmd#uebersicht-nach-werkzeug) mit Stand-Datum. Hängt ein Detail vom Werkzeug ab, fragen wir den Agenten selbst. Jedes Kapitel enthält dafür eine Frage zum Kopieren.
+Die Kapitel erklären offene Formate und Begriffe: Ordner, Markdown, `AGENTS.md`, Skills und MCP. Menüs, Buttons und Speicherorte einzelner Produkte ändern sich schnell. Produktdetails stehen deshalb jeweils dort, wo sie gebraucht werden, mit Stand-Datum: App, Zugang und Ordnerwahl in der [Übersicht nach Werkzeug](agent-arbeitsumgebung/chat-oder-agent.qmd#uebersicht-nach-werkzeug), die Anweisungsdatei im Kapitel AGENTS.md, der Skills-Ordner im Kapitel Skills, die MCP-Konfiguration im Kapitel MCP. Hängt ein Detail vom Werkzeug ab, fragen wir den Agenten selbst. Jedes Kapitel enthält dafür eine Frage zum Kopieren.
 :::
 
 ## Aufbau
