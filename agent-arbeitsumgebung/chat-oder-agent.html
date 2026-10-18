@@ -357,38 +357,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>In einem Workflow (etwa in n8n): Der Agent übernimmt einen festen Schritt in einem automatischen Ablauf.</li>
 <li>Auf dem eigenen Rechner in einem Ordner: Das ist der <strong>Coding-Agent</strong>. Seine Werkzeuge lesen, anlegen und ändern Dateien in diesem Ordner und führen Befehle aus. Die Ergebnisse liegen als Dateien im Ordner.</li>
 </ol>
-<p>Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse. Bekannte Beispiele:</p>
+<p>Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse.</p>
+<p>Welches Werkzeug wir nutzen, hängt am einfachsten an dem Abo, das wir schon haben. Mit einem ChatGPT-Abo nehmen wir Codex, mit einem Claude-Abo Claude Code; beide sind im Abo enthalten. Ohne Abo nehmen wir Antigravity von Google: Die Anmeldung mit einem privaten Google-Konto genügt, und die Nutzung ist kostenlos, mit Nutzungsgrenzen. Wer schon mit Cursor arbeitet, bleibt dabei.</p>
 <table class="caption-top table">
+<caption>Stand: 18.10.2026. Abos und Grenzen ändern sich, maßgeblich sind die Seiten der Anbieter.</caption>
 <thead>
 <tr class="header">
 <th>Werkzeug</th>
 <th>Anbieter</th>
+<th>Zugang</th>
 <th>App</th>
 <th>Anleitung</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Claude Code</td>
-<td>Anthropic</td>
-<td><a href="https://claude.com/download">Claude-Desktop-App</a>, Bereich „Code“</td>
-<td><a href="https://code.claude.com/docs/en/desktop">Claude Code in der Desktop-App</a></td>
-</tr>
-<tr class="even">
 <td>Codex</td>
 <td>OpenAI</td>
+<td>im ChatGPT-Abo (Plus oder höher)</td>
 <td><a href="https://learn.chatgpt.com/docs/app">Codex-App</a></td>
 <td><a href="https://learn.chatgpt.com/docs">Codex-Dokumentation</a></td>
+</tr>
+<tr class="even">
+<td>Claude Code</td>
+<td>Anthropic</td>
+<td>im Claude-Abo (Pro oder höher)</td>
+<td><a href="https://claude.com/download">Claude-Desktop-App</a>, Bereich „Code“</td>
+<td><a href="https://code.claude.com/docs/en/desktop">Claude Code in der Desktop-App</a></td>
 </tr>
 <tr class="odd">
 <td>Antigravity</td>
 <td>Google</td>
+<td>kostenlos mit privatem Google-Konto, mit Nutzungsgrenzen</td>
 <td><a href="https://antigravity.google/download">Antigravity-App</a></td>
 <td><a href="https://antigravity.google/docs">Antigravity-Dokumentation</a></td>
 </tr>
 <tr class="even">
 <td>Cursor</td>
 <td>Anysphere</td>
+<td>eigenes Abo, kostenloser Einstieg</td>
 <td><a href="https://cursor.com/download">Cursor-App</a></td>
 <td><a href="https://cursor.com/docs">Cursor-Dokumentation</a></td>
 </tr>
@@ -399,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="schritt-1-app-installieren-und-ordner-öffnen" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="schritt-1-app-installieren-und-ordner-öffnen"><span class="header-section-number">1.4</span> Schritt 1: App installieren und Ordner öffnen</h2>
-<p><strong>Voraussetzung:</strong> Ein Konto bei einem der Anbieter.</p>
+<p><strong>Voraussetzung:</strong> Ein Werkzeug nach dem eigenen Abo gewählt (Tabelle oben).</p>
 <ol type="1">
 <li>Die App des eigenen Werkzeugs aus der Tabelle oben herunterladen.</li>
 <li>Die App installieren und sich anmelden. Die Anleitung des Herstellers steht in der Tabelle.</li>
@@ -441,6 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Die App fragt nach einem Projekt oder Arbeitsbereich: den Ordner <code>agent-test</code> wählen.</li>
 <li>Die Claude-Desktop-App zeigt nur einen Chat ohne Ordner: in den Bereich „Code“ wechseln und dort den Ordner wählen.</li>
 <li>Die App zeigt keinen Dateibaum: Viele Apps blenden ihn erst auf Klick ein. Der Agent arbeitet trotzdem im geöffneten Ordner.</li>
+<li>Die App verlangt ein Abo, das wir nicht haben: Antigravity mit einem privaten Google-Konto nutzen.</li>
 </ul>
 </div>
 </div>
