@@ -251,8 +251,25 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Ein Agent im Projektordner kennt nur die Dateien in diesem Ordner. Der Terminwunsch vom 5. Oktober liegt als Datei in <code>anfragen/</code>, die freien Zeiten im Teamkalender liegen dort nicht. Damit der Agent sie trotzdem nachsehen kann, braucht er einen Zugang zum Kalender. MCP regelt solche Zugänge, und zwar genormt: Ein Agent, der MCP beherrscht, kann jedes System erreichen, das ebenfalls MCP anbietet.</p>
-<p>In diesem Kapitel richten wir nichts ein. Wir fragen den eigenen Agenten, welche Zugänge er hat, und entscheiden, ob wir einen brauchen. Die Erklärung folgt jeweils am eigenen Ergebnis. Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.</p>
-<p><strong>Voraussetzung:</strong> Der Ordner <code>kundenanfragen</code> ist in der App des Agenten geöffnet.</p>
+<p>Eingerichtet wird hier nichts. Wir fragen den eigenen Agenten, welche Zugänge er hat, und entscheiden, ob wir einen brauchen. Die Erklärung folgt jeweils am eigenen Ergebnis. Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.</p>
+<p><strong>Voraussetzung:</strong> Der Ordner <code>kundenanfragen</code> mit dem Stand nach dem Kapitel <a href="../agent-arbeitsumgebung/skills.html">Skills: Abläufe, die bleiben</a> ist in der App des Agenten gewählt.</p>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Fragen zu Verbindungen">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Fragen zu Verbindungen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Die Aufträge in diesem Kapitel betreffen Verbindungen und Einstellungen außerhalb des Projektordners. Darum beginnt jeder Auftrag mit „Nur lesen und auflisten, nichts ändern“.</li>
+<li>Keine Änderung freigeben, die der Agent dabei vorschlägt. Das gilt auch für einen Testaufruf eines Werkzeugs.</li>
+<li>Den Agenten keine Datei mit Einstellungen öffnen oder ändern lassen.</li>
+</ul>
+</div>
+</div>
 <section id="schritt-1-verbundene-server-auflisten" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="schritt-1-verbundene-server-auflisten"><span class="header-section-number">10.1</span> Schritt 1: Verbundene Server auflisten</h2>
 <ol type="1">
@@ -390,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Voraussetzung:</strong> Die Sitzung aus Schritt 1 ist offen.</p>
 <ol type="1">
 <li><p>Diese Frage senden:</p>
-<pre class="text"><code>Wo ist die Konfiguration der MCP-Server bei dir gespeichert? Nur den Pfad oder den Ort in den Einstellungen nennen, nichts öffnen.</code></pre></li>
+<pre class="text"><code>Nur lesen und auflisten, nichts ändern. Wo ist die Konfiguration der MCP-Server bei dir gespeichert? Nur den Pfad oder den Ort in den Einstellungen nennen, nichts öffnen.</code></pre></li>
 <li><p>Prüfen: Der Agent nennt einen Pfad zu einer Datei oder einen Bereich in den Einstellungen.</p></li>
 <li><p>Den genannten Ort mit der Tabelle unter „Was gerade passiert ist“ vergleichen.</p></li>
 <li><p>Prüfen: Der Ort passt zum eigenen Werkzeug.</p></li>
@@ -412,6 +429,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="was-gerade-passiert-ist-1" class="level3" data-number="10.2.2">
 <h3 data-number="10.2.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-1"><span class="header-section-number">10.2.2</span> Was gerade passiert ist</h3>
 <p>Der Agent hat gesagt, wo seine Verbindungen eingetragen sind, ohne etwas zu öffnen. Manche Agenten lesen die Liste ihrer MCP-Server aus einer <strong>Konfigurationsdatei</strong> (einer Datei mit Einstellungen), oft eine für das Projekt im Projektordner und eine für alle Projekte im Benutzerordner. Andere verwalten sie in einem Bereich der Einstellungen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l09-mcp/konfiguration-zwei-orte.svg" class="img-fluid figure-img" alt="Zwei Orte, an denen ein Agent seine Verbindungen eingetragen hat. Links eine Konfigurationsdatei, also eine Datei mit Einstellungen: im Projektordner, gültig für dieses Projekt, oder im Benutzerordner mit einem Pfad, der mit ~ beginnt, gültig für alle Projekte. Rechts der Bereich für MCP oder Konnektoren in den Einstellungen der App. Beide führen zur Liste der MCP-Server, zum Beispiel kalender mit zwei Werkzeugen. Unten: Im Kurs genügt die Frage an den Agenten, nur den Ort nennen lassen, nichts öffnen."></p>
+<figcaption>Zwei Orte für die Liste der MCP-Server: eine Konfigurationsdatei im Projektordner oder im Benutzerordner, oder ein Bereich in den Einstellungen der App.</figcaption>
+</figure>
+</div>
 <table class="caption-top table">
 <caption>Stand: 18. Oktober 2026. Ein Pfad mit <code>~</code> liegt im eigenen Benutzerordner. Weicht der eigene Agent ab, gilt seine Selbstauskunft.</caption>
 <thead>
@@ -457,12 +480,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="im-nachbau-ein-werkzeugaufruf" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="im-nachbau-ein-werkzeugaufruf"><span class="header-section-number">10.3</span> Im Nachbau: ein Werkzeugaufruf</h2>
 <p>Wie ein Werkzeugaufruf im Alltag aussieht, zeigt die folgende Szene. Der Ordner <code>kundenanfragen</code> hat den Stand nach dem Kapitel <a href="../agent-arbeitsumgebung/skills.html">Skills: Abläufe, die bleiben</a>. Neu ist eine Verbindung zu einem Kalender-Server. Mit „Weiter“ klicken wir uns Schritt für Schritt durch die Sitzung.</p>
-<iframe class="muster-agent" src="widgets/09-steckdose.html" title="Nachbau eines Agenten: Termin über den Kalender-Server" loading="lazy" style="width:100%;height:640px;border:0"></iframe>
+<iframe class="muster-agent" src="widgets/09-steckdose.html" title="Nachbau eines Agenten: Termin über den Kalender-Server" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
 <script>if(!window.__maResize){window.__maResize=1;addEventListener('message',function(e){if(!e.data||e.data.type!=='claude-widget-height')return;document.querySelectorAll('iframe.muster-agent').forEach(function(f){if(f.contentWindow===e.source)f.style.height=(e.data.height+8)+'px';});});}</script>
 <p>Drei Stellen in der Szene sind wichtig.</p>
 <p><strong>Die Rückfrage vor dem Aufruf.</strong> Bevor der Agent den Kalender abfragt, fragt er, wie er es auch vor dem Anlegen einer Datei tut. Die Rückfrage nennt den Server (<code>kalender</code>), das Werkzeug (<code>termine_lesen</code>) und den Hinweis, dass es nur liest. Die Zeile mit „› ruft auf“ im Chat zeigt danach den eigentlichen Aufruf.</p>
-<p><strong>Was wo entsteht.</strong> Die drei freien Zeiten kommen aus dem Kalender, nicht aus einer Datei. Im Projektordner entsteht nur der Antwortentwurf in <code>antworten/</code>, dazu die neue Zeile in <code>UEBERSICHT.md</code>. Der Kalender selbst bleibt unverändert.</p>
+<p><strong>Was wo entsteht.</strong> Die Anfrage zeigt der Chat gekürzt: nur die markierte Zeile mit dem Terminwunsch und ihre Nachbarzeilen. Die drei freien Zeiten kommen aus dem Kalender, nicht aus einer Datei. Im Projektordner entsteht nur der Antwortentwurf in <code>antworten/</code>, den der Chat formatiert zeigt. Für die neue Zeile in <code>UEBERSICHT.md</code> zeigt er nur die Zeile „› ändert UEBERSICHT.md“. Der Kalender selbst bleibt unverändert.</p>
 <p><strong>Was der Agent nicht tut.</strong> <code>termin_anlegen</code> würde den Kalender ändern. Der Agent ruft es nicht auf, weil der Auftrag einen Entwurf verlangt. Ein Entwurf bietet drei Zeiten an; einen Termin trägt erst ein Mensch ein, wenn die Zusage der Kundin oder des Kunden da ist.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l09-mcp/rechte-eines-servers.svg" class="img-fluid figure-img" alt="Ein Kalender-Server außerhalb des Projektordners mit zwei Werkzeugen. termine_lesen ist als liest markiert: Im schlimmsten Fall zeigt es etwas Falsches an. termin_anlegen ist als ändert markiert: Es legt echte Termine an, die andere Menschen sehen. Darunter drei Fragen vor jeder Anbindung: Welche Werkzeuge stellt der Server bereit? Welche davon ändern etwas? Wer hat die Anbindung geprüft? Unten: Erste Wahl ist der offizielle Server des Anbieters, im Unternehmen mit Freigabe der IT."></p>
+<figcaption>Ein lesendes Werkzeug zeigt schlimmstenfalls etwas Falsches an, ein änderndes legt echte Termine an. Drei Fragen klären wir vor jeder Anbindung.</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-simple callout-warning callout-titled" title="Rechte eines Servers">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -527,6 +556,12 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="10.4.2" class="anchored" data-anchor-id="was-die-drei-schritte-gezeigt-haben"><span class="header-section-number">10.4.2</span> Was die drei Schritte gezeigt haben</h3>
 <p>Wir haben die Zugänge des eigenen Agenten erkundet, ohne etwas zu ändern, und eine Entscheidung vorbereitet. Ein MCP-Server bringt dem Agenten Werkzeuge, aber kein besseres Sprachmodell, kein Gedächtnis für frühere Unterhaltungen und keine Kopie der Daten in den Projektordner. Die Daten bleiben im Kalender oder im Ticket-System; der Agent holt sich bei jedem Aufruf nur das Ergebnis.</p>
 <p>Daraus folgt eine Faustregel. Eine Anbindung lohnt sich, wenn ein Auftrag Daten aus einem anderen System braucht, die nicht als Datei im Ordner liegen, etwa Dokumente in der Cloud-Ablage, die das Team laufend ändert. Für alles, was als Datei vorliegt, reicht der Projektordner. Der offizielle Server des Anbieters ist die erste Wahl vor Servern von Dritten. Im Unternehmen gibt meist die IT frei, bei einem eigenen Konto die Person, der das Konto gehört.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l09-mcp/wann-anbindung.svg" class="img-fluid figure-img" alt="Eine Frage entscheidet: Liegen die Daten für den Auftrag als Datei im Ordner? Bei ja reicht der Projektordner, Beispiel: das Protokoll der Teambesprechung, als Datei abgelegt; ohne MCP-Server läuft alles, was bisher im Ordner lief. Bei nein braucht es eine Anbindung über einen MCP-Server, Beispiel: Dokumente in der Cloud-Ablage, die das Team laufend ändert; erste Wahl ist der offizielle Server des Anbieters. Unten: Im Unternehmen gibt meist die IT eine Anbindung frei, beim eigenen Konto die Person, der es gehört."></p>
+<figcaption>Die Faustregel als Frage: Liegen die Daten als Datei im Ordner, reicht der Projektordner. Sonst braucht es eine Anbindung über einen MCP-Server.</figcaption>
+</figure>
+</div>
 <p>Vier Aufträge an den Agenten im Ordner <code>kundenanfragen</code> zeigen die Faustregel im Einsatz:</p>
 <table class="caption-top table">
 <colgroup>
