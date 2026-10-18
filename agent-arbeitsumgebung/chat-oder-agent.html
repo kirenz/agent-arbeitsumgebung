@@ -348,19 +348,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Im Nachbau kamen zwei Arten von Zeilen vor: Sätze des Agenten und kurze Meldungen wie „liest anfragen/…“. Dahinter stehen die zwei Teile eines Agenten.</p>
 <p>Das <strong>Sprachmodell</strong> (das KI-Modell, das den Text erzeugt) liest den bisherigen Verlauf und schreibt Text. Mehr kann es nicht. Will es ein Werkzeug nutzen, schreibt es diesen Wunsch als Text auf, etwa „Lies die Datei anfragen/2026-10-07-beschwerde.md“. Der <strong>Rahmen</strong> (englisch: Agent Harness) ist die Software um das Modell herum, bei einem Agenten auf dem eigenen Rechner die App. Sie erkennt den Werkzeugwunsch, führt ihn aus, legt das Ergebnis dem Modell wieder vor und startet die nächste Runde. Vor Änderungen und Befehlen hält sie an und fragt uns. Die Rückfrage „antworten/2026-10-07-beschwerde-antwort.md anlegen?“ stellt also der Rahmen. Ein Agent ist Modell plus Werkzeuge plus Schleife, dazu alles, was das Modell gerade vorliegen hat (der Kontext).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Der Fachbegriff für diesen Wechsel aus Überlegen und Handeln lautet ReAct (kurz für Reasoning and Acting).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Der Unterschied zum Chat liegt im Rahmen. Der Rahmen eines Chat-Assistenten reicht dem Modell das Eingabefeld und gibt die Antwort zurück. Der Rahmen eines Agenten gibt dem Modell zusätzlich Werkzeuge und lässt die Schleife laufen, bis das Ziel erreicht ist. Welche Werkzeuge es gibt und wann wir gefragt werden, legt darum der Rahmen fest, also die App, die wir wählen.</p>
-<div class="callout callout-style-simple callout-tip callout-titled" title="Prüffrage">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Prüffrage
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ein Agent soll aus drei Anfragen eine Übersicht schreiben. Er liest alle drei Dateien und hält dann an: „UEBERSICHT.md anlegen?“ Wer stellt diese Frage, und warum gerade jetzt? Die Antwort steht im Absatz oben: Das Modell hat einen Werkzeugwunsch aufgeschrieben, der Rahmen holt vor dem Ausführen die Freigabe ein.</p>
-</div>
-</div>
 </section>
 <section id="drei-formen-von-agenten-eine-davon-in-diesem-buch" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="drei-formen-von-agenten-eine-davon-in-diesem-buch"><span class="header-section-number">1.3</span> Drei Formen von Agenten, eine davon in diesem Buch</h2>
