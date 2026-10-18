@@ -52,7 +52,7 @@ Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Program
 | Antigravity | Google | [Antigravity-App](https://antigravity.google/download) | [Antigravity-Dokumentation](https://antigravity.google/docs) |
 | Cursor | Anysphere | [Cursor-App](https://cursor.com/download) | [Cursor-Dokumentation](https://cursor.com/docs) |
 
-Wir arbeiten in der **App** des jeweiligen Werkzeugs, dem Programm auf dem Rechner. Manche Werkzeuge lassen sich auch über ein Textfenster für Befehle (Terminal) bedienen; das brauchen wir nicht. Die Bedienung unterscheidet sich von Werkzeug zu Werkzeug und ändert sich oft. Das Buch zeigt deshalb keine bestimmte Oberfläche. Was sich je Werkzeug unterscheidet, etwa Dateinamen und Speicherorte, steht gesammelt in der [Übersicht nach Werkzeug](#uebersicht-nach-werkzeug).
+Wir arbeiten in der **App** des jeweiligen Werkzeugs, dem Programm auf dem Rechner. Die Bedienung unterscheidet sich von Werkzeug zu Werkzeug und ändert sich oft. Das Buch zeigt deshalb keine bestimmte Oberfläche. Was sich je Werkzeug unterscheidet, etwa Dateinamen und Speicherorte, steht gesammelt in der [Übersicht nach Werkzeug](#uebersicht-nach-werkzeug).
 
 Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
