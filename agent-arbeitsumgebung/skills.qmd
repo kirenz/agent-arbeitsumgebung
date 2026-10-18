@@ -1,10 +1,10 @@
 # Skills: Abläufe, die bleiben
 
-Den Ablauf zum Einsortieren aus dem Kapitel [Laufend neue Dateien](laufend-neue-dateien.qmd) haben wir als langen Auftrag mit sechs Schritten geschickt. Jede Woche kommt neue Post, und jede Woche müssten wir den Auftrag wieder einfügen, ohne Tippfehler und ohne einen Schritt zu vergessen. Ein Skill hält einen solchen Ablauf als Datei im Ordner fest. In diesem Kapitel legen wir mit dem eigenen Agenten Schritt für Schritt einen Skill an und lösen ihn mit einem kurzen Auftrag aus. Die Erklärung folgt jeweils am eigenen Ergebnis.
+Den Ablauf zum Einsortieren aus dem Kapitel [Laufend neue Dateien](laufend-neue-dateien.qmd) haben wir als langen Auftrag mit sechs Schritten geschickt. Jede Woche kommt neue Post, und jede Woche müssten wir den Auftrag wieder einfügen, ohne Tippfehler und ohne einen Schritt zu vergessen. Ein Skill hält einen solchen Ablauf als Datei im Ordner fest. Wir legen mit dem eigenen Agenten Schritt für Schritt einen Skill an und lösen ihn mit einem kurzen Auftrag aus. Die Erklärung folgt jeweils am eigenen Ergebnis.
 
 Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
-**Voraussetzung:** Der Ordner `kundenanfragen` mit dem Ordner `eingang/` aus dem Kapitel [Laufend neue Dateien](laufend-neue-dateien.qmd) ist in der App des Agenten geöffnet.
+**Voraussetzung:** Der Ordner `kundenanfragen` ist in der App des Agenten gewählt. Der Ordner `eingang/` ist leer (Stand nach dem Kapitel [Laufend neue Dateien](laufend-neue-dateien.qmd)).
 
 ## Schritt 1: Den Skill anlegen
 
@@ -24,30 +24,42 @@ Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das 
 4. Das Anlegen freigeben.
 5. Prüfen: Der Agent nennt einen Pfad, der auf `eingang-einsortieren/SKILL.md` endet.
 6. Liegt der Pfad nicht im Skills-Ordner, den der Agent genannt hat: „Verschiebe den Ordner eingang-einsortieren in den Ordner für Skills, den du genannt hast.“ senden.
-7. `SKILL.md` in der App öffnen, so dass der Inhalt mit allen Zeichen sichtbar ist.
-8. Prüfen: Die Datei beginnt mit einer Zeile `---`. Darunter stehen `name` und `description`, dann folgt eine zweite Zeile `---`.
+7. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von SKILL.md im Skill eingang-einsortieren genau so, wie er in der Datei steht, mit allen Zeichen.
+   ```
+
+8. Prüfen: Zeile 1 lautet `---`. Darunter stehen `name` und `description`, dann folgt eine zweite Zeile `---`.
 
 ### Das sollten wir jetzt sehen
 
-Die Datei `SKILL.md` im Skill-Ordner `eingang-einsortieren` mit allen Zeichen. Der Ordner davor hängt vom Werkzeug ab. Überschrift und Leerzeilen können etwas anders aussehen.
-
-```markdown
----
-name: eingang-einsortieren
-description: Verwenden, wenn Dateien in eingang/ einsortiert werden sollen.
----
-
-# Eingang einsortieren
-
-1. Lies jede Datei in eingang/.
-2. Bestimme die Art (Anfrage, Antwort, Quelle, sonstiges).
-3. Benenne um nach JJJJ-MM-TT-anliegen.md mit dem Datum aus der Datei, sonst heute. PDF und andere Dateien, die kein Text sind, behalten ihre Endung.
-4. Entferne Personennamen und ersetze sie durch „Kundin“ oder „Kunde“.
-5. Verschiebe nach anfragen/, antworten/ oder quellen/original/; unklare Dateien bleiben in eingang/ und werden gemeldet.
-6. Ergänze UEBERSICHT.md.
-
-Zeige vor dem Verschieben den Plan als Tabelle (alt, neu, Ziel).
+```{=html}
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45"><div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat</span></div><div style="padding:12px;display:grid;gap:8px"><div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>In welchem Ordner erwartest du Skills für dieses Projekt, und in welchem für alle Projekte? Welche Skills kennst du gerade? Nur auflisten.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><p style="margin:0 0 4px">Skills für dieses Projekt erwarte ich in <code>.agents/skills/</code> innerhalb von <code>kundenanfragen</code>. Skills für alle Projekte liegen in einem Ordner im Benutzerordner des Rechners.</p><p style="margin:0 0 4px">Gerade kenne ich keine Skills.</p></div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Erstelle einen Skill mit dem Namen eingang-einsortieren an dem Ort, an dem du Skills in diesem Projekt erwartest. Die Datei SKILL.md beginnt mit Frontmatter: name: eingang-einsortieren, description: Verwenden, wenn Dateien in eingang/ einsortiert werden sollen. Danach diese sechs Schritte, wörtlich: 1. Lies jede Datei in eingang/. 2. Bestimme die Art (Anfrage, Antwort, Quelle, sonstiges). 3. Benenne um nach JJJJ-MM-TT-anliegen.md mit dem Datum aus der Datei, sonst heute. PDF und andere Dateien, die kein Text sind, behalten ihre Endung. 4. Entferne Personennamen und ersetze sie durch „Kundin“ oder „Kunde“. 5. Verschiebe nach anfragen/, antworten/ oder quellen/original/; unklare Dateien bleiben in eingang/ und werden gemeldet. 6. Ergänze UEBERSICHT.md. Zum Schluss der Satz: Zeige vor dem Verschieben den Plan als Tabelle (alt, neu, Ziel). Nenne mir den vollständigen Pfad der Datei.</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege in <code>.agents/skills/</code> den Ordner <code>eingang-einsortieren</code> an und darin <code>SKILL.md</code> mit Kopf und sechs Schritten. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>.agents/skills/eingang-einsortieren/SKILL.md angelegt</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Eine Datei angelegt. Pfad: <code>kundenanfragen/.agents/skills/eingang-einsortieren/SKILL.md</code></div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von SKILL.md im Skill eingang-einsortieren genau so, wie er in der Datei steht, mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Inhalt von <code>SKILL.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">---</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span><b>name:</b> eingang-einsortieren
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><b>description:</b> Verwenden, wenn Dateien in eingang/ einsortiert werden sollen.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span><i style="color:#23417a;font-style:normal;font-weight:700">---</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Eingang einsortieren
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">7</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">8</span>1. Lies jede Datei in eingang/.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">9</span>2. Bestimme die Art (Anfrage, Antwort, Quelle, sonstiges).
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">10</span>3. Benenne um nach JJJJ-MM-TT-anliegen.md mit dem Datum aus der Datei, sonst heute. PDF und andere Dateien, die kein Text sind, behalten ihre Endung.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">11</span>4. Entferne Personennamen und ersetze sie durch „Kundin“ oder „Kunde“.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">12</span>5. Verschiebe nach anfragen/, antworten/ oder quellen/original/; unklare Dateien bleiben in eingang/ und werden gemeldet.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">13</span>6. Ergänze UEBERSICHT.md.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">14</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">15</span>Zeige vor dem Verschieben den Plan als Tabelle (alt, neu, Ziel).</pre></div></div></div>
 ```
+
+Zeilen 1 bis 4 sind der Kopf, darunter stehen die Schritte. Der Skills-Ordner hängt von der App ab, hier `.agents/skills/` wie bei Codex und Antigravity; die Antwort auf die erste Frage nennt den eigenen. Überschrift und Leerzeilen können etwas anders aussehen.
 
 ### Was gerade passiert ist
 
@@ -59,6 +71,8 @@ Die Datei hat zwei Teile. Unten stehen die Schritte in gewöhnlichem Markdown. O
 |---|---|---|
 | `name` | 1 bis 64 Zeichen, nur Kleinbuchstaben, Ziffern und Bindestriche; gleich dem Namen des Skill-Ordners | `eingang-einsortieren` |
 | `description` | 1 bis 1024 Zeichen; sagt, was der Skill tut und wann er gilt | `Verwenden, wenn Dateien in eingang/ einsortiert werden sollen.` |
+
+![Ein Skill ist ein Ordner mit der Datei SKILL.md: oben der Kopf, der sagt, wann er gilt, unten die Schritte.](images/lektionen/l08-skills/skill-aufbau.svg){fig-alt="Links ein Regal mit drei Ordnern, einer herausgezogen und beschriftet eingang-einsortieren, Untertitel: Arbeitsanweisung im Regal. Rechts die Datei SKILL.md in zwei Teilen: oben der Kopf zwischen zwei Zeilen mit drei Bindestrichen, darin name: eingang-einsortieren und description: Verwenden, wenn Dateien in eingang/ einsortiert werden sollen, beschriftet: sagt, wann der Skill gilt; unten die sechs Schritte, beschriftet: sagt, was zu tun ist. Merksatz: Ordnername gleich name."}
 
 Nach der Beschreibung entscheidet der Agent, ob er den Skill für einen Auftrag holt. Eine Beschreibung beginnt am besten mit „Verwenden, wenn …“ und nennt die Situation in den Worten, in denen wir den Auftrag später schreiben. Wo der Skills-Ordner liegt, hängt vom Werkzeug ab: Meist gibt es einen Ort für Skills eines Projekts, innerhalb des Projektordners, und einen für Skills, die in allen Projekten gelten. Deshalb die Frage an den Agenten.
 
@@ -92,7 +106,7 @@ Nach der Beschreibung entscheidet der Agent, ob er den Skill für einen Auftrag 
    ```
 
 2. Das Anlegen freigeben.
-3. Eine neue Sitzung im selben Ordner starten.
+3. Eine neue Sitzung im Ordner `kundenanfragen` starten (neuer Chat, wie im Kapitel [Der Projektordner](projektordner.qmd), Schritt 3).
 4. Diesen Auftrag senden:
 
    ```text
@@ -101,26 +115,29 @@ Nach der Beschreibung entscheidet der Agent, ob er den Skill für einen Auftrag 
 
 5. Prüfen: Der Agent zeigt den Plan als Tabelle mit alt, neu und Ziel. Die sechs Schritte wurden in dieser Sitzung nicht genannt.
 6. Den Plan freigeben.
-7. Prüfen: `eingang/` ist leer. Die neue Datei liegt in `anfragen/` und steht in `UEBERSICHT.md`.
+7. Diese Frage senden:
+
+   ```text
+   Liste die Dateien in eingang/ und anfragen/ auf. Zeig mir die neue Zeile in UEBERSICHT.md.
+   ```
+
+8. Prüfen: Die Liste nennt für `eingang/` keine Datei. Die neue Datei liegt in `anfragen/` und steht in `UEBERSICHT.md`.
 
 ### Das sollten wir jetzt sehen
 
-Die Antwort des Agenten in der neuen Sitzung. Dateiname, Datum und Anliegen hängen von der Beispielanfrage ab.
-
 ```{=html}
-<div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Neue Sitzung · kundenanfragen</div>
-<div style="padding:12px 16px 14px;line-height:1.5;font-size:.92rem">
-<div style="margin:0 0 10px;padding:7px 11px;border-radius:10px;background:#f4f2ed"><span style="display:block;font-size:11px;color:#5b6170;font-weight:600">Wir</span>Eingang einsortieren.</div>
-<div><span style="display:block;font-size:11px;color:#5b6170;font-weight:600">Agent</span>
-<p style="margin:0 0 8px">Ich verwende den Skill <code>eingang-einsortieren</code>. Plan für <code>eingang/</code>:</p>
-<table style="border-collapse:collapse;font-size:.88rem;width:100%">
-<thead><tr style="border-bottom:2px solid #dcd9d2;text-align:left"><th style="padding:5px 8px">alt</th><th style="padding:5px 8px">neu</th><th style="padding:5px 8px">Ziel</th></tr></thead>
-<tbody><tr><td style="padding:5px 8px"><code>neue anfrage (2).txt</code></td><td style="padding:5px 8px"><code>2026-10-20-terminwunsch.md</code></td><td style="padding:5px 8px"><code>anfragen/</code></td></tr></tbody>
-</table>
-<p style="margin:8px 0 0">Danach ergänze ich <code>UEBERSICHT.md</code>. Soll ich verschieben?</p>
-</div></div></div>
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45"><div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Neue Sitzung</span></div><div style="padding:12px;display:grid;gap:8px"><div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Eingang einsortieren.</div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest .agents/skills/eingang-einsortieren/SKILL.md</div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest eingang/neue anfrage (2).txt</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><p style="margin:0 0 4px">Ich verwende den Skill <code>eingang-einsortieren</code>. Plan für <code>eingang/</code>:</p><table style="border-collapse:collapse;font-size:.9rem;margin-top:4px"><thead><tr><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">alt</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">neu</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Ziel</th></tr></thead><tbody><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left"><code>neue anfrage (2).txt</code></td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left"><code>2026-10-20-terminwunsch.md</code></td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left"><code>anfragen/</code></td></tr></tbody></table><p style="margin:0 0 4px">Danach ergänze ich <code>UEBERSICHT.md</code>. Soll ich verschieben?</p><br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>eingang/neue anfrage (2).txt verschoben nach anfragen/2026-10-20-terminwunsch.md</div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>UEBERSICHT.md geändert</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. <code>eingang/</code> ist leer, eine Datei nach <code>anfragen/</code> verschoben, eine Zeile in <code>UEBERSICHT.md</code> ergänzt.</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Liste die Dateien in eingang/ und anfragen/ auf. Zeig mir die neue Zeile in UEBERSICHT.md.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><p style="margin:0 0 4px"><code>eingang/</code>: keine Dateien.</p><p style="margin:0 0 4px"><code>anfragen/</code>: 2026-10-05-terminwunsch.md, 2026-10-06-preisfrage.md, 2026-10-07-beschwerde.md, 2026-10-16-rueckruf.md, 2026-10-17-preisfrage.md, 2026-10-20-terminwunsch.md.</p><p style="margin:0 0 4px">Neue Zeile in <code>UEBERSICHT.md</code>:</p><pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="display:block;background:#d9e4f5">+ | anfragen/2026-10-20-terminwunsch.md | Termin für eine Reparatur | 2026-10-20 |</span></pre></div></div></div>
 ```
+
+Ein Beispiel. Dateiname, Datum und Anliegen hängen von der Beispielanfrage ab. Entscheidend: die Zeile „liest … SKILL.md“, die drei Spalten und die Rückfrage, obwohl wir die sechs Schritte nicht genannt haben.
 
 ### Was gerade passiert ist
 
@@ -134,7 +151,9 @@ Möglich ist das, weil der Agent Skills in Stufen lädt. Dieses **Laden in Stufe
 | 2 | die Schritte in der `SKILL.md` | wenn ein Auftrag zur Beschreibung passt |
 | 3 | weitere Dateien im Skill-Ordner, etwa Vorlagen | nur wenn die Schritte sie verlangen |
 
-Die Plan-Tabelle stammt aus dem letzten Satz unserer `SKILL.md`. Was wir im Kapitel [Laufend neue Dateien](laufend-neue-dateien.qmd) jedes Mal in den Auftrag schreiben mussten, steht jetzt dauerhaft im Ordner.
+![Laden in Stufen: erst Name und Beschreibung, dann die Schritte, weitere Dateien nur bei Bedarf.](images/lektionen/l08-skills/laden-in-stufen.svg){fig-alt="Drei Stufen von links nach rechts. Stufe 1, Beginn der Sitzung: Der Agent kennt von jedem Skill nur name und description. Stufe 2, ein Auftrag passt: Der Auftrag „Eingang einsortieren.“ trifft die Beschreibung „Verwenden, wenn Dateien in eingang/ einsortiert werden sollen“, der Agent liest die Schritte in SKILL.md. Stufe 3, nur bei Bedarf: weitere Dateien im Skill-Ordner, etwa Vorlagen. Merksatz: Skills belegen kaum Platz, solange sie nicht gebraucht werden."}
+
+Die Zeile „liest … SKILL.md“ im Kasten zeigt das Holen. Die Plan-Tabelle stammt aus dem letzten Satz unserer `SKILL.md`. Was wir im Kapitel [Laufend neue Dateien](laufend-neue-dateien.qmd) jedes Mal in den Auftrag schreiben mussten, steht jetzt dauerhaft im Ordner.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Der Agent fragt nach den Schritten oder sortiert ohne Plan: Diese Frage senden und den genannten Ort mit der Tabelle in Schritt 1 vergleichen.
@@ -154,9 +173,19 @@ Zum Abschluss vergleichen wir die beiden Dateien, die der Agent jetzt liest.
 
 **Voraussetzung:** `AGENTS.md` aus den bisherigen Kapiteln und `SKILL.md` aus Schritt 1 liegen im Ordner `kundenanfragen`.
 
-1. `AGENTS.md` in der App öffnen.
+1. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von AGENTS.md mit allen Zeichen.
+   ```
+
 2. Prüfen: Die Datei enthält sechs kurze Regeln. Keine Regel beschreibt die Schritte zum Einsortieren.
-3. `SKILL.md` aus Schritt 1 öffnen.
+3. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von SKILL.md im Skill eingang-einsortieren genau so, wie er in der Datei steht, mit allen Zeichen.
+   ```
+
 4. Prüfen: Die Datei enthält den Kopf und die sechs Schritte zum Einsortieren.
 
 ### Was die drei Schritte gezeigt haben
@@ -171,6 +200,8 @@ Wir haben einen Ablauf als Datei abgelegt und mit einem kurzen Auftrag ausgelös
 | Bei uns | sechs Regeln, etwa „Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.“ | `eingang-einsortieren` mit sechs Schritten und der Plan-Tabelle |
 
 Ein Skill braucht keinen Eintrag in der `AGENTS.md`. Der Agent findet ihn über seinen Ordner und seine Beschreibung. Ein Skill darf ausführlich sein: Neben der `SKILL.md` kann der Ordner Unterordner enthalten, etwa `references/` für Nachschlagetexte, `assets/` für Vorlagen oder `scripts/` für kleine Programme. Die Spezifikation empfiehlt, die `SKILL.md` selbst unter 500 Zeilen zu halten. Für unsere Abläufe reichen meist zwanzig.
+
+![Die Hausordnung gilt bei jedem Auftrag, die Skills im Regal nur bei Bedarf.](images/lektionen/l08-skills/hausordnung-und-regal.svg){fig-alt="Links die Hausordnung AGENTS.md als Aushang: sechs kurze Zeilen, Beschriftung: gilt bei jedem Auftrag, wird in jeder Sitzung ganz gelesen. Rechts ein Regal mit Skill-Ordnern, einer geöffnet mit SKILL.md und den Unterordnern references/, assets/ und scripts/, Beschriftung: gilt bei Bedarf, darf lang sein, zuerst nur Name und Beschreibung. In der Mitte der Agent mit Pfeilen zu beiden. Merksatz: Ein Skill braucht keinen Eintrag in der AGENTS.md."}
 
 Vier weitere Vorgaben für unseren Ordner zeigen die Unterscheidung. „Antworte auf Deutsch.“ und „Schreibe keine Personennamen in neue Dateien.“ gelten bei jedem Auftrag und gehören in die `AGENTS.md`. Ein Wochenbericht aus `anfragen/` mit der Zahl je Anliegen und den offenen Anfragen ist ein Ablauf mit mehreren Schritten, ebenso ein Angebot aus Preisliste und Anfrage mit einer Vorlage. Beide sind Skills. Der Wochenbericht wirkt wie eine Regel, weil er jede Woche vorkommt. In der `AGENTS.md` läge er aber in jeder Sitzung im Kontext, auch wenn niemand einen Bericht braucht.
 

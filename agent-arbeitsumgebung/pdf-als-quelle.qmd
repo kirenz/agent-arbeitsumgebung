@@ -1,13 +1,14 @@
 # PDFs als Quellen
 
-Viele Unterlagen eines Betriebs liegen als PDF vor: Preislisten, Merkblätter, Verträge, Angebote von Lieferanten. Ein Agent arbeitet am zuverlässigsten mit reinem Text. In diesem Kapitel nehmen wir mit dem eigenen Agenten eine PDF-Preisliste als Quelle auf: Original ablegen, Textfassung in Markdown anlegen lassen, gegen das Original prüfen, in eine Quellenliste eintragen. Die Erklärung folgt jeweils am eigenen Ergebnis.
+Viele Unterlagen eines Betriebs liegen als PDF vor: Preislisten, Merkblätter, Verträge, Angebote von Lieferanten. Ein Agent arbeitet am zuverlässigsten mit reinem Text. Wir nehmen mit dem eigenen Agenten eine PDF-Preisliste als Quelle auf: Original ablegen, Textfassung in Markdown anlegen lassen, gegen das Original prüfen, in eine Quellenliste eintragen. Die Erklärung folgt jeweils am eigenen Ergebnis.
 
 Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
 **Voraussetzungen:**
 
-- Der Ordner `kundenanfragen` ist in der App des Agenten geöffnet. `AGENTS.md` enthält sechs Regeln, `UEBERSICHT.md` liegt im Ordner (Stand nach dem Kapitel [Kontext bereitstellen](kontext-bereitstellen.qmd)).
-- Die [Beispiel-Preisliste als PDF](downloads/preisliste-2026.pdf) ist heruntergeladen (zwei Seiten, eine Tabelle, Text lässt sich mit der Maus markieren). Alternativ eignet sich ein eigenes PDF mit mindestens einer Tabelle, mit Textebene und ohne vertrauliche Daten; dann in den Aufträgen den Namen `preisliste-2026.pdf` durch den Namen der eigenen Datei ersetzen.
+- Der Ordner `kundenanfragen` ist in der App des Agenten gewählt. `AGENTS.md` enthält sechs Regeln, `UEBERSICHT.md` liegt im Ordner (Stand nach dem Kapitel [Kontext bereitstellen](kontext-bereitstellen.qmd)).
+- Die [Beispiel-Preisliste als PDF](downloads/preisliste-2026.pdf) ist heruntergeladen (zwei Seiten, eine Tabelle, Text lässt sich mit der Maus markieren). Alternativ eignet sich ein eigenes PDF mit mindestens einer Tabelle, mit Textebene und ohne vertrauliche Daten; dann in den Aufträgen den Namen `preisliste-2026.pdf` durch den Namen der eigenen Datei ersetzen. Die Datei liegt im Ordner `Downloads`.
+- Zwei Handlungen laufen außerhalb der App: das PDF in den Ordner legen und es später im PDF-Programm öffnen. Dafür nutzen wir den Finder (Mac) oder den Explorer (Windows), das Programm, das Ordner und Dateien anzeigt. Alles andere läuft im Chat.
 
 ## Schritt 1: Das Original ablegen
 
@@ -25,47 +26,62 @@ Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das 
    Lege die Ordner quellen/original und quellen/text an.
    ```
 
-5. Das PDF in den Ordner `quellen/original/` legen.
-6. Prüfen: `quellen/original/` enthält `preisliste-2026.pdf`. `quellen/text/` ist leer.
+5. Das Anlegen freigeben, wenn der Agent fragt.
+6. Im Finder oder Explorer den Ordner `kundenanfragen/quellen/original` öffnen.
+7. `preisliste-2026.pdf` aus dem Ordner `Downloads` in den Ordner `original` ziehen.
+8. Zurück zur App wechseln.
+9. Diese Frage senden:
+
+   ```text
+   Liste alle Dateien und Ordner in quellen/ auf, auch die in den Unterordnern.
+   ```
+
+10. Prüfen: Die Liste nennt `original/preisliste-2026.pdf`. Der Ordner `text/` ist leer.
 
 ### Das sollten wir jetzt sehen
 
-```text
-kundenanfragen/
-├── AGENTS.md
-├── README.md
-├── UEBERSICHT.md
-├── anfragen/
-└── quellen/
-    ├── original/
-    │   └── preisliste-2026.pdf     ← neu
-    └── text/                       (leer)
+```{=html}
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45"><div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat</span></div><div style="padding:12px;display:grid;gap:8px"><div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Kannst du PDF-Dateien in diesem Ordner direkt lesen? Wenn nein: Welches Werkzeug nutzt du oder brauchst du dafür? Nur antworten, nichts ändern.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ja, ich kann PDF-Dateien in diesem Ordner direkt lesen. Ein zusätzliches Werkzeug brauche ich dafür nicht.</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege die Ordner quellen/original und quellen/text an.</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege zwei leere Ordner an: <code>quellen/original</code> und <code>quellen/text</code>. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>quellen/original angelegt</div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>quellen/text angelegt</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Zwei Ordner angelegt, keine Datei geändert.</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Liste alle Dateien und Ordner in quellen/ auf, auch die in den Unterordnern.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><p style="margin:0 0 4px"><code>quellen/</code> enthält zwei Ordner:</p><ul style="margin:0;padding-left:20px"><li><code>original/</code>: <code>preisliste-2026.pdf</code></li><li><code>text/</code>: leer</li></ul></div></div></div>
 ```
 
-Die Antwort auf die Frage aus Schritt 1 ist je Werkzeug verschieden.
+So sieht es aus, wenn es geklappt hat. Die Antwort auf die erste Frage ist je Werkzeug verschieden. Die PDF-Datei haben wir im Finder oder Explorer hineingelegt; beim Auflisten sieht der Agent sie trotzdem.
 
 ### Was gerade passiert ist
 
-Wir haben das PDF abgelegt, der Agent hat nur zwei leere Ordner angelegt. Am PDF selbst ändert sich ab jetzt nichts mehr.
+Wir haben die PDF-Datei selbst in den Ordner gelegt. Der Agent hat nur zwei leere Ordner angelegt und beim Auflisten die Datei gesehen. Was im Ordner liegt, erfahren wir also im Chat, auch bei Dateien, die wir selbst hineingelegt haben. Am PDF selbst ändert sich ab jetzt nichts mehr.
 
 Das **Original** ist die Datei, so wie sie von außen kam. Sie liegt in `quellen/original/`, und niemand ändert sie. Sie ist der Beleg, gegen den wir später prüfen. In `original/` liegt alles, was von außen kommt und unverändert als Beleg bleibt. Das kann auch eine gespeicherte E-Mail sein, etwa eine `.eml`-Datei (eine E-Mail, als Datei auf dem Rechner gespeichert) eines Lieferanten mit neuen Einkaufspreisen. Sie wirkt wie Korrespondenz, enthält aber Zahlen, auf die sich Antworten stützen. Eine eigene Notiz zu einem Telefonat mit einer Kundin gehört dagegen nicht nach `quellen/`. Sie ist eine Anfrage in unseren eigenen Worten und kommt nach `anfragen/`, ohne den Namen der Kundin.
 
 Ein PDF ist für den Druck gemacht. Es hält fest, wo jedes Zeichen auf der Seite steht, aber nicht, welche Zeichen zu einer Tabellenzeile oder zu einem Absatz gehören. Viele Agenten lesen PDF-Dateien direkt, manche brauchen dafür ein zusätzliches Werkzeug. Deshalb die Frage an den Agenten.
 
+![Auf der Seite sehen wir eine Tabelle. Das PDF speichert nur Wörter mit ihrer Position.](images/lektionen/l06-pdf-als-quelle/pdf-fuer-den-druck.svg){fig-alt="Links eine Tabelle, wie wir sie auf der PDF-Seite sehen: drei Zeilen mit Leistung, Einheit und Preis. Rechts, was das PDF speichert: dieselben Wörter und Zahlen einzeln mit ihrer Position auf der Seite, ohne Zeilen. Darunter der Merksatz: Das PDF kennt Positionen, keine Tabellenzeilen; darum prüfen wir die Umwandlung."}
+
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Der Agent sagt nein und nennt kein Werkzeug: „Welches Werkzeug empfiehlst du für PDF-Dateien?“ Das Werkzeug dann nach der Anleitung des Herstellers einrichten.
+- Der Agent fragt, bevor er die Ordner anlegt: Das ist in Ordnung. Erlauben.
 - Die Ordner heißen anders, etwa `Quellen/Original`: den Agenten sie umbenennen lassen. Die folgenden Aufträge nutzen genau die Namen `quellen/original` und `quellen/text`.
+- Die Liste nennt die PDF-Datei nicht: im Finder oder Explorer prüfen, ob die Datei im Ordner `original` liegt und nicht daneben. Die Frage danach erneut senden.
 :::
 
 ## Schritt 2: Die Textfassung anlegen
 
 ::: {.callout-important title="Gescannte PDFs"}
-Ein gescanntes PDF enthält Bilder der Seiten, aber keine **Textebene** (den unsichtbaren Text, der sich mit der Maus markieren und kopieren lässt). Die Textfassung wird dann leer oder enthält falsche Zeichen.
+Ein gescanntes PDF enthält Bilder der Seiten, aber keine **Textebene** (den Text hinter dem Seitenbild, der sich mit der Maus markieren und kopieren lässt). Die Textfassung wird dann leer oder enthält falsche Zeichen.
 
-Vor dem Auftrag prüfen: Lässt sich Text im PDF mit der Maus auswählen? Wenn nicht, das PDF zuerst mit einer Texterkennung umwandeln (OCR, Optical Character Recognition: Umwandlung von Bild in Text).
+Vor dem Auftrag prüfen: das PDF im Finder oder Explorer mit einem Doppelklick öffnen und mit gedrückter Maustaste über eine Zeile ziehen. Wird die Zeile farbig markiert, hat das PDF eine Textebene. Lässt sich nichts markieren, das PDF zuerst mit einer Texterkennung umwandeln (OCR, Optical Character Recognition: Umwandlung von Bild in Text). Viele PDF-Programme und Scanner bieten das an.
 :::
 
-**Voraussetzung:** `preisliste-2026.pdf` liegt in `quellen/original/`. Text im PDF lässt sich mit der Maus auswählen.
+![Mit Textebene wird die Textfassung vollständig. Ein gescanntes PDF braucht zuerst eine Texterkennung.](images/lektionen/l06-pdf-als-quelle/textebene.svg){fig-alt="Zwei Zeilen untereinander. Oben: PDF mit Textebene, eine Zeile lässt sich mit der Maus markieren, die Textfassung wird vollständig. Unten: gescanntes PDF, nur ein Bild der Seite, nichts lässt sich markieren, die Textfassung wird leer oder falsch; zuerst eine Texterkennung (OCR) nutzen."}
+
+**Voraussetzung:** `preisliste-2026.pdf` liegt in `quellen/original/`. Text im PDF lässt sich mit der Maus markieren (Kasten oben).
 
 1. Diesen Auftrag senden:
 
@@ -74,16 +90,26 @@ Vor dem Auftrag prüfen: Lässt sich Text im PDF mit der Maus auswählen? Wenn n
    ```
 
 2. Das Anlegen freigeben, wenn der Agent fragt.
-3. Den Rohtext von `quellen/text/preisliste-2026.md` öffnen.
-4. Prüfen: Die Datei enthält eine Tabelle mit den Spalten Nr., Leistung, Einheit und Preis.
-5. Prüfen: Die Antwort nennt die Zahl der Tabellenzeilen und drei Beträge mit Seite und Zeile.
+3. Prüfen: Die Antwort nennt die Zahl der Tabellenzeilen und drei Beträge mit Seite und Zeile.
+4. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von quellen/text/preisliste-2026.md genau so, wie er in der Datei steht, mit allen Zeichen.
+   ```
+
+5. Prüfen: Die Antwort zeigt eine Tabelle mit senkrechten Strichen und den Spalten Nr., Leistung, Einheit und Preis.
+6. Prüfen: Nach der Tabelle folgt die Überschrift „Bedingungen“ mit drei Punkten.
 
 ### Das sollten wir jetzt sehen
 
-Die Datei `quellen/text/preisliste-2026.md` mit allen Zeichen:
-
-```markdown
-# Preisliste 2026
+```{=html}
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45"><div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat</span></div><div style="padding:12px;display:grid;gap:8px"><div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lies quellen/original/preisliste-2026.pdf und lege eine Markdown-Fassung unter quellen/text/preisliste-2026.md an. Überschriften, Tabellen und Zahlen vollständig übernehmen, nichts zusammenfassen. Prüfe danach: Hat die Tabelle im Markdown dieselbe Zahl Zeilen wie im PDF? Nenne mir drei Beträge mit Seite und Zeile, damit ich sie vergleichen kann.</div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest quellen/original/preisliste-2026.pdf</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege <code>quellen/text/preisliste-2026.md</code> an: Überschrift, Stand-Zeile, die Tabelle mit 5 Zeilen und der Abschnitt „Bedingungen“ von Seite 2. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>quellen/text/preisliste-2026.md angelegt</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><p style="margin:0 0 4px">Fertig. Eine Datei angelegt, keine geändert. Die Tabelle hat im PDF 5 Zeilen und im Markdown 5 Zeilen. Drei Beträge zum Vergleich:</p><ul style="margin:0;padding-left:20px"><li>Seite 1, Zeile 1: Kleine Reparatur, 45,00</li><li>Seite 1, Zeile 3: Beratung vor Ort, 89,00</li><li>Seite 1, Zeile 4: Anfahrt, 1,20</li></ul></div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von quellen/text/preisliste-2026.md genau so, wie er in der Datei steht, mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Inhalt von <code>quellen/text/preisliste-2026.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Preisliste 2026
 
 Stand: 1. Januar 2026. Preise in EUR inklusive Umsatzsteuer.
 
@@ -95,23 +121,14 @@ Stand: 1. Januar 2026. Preise in EUR inklusive Umsatzsteuer.
 | 4 | Anfahrt | je km | 1,20 |
 | 5 | Eilzuschlag innerhalb von 24 Stunden | pauschal | 35,00 |
 
-## Bedingungen
+<i style="color:#23417a;font-style:normal;font-weight:700">##</i> Bedingungen
 
-- Termine nach Vereinbarung, Montag bis Freitag.
-- Eine Absage bis 24 Stunden vorher ist kostenfrei.
-- Ersatzteile werden zusätzlich nach Aufwand berechnet.
+<i style="color:#23417a;font-style:normal;font-weight:700">-</i> Termine nach Vereinbarung, Montag bis Freitag.
+<i style="color:#23417a;font-style:normal;font-weight:700">-</i> Eine Absage bis 24 Stunden vorher ist kostenfrei.
+<i style="color:#23417a;font-style:normal;font-weight:700">-</i> Ersatzteile werden zusätzlich nach Aufwand berechnet.</pre></div></div></div>
 ```
 
-Die Antwort des Agenten:
-
-```{=html}
-<div style="max-width:640px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Antwort im Chat</div>
-<div style="padding:8px 14px;line-height:1.5"><div style="font-size:11px;color:#5b6170;text-transform:uppercase;letter-spacing:.04em">Agent</div>Die Tabelle hat im PDF 5 Zeilen und im Markdown 5 Zeilen. Drei Beträge zum Vergleich:<br>Seite 1, Zeile 1: Kleine Reparatur, 45,00<br>Seite 1, Zeile 3: Beratung vor Ort, 89,00<br>Seite 1, Zeile 4: Anfahrt, 1,20</div>
-</div>
-```
-
-So sieht es mit der Beispiel-Preisliste aus. Welche drei Beträge der Agent nennt, kann abweichen.
+So sieht es mit der Beispiel-Preisliste aus. Welche drei Beträge der Agent nennt, kann abweichen. Die Zeichen `#` und `|` gehören zum Rohtext, so wie wir ihn aus dem Kapitel [Markdown](markdown.qmd) kennen.
 
 ### Was gerade passiert ist
 
@@ -123,6 +140,8 @@ Die **Textfassung** ist die Markdown-Datei, die der Agent aus dem Original erzeu
 |---|---|---|
 | `quellen/original/` | Das PDF, so wie es von außen kam. Es dient als Beleg. | niemand |
 | `quellen/text/` | Die Textfassung mit demselben Namen. Mit ihr arbeitet der Agent. | der Agent, nach Rückfrage |
+
+![Original und Textfassung tragen denselben Namen. Fehler entstehen bei der Umwandlung, am häufigsten an drei Stellen.](images/lektionen/l06-pdf-als-quelle/original-und-textfassung.svg){fig-alt="Links die Karte Original: quellen/original/preisliste-2026.pdf, Beleg, niemand ändert sie. Ein Pfeil mit der Beschriftung Umwandlung durch den Agenten führt zur Karte Textfassung: quellen/text/preisliste-2026.md, gleicher Name, damit arbeitet der Agent. Unter dem Pfeil drei Stellen, an denen die Umwandlung am häufigsten Fehler macht: Tabellen, Fußnoten, zwei Textspalten."}
 
 Das Lesen allein ist selten das Problem. Fehler entstehen bei der **Umwandlung**, also beim Übertragen der Seitengestaltung in Text. Drei Stellen sind besonders anfällig:
 
@@ -136,22 +155,25 @@ Solche Fehler fallen beim schnellen Lesen nicht auf. Eine Tabelle mit einer leer
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Der Agent fasst zusammen, etwa „Preise zwischen 1,20 und 89,00 EUR“: „Übernimm die Tabelle vollständig, Zeile für Zeile.“
-- Die Datei ist leer oder enthält wirre Zeichen: Das PDF hat vermutlich keine Textebene. Siehe den Kasten „Gescannte PDFs“.
+- Die Textfassung ist leer oder enthält wirre Zeichen: Das PDF hat vermutlich keine Textebene. Siehe den Kasten „Gescannte PDFs“.
 - Die Bedingungen von Seite 2 fehlen: „Übernimm auch Seite 2 vollständig.“
+- Die Antwort zeigt die Tabelle formatiert, ohne Striche: „Zeig mir den Inhalt in einem Codeblock, Zeile für Zeile.“
 - Die Tabelle steht als Liste da: Für die Prüfung genügt das, solange jede Zeile Leistung und Preis enthält.
 :::
 
 ## Schritt 3: Die Stichprobe gegen das Original
 
-**Voraussetzung:** Die Antwort aus Schritt 2 mit drei Beträgen steht im Chat.
+**Voraussetzung:** Die Antwort aus Schritt 2 mit drei Beträgen und der Inhalt der Textfassung stehen im Chat.
 
-1. Das PDF `quellen/original/preisliste-2026.pdf` öffnen.
-2. Die drei Beträge aus der Antwort an der genannten Seite und Zeile suchen.
-3. Prüfen: Alle drei Beträge stimmen überein.
-4. Die Tabellenzeilen im PDF und in `quellen/text/preisliste-2026.md` zählen.
-5. Prüfen: Beide Tabellen haben gleich viele Zeilen (Beispieldatei: 5).
-6. Prüfen: In beiden Fassungen steht die Überschrift „Bedingungen“ nach der Tabelle.
-7. Weicht ein Betrag ab: dem Agenten die Zeile nennen und korrigieren lassen.
+1. Im Finder oder Explorer den Ordner `kundenanfragen/quellen/original` öffnen.
+2. `preisliste-2026.pdf` mit einem Doppelklick öffnen. Das PDF erscheint im PDF-Programm.
+3. Die drei Beträge aus der Antwort an der genannten Seite und Zeile suchen.
+4. Prüfen: Alle drei Beträge stimmen überein.
+5. Die Tabellenzeilen im PDF zählen.
+6. Die Tabellenzeilen in der Textfassung im Chat zählen.
+7. Prüfen: Beide Tabellen haben gleich viele Zeilen (Beispieldatei: 5).
+8. Prüfen: In beiden Fassungen steht die Überschrift „Bedingungen“ nach der Tabelle.
+9. Weicht ein Betrag ab: dem Agenten die Zeile nennen und korrigieren lassen.
 
 ### Das sollten wir jetzt sehen
 
@@ -180,12 +202,15 @@ Wir haben nicht das ganze Dokument geprüft, sondern drei Stellen, an denen Fehl
 
 Dahinter steht das **Vier-Augen-Prinzip**: Einer überträgt, ein Zweiter liest gegen. Wie bei einem neuen Mitarbeiter bringt der Agent die Unterlage in eine lesbare Form, und wir prüfen. Die Fundstellen aus seiner Antwort machen das schnell.
 
+![Der Agent überträgt und nennt Fundstellen, wir lesen an drei Stellen gegen.](images/lektionen/l06-pdf-als-quelle/stichprobe-vier-augen.svg){fig-alt="Oben zwei Rollen nebeneinander: Der Agent überträgt das Original in die Textfassung und nennt Fundstellen; wir lesen an diesen Stellen gegen. Darunter drei nummerierte Prüfstellen: eine Tabelle (Zeilen vollständig?), zwei Zahlen (identisch?), eine Überschrift (Reihenfolge erhalten?). Merksatz: Drei Stellen statt des ganzen Dokuments."}
+
 Findet die Stichprobe einen Fehler, korrigieren wir gezielt. Zeigt die Textfassung etwa 12 Tabellenzeilen und das PDF 14, nennen wir dem Agenten die fehlenden Zeilen und lassen ihn nachtragen. Die ganze Tabelle abzutippen kostet unnötig Zeit. Ebenso wenig hilft es, den Agenten künftig das PDF statt der Textfassung lesen zu lassen: Hat die Umwandlung die Tabelle falsch gelesen, liest er sie beim nächsten Mal wieder falsch, dann ohne Prüfung.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Ein Betrag fehlt oder weicht ab, etwa: „In Zeile 3 steht im PDF 89,00. Korrigiere die Textfassung und zeige mir die Änderung, bevor du speicherst.“ Die Stelle danach erneut prüfen.
 - Der Agent nennt 6 Zeilen: Er hat die Kopfzeile mitgezählt. Nur die Zeilen mit einer Nummer zählen.
 - Die Antwort nennt keine Seite: „Auf welcher Seite des PDF steht dieser Betrag?“
+- Eine Zeile ist im PDF nicht zu finden: die Suche des PDF-Programms nutzen (meist Strg+F oder Cmd+F), etwa nach „Anfahrt“.
 :::
 
 ## Schritt 4: Als Quelle eintragen und nutzen
@@ -198,45 +223,45 @@ Findet die Stichprobe einen Fehler, korrigieren wir gezielt. Zeigt die Textfassu
    Lege quellen/QUELLEN.md an. Über der Tabelle steht der Satz: „Nur Dateien mit Prüfvermerk gelten als Quelle.“ Die Tabelle hat die Spalten Datei, Herkunft, Stand, Prüfung. Trage die Preisliste ein, Prüfung: heutiges Datum, „drei Beträge geprüft“. Ergänze die neuen Dateien in UEBERSICHT.md.
    ```
 
-2. Prüfen: `QUELLEN.md` hat eine Zeile mit Datum und Prüfvermerk.
-3. Eine neue Sitzung im selben Ordner starten.
-4. Diese Frage senden, den Text in Klammern durch eine Position aus der Preisliste ersetzt:
+2. Prüfen: Die Rückfrage nennt `QUELLEN.md` als neue Datei und neue Zeilen in `UEBERSICHT.md`.
+3. Freigeben.
+4. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von quellen/QUELLEN.md mit allen Zeichen.
+   ```
+
+5. Prüfen: Die Tabelle in `QUELLEN.md` hat eine Zeile mit heutigem Datum und „drei Beträge geprüft“.
+6. Eine neue Sitzung im Ordner `kundenanfragen` starten (neuer Chat, wie im Kapitel [Der Projektordner](projektordner.qmd), Schritt 3).
+7. Diese Frage senden, den Text in Klammern durch eine Position aus der Preisliste ersetzt:
 
    ```text
    Was kostet [eine Position aus der Preisliste]? Nenne die Quelle.
    ```
 
-5. Prüfen: Die Antwort nennt den Betrag aus der Preisliste und die Datei `quellen/text/preisliste-2026.md`.
+8. Prüfen: Die Antwort nennt den Betrag aus der Preisliste und die Datei `quellen/text/preisliste-2026.md`.
 
 ### Das sollten wir jetzt sehen
 
-Die Datei `quellen/QUELLEN.md`:
-
-```markdown
-# Quellen
+```{=html}
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45"><div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat</span></div><div style="padding:12px;display:grid;gap:8px"><div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege quellen/QUELLEN.md an. Über der Tabelle steht der Satz: „Nur Dateien mit Prüfvermerk gelten als Quelle.“ Die Tabelle hat die Spalten Datei, Herkunft, Stand, Prüfung. Trage die Preisliste ein, Prüfung: heutiges Datum, „drei Beträge geprüft“. Ergänze die neuen Dateien in UEBERSICHT.md.</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege <code>quellen/QUELLEN.md</code> an (Satz, Tabelle, eine Zeile für die Preisliste) und ergänze drei Zeilen in <code>UEBERSICHT.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="display:block;background:#d9e4f5">+ | quellen/original/preisliste-2026.pdf | Preisliste 2026, Original | 2026-01-01 |</span><span style="display:block;background:#d9e4f5">+ | quellen/text/preisliste-2026.md | Preisliste 2026, Textfassung | 2026-01-01 |</span><span style="display:block;background:#d9e4f5">+ | quellen/QUELLEN.md | Quellenliste mit Prüfvermerken | 2026-10-17 |</span></pre>Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>quellen/QUELLEN.md angelegt</div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>UEBERSICHT.md geändert</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Eine Datei angelegt (<code>quellen/QUELLEN.md</code>), eine geändert (<code>UEBERSICHT.md</code>, drei neue Zeilen).</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von quellen/QUELLEN.md mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Inhalt von <code>quellen/QUELLEN.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Quellen
 
 Nur Dateien mit Prüfvermerk gelten als Quelle.
 
 | Datei | Herkunft | Stand | Prüfung |
 |---|---|---|---|
-| text/preisliste-2026.md | Preisliste des Betriebs | 2026-01-01 | 2026-10-17 drei Beträge geprüft |
+| text/preisliste-2026.md | Preisliste des Betriebs | 2026-01-01 | 2026-10-17 drei Beträge geprüft |</pre></div></div></div>
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45"><div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Neue Sitzung</span></div><div style="padding:12px;display:grid;gap:8px"><div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Was kostet eine kleine Reparatur? Nenne die Quelle.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Eine kleine Reparatur kostet pauschal 45,00 EUR. Quelle: <code>quellen/text/preisliste-2026.md</code>, Stand 1. Januar 2026.</div></div></div>
 ```
 
-Neue Zeilen in `UEBERSICHT.md` und die Antwort in der neuen Sitzung:
-
-```{=html}
-<div style="max-width:640px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Neue Zeilen in UEBERSICHT.md</div>
-<pre style="margin:0;padding:10px 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;line-height:1.6;background:transparent;border:0;white-space:pre-wrap"><span style="display:block;background:#d9e4f5">+ | quellen/original/preisliste-2026.pdf | Preisliste 2026, Original | 2026-01-01 |</span><span style="display:block;background:#d9e4f5">+ | quellen/text/preisliste-2026.md | Preisliste 2026, Textfassung | 2026-01-01 |</span><span style="display:block;background:#d9e4f5">+ | quellen/QUELLEN.md | Quellenliste mit Prüfvermerken | 2026-10-17 |</span></pre>
-</div>
-<div style="max-width:640px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Chat in der neuen Sitzung</div>
-<div style="padding:8px 14px;border-bottom:1px solid #dcd9d2"><div style="font-size:11px;color:#5b6170;text-transform:uppercase;letter-spacing:.04em">Wir</div>Was kostet eine kleine Reparatur? Nenne die Quelle.</div>
-<div style="padding:8px 14px;background:#f4f2ed"><div style="font-size:11px;color:#5b6170;text-transform:uppercase;letter-spacing:.04em">Agent</div>Eine kleine Reparatur kostet pauschal 45,00 EUR. Quelle: <code>quellen/text/preisliste-2026.md</code>, Stand 1. Januar 2026.</div>
-</div>
-```
-
-Das Prüfdatum ist das heutige Datum. Die Zeilen in der Übersicht formuliert der Agent mit eigenen Worten.
+Oben die erste Sitzung, unten die neue. Das Prüfdatum ist das heutige Datum. Die Zeilen in der Übersicht formuliert der Agent mit eigenen Worten.
 
 ### Was gerade passiert ist
 
@@ -245,6 +270,8 @@ Die Textfassung trägt jetzt einen Prüfvermerk. In der neuen Sitzung hat der Ag
 Die **Quellenliste** ist die Datei `quellen/QUELLEN.md` mit einer Tabelle Datei, Herkunft, Stand, Prüfung. Der Satz über der Tabelle ist die eigentliche Regel. Eine Textfassung ohne Zeile in der Quellenliste ist damit für uns und den Agenten erkennbar ungeprüft. Den Prüfvermerk setzen wir erst, wenn die Stichprobe bestanden ist. Fehlen noch zwei Zeilen, ist der Vermerk falsch, auch wenn zwei von vierzehn Zeilen wenig erscheinen.
 
 Die Quellenliste ergänzt Regel 2 unserer `AGENTS.md`: „Nutze nur Fakten aus Dateien in diesem Ordner.“ Regel 2 sagt, woher Fakten kommen dürfen. Die Quellenliste sagt, welchen dieser Dateien wir trauen. Sie ist damit die Liste der freigegebenen Unterlagen. Die Quellenangabe in der Antwort macht den Betrag nachprüfbar: Wir wissen, in welcher Datei er steht.
+
+![Regel 2 sagt, woher Fakten kommen. Die Quellenliste sagt, welchen Dateien wir trauen.](images/lektionen/l06-pdf-als-quelle/quellenliste-und-regel-2.svg){fig-alt="Drei Stufen von links nach rechts. Erste Stufe: Regel 2 der AGENTS.md, Fakten nur aus Dateien in diesem Ordner. Zweite Stufe: die Quellenliste QUELLEN.md mit dem Satz „Nur Dateien mit Prüfvermerk gelten als Quelle“ und einer geprüften Zeile für die Preisliste. Dritte Stufe: die Antwort im Chat nennt den Betrag und die Datei als Quelle. Merksatz: Regel 2 sagt, woher Fakten kommen; die Quellenliste sagt, welchen Dateien wir trauen."}
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Die Antwort nennt das PDF statt der Textfassung: „Nutze für Preise die Textfassung in quellen/text/.“

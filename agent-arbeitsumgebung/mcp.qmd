@@ -2,9 +2,15 @@
 
 Ein Agent im Projektordner kennt nur die Dateien in diesem Ordner. Der Terminwunsch vom 5. Oktober liegt als Datei in `anfragen/`, die freien Zeiten im Teamkalender liegen dort nicht. Damit der Agent sie trotzdem nachsehen kann, braucht er einen Zugang zum Kalender. MCP regelt solche Zugänge, und zwar genormt: Ein Agent, der MCP beherrscht, kann jedes System erreichen, das ebenfalls MCP anbietet.
 
-In diesem Kapitel richten wir nichts ein. Wir fragen den eigenen Agenten, welche Zugänge er hat, und entscheiden, ob wir einen brauchen. Die Erklärung folgt jeweils am eigenen Ergebnis. Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
+Eingerichtet wird hier nichts. Wir fragen den eigenen Agenten, welche Zugänge er hat, und entscheiden, ob wir einen brauchen. Die Erklärung folgt jeweils am eigenen Ergebnis. Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
-**Voraussetzung:** Der Ordner `kundenanfragen` ist in der App des Agenten geöffnet.
+**Voraussetzung:** Der Ordner `kundenanfragen` mit dem Stand nach dem Kapitel [Skills: Abläufe, die bleiben](skills.qmd) ist in der App des Agenten gewählt.
+
+::: {.callout-warning title="Fragen zu Verbindungen"}
+- Die Aufträge in diesem Kapitel betreffen Verbindungen und Einstellungen außerhalb des Projektordners. Darum beginnt jeder Auftrag mit „Nur lesen und auflisten, nichts ändern“.
+- Keine Änderung freigeben, die der Agent dabei vorschlägt. Das gilt auch für einen Testaufruf eines Werkzeugs.
+- Den Agenten keine Datei mit Einstellungen öffnen oder ändern lassen.
+:::
 
 ## Schritt 1: Verbundene Server auflisten
 
@@ -78,7 +84,7 @@ MCP ist eine offene Spezifikation, die jeder Hersteller umsetzen darf. Seit Deze
 1. Diese Frage senden:
 
    ```text
-   Wo ist die Konfiguration der MCP-Server bei dir gespeichert? Nur den Pfad oder den Ort in den Einstellungen nennen, nichts öffnen.
+   Nur lesen und auflisten, nichts ändern. Wo ist die Konfiguration der MCP-Server bei dir gespeichert? Nur den Pfad oder den Ort in den Einstellungen nennen, nichts öffnen.
    ```
 
 2. Prüfen: Der Agent nennt einen Pfad zu einer Datei oder einen Bereich in den Einstellungen.
@@ -106,6 +112,8 @@ Zwei typische Antworten in eigenen Worten. Der eigene Agent nennt den genauen Pf
 
 Der Agent hat gesagt, wo seine Verbindungen eingetragen sind, ohne etwas zu öffnen. Manche Agenten lesen die Liste ihrer MCP-Server aus einer **Konfigurationsdatei** (einer Datei mit Einstellungen), oft eine für das Projekt im Projektordner und eine für alle Projekte im Benutzerordner. Andere verwalten sie in einem Bereich der Einstellungen.
 
+![Zwei Orte für die Liste der MCP-Server: eine Konfigurationsdatei im Projektordner oder im Benutzerordner, oder ein Bereich in den Einstellungen der App.](images/lektionen/l09-mcp/konfiguration-zwei-orte.svg){fig-alt="Zwei Orte, an denen ein Agent seine Verbindungen eingetragen hat. Links eine Konfigurationsdatei, also eine Datei mit Einstellungen: im Projektordner, gültig für dieses Projekt, oder im Benutzerordner mit einem Pfad, der mit ~ beginnt, gültig für alle Projekte. Rechts der Bereich für MCP oder Konnektoren in den Einstellungen der App. Beide führen zur Liste der MCP-Server, zum Beispiel kalender mit zwei Werkzeugen. Unten: Im Kurs genügt die Frage an den Agenten, nur den Ort nennen lassen, nichts öffnen."}
+
 | Werkzeug | Wo die MCP-Server eingetragen sind |
 |---|---|
 | Claude Code | Datei `.mcp.json` im Projektordner.[^cc-mcp] |
@@ -130,7 +138,7 @@ Dieses Buch richtet keinen Server ein. Der Weg dahin ist je Werkzeug anders, und
 Wie ein Werkzeugaufruf im Alltag aussieht, zeigt die folgende Szene. Der Ordner `kundenanfragen` hat den Stand nach dem Kapitel [Skills: Abläufe, die bleiben](skills.qmd). Neu ist eine Verbindung zu einem Kalender-Server. Mit „Weiter“ klicken wir uns Schritt für Schritt durch die Sitzung.
 
 ```{=html}
-<iframe class="muster-agent" src="widgets/09-steckdose.html" title="Nachbau eines Agenten: Termin über den Kalender-Server" loading="lazy" style="width:100%;height:640px;border:0"></iframe>
+<iframe class="muster-agent" src="widgets/09-steckdose.html" title="Nachbau eines Agenten: Termin über den Kalender-Server" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
 <script>if(!window.__maResize){window.__maResize=1;addEventListener('message',function(e){if(!e.data||e.data.type!=='claude-widget-height')return;document.querySelectorAll('iframe.muster-agent').forEach(function(f){if(f.contentWindow===e.source)f.style.height=(e.data.height+8)+'px';});});}</script>
 ```
 
@@ -138,9 +146,11 @@ Drei Stellen in der Szene sind wichtig.
 
 **Die Rückfrage vor dem Aufruf.** Bevor der Agent den Kalender abfragt, fragt er, wie er es auch vor dem Anlegen einer Datei tut. Die Rückfrage nennt den Server (`kalender`), das Werkzeug (`termine_lesen`) und den Hinweis, dass es nur liest. Die Zeile mit „› ruft auf“ im Chat zeigt danach den eigentlichen Aufruf.
 
-**Was wo entsteht.** Die drei freien Zeiten kommen aus dem Kalender, nicht aus einer Datei. Im Projektordner entsteht nur der Antwortentwurf in `antworten/`, dazu die neue Zeile in `UEBERSICHT.md`. Der Kalender selbst bleibt unverändert.
+**Was wo entsteht.** Die Anfrage zeigt der Chat gekürzt: nur die markierte Zeile mit dem Terminwunsch und ihre Nachbarzeilen. Die drei freien Zeiten kommen aus dem Kalender, nicht aus einer Datei. Im Projektordner entsteht nur der Antwortentwurf in `antworten/`, den der Chat formatiert zeigt. Für die neue Zeile in `UEBERSICHT.md` zeigt er nur die Zeile „› ändert UEBERSICHT.md“. Der Kalender selbst bleibt unverändert.
 
 **Was der Agent nicht tut.** `termin_anlegen` würde den Kalender ändern. Der Agent ruft es nicht auf, weil der Auftrag einen Entwurf verlangt. Ein Entwurf bietet drei Zeiten an; einen Termin trägt erst ein Mensch ein, wenn die Zusage der Kundin oder des Kunden da ist.
+
+![Ein lesendes Werkzeug zeigt schlimmstenfalls etwas Falsches an, ein änderndes legt echte Termine an. Drei Fragen klären wir vor jeder Anbindung.](images/lektionen/l09-mcp/rechte-eines-servers.svg){fig-alt="Ein Kalender-Server außerhalb des Projektordners mit zwei Werkzeugen. termine_lesen ist als liest markiert: Im schlimmsten Fall zeigt es etwas Falsches an. termin_anlegen ist als ändert markiert: Es legt echte Termine an, die andere Menschen sehen. Darunter drei Fragen vor jeder Anbindung: Welche Werkzeuge stellt der Server bereit? Welche davon ändern etwas? Wer hat die Anbindung geprüft? Unten: Erste Wahl ist der offizielle Server des Anbieters, im Unternehmen mit Freigabe der IT."}
 
 ::: {.callout-warning title="Rechte eines Servers"}
 Ein verbundener MCP-Server handelt mit den Rechten, die wir ihm geben. `termin_anlegen` legt echte Termine an, `ticket_anlegen` echte Tickets.
@@ -184,6 +194,8 @@ Ein Beispiel für den Ordner `kundenanfragen`. Auch „kein System nötig“ ist
 Wir haben die Zugänge des eigenen Agenten erkundet, ohne etwas zu ändern, und eine Entscheidung vorbereitet. Ein MCP-Server bringt dem Agenten Werkzeuge, aber kein besseres Sprachmodell, kein Gedächtnis für frühere Unterhaltungen und keine Kopie der Daten in den Projektordner. Die Daten bleiben im Kalender oder im Ticket-System; der Agent holt sich bei jedem Aufruf nur das Ergebnis.
 
 Daraus folgt eine Faustregel. Eine Anbindung lohnt sich, wenn ein Auftrag Daten aus einem anderen System braucht, die nicht als Datei im Ordner liegen, etwa Dokumente in der Cloud-Ablage, die das Team laufend ändert. Für alles, was als Datei vorliegt, reicht der Projektordner. Der offizielle Server des Anbieters ist die erste Wahl vor Servern von Dritten. Im Unternehmen gibt meist die IT frei, bei einem eigenen Konto die Person, der das Konto gehört.
+
+![Die Faustregel als Frage: Liegen die Daten als Datei im Ordner, reicht der Projektordner. Sonst braucht es eine Anbindung über einen MCP-Server.](images/lektionen/l09-mcp/wann-anbindung.svg){fig-alt="Eine Frage entscheidet: Liegen die Daten für den Auftrag als Datei im Ordner? Bei ja reicht der Projektordner, Beispiel: das Protokoll der Teambesprechung, als Datei abgelegt; ohne MCP-Server läuft alles, was bisher im Ordner lief. Bei nein braucht es eine Anbindung über einen MCP-Server, Beispiel: Dokumente in der Cloud-Ablage, die das Team laufend ändert; erste Wahl ist der offizielle Server des Anbieters. Unten: Im Unternehmen gibt meist die IT eine Anbindung frei, beim eigenen Konto die Person, der es gehört."}
 
 Vier Aufträge an den Agenten im Ordner `kundenanfragen` zeigen die Faustregel im Einsatz:
 
