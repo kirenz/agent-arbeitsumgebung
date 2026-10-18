@@ -1,10 +1,53 @@
 # Chat oder Agent?
 
-Ein Chat-Assistent und ein Agent nutzen oft dasselbe Sprachmodell (das KI-Modell, das den Text erzeugt). Der Unterschied liegt im Arbeitsplatz. Der Chat sieht nur, was wir ins Eingabefeld schreiben oder hineinkopieren. Der Agent arbeitet in einem Ordner auf unserem Rechner, öffnet dort selbst Dateien und legt seine Ergebnisse als Dateien ab. In diesem Kapitel richten wir den eigenen Agenten ein und geben ihm zwei Aufträge. Die Erklärung folgt jeweils am eigenen Ergebnis.
+Eine Kundin schreibt: Die Reparatur war für Freitag zugesagt, bis heute keine Nachricht. Einem Chat-Assistenten lesen wir die Beschwerde vor und erhalten einen Antworttext. Ein Agent bekommt ein Ziel: „Lies die Beschwerde und lege einen Antwortentwurf ab.“ Dann arbeitet er in einer Schleife, bis das Ziel erreicht ist oder der Ablauf endet. Dieses Kapitel erklärt zuerst, was dabei passiert und wer die Arbeit ausführt. Danach richten wir den eigenen Agenten ein und geben ihm zwei Aufträge; die Erklärung folgt jeweils am eigenen Ergebnis.
 
-## Was hier mit Agent gemeint ist
+## Was ein KI-Agent tut
 
-Mit Agent meinen wir in diesem Buch einen **Coding-Agenten**: ein KI-Werkzeug, das auf dem eigenen Rechner in einem Ordner mitarbeitet. Gebaut wurden diese Werkzeuge für Programmcode. Sie arbeiten aber mit allen Textdateien, also auch mit Kundenanfragen, Protokollen oder Konzepten. Bekannte Beispiele:
+Ein **KI-Agent** ist ein Programm, das ein Ziel verfolgt. Es beobachtet seine Umgebung (hier die Dateien im Ordner), überlegt den nächsten Schritt, handelt mit Werkzeugen und wiederholt das, bis das Ziel erreicht ist. „Überlegen“ meint dabei Verarbeiten und Planen im Programm, kein Nachdenken wie bei einem Menschen. Ein **Werkzeug** ist eine Fähigkeit, die der Agent abrufen kann: eine Datei lesen, eine Datei anlegen, den Ordner durchsuchen oder einen Termin eintragen. Ohne Werkzeuge bleibt ein Agent ein Chat.[^kaggle-agents]
+
+::: {layout-ncol=5}
+![Ziel](images/agent-ziel.png){fig-alt="Zielscheibe mit Pfeil und Checkliste"}
+
+![Beobachten](images/agent-beobachten.png){fig-alt="Drei Dokumente fließen in eine Ablage"}
+
+![Überlegen](images/agent-ueberlegen.png){fig-alt="Entscheidungsbaum mit einem hervorgehobenen Weg"}
+
+![Handeln](images/agent-handeln.png){fig-alt="Befehlsfenster mit Pfeil zu einem Kalender"}
+
+![Wiederholen](images/agent-wiederholen.png){fig-alt="Zwei Pfeile bilden einen Kreis, in der Mitte ein Haken"}
+:::
+
+Für die Beschwerde heißt das: Der Agent liest die Datei, stellt fest, dass ihm der Stand der Reparatur fehlt, durchsucht den Ordner, findet keinen Auftrag, schreibt den Entwurf mit einer Lücke für den Stand und meldet am Ende, was er getan hat. Der folgende Nachbau spielt diese Sitzung Schritt für Schritt ab. An der Rückfrage entscheiden wir selbst, ob der Agent die Datei anlegen darf.
+
+```{=html}
+<iframe class="muster-agent" src="widgets/01-agent-schleife.html" title="Nachbau einer Agentensitzung: fünf Stationen an einer Kundenbeschwerde" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
+<script>if(!window.__maResize){window.__maResize=1;addEventListener('message',function(e){if(!e.data||e.data.type!=='claude-widget-height')return;document.querySelectorAll('iframe.muster-agent').forEach(function(f){if(f.contentWindow===e.source)f.style.height=(e.data.height+8)+'px';});});}</script>
+```
+
+Zum Vergleich: Der Chat gleicht einem externen Berater am Telefon, dem wir jedes Mal alles vorlesen. Der Agent gleicht einem neuen Mitarbeiter am eigenen Schreibtisch mit Zugang zur Ablage. Vor wichtigen Schritten fragt er nach. An einer Stelle hinkt der Vergleich: Der Agent erinnert sich nicht von selbst an gestern. Jede neue **Sitzung** (Unterhaltung vom Start bis zum Schließen) beginnt ohne Erinnerung an die vorige. Darum steht in diesem Buch alles Wichtige als Datei im Ordner.
+
+## Das Modell führt nichts aus, die App fragt uns
+
+Im Nachbau kamen zwei Arten von Zeilen vor: Sätze des Agenten und kurze Meldungen wie „liest anfragen/…“. Dahinter stehen die zwei Teile eines Agenten.
+
+Das **Sprachmodell** (das KI-Modell, das den Text erzeugt) liest den bisherigen Verlauf und schreibt Text. Mehr kann es nicht. Will es ein Werkzeug nutzen, schreibt es diesen Wunsch als Text auf, etwa „Lies die Datei anfragen/2026-10-07-beschwerde.md“. Der **Rahmen** ist die Software um das Modell herum, bei einem Agenten auf dem eigenen Rechner die App. Sie erkennt den Werkzeugwunsch, führt ihn aus, legt das Ergebnis dem Modell wieder vor und startet die nächste Runde. Vor Änderungen und Befehlen hält sie an und fragt uns. Die Rückfrage „antworten/2026-10-07-beschwerde-antwort.md anlegen?“ stellt also der Rahmen. Ein Agent ist Modell plus Werkzeuge plus Schleife, dazu alles, was das Modell gerade vorliegen hat (der Kontext).[^anthropic-agents] Diesen Wechsel aus Überlegen und Handeln beschreibt die Forschung als ReAct, Reasoning and Acting.[^react]
+
+Der Unterschied zum Chat liegt im Rahmen. Der Rahmen eines Chat-Assistenten reicht dem Modell das Eingabefeld und gibt die Antwort zurück. Der Rahmen eines Agenten gibt dem Modell zusätzlich Werkzeuge und lässt die Schleife laufen, bis das Ziel erreicht ist. Welche Werkzeuge es gibt und wann wir gefragt werden, legt darum der Rahmen fest, also die App, die wir wählen.
+
+::: {.callout-tip title="Prüffrage"}
+Ein Agent soll aus drei Anfragen eine Übersicht schreiben. Er liest alle drei Dateien und hält dann an: „UEBERSICHT.md anlegen?“ Wer stellt diese Frage, und warum gerade jetzt? Die Antwort steht im Absatz oben: Das Modell hat einen Werkzeugwunsch aufgeschrieben, der Rahmen holt vor dem Ausführen die Freigabe ein.
+:::
+
+## Drei Formen von Agenten, eine davon in diesem Buch
+
+Agenten begegnen uns in drei Formen. Alle drei arbeiten in derselben Schleife, Rahmen und Werkzeuge unterscheiden sich.
+
+1. In Chat-Apps als Agentenmodus oder persönlicher Assistent: Der Rahmen ist die Chat-App des Anbieters, die Werkzeuge sind Websuche, Browser oder verbundene Konten.
+2. Als Baustein in Automatisierungen (etwa in n8n): Der Rahmen ist der Workflow, der Agent übernimmt einen Schritt darin.
+3. Als **Coding-Agent** auf dem eigenen Rechner: Der Rahmen ist eine App, die Werkzeuge arbeiten in einem Ordner (Dateien lesen, anlegen, ändern, Befehle ausführen).
+
+Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse. Bekannte Beispiele:
 
 | Werkzeug | Anbieter | App | Anleitung |
 |---|---|---|---|
@@ -13,11 +56,13 @@ Mit Agent meinen wir in diesem Buch einen **Coding-Agenten**: ein KI-Werkzeug, d
 | Antigravity | Google | [Antigravity-App](https://antigravity.google/download) | [Antigravity-Dokumentation](https://antigravity.google/docs) |
 | Cursor | Anysphere | [Cursor-App](https://cursor.com/download) | [Cursor-Dokumentation](https://cursor.com/docs) |
 
-Wir arbeiten in diesem Buch in der **App** des jeweiligen Werkzeugs, dem Programm auf dem Rechner. Manche Werkzeuge lassen sich auch über ein Textfenster für Befehle (Terminal) bedienen; das brauchen wir nicht. Die Bedienung unterscheidet sich von Werkzeug zu Werkzeug und ändert sich oft. Das Buch zeigt deshalb keine bestimmte Oberfläche. Was sich je Werkzeug unterscheidet, etwa Dateinamen und Speicherorte, steht gesammelt in der [Übersicht nach Werkzeug](#uebersicht-nach-werkzeug).
+Wir arbeiten in der **App** des jeweiligen Werkzeugs, dem Programm auf dem Rechner. Manche Werkzeuge lassen sich auch über ein Textfenster für Befehle (Terminal) bedienen; das brauchen wir nicht. Die Bedienung unterscheidet sich von Werkzeug zu Werkzeug und ändert sich oft. Das Buch zeigt deshalb keine bestimmte Oberfläche. Was sich je Werkzeug unterscheidet, etwa Dateinamen und Speicherorte, steht gesammelt in der [Übersicht nach Werkzeug](#uebersicht-nach-werkzeug).
 
-Gemeint ist ein Arbeitswerkzeug am eigenen Rechner. Agenten, die als Baustein in eine Automatisierung eingebaut sind, etwa in einen Workflow, sind etwas anderes.
+Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
-Jeder Schritt hat denselben Aufbau: eine Anleitung, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
+[^kaggle-agents]: Wiesinger, Marlow und Vuskovic, Agents, Kaggle-Whitepaper (2025): <https://www.kaggle.com/whitepaper-agents>
+[^anthropic-agents]: Anthropic, Building effective agents, 19.12.2024: <https://www.anthropic.com/engineering/building-effective-agents>
+[^react]: Yao et al., ReAct: Synergizing Reasoning and Acting in Language Models (2023): <https://arxiv.org/abs/2210.03629>
 
 ## Schritt 1: App installieren und Ordner öffnen
 
@@ -104,7 +149,7 @@ Heute ist der 17. Oktober 2026.
 
 Wir haben einen Satz geschrieben. Der Agent hat nachgefragt und dann die Datei `hallo.md` in unserem Ordner angelegt. Das Ergebnis liegt als Datei auf unserem Rechner.
 
-Ein **Agent** arbeitet in einem Ordner. Er liest Dateien, legt neue an und führt Befehle aus. Ein Befehl ist hier ein kleines Programm, das der Agent startet, etwa um eine Datei umzuwandeln oder einen Ordner zu durchsuchen. Vor jeder Änderung und vor jedem Befehl fragt der Agent nach oder zeigt, was er vorhat. Ein Chat-Assistent antwortet nur auf das, was im Eingabefeld steht. Mit ihm hätten wir den Text erhalten und `hallo.md` selbst angelegt. Zum Vergleich: Der Chat gleicht einem externen Berater am Telefon, dem wir jedes Mal alles vorlesen. Der Agent gleicht einem neuen Mitarbeiter am eigenen Schreibtisch, mit Zugang zur Ablage. Vor wichtigen Schritten fragt er nach.
+Das war die Schleife aus dem Abschnitt [Was ein KI-Agent tut](#was-ein-ki-agent-tut) am eigenen Ergebnis. Unser Auftrag war das Ziel. Der Agent hat den leeren Ordner beobachtet, den Inhalt überlegt und mit dem Werkzeug „Datei anlegen“ gehandelt. Die Rückfrage davor kam vom Rahmen, also von der App. Eine Zeile wie „hallo.md angelegt“ im Chat zeigt den ausgeführten Werkzeugwunsch. Mit einem Chat-Assistenten hätten wir den Text erhalten und `hallo.md` selbst angelegt.
 
 `hallo.md` ist eine **Markdown**-Datei. Markdown ist reiner Text mit wenigen Zeichen für die Gliederung: `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Die Dateien enden auf `.md`. Fast alle Dateien in diesem Buch sind Markdown-Dateien, weil Mensch und Agent dieselbe Datei ohne Spezialprogramm lesen und jede geänderte Zeile sichtbar ist. Im Kapitel [Markdown: Text, den Mensch und Agent lesen](markdown.qmd) legen wir Schritt für Schritt weitere Markdown-Dateien an und sehen dort auch, was eine Word-Datei davon unterscheidet.
 
@@ -258,7 +303,7 @@ Hersteller ändern Dateinamen und Speicherorte. Weicht der eigene Agent von der 
 
 ## Vier Bausteine für die Arbeit mit einem Agenten
 
-Damit ein Agent verlässlich arbeitet, braucht er mehr als einen Auftrag. Der neue Mitarbeiter ist fachlich fit, kennt aber unseren Betrieb nicht. Anders als ein Mensch erinnert er sich nicht von selbst an gestern: Jede neue Sitzung beginnt ohne Erinnerung an die vorige. Darum steht alles Wichtige schriftlich in seinem **Onboarding**, der Einarbeitung neuer Mitarbeitender. Vier Bausteine bilden seine Onboarding-Mappe und fassen zusammen, was die folgenden Kapitel aufbauen:
+Damit ein Agent verlässlich arbeitet, braucht er mehr als einen Auftrag. Der neue Mitarbeiter vom Anfang des Kapitels ist fachlich fit, kennt aber unseren Betrieb nicht und erinnert sich nicht an gestern. Darum steht alles Wichtige schriftlich in seinem **Onboarding**, der Einarbeitung neuer Mitarbeitender. Vier Bausteine bilden seine Onboarding-Mappe und fassen zusammen, was die folgenden Kapitel aufbauen:
 
 ![Vier Bausteine einer Arbeitsumgebung für einen Agenten](images/01-leitbild.svg){fig-alt="Vier Karten: Ordner gleich Arbeitsplatz mit Ablage, AGENTS.md gleich Hausordnung, Skills gleich Arbeitsanweisungen, MCP gleich Zugänge." width="100%"}
 
