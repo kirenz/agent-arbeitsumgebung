@@ -35,13 +35,13 @@ Das **Sprachmodell** (das KI-Modell, das den Text erzeugt) liest den bisherigen 
 
 Der Unterschied zum Chat liegt im Rahmen. Der Rahmen eines Chat-Assistenten reicht dem Modell das Eingabefeld und gibt die Antwort zurück. Der Rahmen eines Agenten gibt dem Modell zusätzlich Werkzeuge und lässt die Schleife laufen, bis das Ziel erreicht ist. Welche Werkzeuge es gibt und wann wir gefragt werden, legt darum der Rahmen fest, also die App, die wir wählen.
 
-## Drei Formen von Agenten, eine davon in diesem Buch
+## Wo ein Agent arbeitet: drei Formen
 
-Agenten begegnen uns in drei Formen. Alle drei arbeiten in derselben Schleife, Rahmen und Werkzeuge unterscheiden sich.
+Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugreifen. Die Schleife ist überall dieselbe. Oft bietet eine App mehrere dieser Formen an: Die Claude-Desktop-App hat etwa einen Chat und den Bereich „Code“.
 
-1. In Chat-Apps als Agentenmodus oder persönlicher Assistent: Der Rahmen ist die Chat-App des Anbieters, die Werkzeuge sind Websuche, Browser oder verbundene Konten.
-2. Als Baustein in Automatisierungen (etwa in n8n): Der Rahmen ist der Workflow, der Agent übernimmt einen Schritt darin.
-3. Als **Coding-Agent** auf dem eigenen Rechner: Der Rahmen ist eine App, die Werkzeuge arbeiten in einem Ordner (Dateien lesen, anlegen, ändern, Befehle ausführen).
+1. Beim Anbieter im Netz: Der Agent arbeitet auf den Rechnern des Anbieters. Seine Werkzeuge sind Websuche, ein eigener Browser oder verbundene Konten wie E-Mail und Kalender. Die Ergebnisse erscheinen im Chat oder in den verbundenen Diensten. Ein Beispiel ist der Agentenmodus von ChatGPT, der Hotels im Browser vergleicht.
+2. In einem Workflow (etwa in n8n): Der Agent übernimmt einen festen Schritt in einem automatischen Ablauf.
+3. Auf dem eigenen Rechner in einem Ordner: Das ist der **Coding-Agent**. Seine Werkzeuge lesen, anlegen und ändern Dateien in diesem Ordner und führen Befehle aus. Die Ergebnisse liegen als Dateien im Ordner.
 
 Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse. Bekannte Beispiele:
 
