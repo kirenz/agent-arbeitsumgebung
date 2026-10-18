@@ -341,10 +341,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <iframe class="muster-agent" src="widgets/01-agent-schleife.html" title="Nachbau eines Agenten: fünf Stationen an einer Kundenbeschwerde" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
 <script>if(!window.__maResize){window.__maResize=1;addEventListener('message',function(e){if(!e.data||e.data.type!=='claude-widget-height')return;document.querySelectorAll('iframe.muster-agent').forEach(function(f){if(f.contentWindow===e.source)f.style.height=(e.data.height+8)+'px';});});}</script>
 <p>Zum Vergleich: Der Chat gleicht einem externen Berater am Telefon, dem wir jedes Mal alles vorlesen. Der Agent gleicht einem neuen Mitarbeiter am eigenen Schreibtisch mit Zugang zur Ablage. Vor wichtigen Schritten fragt er nach. An einer Stelle hinkt der Vergleich: Der Agent erinnert sich nicht von selbst an gestern. Jede neue Unterhaltung mit ihm beginnt ohne Erinnerung an die vorige. Darum steht in diesem Buch alles Wichtige als Datei im Ordner.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l01-chat-oder-agent/chat-oder-agent.svg" class="img-fluid figure-img" alt="Zwei Wege für dieselbe Beschwerde. Links der Chat-Assistent wie ein Berater am Telefon: Text in den Chat kopieren, der Chat kennt nur, was im Chat steht, der Antworttext wird von Hand in eine Datei übertragen. Rechts der Agent wie ein neuer Mitarbeiter mit Zugang zur Ablage: Er bekommt ein Ziel, arbeitet mit Werkzeugen im Ordner, fragt vor Änderungen und legt das Ergebnis als Datei ab."></p>
+<figcaption>Derselbe Fall, zwei Wege: Dem Chat lesen wir vor, der Agent arbeitet mit Werkzeugen im Ordner und fragt vor Änderungen.</figcaption>
+</figure>
+</div>
 </section>
 <section id="welcher-agent-hier-gemeint-ist" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="welcher-agent-hier-gemeint-ist"><span class="header-section-number">1.2</span> Welcher Agent hier gemeint ist</h2>
 <p>Agenten gibt es in Chat-Apps im Netz, in automatischen Abläufen und auf dem eigenen Rechner. Die Schleife ist überall dieselbe. In diesem Buch geht es um die Form auf dem eigenen Rechner: den <strong>Coding-Agenten</strong>. Seine Werkzeuge lesen, anlegen und ändern Dateien in einem Ordner. Gebaut wurde er für Programmcode. Er arbeitet aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse. Beispiele sind Claude Code (Anthropic), Codex (OpenAI) und Antigravity (Google); Cursor arbeitet ähnlich.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l01-chat-oder-agent/drei-orte.svg" class="img-fluid figure-img" alt="Drei Karten: Agenten in einer Chat-App im Netz, in einem automatischen Ablauf und auf dem eigenen Rechner. Die dritte Karte ist hervorgehoben: Der Coding-Agent liest, legt an und ändert Dateien in einem Ordner, bedient wird er über den Chat der App. Die Schleife ist an allen drei Orten dieselbe."></p>
+<figcaption>Drei Orte für Agenten. In diesem Buch arbeiten wir mit der Form auf dem eigenen Rechner, dem Coding-Agenten.</figcaption>
+</figure>
+</div>
 <p>Am schnellsten gelingt der Einstieg mit dem Agenten, der im eigenen Abo bereits enthalten ist: Codex in ChatGPT Plus und höher, Claude Code in Claude Pro und höher. Ohne Abo empfiehlt sich Antigravity, weil Google ein begrenztes Kontingent kostenlos bereitstellt; dafür genügt ein privates Google-Konto.</p>
 <table class="caption-top table">
 <caption>Stand: 18.10.2026. Abos und Grenzen ändern sich, maßgeblich sind die Seiten der Anbieter.</caption>
@@ -431,6 +443,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Es liest eine Anweisungsdatei (eine Datei mit Regeln) im Projektordner.</li>
 </ol>
 <p>Schritt 2 prüft die ersten beiden Punkte, Schritt 3 den dritten.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l01-chat-oder-agent/drei-anforderungen.svg" class="img-fluid figure-img" alt="Drei nummerierte Anforderungen mit Pfeil zur jeweiligen Prüfung: Dateien in einem Ordner lesen, anlegen und ändern (Schritt 2); vor Änderungen nachfragen oder die Änderung zeigen (Schritt 2); eine Anweisungsdatei im Ordner lesen (Schritt 3)."></p>
+<figcaption>Drei Anforderungen an das Werkzeug. Schritt 2 prüft die ersten beiden, Schritt 3 die dritte.</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -491,6 +509,12 @@ Heute ist der 18. Oktober 2026.</pre></div>
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-1"><span class="header-section-number">1.4.2</span> Was gerade passiert ist</h3>
 <p>Wir haben einen Satz geschrieben. Der Agent hat nachgefragt und dann die Datei <code>hallo.md</code> in unserem Ordner angelegt. Das Ergebnis liegt als Datei auf unserem Rechner, und der Agent hat es uns auf Nachfrage im Chat gezeigt.</p>
 <p>Das war die Schleife aus dem Abschnitt <a href="#was-ein-ki-agent-tut">Was ein KI-Agent tut</a> am eigenen Ergebnis. Unser Auftrag war das Ziel. Der Agent hat den leeren Ordner beobachtet, den Inhalt überlegt und mit dem Werkzeug „Datei anlegen“ gehandelt. Den Text hat der Agent geschrieben. Angelegt hat die Datei die App, und sie hat uns vorher gefragt. Eine Zeile wie „hallo.md angelegt“ im Chat zeigt das ausgeführte Werkzeug. Mit einem Chat-Assistenten hätten wir den Text erhalten und <code>hallo.md</code> selbst angelegt.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l01-chat-oder-agent/weg-eines-auftrags.svg" class="img-fluid figure-img" alt="Drei Bahnen Chat, Agent und App. Der Auftrag im Chat setzt das Ziel. Der Agent beobachtet den leeren Ordner, überlegt den Inhalt und wählt das Werkzeug Datei anlegen. Die App fragt um Erlaubnis, im Chat wird freigegeben, die App legt hallo.md an und meldet es. Der Agent meldet: Fertig, eine Datei angelegt."></p>
+<figcaption>Der Weg unseres ersten Auftrags: Der Agent überlegt und wählt das Werkzeug, die App fragt und legt die Datei an.</figcaption>
+</figure>
+</div>
 <p><code>hallo.md</code> ist eine <strong>Markdown</strong>-Datei. Markdown ist reiner Text mit wenigen Zeichen für die Gliederung: <code>#</code> am Zeilenanfang macht eine Überschrift, <code>-</code> einen Listenpunkt. Die Dateien enden auf <code>.md</code>. Fast alle Dateien in diesem Buch sind Markdown-Dateien, weil Mensch und Agent dieselbe Datei ohne Spezialprogramm lesen und jede geänderte Zeile sichtbar ist. Im Kapitel <a href="../agent-arbeitsumgebung/markdown.html">Markdown: Text, den Mensch und Agent lesen</a> legen wir Schritt für Schritt weitere Markdown-Dateien an und sehen dort auch, was eine Word-Datei davon unterscheidet.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
@@ -658,6 +682,12 @@ Heute ist der 18. Oktober 2026.</pre></div>
 </tbody>
 </table>
 <p>Die Begrüßung für die Website klingt nach Arbeit an einer Datei. Sie ist aber ein kurzer Text ohne Material, den wir an einer Stelle einfügen. Bei den 40 Anfragen dagegen liest der Agent den Ordner selbst und schreibt die Tabelle, ohne dass wir vierzigmal kopieren.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l01-chat-oder-agent/wann-agent-wann-chat.svg" class="img-fluid figure-img" alt="Zwei Fragen: Liegt das Material schon als Dateien vor? Soll das Ergebnis als Datei entstehen? Bei Ja führt der Pfeil zum Agenten im Ordner, der Dateien selbst liest, vor Änderungen fragt und das Ergebnis ablegt. Bei zweimal Nein führt der Pfeil zum Chat für eine kurze Frage ohne Material."></p>
+<figcaption>Zwei Fragen entscheiden: Liegt Material als Dateien vor oder soll eine Datei entstehen, nehmen wir den Agenten.</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="schritt-3-den-agenten-nach-sich-selbst-fragen" class="level2" data-number="1.5">

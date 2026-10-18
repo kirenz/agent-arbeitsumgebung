@@ -328,6 +328,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="was-gerade-passiert-ist"><span class="header-section-number">2.1.2</span> Was gerade passiert ist</h3>
 <p>Wir haben dem Agenten nur Überschrift und Liste genannt. Die Zeichen <code>#</code> und <code>-</code> hat er von selbst gesetzt. Das ist Markdown, das Dateiformat aus dem Kapitel <a href="../agent-arbeitsumgebung/chat-oder-agent.html">Chat oder Agent?</a>.</p>
 <p>Der Inhalt der Datei genau so, wie er gespeichert ist, heißt <strong>Rohtext</strong>. <code>#</code> am Zeilenanfang macht eine Überschrift, <code>-</code> einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile <code>- Kanal: E-Mail</code> und antwortet „E-Mail“. Die <strong>Vorschau</strong> ist die formatierte Ansicht desselben Textes: Die Zeichen <code>#</code> und <code>-</code> verschwinden, übrig bleiben Überschrift und Liste. Der Chat zeigt Markdown meist so an. Darum ist die zweite Antwort die Vorschau unserer Datei.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l02-markdown/rohtext-und-vorschau.svg" class="img-fluid figure-img" alt="Links der Rohtext der Datei terminwunsch.md mit den Zeichen # und - am Zeilenanfang, rechts dieselbe Datei als Vorschau mit Überschrift und drei Listenpunkten. Pfeile zeigen: # wird Überschrift, - wird Listenpunkt. Die drei Listenzeilen Datum, Kanal und Anliegen bilden den festen Kopf."></p>
+<figcaption>Rohtext und Vorschau derselben Datei. Der Agent liest links, der Chat zeigt rechts.</figcaption>
+</figure>
+</div>
 <p>Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen Aufbau nutzen alle Anfragen in den folgenden Kapiteln, weil der Agent die drei Angaben so direkt abliest.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
@@ -401,6 +407,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="was-gerade-passiert-ist-1" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-1"><span class="header-section-number">2.2.2</span> Was gerade passiert ist</h3>
 <p>Der Agent hat aus dem Satz im Auftrag vier Zeilen mit Strichen gemacht. Eine <strong>Tabelle</strong> besteht aus Zeilen mit senkrechten Strichen <code>|</code> zwischen den Spalten. Die erste Zeile ist der Kopf, danach folgt eine Zeile je Eintrag. Die <strong>Trennzeile</strong> aus Strichen, <code>|---|---|</code>, steht direkt unter dem Kopf und trennt ihn vom Inhalt. In der Vorschau erscheint sie nicht. Fehlt sie, zeigen die meisten Vorschauen keine Tabelle, sondern den Rohtext mit Strichen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l02-markdown/tabelle-aufbau.svg" class="img-fluid figure-img" alt="Vier Zeilen einer Markdown-Tabelle mit senkrechten Strichen, nummeriert: 1 Kopfzeile mit den Spaltennamen Datei und Anliegen, 2 Trennzeile aus Strichen, 3 eine Zeile je Eintrag für hallo.md und terminwunsch.md. Jede Zeile hat zwei Spalten."></p>
+<figcaption>Aufbau einer Markdown-Tabelle: Kopfzeile, Trennzeile, eine Zeile je Eintrag.</figcaption>
+</figure>
+</div>
 <p>Die Striche müssen nicht untereinander stehen. Wichtig ist, dass jede Zeile gleich viele Spalten hat. Tabellen eignen sich für Übersichten mit wenigen, kurzen Spalten: Datei und Anliegen, Datei und Stand, Regel und Prüfung. Für längere Texte je Eintrag ist eine Liste mit Unterüberschriften besser lesbar.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
@@ -461,6 +473,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-2"><span class="header-section-number">2.3.2</span> Was gerade passiert ist</h3>
 <p>Zwei Aufträge, zwei Änderungen an derselben Datei. Beim zweiten haben wir vor dem Speichern genau die eine Zeile gesehen, die sich ändert.</p>
 <p>Der <strong>Zeilenvergleich</strong> zeigt eine Änderung als alte und neue Zeile, oft mit <code>-</code> und <code>+</code> davor. So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: <code>- Kanal: E-Mail</code> wird zu <code>- Kanal: Telefon</code>, die Zeile <code>- Rückruf: ja</code> bleibt. Die <strong>Änderungsansicht</strong> ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l02-markdown/zeilenvergleich-lesen.svg" class="img-fluid figure-img" alt="Zeilenvergleich der Datei terminwunsch.md: Die alte Zeile Kanal: E-Mail ist mit Minus markiert und fällt weg, die neue Zeile Kanal: Telefon ist mit Plus markiert, die Zeilen Datum, Anliegen und Rückruf bleiben unverändert. Prüffrage vor der Freigabe: Ist nur die eine Zeile markiert? Ja: Erlauben. Mehr Zeilen: Ablehnen und Auftrag wiederholen."></p>
+<figcaption>Einen Zeilenvergleich lesen: eine Zeile fällt weg, eine kommt hinzu, der Rest bleibt. Vor der Freigabe prüfen wir, dass nur diese Zeile markiert ist.</figcaption>
+</figure>
+</div>
 <p>Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile im Zeilenvergleich. Wir können die Datei auch selbst ändern. Ein Klick auf den Dateipfad im Chat öffnet sie in vielen Apps zum Bearbeiten; unsere Zeile sieht der Agent beim nächsten Lesen.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
@@ -563,6 +581,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>PDFs bleiben trotzdem wichtig, weil viele Quellen nur so vorliegen. Wie wir sie in Markdown umwandeln und prüfen, zeigt das Kapitel <a href="../agent-arbeitsumgebung/pdf-als-quelle.html">PDFs als Quellen</a>.</p>
 <p>Zwei weitere Zeichen kommen in den folgenden Kapiteln vor: <code>**fett**</code> hebt ein Wort hervor, <code>[Text](Ziel)</code> setzt einen Link. Der Link kann auf eine Website zeigen oder auf eine andere Datei im Ordner, etwa <code>[Preisliste](preisliste-2026.md)</code>. Der zweite Fall ist für uns der wichtigere: Eine Übersicht verlinkt auf die Anfragen, eine Antwort auf die Quelle, aus der ein Betrag stammt. Der Agent folgt solchen Verweisen und öffnet die genannte Datei.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/lektionen/l02-markdown/fuenf-zeichen.svg" class="img-fluid figure-img" alt="Fünf Markdown-Zeichen mit Rohtext und Vorschau: # macht eine Überschrift, - einen Listenpunkt, senkrechte Striche eine Tabelle, zwei Sternchen um ein Wort machen es fett, eckige und runde Klammern setzen einen Link, hier auf die Datei preisliste-2026.md."></p>
+<figcaption>Fünf Zeichen reichen für alle Dateien in diesem Buch: Überschrift, Liste, Tabelle, Hervorhebung, Link.</figcaption>
+</figure>
+</div>
 <p>Die Dateien in <code>agent-test</code> brauchen wir später nicht mehr. Im nächsten Kapitel legt der Agent den eigentlichen Projektordner <code>kundenanfragen</code> an.</p>
 
 
