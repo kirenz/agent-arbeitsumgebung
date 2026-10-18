@@ -39,7 +39,7 @@ Der Unterschied zum Chat liegt im Rahmen. Der Rahmen eines Chat-Assistenten reic
 
 Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugreifen. Die Schleife ist überall dieselbe. Oft bietet eine App mehrere dieser Formen an: Die Claude-Desktop-App hat etwa einen Chat und den Bereich „Code“.
 
-1. Beim Anbieter im Netz: Der Agent arbeitet auf den Rechnern des Anbieters. Seine Werkzeuge sind Websuche, ein eigener Browser oder verbundene Konten wie E-Mail und Kalender. Die Ergebnisse erscheinen im Chat oder in den verbundenen Diensten. Ein Beispiel ist der Agentenmodus von ChatGPT, der Hotels im Browser vergleicht.
+1. Beim Anbieter im Netz: Der Agent arbeitet auf den Rechnern des Anbieters. Seine Werkzeuge sind Websuche, ein eigener Browser oder verbundene Konten wie E-Mail und Kalender. Die Ergebnisse erscheinen im Chat oder in den verbundenen Diensten. Ein Beispiel ist ein Assistent in einer Chat-App, der Hotels in seinem Browser vergleicht und drei Vorschläge meldet.
 2. In einem Workflow (etwa in n8n): Der Agent übernimmt einen festen Schritt in einem automatischen Ablauf.
 3. Auf dem eigenen Rechner in einem Ordner: Das ist der **Coding-Agent**. Seine Werkzeuge lesen, anlegen und ändern Dateien in diesem Ordner und führen Befehle aus. Die Ergebnisse liegen als Dateien im Ordner.
 
