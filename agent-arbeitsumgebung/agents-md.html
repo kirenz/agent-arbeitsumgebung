@@ -424,7 +424,30 @@ Zeige mir die Datei, bevor du sie speicherst.</code></pre></li>
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-1"><span class="header-section-number">4.2.2</span> Was gerade passiert ist</h3>
 <p>Die neue Sitzung begann ohne Erinnerung an Schritt 1. Trotzdem kannte der Agent die Regeln: Er hat die <code>AGENTS.md</code> zu Beginn der Sitzung von selbst gelesen, ohne dass jemand sie erwähnt hat.</p>
 <p><code>AGENTS.md</code> ist ein <strong>offenes Format</strong> ohne Pflichtfelder: eine gewöhnliche Markdown-Datei mit festem Namen. Viele Agenten lesen sie, unter anderem Werkzeuge großer Anbieter und mehrere Open-Source-Projekte. Seit Dezember 2025 betreut die Agentic AI Foundation das Format, eine Stiftung unter dem Dach der Linux Foundation. Die Beschreibung und eine Liste kompatibler Werkzeuge stehen auf <a href="https://agents.md/">agents.md</a>.</p>
-<p>Einige Werkzeuge erwarten einen eigenen Dateinamen oder lesen die <code>AGENTS.md</code> nur unter bestimmten Bedingungen. Welche das sind, zeigt die <a href="../agent-arbeitsumgebung/chat-oder-agent.html#uebersicht-nach-werkzeug">Übersicht nach Werkzeug</a>. Oft genügt dann eine zweite Datei mit dem erwarteten Namen, die auf die <code>AGENTS.md</code> verweist. So bleibt die <code>AGENTS.md</code> der einzige Ort, an dem wir Regeln pflegen, und derselbe Ordner funktioniert mit verschiedenen Agenten.</p>
+<p>Einige Werkzeuge erwarten einen eigenen Dateinamen oder lesen die <code>AGENTS.md</code> nur unter bestimmten Bedingungen. Oft genügt dann eine zweite Datei mit dem erwarteten Namen, die auf die <code>AGENTS.md</code> verweist. So bleibt die <code>AGENTS.md</code> der einzige Ort, an dem wir Regeln pflegen, und derselbe Ordner funktioniert mit verschiedenen Agenten.</p>
+<table class="caption-top table">
+<caption>Stand: 18. Oktober 2026. Ein Pfad mit <code>~</code> liegt im eigenen Benutzerordner und gilt für alle Projekte. Weicht der eigene Agent ab, gilt seine Selbstauskunft.</caption>
+<thead>
+<tr class="header">
+<th>Werkzeug</th>
+<th>Anweisungsdatei im Projektordner</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Claude Code</td>
+<td><code>CLAUDE.md</code>. Liest <code>AGENTS.md</code> nur, wenn kein <code>CLAUDE.md</code> vorliegt. Alternativ in <code>CLAUDE.md</code> die Zeile <code>@AGENTS.md</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+</tr>
+<tr class="even">
+<td>Codex</td>
+<td><code>AGENTS.md</code>, zusätzlich global in <code>~/.codex/</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Antigravity</td>
+<td><code>AGENTS.md</code> oder <code>GEMINI.md</code>, zusätzlich Regeln in <code>.agents/rules/</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+</tr>
+</tbody>
+</table>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -548,6 +571,14 @@ Angelegt oder geändert: keine Dateien.</code></pre>
 <p><strong>Kurz bleiben.</strong> Die <code>AGENTS.md</code> wirkt in jeder Sitzung und bei jedem Auftrag. Fünf bis zehn Regeln wirken besser als ein Handbuch, weil der Agent jede Zeile bei jedem Auftrag berücksichtigt. Abläufe mit vielen Schritten, etwa „so sortieren wir neue Dateien ein“, gehören in einen Skill. Wie das geht, zeigt das Kapitel <a href="../agent-arbeitsumgebung/skills.html">Skills</a>.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Claude Code, „How Claude remembers your project“: <a href="https://code.claude.com/docs/en/memory" class="uri">https://code.claude.com/docs/en/memory</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Codex, „AGENTS.md“: <a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" class="uri">https://learn.chatgpt.com/docs/agent-configuration/agents-md</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Antigravity, „Rules“: <a href="https://antigravity.google/docs/rules/" class="uri">https://antigravity.google/docs/rules/</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

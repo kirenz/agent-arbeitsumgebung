@@ -350,6 +350,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Nach der Beschreibung entscheidet der Agent, ob er den Skill für einen Auftrag holt. Eine Beschreibung beginnt am besten mit „Verwenden, wenn …“ und nennt die Situation in den Worten, in denen wir den Auftrag später schreiben. Wo der Skills-Ordner liegt, hängt vom Werkzeug ab: Meist gibt es einen Ort für Skills eines Projekts, innerhalb des Projektordners, und einen für Skills, die in allen Projekten gelten. Deshalb die Frage an den Agenten.</p>
+<table class="caption-top table">
+<caption>Stand: 18. Oktober 2026. Ein Punkt am Anfang eines Ordnernamens bedeutet, dass der Ordner im Dateimanager meist ausgeblendet ist. Ein Pfad mit <code>~</code> liegt im eigenen Benutzerordner. Weicht der eigene Agent ab, gilt seine Selbstauskunft.</caption>
+<thead>
+<tr class="header">
+<th>Werkzeug</th>
+<th>Skills-Ordner im Projekt</th>
+<th>Skills-Ordner für alle Projekte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Claude Code</td>
+<td><code>.claude/skills/</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td><code>~/.claude/skills/</code></td>
+</tr>
+<tr class="even">
+<td>Codex</td>
+<td><code>.agents/skills/</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td><code>~/.agents/skills/</code></td>
+</tr>
+<tr class="odd">
+<td>Antigravity</td>
+<td><code>.agents/skills/</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></td>
+<td><code>~/.gemini/config/skills/</code></td>
+</tr>
+</tbody>
+</table>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -361,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Der Agent nennt nur einen Ordner für alle Projekte: den Ort für Projekt-Skills aus der <a href="../agent-arbeitsumgebung/chat-oder-agent.html#uebersicht-nach-werkzeug">Übersicht nach Werkzeug</a> nutzen.</li>
+<li>Der Agent nennt nur einen Ordner für alle Projekte: den Ort für Projekt-Skills aus der Tabelle oben nutzen.</li>
 <li>Der Skill-Ordner heißt anders als der Name im Kopf, etwa <code>Eingang einsortieren</code>: „Benenne den Skill-Ordner in eingang-einsortieren um.“</li>
 <li>Die Zeilen <code>---</code> fehlen: „Setze name und description in SKILL.md zwischen zwei Zeilen mit —.“</li>
 <li>Die Schritte stehen als Fließtext statt als Liste: Das ist meist in Ordnung, solange alle sechs Schritte enthalten sind.</li>
@@ -461,7 +488,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Der Agent fragt nach den Schritten oder sortiert ohne Plan: Diese Frage senden und den genannten Ort mit der <a href="../agent-arbeitsumgebung/chat-oder-agent.html#uebersicht-nach-werkzeug">Übersicht nach Werkzeug</a> vergleichen.</p>
+<li><p>Der Agent fragt nach den Schritten oder sortiert ohne Plan: Diese Frage senden und den genannten Ort mit der Tabelle in Schritt 1 vergleichen.</p>
 <pre class="text"><code>Welche Skills kennst du, und wo hast du gesucht?</code></pre>
 <p>Fehlt <code>eingang-einsortieren</code>, den Agenten den Skill-Ordner an einen der genannten Orte verschieben lassen. Danach eine neue Sitzung starten.</p></li>
 <li><p>Manche Werkzeuge erkennen einen neuen Skill erst in einer neuen Sitzung. Deshalb starten wir vor dem kurzen Auftrag eine neue Sitzung.</p></li>
@@ -565,6 +592,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Claude Code, „Skills“: <a href="https://code.claude.com/docs/en/skills" class="uri">https://code.claude.com/docs/en/skills</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Codex, „Build skills“: <a href="https://learn.chatgpt.com/docs/build-skills" class="uri">https://learn.chatgpt.com/docs/build-skills</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Antigravity, „Skills“: <a href="https://antigravity.google/docs/skills/" class="uri">https://antigravity.google/docs/skills/</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

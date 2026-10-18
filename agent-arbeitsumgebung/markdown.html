@@ -460,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="was-gerade-passiert-ist-2" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-2"><span class="header-section-number">2.3.2</span> Was gerade passiert ist</h3>
 <p>Zwei Aufträge, zwei Änderungen an derselben Datei. Beim zweiten haben wir vor dem Speichern genau die eine Zeile gesehen, die sich ändert.</p>
-<p>Der <strong>Zeilenvergleich</strong> zeigt eine Änderung als alte und neue Zeile, oft mit <code>-</code> und <code>+</code> davor (in vielen Werkzeugen „Diff“ genannt). So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: <code>- Kanal: E-Mail</code> wird zu <code>- Kanal: Telefon</code>, die Zeile <code>- Rückruf: ja</code> bleibt. Die <strong>Änderungsansicht</strong> ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.</p>
+<p>Der <strong>Zeilenvergleich</strong> zeigt eine Änderung als alte und neue Zeile, oft mit <code>-</code> und <code>+</code> davor. So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: <code>- Kanal: E-Mail</code> wird zu <code>- Kanal: Telefon</code>, die Zeile <code>- Rückruf: ja</code> bleibt. Die <strong>Änderungsansicht</strong> ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.</p>
 <p>Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile im Zeilenvergleich. Wir können die Datei auch selbst ändern. Ein Klick auf den Dateipfad im Chat öffnet sie in vielen Apps zum Bearbeiten; unsere Zeile sieht der Agent beim nächsten Lesen.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
@@ -562,20 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>PDFs bleiben trotzdem wichtig, weil viele Quellen nur so vorliegen. Wie wir sie in Markdown umwandeln und prüfen, zeigt das Kapitel <a href="../agent-arbeitsumgebung/pdf-als-quelle.html">PDFs als Quellen</a>.</p>
-<p>Zwei weitere Zeichen kommen in den folgenden Kapiteln vor: <code>**fett**</code> hebt ein Wort hervor, <code>[Text](Ziel)</code> setzt einen Link. Der Link kann auf eine Website zeigen oder auf eine andere Datei im Ordner, etwa <code>[Preisliste](quellen/text/preisliste-2026.md)</code>. Der zweite Fall ist für uns der wichtigere: Eine Übersicht verlinkt auf die Anfragen, eine Antwort auf die Quelle, aus der ein Betrag stammt. Der Agent folgt solchen Verweisen und öffnet die genannte Datei.</p>
-<div class="callout callout-style-simple callout-note callout-titled" title="Woher die Regeln stammen">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Hinweis</span>Woher die Regeln stammen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Markdown ist offen beschrieben. Die Grundregeln stehen in der Spezifikation <a href="https://spec.commonmark.org/">CommonMark</a> (Version 0.31.2 vom 28. Januar 2024). <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> baut darauf auf und ergänzt unter anderem Tabellen. Die meisten Editoren und Agenten folgen beiden. Kleine Abweichungen zwischen Programmen kommen vor, betreffen aber selten die Zeichen aus diesem Kapitel.</p>
-</div>
-</div>
+<p>Zwei weitere Zeichen kommen in den folgenden Kapiteln vor: <code>**fett**</code> hebt ein Wort hervor, <code>[Text](Ziel)</code> setzt einen Link. Der Link kann auf eine Website zeigen oder auf eine andere Datei im Ordner, etwa <code>[Preisliste](preisliste-2026.md)</code>. Der zweite Fall ist für uns der wichtigere: Eine Übersicht verlinkt auf die Anfragen, eine Antwort auf die Quelle, aus der ein Betrag stammt. Der Agent folgt solchen Verweisen und öffnet die genannte Datei.</p>
 <p>Die Dateien in <code>agent-test</code> brauchen wir später nicht mehr. Im nächsten Kapitel legt der Agent den eigentlichen Projektordner <code>kundenanfragen</code> an.</p>
 
 
