@@ -4,7 +4,7 @@ Agenten lesen und schreiben Markdown ohne Umweg. Fast alle Dateien, die in den f
 
 Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
-**Voraussetzung:** Der Ordner `agent-test` aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd) ist in der App des Agenten geöffnet. Darin liegt die Datei `hallo.md` aus dem Selbsttest.
+**Voraussetzung:** Der Ordner `agent-test` aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd) ist in der App des Agenten gewählt. Darin liegt die Datei `hallo.md` aus dem Selbsttest. Alle Aufträge und Prüfungen laufen im Chat; eine Datei zeigt uns der Agent auf Nachfrage einmal mit allen Zeichen und einmal formatiert.
 
 ## Schritt 1: Die erste Datei
 
@@ -15,61 +15,64 @@ Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das 
    ```
 
 2. Das Anlegen freigeben.
-3. `terminwunsch.md` in der App öffnen, so dass der Inhalt mit allen Zeichen sichtbar ist.
+3. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.
+   ```
+
 4. Prüfen: Zeile 1 beginnt mit `#`. Drei Zeilen beginnen mit `-`.
 5. Diese Frage senden:
 
    ```text
-   Wie öffne ich in dieser App die Vorschau einer .md-Datei, also die formatierte Ansicht? Nur antworten, nichts ändern.
+   Gib den Inhalt von terminwunsch.md jetzt formatiert wieder, so wie ein Leser ihn sehen soll.
    ```
 
-6. Die Vorschau so öffnen, wie der Agent es beschreibt.
-7. Prüfen: Die Vorschau zeigt eine Überschrift und drei Listenpunkte. Die Zeichen `#` und `-` sind ausgeblendet.
-8. Diese Frage senden:
+6. Prüfen: Die Antwort zeigt eine Überschrift und drei Listenpunkte. Die Zeichen `#` und `-` sind nicht zu sehen.
+7. Diese Frage senden:
 
    ```text
    Über welchen Kanal kam der Terminwunsch in terminwunsch.md? Nur antworten.
    ```
 
-9. Prüfen: Die Antwort lautet „E-Mail“.
+8. Prüfen: Die Antwort lautet „E-Mail“.
 
 ### Das sollten wir jetzt sehen
 
-Die Datei `terminwunsch.md` mit allen Zeichen:
-
-```markdown
-# Terminwunsch
-
-- Datum: 2026-10-05
-- Kanal: E-Mail
-- Anliegen: Termin für eine Reparatur
-```
-
-Dieselbe Datei in der Vorschau:
+Dieselbe Datei zweimal im Chat, einmal mit allen Zeichen, einmal formatiert:
 
 ```{=html}
-<div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">terminwunsch.md · Vorschau</div>
-<div style="padding:12px 18px 14px;line-height:1.5">
-<div style="font-size:1.5rem;font-weight:700;margin:0 0 8px">Terminwunsch</div>
-<ul style="margin:0;padding-left:22px"><li>Datum: 2026-10-05</li><li>Kanal: E-Mail</li><li>Anliegen: Termin für eine Reparatur</li></ul>
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
+<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+<div style="padding:12px;display:grid;gap:8px">
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Inhalt von <code>terminwunsch.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Terminwunsch
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Datum: 2026-10-05
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Kanal: E-Mail
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Anliegen: Termin für eine Reparatur</pre></div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Gib den Inhalt von terminwunsch.md jetzt formatiert wieder, so wie ein Leser ihn sehen soll.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Terminwunsch</div><ul style="margin:0;padding-left:20px"><li>Datum: 2026-10-05</li><li>Kanal: E-Mail</li><li>Anliegen: Termin für eine Reparatur</li></ul></div>
 </div>
 </div>
 ```
+
 
 ### Was gerade passiert ist
 
 Wir haben dem Agenten nur Überschrift und Liste genannt. Die Zeichen `#` und `-` hat er von selbst gesetzt. Das ist Markdown, das Dateiformat aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd).
 
-Der Inhalt der Datei genau so, wie er gespeichert ist, heißt **Rohtext**. `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile `- Kanal: E-Mail` und antwortet „E-Mail“. Die **Vorschau** ist die formatierte Ansicht derselben Datei. Die App blendet `#` und `-` aus und zeigt Überschrift und Liste. Wo die Vorschau liegt, ist je App verschieden, deshalb die Frage an den Agenten.
+Der Inhalt der Datei genau so, wie er gespeichert ist, heißt **Rohtext**. `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile `- Kanal: E-Mail` und antwortet „E-Mail“. Die **Vorschau** ist die formatierte Ansicht desselben Textes: Die Zeichen `#` und `-` verschwinden, übrig bleiben Überschrift und Liste. Der Chat zeigt Markdown meist so an. Darum ist die zweite Antwort die Vorschau unserer Datei.
 
 Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen Aufbau nutzen alle Anfragen in den folgenden Kapiteln, weil der Agent die drei Angaben so direkt abliest.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - `*` statt `-` am Zeilenanfang: Beide Zeichen machen einen Listenpunkt. Die Vorschau zeigt dasselbe.
 - Eine Leerzeile mehr oder weniger: In der Vorschau ändert sich meist nichts. Erst zwei Zeilenumbrüche hintereinander trennen Absätze.
-- Der Chat des Agenten zeigt Markdown oft schon formatiert. Gemeint ist in Schritt 6 die Vorschau der Datei im Ordner, nicht der Chat.
+- Beide Antworten zeigen die Zeichen: „Gib den Text ohne Codeblock wieder, damit der Chat ihn formatiert.“ Ein Codeblock ist ein Kasten im Chat, der Text unverändert mit allen Zeichen zeigt.
+- Beide Antworten sind formatiert: „Zeig mir den Inhalt in einem Codeblock, Zeile für Zeile.“
 - Die Datei heißt `terminwunsch.txt` oder liegt in einem Unterordner: „Benenne die Datei in terminwunsch.md um und lege sie direkt in diesen Ordner.“
+- Wer die Datei selbst sehen will: im Chat auf den Dateipfad klicken oder den Ordner `agent-test` im Finder oder Explorer öffnen.
 :::
 
 ## Schritt 2: Eine Tabelle
@@ -83,35 +86,34 @@ Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen A
    ```
 
 2. Das Anlegen freigeben.
-3. Den Rohtext von `uebersicht-test.md` öffnen.
-4. Prüfen: Drei Zeilen enthalten senkrechte Striche `|`. Unter der ersten davon steht eine Zeile aus Strichen wie `|---|---|`.
-5. Die Vorschau von `uebersicht-test.md` öffnen.
-6. Prüfen: Die Vorschau zeigt eine Tabelle mit Kopfzeile und zwei Zeilen.
+3. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von uebersicht-test.md zuerst mit allen Zeichen, so wie er in der Datei steht, und danach formatiert.
+   ```
+
+4. Prüfen: In der ersten Ansicht enthalten vier Zeilen senkrechte Striche `|`. Die zweite davon besteht aus Strichen wie `|---|---|`.
+5. Prüfen: Die zweite Ansicht zeigt eine Tabelle mit Kopfzeile und zwei Zeilen.
 
 ### Das sollten wir jetzt sehen
 
-```markdown
-# Übersicht
-
-| Datei | Anliegen |
-|---|---|
-| hallo.md | Test |
-| terminwunsch.md | Termin für eine Reparatur |
-```
-
 ```{=html}
-<div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">uebersicht-test.md · Vorschau</div>
-<div style="padding:12px 18px 14px;line-height:1.5">
-<div style="font-size:1.5rem;font-weight:700;margin:0 0 8px">Übersicht</div>
-<table style="border-collapse:collapse;font-size:.92rem">
-<thead><tr style="border-bottom:2px solid #dcd9d2;text-align:left"><th style="padding:6px 8px">Datei</th><th style="padding:6px 8px">Anliegen</th></tr></thead>
-<tbody><tr style="border-bottom:1px solid #dcd9d2"><td style="padding:6px 8px">hallo.md</td><td style="padding:6px 8px">Test</td></tr>
-<tr><td style="padding:6px 8px">terminwunsch.md</td><td style="padding:6px 8px">Termin für eine Reparatur</td></tr></tbody>
-</table>
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
+<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+<div style="padding:12px;display:grid;gap:8px">
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von uebersicht-test.md zuerst mit allen Zeichen, so wie er in der Datei steht, und danach formatiert.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Mit allen Zeichen:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Übersicht
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> Datei <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Anliegen <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span><i style="color:#23417a;font-style:normal;font-weight:700">|---|---|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> hallo.md <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Test <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> terminwunsch.md <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Termin für eine Reparatur <i style="color:#23417a;font-style:normal;font-weight:700">|</i></pre><p style="margin-top:10px">Formatiert:</p><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Übersicht</div><table style="border-collapse:collapse;font-size:.9rem;margin-top:4px"><thead><tr><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Datei</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Anliegen</th></tr></thead><tbody><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">hallo.md</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Test</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">terminwunsch.md</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Termin für eine Reparatur</td></tr></tbody></table></div>
 </div>
 </div>
 ```
+
+
+Zeile 4 ist die Trennzeile. Sie erscheint in der formatierten Ansicht nicht, macht aber aus den Zeilen mit Strichen eine Tabelle.
 
 ### Was gerade passiert ist
 
@@ -125,59 +127,71 @@ Die Striche müssen nicht untereinander stehen. Wichtig ist, dass jede Zeile gle
 - In einer Zeile fehlt eine Spalte: Die Vorschau zeigt die Zeile dann meist verschoben. Den Agenten die Spalte ergänzen lassen.
 :::
 
-## Schritt 3: Selbst ändern, dann den Agenten ändern lassen
+## Schritt 3: Ändern lassen und die Änderung prüfen
 
 **Voraussetzung:** `terminwunsch.md` aus Schritt 1 liegt im Ordner `agent-test`.
 
-1. Den Rohtext von `terminwunsch.md` im Editor der App öffnen.
-2. Unter den dritten Listenpunkt die Zeile `- Rückruf: ja` schreiben.
-3. Die Datei speichern.
-4. Prüfen: Die Vorschau zeigt vier Listenpunkte.
-5. Diesen Auftrag senden:
+1. Diesen Auftrag senden:
+
+   ```text
+   Ergänze in terminwunsch.md unter dem dritten Listenpunkt die Zeile „- Rückruf: ja“. Frage, bevor du speicherst.
+   ```
+
+2. Das Speichern freigeben.
+3. Diesen Auftrag senden:
 
    ```text
    Ändere in terminwunsch.md den Kanal von E-Mail auf Telefon. Lass alle anderen Zeilen unverändert. Zeige mir die Änderung Zeile für Zeile und frage, bevor du speicherst.
    ```
 
-6. Prüfen: Der Agent zeigt die Zeile mit dem Kanal alt und neu und fragt vor dem Speichern.
-7. Das Speichern freigeben.
-8. Den Rohtext von `terminwunsch.md` öffnen.
-9. Prüfen: Die Zeile lautet `- Kanal: Telefon`. Die Zeile `- Rückruf: ja` steht noch in der Datei.
+4. Prüfen: Der Agent zeigt die Zeile mit dem Kanal alt und neu und fragt vor dem Speichern.
+5. Das Speichern freigeben.
+6. Diese Frage senden:
+
+   ```text
+   Zeig mir den Inhalt von terminwunsch.md mit allen Zeichen.
+   ```
+
+7. Prüfen: Die Zeile lautet `- Kanal: Telefon`. Die Zeile `- Rückruf: ja` steht noch in der Datei.
 
 ### Das sollten wir jetzt sehen
 
-Die Änderung, wie der Agent sie vor dem Speichern zeigt:
+Die Änderung, wie der Agent sie vor dem Speichern zeigt, und die Datei danach:
 
 ```{=html}
-<div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
-<div style="padding:6px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Änderung an terminwunsch.md</div>
-<pre style="margin:0;padding:10px 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;background:transparent;border:0">  - Datum: 2026-10-05
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
+<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+<div style="padding:12px;display:grid;gap:8px">
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Ändere in terminwunsch.md den Kanal von E-Mail auf Telefon. Lass alle anderen Zeilen unverändert. Zeige mir die Änderung Zeile für Zeile und frage, bevor du speicherst.</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Eine Zeile ändert sich, alle anderen bleiben:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word">  - Datum: 2026-10-05
 <span style="display:block;background:#f7e3c3;text-decoration:line-through;text-decoration-color:#5b6170">- - Kanal: E-Mail</span><span style="display:block;background:#d9e4f5">+ - Kanal: Telefon</span>  - Anliegen: Termin für eine Reparatur
-  - Rückruf: ja</pre>
+  - Rückruf: ja</pre>Darf ich speichern?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>terminwunsch.md geändert</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von terminwunsch.md mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span># Terminwunsch
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span>- Datum: 2026-10-05
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span>- Kanal: <i style="color:#23417a;font-style:normal;font-weight:700">Telefon</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span>- Anliegen: Termin für eine Reparatur
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span>- Rückruf: ja</pre></div>
+</div>
 </div>
 ```
 
-Die Datei danach:
-
-```markdown
-# Terminwunsch
-
-- Datum: 2026-10-05
-- Kanal: Telefon
-- Anliegen: Termin für eine Reparatur
-- Rückruf: ja
-```
 
 ### Was gerade passiert ist
 
-Zwei Änderungen an derselben Datei: unsere Zeile von Hand, die Zeile des Agenten nach Rückfrage. Beide stehen jetzt im Rohtext.
+Zwei Aufträge, zwei Änderungen an derselben Datei. Beim zweiten haben wir vor dem Speichern genau die eine Zeile gesehen, die sich ändert.
 
-Der **Editor** ist der Bereich der App, in dem wir eine Datei selbst bearbeiten (ein Programm zum Bearbeiten von Text). Wir und der Agent schreiben in dieselbe Datei. Nach dem Speichern sieht der Agent unsere Zeile beim nächsten Lesen; darum blieb `- Rückruf: ja` stehen, obwohl der Agent danach die Datei geändert hat. Der **Zeilenvergleich** zeigt eine Änderung als alte und neue Zeile, oft mit `-` und `+` davor (in vielen Werkzeugen „Diff“ genannt). So prüfen wir vor der Freigabe genau die eine Zeile, die sich ändert. Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile in der Anzeige des Agenten.
+Der **Zeilenvergleich** zeigt eine Änderung als alte und neue Zeile, oft mit `-` und `+` davor (in vielen Werkzeugen „Diff“ genannt). So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: `- Kanal: E-Mail` wird zu `- Kanal: Telefon`, die Zeile `- Rückruf: ja` bleibt. Die **Änderungsansicht** ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.
+
+Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile im Zeilenvergleich. Wir können die Datei auch selbst ändern. Ein Klick auf den Dateipfad im Chat öffnet sie in vielen Apps zum Bearbeiten; unsere Zeile sieht der Agent beim nächsten Lesen.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Der Agent beschreibt die Änderung nur in Worten: „Zeige mir die alte und die neue Zeile.“
 - Die Zeile `- Rückruf: ja` fehlt nach der Änderung: Der Agent hat die Datei neu geschrieben. Beim nächsten Mal ablehnen, wenn der Zeilenvergleich mehr als die eine Zeile zeigt, und den Auftrag wiederholen.
-- Der Editor zeigt noch den alten Stand: Die Datei schließen und erneut öffnen. Die meisten Apps laden geänderte Dateien von selbst neu.
+- Statt einer Frage erscheint die Änderungsansicht: Das ist die Freigabe. Prüfen, dass nur die Zeile mit dem Kanal markiert ist, und annehmen.
+- Der Agent ändert ohne Rückfrage: den Modus mit Rückfragen wählen, siehe Kapitel [Chat oder Agent?](chat-oder-agent.qmd), Schritt 2, „Wenn es anders aussieht“.
 :::
 
 ## Schritt 4: Warum Markdown
@@ -196,7 +210,7 @@ Bei Markdown und Textdateien steht ja. Steht bei PDF ein Nein, ist das Kapitel [
 
 ### Was die drei Schritte gezeigt haben
 
-Wir haben Dateien gelesen, von Hand geändert und den Agenten ändern lassen, alles in derselben Datei und ohne Spezialprogramm. Das geht, weil Markdown reiner Text ist. Zum Vergleich dieselbe Datei als Word-Datei:
+Wir haben Dateien anlegen, anzeigen und ändern lassen, alles über den Chat und ohne Spezialprogramm. Das geht, weil Markdown reiner Text ist. Zum Vergleich dieselbe Datei als Word-Datei:
 
 :::: {layout-ncol=2}
 ::: {}
