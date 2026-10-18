@@ -1,6 +1,6 @@
 # Chat oder Agent?
 
-Eine Kundin schreibt: Die Reparatur war für Freitag zugesagt, bis heute keine Nachricht. Einem Chat-Assistenten lesen wir die Beschwerde vor und erhalten einen Antworttext. Ein Agent bekommt ein Ziel: „Lies die Beschwerde und lege einen Antwortentwurf ab.“ Dann arbeitet er in einer Schleife, bis das Ziel erreicht ist oder der Ablauf endet. Dieses Kapitel erklärt zuerst, was dabei passiert und wer die Arbeit ausführt. Danach richten wir den eigenen Agenten ein und geben ihm zwei Aufträge; die Erklärung folgt jeweils am eigenen Ergebnis.
+Eine Kundin schreibt: Die Reparatur war für Freitag zugesagt, bis heute keine Nachricht. Einem Chat-Assistenten lesen wir die Beschwerde vor und erhalten einen Antworttext. Ein Agent bekommt ein Ziel: „Lies die Beschwerde und lege einen Antwortentwurf ab.“ Dann arbeitet er in einer Schleife, bis das Ziel erreicht ist. Dieses Kapitel erklärt zuerst, was dabei passiert. Danach richten wir den eigenen Agenten ein und geben ihm zwei Aufträge; die Erklärung folgt jeweils am eigenen Ergebnis.
 
 ## Was ein KI-Agent tut
 
@@ -18,32 +18,18 @@ Ein **KI-Agent** ist ein Programm, das ein Ziel verfolgt. Es beobachtet seine Um
 ![Wiederholen](images/agent-wiederholen.png){fig-alt="Zwei Pfeile bilden einen Kreis, in der Mitte ein Haken"}
 :::
 
-Für die Beschwerde heißt das: Der Agent liest die Datei, stellt fest, dass ihm der Stand der Reparatur fehlt, durchsucht den Ordner, findet keinen Auftrag, schreibt den Entwurf mit einer Lücke für den Stand und meldet am Ende, was er getan hat. Der folgende Nachbau spielt diese Sitzung Schritt für Schritt ab. An der Rückfrage entscheiden wir selbst, ob der Agent die Datei anlegen darf.
+Für die Beschwerde heißt das: Der Agent liest die Beschwerde, stellt fest, dass ihm der Stand der Reparatur fehlt, durchsucht den Ordner, findet keinen Auftrag, schreibt den Entwurf mit einer Lücke für den Stand und meldet am Ende, was er getan hat. Der folgende Nachbau spielt diesen Ablauf Schritt für Schritt ab. An der Rückfrage entscheiden wir selbst, ob der Agent die Datei anlegen darf.
 
 ```{=html}
-<iframe class="muster-agent" src="widgets/01-agent-schleife.html" title="Nachbau einer Agentensitzung: fünf Stationen an einer Kundenbeschwerde" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
+<iframe class="muster-agent" src="widgets/01-agent-schleife.html" title="Nachbau eines Agenten: fünf Stationen an einer Kundenbeschwerde" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
 <script>if(!window.__maResize){window.__maResize=1;addEventListener('message',function(e){if(!e.data||e.data.type!=='claude-widget-height')return;document.querySelectorAll('iframe.muster-agent').forEach(function(f){if(f.contentWindow===e.source)f.style.height=(e.data.height+8)+'px';});});}</script>
 ```
 
-Zum Vergleich: Der Chat gleicht einem externen Berater am Telefon, dem wir jedes Mal alles vorlesen. Der Agent gleicht einem neuen Mitarbeiter am eigenen Schreibtisch mit Zugang zur Ablage. Vor wichtigen Schritten fragt er nach. An einer Stelle hinkt der Vergleich: Der Agent erinnert sich nicht von selbst an gestern. Jede neue **Sitzung** (Unterhaltung vom Start bis zum Schließen) beginnt ohne Erinnerung an die vorige. Darum steht in diesem Buch alles Wichtige als Datei im Ordner.
+Zum Vergleich: Der Chat gleicht einem externen Berater am Telefon, dem wir jedes Mal alles vorlesen. Der Agent gleicht einem neuen Mitarbeiter am eigenen Schreibtisch mit Zugang zur Ablage. Vor wichtigen Schritten fragt er nach. An einer Stelle hinkt der Vergleich: Der Agent erinnert sich nicht von selbst an gestern. Jede neue Unterhaltung mit ihm beginnt ohne Erinnerung an die vorige. Darum steht in diesem Buch alles Wichtige als Datei im Ordner.
 
-## Das Modell führt nichts aus, die App fragt uns
+## Welcher Agent hier gemeint ist
 
-Im Nachbau kamen zwei Arten von Zeilen vor: Sätze des Agenten und kurze Meldungen wie „liest anfragen/…“. Dahinter stehen die zwei Teile eines Agenten.
-
-Das **Sprachmodell** (das KI-Modell, das den Text erzeugt) liest den bisherigen Verlauf und schreibt Text. Mehr kann es nicht. Will es ein Werkzeug nutzen, schreibt es diesen Wunsch als Text auf, etwa „Lies die Datei anfragen/2026-10-07-beschwerde.md“. Der **Rahmen** (englisch: Agent Harness) ist die Software um das Modell herum, bei einem Agenten auf dem eigenen Rechner die App. Sie erkennt den Werkzeugwunsch, führt ihn aus, legt das Ergebnis dem Modell wieder vor und startet die nächste Runde. Vor Änderungen und Befehlen hält sie an und fragt uns. Die Rückfrage „antworten/2026-10-07-beschwerde-antwort.md anlegen?“ stellt also der Rahmen. Ein Agent ist Modell plus Werkzeuge plus Schleife, dazu alles, was das Modell gerade vorliegen hat (der Kontext).[^anthropic-agents] Der Fachbegriff für diesen Wechsel aus Überlegen und Handeln lautet ReAct (kurz für Reasoning and Acting).[^react]
-
-Der Unterschied zum Chat liegt im Rahmen. Der Rahmen eines Chat-Assistenten reicht dem Modell das Eingabefeld und gibt die Antwort zurück. Der Rahmen eines Agenten gibt dem Modell zusätzlich Werkzeuge und lässt die Schleife laufen, bis das Ziel erreicht ist. Welche Werkzeuge es gibt und wann wir gefragt werden, legt darum der Rahmen fest, also die App, die wir wählen.
-
-## Wo ein Agent arbeitet: drei Formen
-
-Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugreifen. Die Schleife ist überall dieselbe. Oft bietet eine App mehrere dieser Formen an: Die Claude-Desktop-App hat etwa einen Chat und den Bereich „Code“.
-
-1. Beim Anbieter im Netz: Der Agent arbeitet auf den Rechnern des Anbieters. Seine Werkzeuge sind Websuche, ein eigener Browser oder verbundene Konten wie E-Mail und Kalender. Die Ergebnisse erscheinen im Chat oder in den verbundenen Diensten. Ein Beispiel ist ein Assistent in einer Chat-App, der Hotels in seinem Browser vergleicht und drei Vorschläge meldet.
-2. In einem Workflow (etwa in n8n): Der Agent übernimmt einen festen Schritt in einem automatischen Ablauf.
-3. Auf dem eigenen Rechner in einem Ordner: Das ist der **Coding-Agent**. Seine Werkzeuge lesen, anlegen und ändern Dateien in diesem Ordner und führen Befehle aus. Die Ergebnisse liegen als Dateien im Ordner.
-
-Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse.
+Agenten gibt es in Chat-Apps im Netz, in automatischen Abläufen und auf dem eigenen Rechner. Die Schleife ist überall dieselbe. In diesem Buch geht es um die Form auf dem eigenen Rechner: den **Coding-Agenten**. Seine Werkzeuge lesen, anlegen und ändern Dateien in einem Ordner. Gebaut wurde er für Programmcode. Er arbeitet aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse. Beispiele sind Claude Code (Anthropic), Codex (OpenAI) und Antigravity (Google); Cursor arbeitet ähnlich.
 
 Am schnellsten gelingt der Einstieg mit dem Agenten, der im eigenen Abo bereits enthalten ist: Codex in ChatGPT Plus und höher, Claude Code in Claude Pro und höher. Ohne Abo empfiehlt sich Antigravity, weil Google ein begrenztes Kontingent kostenlos bereitstellt; dafür genügt ein privates Google-Konto.
 
@@ -56,26 +42,26 @@ Am schnellsten gelingt der Einstieg mit dem Agenten, der im eigenen Abo bereits 
 
 : Stand: 18.10.2026. Abos und Grenzen ändern sich, maßgeblich sind die Seiten der Anbieter.
 
-Wir arbeiten in der **App** des jeweiligen Werkzeugs, dem Programm auf dem Rechner. In jeder dieser Apps steht der Chat im Mittelpunkt: Dort geben wir Aufträge, dort erscheinen Rückfragen, Hinweise auf geänderte Dateien und Antworten. Die weiteren Bereiche der Apps unterscheiden sich je Werkzeug und ändern sich oft; das Buch braucht sie nicht. Was sich je Werkzeug unterscheidet, etwa Dateinamen und Speicherorte, steht gesammelt in der [Übersicht nach Werkzeug](#uebersicht-nach-werkzeug).
+Wir arbeiten in der **App** des jeweiligen Werkzeugs, dem Programm auf dem Rechner. In jeder dieser Apps steht der Chat im Mittelpunkt: Dort geben wir Aufträge, dort erscheinen Rückfragen, Hinweise auf geänderte Dateien und Antworten. Die weiteren Bereiche der Apps braucht das Buch nicht. Die Apps sind englisch beschriftet; die Begriffe in Anführungszeichen stehen so in der App.
 
 Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
 [^kaggle-agents]: Wiesinger, Marlow und Vuskovic, Agents, Kaggle-Whitepaper (2025): <https://www.kaggle.com/whitepaper-agents>
-[^anthropic-agents]: Anthropic, Building effective agents, 19.12.2024: <https://www.anthropic.com/engineering/building-effective-agents>
-[^react]: Yao et al., ReAct: Synergizing Reasoning and Acting in Language Models (2023): <https://arxiv.org/abs/2210.03629>
 
 ## Schritt 1: App installieren und Ordner wählen
 
 **Voraussetzung:** Zugang zu einem der Werkzeuge aus der Tabelle oben.
 
 1. Die App des eigenen Werkzeugs aus der Tabelle oben herunterladen.
-2. Die App installieren und sich anmelden. Die Anleitung des Herstellers steht in der Tabelle.
-3. Einen leeren Ordner `agent-test` anlegen, etwa im Ordner `Dokumente`.
-4. Den Ordner `agent-test` in der App wählen. Je App geht das so:
+2. Die App wie jedes andere Programm installieren. Bei Fragen hilft die Anleitung des Herstellers aus der Tabelle.
+3. In der App anmelden. Je nach App öffnet sich dafür der Browser. Nach der Anmeldung zurück zur App wechseln.
+4. Im Ordner `Dokumente` einen leeren Ordner `agent-test` anlegen. Finder: Menü „Ablage“, dann „Neuer Ordner“. Windows-Explorer: „Neu“, dann „Ordner“.
+5. Den Ordner `agent-test` in der App wählen. Je App geht das so:
    - Claude-Desktop-App: den Bereich „Code“ öffnen. Vor der ersten Nachricht unter „Project folder“ den Ordner `agent-test` wählen und unter „Environment“ den Eintrag „Local“.
    - Codex-App: beim Start „open a folder“ wählen, dann den Ordner `agent-test`.
    - Antigravity-App: in der linken Seitenleiste auf „New Project“ (Ordner mit Plus) klicken, dann auf „Add Folder“. `agent-test` wählen und auf „Create“ klicken.
-5. Prüfen: Die App zeigt den Namen `agent-test`, etwa in der Kopfzeile oder bei der Ordnerwahl. Der Chat ist leer.
+6. Fragt der Rechner, ob die App auf den Ordner „Dokumente“ zugreifen darf: den Zugriff erlauben.
+7. Prüfen: Die App zeigt den Namen `agent-test`, etwa in der Kopfzeile oder bei der Ordnerwahl. Der Chat ist leer.
 
 ### Das sollten wir jetzt sehen
 
@@ -92,7 +78,7 @@ Schema einer App, kein echtes Produkt:
 ```
 
 
-Oben der gewählte Ordner, darunter der Chat mit dem Eingabefeld. Weitere Bereiche der App, etwa Dateien, Terminal oder Änderungen, brauchen wir in diesem Buch nicht.
+Oben der gewählte Ordner, darunter der Chat mit dem Eingabefeld. Weitere Bereiche der App brauchen wir in diesem Buch nicht.
 
 ### Was gerade passiert ist
 
@@ -104,13 +90,17 @@ Welches Werkzeug wir nutzen, ist für dieses Buch unerheblich. Es muss drei Ding
 
 1. Es arbeitet in einem Ordner auf dem eigenen Rechner: Dateien lesen, anlegen und ändern.
 2. Es fragt vor Änderungen und vor dem Ausführen von Befehlen nach oder zeigt die Änderungen zur Prüfung.
-3. Es liest eine Anweisungsdatei im Projektordner.
+3. Es liest eine Anweisungsdatei (eine Datei mit Regeln) im Projektordner.
 
 Schritt 2 prüft die ersten beiden Punkte, Schritt 3 den dritten.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
+- Alles in der App ist auf Englisch: Das ist normal. Die Begriffe aus Schritt 5 stehen so in der App. Der Agent selbst antwortet auf Deutsch, wenn wir auf Deutsch schreiben.
+- Der Rechner fragt, ob die App auf den Ordner „Dokumente“ oder „Dateien und Ordner“ zugreifen darf: den Zugriff erlauben. Ohne ihn sieht der Agent den Ordner nicht.
+- Die Anmeldung öffnet den Browser, und danach passiert in der App nichts: zurück zur App wechseln. Je nach App dauert es einen Moment, bis sie die Anmeldung übernimmt.
+- Die Anmeldung bei Antigravity mit einem Firmen- oder Hochschulkonto schlägt fehl: Ein solches Konto kann für Antigravity gesperrt sein. Ein privates Google-Konto nutzen.
 - Die Claude-Desktop-App zeigt nur einen Chat ohne Ordnerwahl: Das ist der normale Chat. In den Bereich „Code“ wechseln.
-- Die App zeigt neben dem Chat weitere Bereiche, etwa Dateien, Terminal oder Änderungen: unbeachtet lassen. Für das Buch genügt der Chat.
+- Die App zeigt neben dem Chat weitere Bereiche, etwa Dateien oder Änderungen: unbeachtet lassen. Für das Buch genügt der Chat.
 - Die App fragt nach einem Projekt oder Arbeitsbereich: Gemeint ist der Ordner. `agent-test` wählen.
 - Die App verlangt ein Abo, das wir nicht haben: Antigravity mit einem privaten Google-Konto nutzen.
 :::
@@ -165,7 +155,7 @@ Wortlaut, Datum und Beschriftung der Buttons unterscheiden sich je App. Manche A
 
 Wir haben einen Satz geschrieben. Der Agent hat nachgefragt und dann die Datei `hallo.md` in unserem Ordner angelegt. Das Ergebnis liegt als Datei auf unserem Rechner, und der Agent hat es uns auf Nachfrage im Chat gezeigt.
 
-Das war die Schleife aus dem Abschnitt [Was ein KI-Agent tut](#was-ein-ki-agent-tut) am eigenen Ergebnis. Unser Auftrag war das Ziel. Der Agent hat den leeren Ordner beobachtet, den Inhalt überlegt und mit dem Werkzeug „Datei anlegen“ gehandelt. Die Rückfrage davor kam vom Rahmen, also von der App. Eine Zeile wie „hallo.md angelegt“ im Chat zeigt den ausgeführten Werkzeugwunsch. Mit einem Chat-Assistenten hätten wir den Text erhalten und `hallo.md` selbst angelegt.
+Das war die Schleife aus dem Abschnitt [Was ein KI-Agent tut](#was-ein-ki-agent-tut) am eigenen Ergebnis. Unser Auftrag war das Ziel. Der Agent hat den leeren Ordner beobachtet, den Inhalt überlegt und mit dem Werkzeug „Datei anlegen“ gehandelt. Den Text hat der Agent geschrieben. Angelegt hat die Datei die App, und sie hat uns vorher gefragt. Eine Zeile wie „hallo.md angelegt“ im Chat zeigt das ausgeführte Werkzeug. Mit einem Chat-Assistenten hätten wir den Text erhalten und `hallo.md` selbst angelegt.
 
 `hallo.md` ist eine **Markdown**-Datei. Markdown ist reiner Text mit wenigen Zeichen für die Gliederung: `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Die Dateien enden auf `.md`. Fast alle Dateien in diesem Buch sind Markdown-Dateien, weil Mensch und Agent dieselbe Datei ohne Spezialprogramm lesen und jede geänderte Zeile sichtbar ist. Im Kapitel [Markdown: Text, den Mensch und Agent lesen](markdown.qmd) legen wir Schritt für Schritt weitere Markdown-Dateien an und sehen dort auch, was eine Word-Datei davon unterscheidet.
 
@@ -179,13 +169,13 @@ Das war die Schleife aus dem Abschnitt [Was ein KI-Agent tut](#was-ein-ki-agent-
 
 ### So sieht es mit echtem Material aus
 
-Der folgende Nachbau zeigt dasselbe Prinzip mit drei Kundenanfragen im Ordner `kundenanfragen`, den wir im Kapitel [Der Projektordner](projektordner.qmd) selbst anlegen. Er stellt eine Sitzung nach, kein echtes Produkt: Der Agent liest die Anfragen selbst, fragt vor dem Anlegen und zeigt die fertige Übersicht auf Nachfrage im Chat.
+Der folgende Nachbau zeigt dasselbe Prinzip mit drei Kundenanfragen im Ordner `kundenanfragen`, den wir im Kapitel [Der Projektordner](projektordner.qmd) selbst anlegen. Er stellt einen Chatverlauf nach, kein echtes Produkt: Der Agent liest die Anfragen selbst, fragt vor dem Anlegen und zeigt die fertige Übersicht auf Nachfrage im Chat.
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
 <div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat</span></div>
 <div style="padding:12px;display:grid;gap:8px">
-<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Sortiere die Anfragen in anfragen/ nach Dringlichkeit und schreibe das Ergebnis in UEBERSICHT.md.</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Sortiere die Anfragen im Ordner anfragen nach Dringlichkeit und schreibe das Ergebnis in die Datei UEBERSICHT.md.</div>
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest anfragen/2026-10-05-terminwunsch.md</div>
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest anfragen/2026-10-06-preisfrage.md</div>
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest anfragen/2026-10-07-beschwerde.md</div>
@@ -193,26 +183,27 @@ Der folgende Nachbau zeigt dasselbe Prinzip mit drei Kundenanfragen im Ordner `k
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>UEBERSICHT.md angelegt</div>
 <div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Eine Datei angelegt (<code>UEBERSICHT.md</code>), keine geändert. Dringendste Anfrage ist die Beschwerde vom 7.10.: Die Reparatur war für Freitag zugesagt, die Kundin hat keine Nachricht.</div>
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von UEBERSICHT.md.</div>
-<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Übersicht der Anfragen</div><p>Sortiert nach Dringlichkeit, dringendste zuerst.</p><table style="border-collapse:collapse;font-size:.9rem;margin-top:4px"><thead><tr><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Rang</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Datei</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Anliegen</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Grund</th></tr></thead><tbody><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">1</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">2026-10-07-beschwerde.md</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Reparatur nicht fertig</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">für Freitag zugesagt, keine Nachricht</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">2</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">2026-10-05-terminwunsch.md</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Termin für eine Reparatur</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Termin nächste Woche gewünscht</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">3</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">2026-10-06-preisfrage.md</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Preis für eine Reparatur</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">keine Frist genannt</td></tr></tbody></table></div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Übersicht der Anfragen</div><p>Sortiert nach Dringlichkeit, dringendste zuerst.</p><table style="border-collapse:collapse;font-size:.9rem;margin-top:4px"><thead><tr><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Rang</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Anfrage</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Anliegen</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Grund</th></tr></thead><tbody><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">1</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Beschwerde vom 7.10.</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Reparatur nicht fertig</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">für Freitag zugesagt, keine Nachricht</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">2</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Terminwunsch vom 5.10.</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Termin für eine Reparatur</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Termin nächste Woche gewünscht</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">3</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Preisfrage vom 6.10.</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Preis für eine Reparatur</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">keine Frist genannt</td></tr></tbody></table></div>
 </div>
 </div>
 ```
 
-Mit einem Chat-Assistenten hieße das: jede Anfrage öffnen, den Text kopieren, in den Chat einfügen, um eine Sortierung bitten und die Antwort danach von Hand in eine Datei übertragen. Beim nächsten Mal beginnt das Kopieren von vorn. Dem Agenten genügt ein Satz: „Sortiere die Anfragen in `anfragen/` nach Dringlichkeit und schreibe das Ergebnis in `UEBERSICHT.md`.“
+Mit einem Chat-Assistenten hieße das: jede Anfrage öffnen, den Text kopieren, in den Chat einfügen, um eine Sortierung bitten und die Antwort danach von Hand in eine Datei übertragen. Beim nächsten Mal beginnt das Kopieren von vorn. Dem Agenten genügt ein Satz: „Sortiere die Anfragen im Ordner `anfragen` nach Dringlichkeit und schreibe das Ergebnis in die Datei `UEBERSICHT.md`.“
 
-Vier Dinge fallen auf. Der Auftrag nennt nur den Ordner und die Zieldatei; niemand kopiert eine Anfrage in den Chat. Der Agent öffnet jede der drei Anfragen selbst und liest die Zeile mit dem Anliegen. Bevor er etwas anlegt, fragt er. Und das Ergebnis steht danach als Datei im Ordner: Der Agent hat die Datei `UEBERSICHT.md` neu angelegt, so wie es der Auftrag verlangt. Sie liegt jetzt neben dem Ordner `anfragen/` und hat diesen Inhalt:
+Vier Dinge fallen auf. Der Auftrag nennt nur den Ordner und die Zieldatei; niemand kopiert eine Anfrage in den Chat. Der Agent öffnet jede der drei Anfragen selbst und liest die Zeile mit dem Anliegen. Bevor er etwas anlegt, fragt er. Und das Ergebnis steht danach als Datei im Ordner: Der Agent hat die Datei `UEBERSICHT.md` neu angelegt, so wie es der Auftrag verlangt. Sie liegt jetzt neben dem Ordner mit den Anfragen und hat diesen Inhalt:
 
 ```{.markdown filename="UEBERSICHT.md"}
 # Übersicht der Anfragen
 
 Sortiert nach Dringlichkeit, dringendste zuerst.
 
-| Rang | Datei | Anliegen | Grund |
+| Rang | Anfrage | Anliegen | Grund |
 |---|---|---|---|
-| 1 | 2026-10-07-beschwerde.md | Reparatur nicht fertig | für Freitag zugesagt, keine Nachricht |
-| 2 | 2026-10-05-terminwunsch.md | Termin für eine Reparatur | Termin nächste Woche gewünscht |
-| 3 | 2026-10-06-preisfrage.md | Preis für eine Reparatur | keine Frist genannt |
+| 1 | Beschwerde vom 7.10. | Reparatur nicht fertig | für Freitag zugesagt, keine Nachricht |
+| 2 | Terminwunsch vom 5.10. | Termin für eine Reparatur | Termin nächste Woche gewünscht |
+| 3 | Preisfrage vom 6.10. | Preis für eine Reparatur | keine Frist genannt |
 ```
+
 
 Auf die Frage „Zeig mir den Inhalt von UEBERSICHT.md“ gibt der Agent dieselbe Datei im Chat formatiert wieder, wie im Nachbau oben: Aus `#` wird eine Überschrift, aus den Zeilen mit senkrechten Strichen eine Tabelle. Diese formatierte Darstellung im Chat ist die Vorschau, mit der wir im Kapitel [Markdown](markdown.qmd) arbeiten.
 
@@ -222,7 +213,7 @@ Die Datei bleibt liegen. Kommt morgen eine vierte Anfrage, ergänzt der Agent di
 |---|---|---|
 | **Woher kommt das Material?** | Wir kopieren es ins Eingabefeld. | Der Agent öffnet die Dateien im Ordner selbst. |
 | **Wohin geht das Ergebnis?** | Es steht als Text im Chat und wird von Hand übertragen. | Es entsteht als Datei im Ordner. |
-| **Was bleibt für das nächste Mal?** | Der Chatverlauf, sofern wir ihn wiederfinden. | Die Dateien im Ordner, für jede neue Sitzung lesbar. |
+| **Was bleibt für das nächste Mal?** | Der Chatverlauf, sofern wir ihn wiederfinden. | Die Dateien im Ordner, für jede neue Unterhaltung lesbar. |
 | **Wer behält die Kontrolle?** | Wir, weil nichts außerhalb des Chats passiert. | Wir, weil der Agent vor Änderungen fragt. |
 
 Der Agent lohnt sich also, wenn das Material schon als Dateien vorliegt oder das Ergebnis als Datei entstehen soll. Für eine kurze Frage ohne Material reicht der Chat. Vier Aufgaben aus dem Büroalltag zeigen die Grenze:
@@ -273,47 +264,28 @@ Diese **Selbstauskunft** ersetzt im Buch die Produktdokumentation. Hängt ein De
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Die Antwort nennt mehrere Dateien oder Orte: Das ist in Ordnung. Wichtig ist der Name der Datei im Projektordner.
-- Der Agent nennt keine Anweisungsdatei: in der Übersicht nach Werkzeug unten nachsehen. Liest das Werkzeug keine Anweisungsdatei, erfüllt es die dritte Anforderung nicht.
+- Der Agent nennt keine Anweisungsdatei: Die Dateinamen der verbreiteten Werkzeuge stehen im Kapitel [AGENTS.md: die Hausordnung](agents-md.qmd). Liest das Werkzeug keine Anweisungsdatei, erfüllt es die dritte Anforderung nicht.
 :::
 
 ## Übersicht nach Werkzeug {#uebersicht-nach-werkzeug}
 
-Diese Tabelle ist die einzige Stelle im Buch mit Produktdetails. Sie nennt drei verbreitete Agenten. Andere Werkzeuge funktionieren ebenso, wenn sie die drei Anforderungen oben erfüllen.
+Die Tabelle nennt für drei verbreitete Agenten, was wir für den Einstieg brauchen: App, Zugang, Ordnerwahl und Rückfrage. Andere Werkzeuge funktionieren ebenso, wenn sie die drei Anforderungen oben erfüllen. Weitere Produktdetails stehen jeweils in dem Kapitel, in dem sie gebraucht werden, mit Stand-Datum: der Name der Anweisungsdatei in [AGENTS.md: die Hausordnung](agents-md.qmd), der Skills-Ordner in [Skills: Abläufe, die bleiben](skills.qmd), die MCP-Konfiguration in [MCP: Zugänge zu anderen Systemen](mcp.qmd), Plugins und Konnektoren in [Konnektoren und Plugins](konnektoren-plugins.qmd).
 
 **Stand: 18. Oktober 2026.** Quelle ist jeweils die Dokumentation des Herstellers.
 
 | Begriff | Claude Code | Codex | Antigravity |
 |---|---|---|---|
 | **App** | [Claude-Desktop-App](https://claude.com/download), Bereich „Code“ | [Codex-App](https://learn.chatgpt.com/docs/app) | [Antigravity-App](https://antigravity.google/download) |
+| **Zugang** | Claude-Abo, Pro oder höher | ChatGPT-Abo, Plus oder höher | privates Google-Konto, begrenztes Kontingent kostenlos |
 | **Ordner wählen** | Im Bereich „Code“ vor der ersten Nachricht: „Project folder“ wählen, „Environment“ auf „Local“.[^cc-desktop] | Beim Start „open a folder“ wählen.[^cx-app] | Seitenleiste „New Project“, dann „Add Folder“ und „Create“.[^ag-start] |
-| **Rückfrage und Änderungen** | Modus „Manual“ neben dem Senden-Button fragt vor Änderungen. Eine Anzeige wie „+12 -1“ öffnet die Änderungsansicht.[^cc-desktop] | Rückfrage im Chat. Einstellungen zu Berechtigungen laut Herstellerdokumentation.[^cx-app] | Änderungen erscheinen als Diffs zur Prüfung. „Local mode“ arbeitet direkt im Ordner.[^ag-start] |
-| **Anweisungsdatei** | `CLAUDE.md`. Liest `AGENTS.md` nur, wenn kein `CLAUDE.md` vorliegt. Alternativ in `CLAUDE.md` die Zeile `@AGENTS.md`.[^cc-memory] | `AGENTS.md` im Projektordner, zusätzlich global in `~/.codex/`.[^cx-agents] | `AGENTS.md` oder `GEMINI.md`, zusätzlich Regeln in `.agents/rules/`.[^ag-rules] |
-| **Skills-Ordner** | `.claude/skills/` im Projekt, persönlich `~/.claude/skills/`.[^cc-skills] | `.agents/skills/` im Projekt, persönlich `~/.agents/skills/`.[^cx-skills] | `.agents/skills/` im Projekt, global `~/.gemini/config/skills/`.[^ag-skills] |
-| **MCP-Konfiguration** | Datei `.mcp.json` im Projekt.[^cc-mcp] | Datei `.codex/config.toml` im Projekt oder `~/.codex/config.toml`.[^cx-mcp] | MCP Store im Agent-Panel, Datei `mcp_config.json`.[^ag-mcp] |
-| **Plugins und Konnektoren** | Plugins aus Marketplaces.[^cc-plugins] Konnektoren (Connectors) in den Claude-Apps, je Werkzeug freigebbar.[^cc-connectors] | Plugins bündeln Skills und MCP-Server. Ein eigener Begriff „Konnektor“ ist nicht belegt.[^cx-plugins] | Plugins mit `plugin.json`, Marketplace in der App.[^ag-plugins] |
-| **Installations&shy;anleitung** | [code.claude.com/docs/en/desktop](https://code.claude.com/docs/en/desktop) | [learn.chatgpt.com/docs/app](https://learn.chatgpt.com/docs/app) | [antigravity.google/docs](https://antigravity.google/docs) |
-
-Ein Pfad mit `~` liegt im eigenen Benutzerordner und gilt für alle Projekte. Pfade ohne `~` liegen im Projektordner und gelten nur dort. Ein Punkt am Anfang eines Ordnernamens (`.agents/`) bedeutet, dass der Ordner im Dateimanager meist ausgeblendet ist. Die Begriffe Skills, MCP, Plugins und Konnektoren erklären die späteren Kapitel.
+| **Rückfrage und Änderungen** | Modus „Manual“ neben dem Senden-Button fragt vor Änderungen. Eine Anzeige wie „+12 -1“ öffnet die Änderungsansicht.[^cc-desktop] | Rückfrage im Chat. Einstellungen zu Berechtigungen laut Anleitung des Herstellers.[^cx-app] | Änderungen erscheinen zur Prüfung, Zeile für Zeile. „Local mode“ arbeitet direkt im Ordner.[^ag-start] |
 
 [^cc-desktop]: Claude Code, „Claude Code on desktop“: <https://code.claude.com/docs/en/desktop>
 [^cx-app]: Codex, „Codex app“: <https://learn.chatgpt.com/docs/app>
 [^ag-start]: Antigravity, „Getting started“: <https://antigravity.google/docs/getting-started>
-[^cc-memory]: Claude Code, „How Claude remembers your project“: <https://code.claude.com/docs/en/memory>
-[^cx-agents]: Codex, „AGENTS.md“: <https://learn.chatgpt.com/docs/agent-configuration/agents-md>
-[^ag-rules]: Antigravity, „Rules“: <https://antigravity.google/docs/rules/>
-[^cc-skills]: Claude Code, „Skills“: <https://code.claude.com/docs/en/skills>
-[^cx-skills]: Codex, „Build skills“: <https://learn.chatgpt.com/docs/build-skills>
-[^ag-skills]: Antigravity, „Skills“: <https://antigravity.google/docs/skills/>
-[^cc-mcp]: Claude Code, „MCP“: <https://code.claude.com/docs/en/mcp>
-[^cx-mcp]: Codex, „MCP“: <https://learn.chatgpt.com/docs/extend/mcp>
-[^ag-mcp]: Antigravity, „MCP“: <https://antigravity.google/docs/mcp/>
-[^cc-plugins]: Claude Code, „Plugins“: <https://code.claude.com/docs/en/plugins>
-[^cc-connectors]: Claude Help Center, „Use connectors to extend Claude's capabilities“: <https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities>
-[^cx-plugins]: Codex, „Plugins“: <https://learn.chatgpt.com/docs/plugins>
-[^ag-plugins]: Antigravity, „Plugins“: <https://antigravity.google/docs/plugins/>
 
 ::: {.callout-note title="Die Tabelle altert"}
-Hersteller ändern Dateinamen und Speicherorte. Weicht der eigene Agent von der Tabelle ab, gilt seine Selbstauskunft. Die Kapitel dieses Buches nennen deshalb keine Produktpfade und bleiben gültig, wenn sich eine Zeile hier ändert.
+Hersteller ändern Bezeichnungen und Speicherorte. Weicht der eigene Agent von einer Angabe ab, gilt seine Selbstauskunft. Die Kapitel dieses Buches nennen Produktdetails nur mit Stand-Datum und bleiben gültig, wenn sich eine Angabe ändert.
 :::
 
 ## Vier Bausteine für die Arbeit mit einem Agenten

@@ -62,8 +62,20 @@ Die Datei hat zwei Teile. Unten stehen die Schritte in gewöhnlichem Markdown. O
 
 Nach der Beschreibung entscheidet der Agent, ob er den Skill für einen Auftrag holt. Eine Beschreibung beginnt am besten mit „Verwenden, wenn …“ und nennt die Situation in den Worten, in denen wir den Auftrag später schreiben. Wo der Skills-Ordner liegt, hängt vom Werkzeug ab: Meist gibt es einen Ort für Skills eines Projekts, innerhalb des Projektordners, und einen für Skills, die in allen Projekten gelten. Deshalb die Frage an den Agenten.
 
+| Werkzeug | Skills-Ordner im Projekt | Skills-Ordner für alle Projekte |
+|---|---|---|
+| Claude Code | `.claude/skills/`[^cc-skills] | `~/.claude/skills/` |
+| Codex | `.agents/skills/`[^cx-skills] | `~/.agents/skills/` |
+| Antigravity | `.agents/skills/`[^ag-skills] | `~/.gemini/config/skills/` |
+
+: Stand: 18. Oktober 2026. Ein Punkt am Anfang eines Ordnernamens bedeutet, dass der Ordner im Dateimanager meist ausgeblendet ist. Ein Pfad mit `~` liegt im eigenen Benutzerordner. Weicht der eigene Agent ab, gilt seine Selbstauskunft.
+
+[^cc-skills]: Claude Code, „Skills“: <https://code.claude.com/docs/en/skills>
+[^cx-skills]: Codex, „Build skills“: <https://learn.chatgpt.com/docs/build-skills>
+[^ag-skills]: Antigravity, „Skills“: <https://antigravity.google/docs/skills/>
+
 ::: {.callout-note title="Wenn es anders aussieht"}
-- Der Agent nennt nur einen Ordner für alle Projekte: den Ort für Projekt-Skills aus der [Übersicht nach Werkzeug](chat-oder-agent.qmd#uebersicht-nach-werkzeug) nutzen.
+- Der Agent nennt nur einen Ordner für alle Projekte: den Ort für Projekt-Skills aus der Tabelle oben nutzen.
 - Der Skill-Ordner heißt anders als der Name im Kopf, etwa `Eingang einsortieren`: „Benenne den Skill-Ordner in eingang-einsortieren um.“
 - Die Zeilen `---` fehlen: „Setze name und description in SKILL.md zwischen zwei Zeilen mit ---.“
 - Die Schritte stehen als Fließtext statt als Liste: Das ist meist in Ordnung, solange alle sechs Schritte enthalten sind.
@@ -125,7 +137,7 @@ Möglich ist das, weil der Agent Skills in Stufen lädt. Dieses **Laden in Stufe
 Die Plan-Tabelle stammt aus dem letzten Satz unserer `SKILL.md`. Was wir im Kapitel [Laufend neue Dateien](laufend-neue-dateien.qmd) jedes Mal in den Auftrag schreiben mussten, steht jetzt dauerhaft im Ordner.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
-- Der Agent fragt nach den Schritten oder sortiert ohne Plan: Diese Frage senden und den genannten Ort mit der [Übersicht nach Werkzeug](chat-oder-agent.qmd#uebersicht-nach-werkzeug) vergleichen.
+- Der Agent fragt nach den Schritten oder sortiert ohne Plan: Diese Frage senden und den genannten Ort mit der Tabelle in Schritt 1 vergleichen.
 
   ```text
   Welche Skills kennst du, und wo hast du gesucht?

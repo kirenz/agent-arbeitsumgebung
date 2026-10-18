@@ -43,7 +43,7 @@
 @media (prefers-reduced-motion:reduce){.sl *{animation:none!important;transition:none!important}}
 </style>
 <div class="sl">
-<div class="sl-kopf"><span>Nachbau einer Agentensitzung, kein echtes Produkt</span><span id="sl-runde"></span></div>
+<div class="sl-kopf"><span>Nachbau eines Agenten bei der Arbeit, kein echtes Produkt</span><span id="sl-runde"></span></div>
 <div class="sl-bahn" role="list" aria-label="Fünf Stationen eines Agenten">
 <div class="sl-st" data-s="ziel" role="listitem"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round"><circle class="ic-a" cx="18" cy="22" r="13"/><circle class="ic-a" cx="18" cy="22" r="7"/><circle class="ic-f" cx="18" cy="22" r="2.5"/><path class="ic-b" d="M18 22L33 7M33 7h-6M33 7v6"/></svg><span>Ziel</span></div>
 <div class="sl-st" data-s="beobachten" role="listitem"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path class="ic-a" d="M6 20h8l3 4h6l3-4h8v12H6z"/><path class="ic-b" d="M13 6v8M20 4v10M27 6v8"/><path class="ic-b" d="M10 11l3 3 3-3M17 11l3 3 3-3M24 11l3 3 3-3"/></svg><span>Beobachten</span></div>
@@ -58,13 +58,13 @@
 </div>
 </div>
 <script type="application/json" id="sl-szene">[
-{"station":"ziel","runde":"","erkl":"Der Auftrag setzt das Ziel. Ab hier arbeitet der Agent selbst weiter. Klicken Sie auf „Weiter“.","log":[{"sie":"Lies die Beschwerde in anfragen/ und lege einen Antwortentwurf in antworten/ ab."}]},
-{"station":"beobachten","runde":"Runde 1","erkl":"Der Agent nimmt auf, was er für das Ziel braucht. Hier öffnet die App die Datei und reicht den Inhalt an das Modell.","log":[{"app":"liest anfragen/2026-10-07-beschwerde.md"},{"modell":"Gelesen: Die Reparatur war für Freitag zugesagt, bis heute keine Nachricht."}]},
-{"station":"ueberlegen","runde":"Runde 1","erkl":"Das Modell plant den nächsten Schritt. Für den Entwurf fehlt der Stand der Reparatur. Es beschließt, zuerst im Ordner danach zu suchen.","log":[{"modell":"Für die Antwort brauche ich den Stand der Reparatur. Ich suche im Ordner nach dem Auftrag."}]},
-{"station":"handeln","runde":"Runde 1","erkl":"Handeln heißt: ein Werkzeug nutzen. Das Modell schreibt den Wunsch „Ordner durchsuchen“ auf, die App führt ihn aus und gibt das Ergebnis zurück.","log":[{"app":"durchsucht den Ordner nach „Reparatur“ und „Freitag“"},{"app":"Ergebnis: kein passender Auftrag im Ordner"}]},
-{"station":"wiederholen","runde":"Runde 2","erkl":"Das Ergebnis geht zurück an das Modell, und die Schleife beginnt von vorn. Das Modell überlegt neu: Der Entwurf bekommt eine Lücke für den Stand, den Sie nachtragen.","log":[{"modell":"Kein Auftrag gefunden. Ich schreibe den Entwurf mit einer Lücke für den Stand und lege ihn in antworten/ ab."}]},
-{"station":"handeln","runde":"Runde 2","erkl":"Vor dem Anlegen einer Datei hält die App an und fragt Sie. Entscheiden Sie: Erlauben oder Ablehnen.","log":[{"frage":"antworten/2026-10-07-beschwerde-antwort.md anlegen?","erlaubt":"legt an antworten/2026-10-07-beschwerde-antwort.md","abgelehnt":"In Ordnung, ich lege keine Datei an. Den Entwurf zeige ich Ihnen hier im Chat."}]},
-{"station":"ziel","runde":"Ziel erreicht","erkl":"Das Ziel ist erreicht, die Schleife endet. Der Agent meldet, was er getan hat. Hätte die Suche den Auftrag gefunden, wäre der Entwurf ohne Lücke entstanden.","log":[{"modell":"Fertig. Eine Datei angelegt (antworten/2026-10-07-beschwerde-antwort.md), keine geändert. Bitte den Stand der Reparatur ergänzen."}]}
+{"station":"ziel","runde":"","erkl":"Der Auftrag setzt das Ziel. Ab hier arbeitet der Agent selbst weiter. Klicken Sie auf „Weiter“.","log":[{"sie":"Lies die Beschwerde im Ordner Anfragen und lege einen Antwortentwurf im Ordner Antworten ab."}]},
+{"station":"beobachten","runde":"Runde 1","erkl":"Der Agent nimmt auf, was er für das Ziel braucht. Hier öffnet die App die Beschwerde, und der Agent liest den Text.","log":[{"app":"liest die Beschwerde vom 7. Oktober"},{"modell":"Gelesen: Die Reparatur war für Freitag zugesagt, bis heute keine Nachricht."}]},
+{"station":"ueberlegen","runde":"Runde 1","erkl":"Der Agent plant den nächsten Schritt. Für den Entwurf fehlt der Stand der Reparatur. Er beschließt, zuerst im Ordner danach zu suchen.","log":[{"modell":"Für die Antwort brauche ich den Stand der Reparatur. Ich suche im Ordner nach dem Auftrag."}]},
+{"station":"handeln","runde":"Runde 1","erkl":"Handeln heißt: ein Werkzeug nutzen. Der Agent schreibt den Wunsch „Ordner durchsuchen“ auf, die App führt ihn aus und gibt das Ergebnis zurück.","log":[{"app":"durchsucht den Ordner nach „Reparatur“ und „Freitag“"},{"app":"Ergebnis: kein passender Auftrag im Ordner"}]},
+{"station":"wiederholen","runde":"Runde 2","erkl":"Das Ergebnis geht zurück an den Agenten, und die Schleife beginnt von vorn. Er überlegt neu: Der Entwurf bekommt eine Lücke für den Stand, den Sie nachtragen.","log":[{"modell":"Kein Auftrag gefunden. Ich schreibe den Entwurf mit einer Lücke für den Stand und lege ihn im Ordner Antworten ab."}]},
+{"station":"handeln","runde":"Runde 2","erkl":"Vor dem Anlegen einer Datei hält die App an und fragt Sie. Entscheiden Sie: Erlauben oder Ablehnen.","log":[{"frage":"Antwortentwurf zur Beschwerde im Ordner Antworten anlegen?","erlaubt":"legt den Antwortentwurf im Ordner Antworten an","abgelehnt":"In Ordnung, ich lege keine Datei an. Den Entwurf zeige ich Ihnen hier im Chat."}]},
+{"station":"ziel","runde":"Ziel erreicht","erkl":"Das Ziel ist erreicht, die Schleife endet. Der Agent meldet, was er getan hat. Hätte die Suche den Auftrag gefunden, wäre der Entwurf ohne Lücke entstanden.","log":[{"modell":"Fertig. Eine Datei angelegt: der Antwortentwurf im Ordner Antworten. Keine Datei geändert. Bitte den Stand der Reparatur ergänzen."}]}
 ]</script>
 <script>
 (function(){

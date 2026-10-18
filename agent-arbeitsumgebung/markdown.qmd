@@ -183,7 +183,7 @@ Die Änderung, wie der Agent sie vor dem Speichern zeigt, und die Datei danach:
 
 Zwei Aufträge, zwei Änderungen an derselben Datei. Beim zweiten haben wir vor dem Speichern genau die eine Zeile gesehen, die sich ändert.
 
-Der **Zeilenvergleich** zeigt eine Änderung als alte und neue Zeile, oft mit `-` und `+` davor (in vielen Werkzeugen „Diff“ genannt). So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: `- Kanal: E-Mail` wird zu `- Kanal: Telefon`, die Zeile `- Rückruf: ja` bleibt. Die **Änderungsansicht** ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.
+Der **Zeilenvergleich** zeigt eine Änderung als alte und neue Zeile, oft mit `-` und `+` davor. So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: `- Kanal: E-Mail` wird zu `- Kanal: Telefon`, die Zeile `- Rückruf: ja` bleibt. Die **Änderungsansicht** ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.
 
 Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile im Zeilenvergleich. Wir können die Datei auch selbst ändern. Ein Klick auf den Dateipfad im Chat öffnet sie in vielen Apps zum Bearbeiten; unsere Zeile sieht der Agent beim nächsten Lesen.
 
@@ -252,10 +252,6 @@ Eine Word- oder Google-Datei ist ein gepacktes Paket aus Text und Formatierungsa
 
 PDFs bleiben trotzdem wichtig, weil viele Quellen nur so vorliegen. Wie wir sie in Markdown umwandeln und prüfen, zeigt das Kapitel [PDFs als Quellen](pdf-als-quelle.qmd).
 
-Zwei weitere Zeichen kommen in den folgenden Kapiteln vor: `**fett**` hebt ein Wort hervor, `[Text](Ziel)` setzt einen Link. Der Link kann auf eine Website zeigen oder auf eine andere Datei im Ordner, etwa `[Preisliste](quellen/text/preisliste-2026.md)`. Der zweite Fall ist für uns der wichtigere: Eine Übersicht verlinkt auf die Anfragen, eine Antwort auf die Quelle, aus der ein Betrag stammt. Der Agent folgt solchen Verweisen und öffnet die genannte Datei.
-
-::: {.callout-note title="Woher die Regeln stammen"}
-Markdown ist offen beschrieben. Die Grundregeln stehen in der Spezifikation [CommonMark](https://spec.commonmark.org/) (Version 0.31.2 vom 28. Januar 2024). [GitHub Flavored Markdown](https://github.github.com/gfm/) baut darauf auf und ergänzt unter anderem Tabellen. Die meisten Editoren und Agenten folgen beiden. Kleine Abweichungen zwischen Programmen kommen vor, betreffen aber selten die Zeichen aus diesem Kapitel.
-:::
+Zwei weitere Zeichen kommen in den folgenden Kapiteln vor: `**fett**` hebt ein Wort hervor, `[Text](Ziel)` setzt einen Link. Der Link kann auf eine Website zeigen oder auf eine andere Datei im Ordner, etwa `[Preisliste](preisliste-2026.md)`. Der zweite Fall ist für uns der wichtigere: Eine Übersicht verlinkt auf die Anfragen, eine Antwort auf die Quelle, aus der ein Betrag stammt. Der Agent folgt solchen Verweisen und öffnet die genannte Datei.
 
 Die Dateien in `agent-test` brauchen wir später nicht mehr. Im nächsten Kapitel legt der Agent den eigentlichen Projektordner `kundenanfragen` an.

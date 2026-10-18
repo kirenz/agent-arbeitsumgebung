@@ -117,7 +117,19 @@ Die neue Sitzung begann ohne Erinnerung an Schritt 1. Trotzdem kannte der Agent 
 
 `AGENTS.md` ist ein **offenes Format** ohne Pflichtfelder: eine gewöhnliche Markdown-Datei mit festem Namen. Viele Agenten lesen sie, unter anderem Werkzeuge großer Anbieter und mehrere Open-Source-Projekte. Seit Dezember 2025 betreut die Agentic AI Foundation das Format, eine Stiftung unter dem Dach der Linux Foundation. Die Beschreibung und eine Liste kompatibler Werkzeuge stehen auf [agents.md](https://agents.md/).
 
-Einige Werkzeuge erwarten einen eigenen Dateinamen oder lesen die `AGENTS.md` nur unter bestimmten Bedingungen. Welche das sind, zeigt die [Übersicht nach Werkzeug](chat-oder-agent.qmd#uebersicht-nach-werkzeug). Oft genügt dann eine zweite Datei mit dem erwarteten Namen, die auf die `AGENTS.md` verweist. So bleibt die `AGENTS.md` der einzige Ort, an dem wir Regeln pflegen, und derselbe Ordner funktioniert mit verschiedenen Agenten.
+Einige Werkzeuge erwarten einen eigenen Dateinamen oder lesen die `AGENTS.md` nur unter bestimmten Bedingungen. Oft genügt dann eine zweite Datei mit dem erwarteten Namen, die auf die `AGENTS.md` verweist. So bleibt die `AGENTS.md` der einzige Ort, an dem wir Regeln pflegen, und derselbe Ordner funktioniert mit verschiedenen Agenten.
+
+| Werkzeug | Anweisungsdatei im Projektordner |
+|---|---|
+| Claude Code | `CLAUDE.md`. Liest `AGENTS.md` nur, wenn kein `CLAUDE.md` vorliegt. Alternativ in `CLAUDE.md` die Zeile `@AGENTS.md`.[^cc-memory] |
+| Codex | `AGENTS.md`, zusätzlich global in `~/.codex/`.[^cx-agents] |
+| Antigravity | `AGENTS.md` oder `GEMINI.md`, zusätzlich Regeln in `.agents/rules/`.[^ag-rules] |
+
+: Stand: 18. Oktober 2026. Ein Pfad mit `~` liegt im eigenen Benutzerordner und gilt für alle Projekte. Weicht der eigene Agent ab, gilt seine Selbstauskunft.
+
+[^cc-memory]: Claude Code, „How Claude remembers your project“: <https://code.claude.com/docs/en/memory>
+[^cx-agents]: Codex, „AGENTS.md“: <https://learn.chatgpt.com/docs/agent-configuration/agents-md>
+[^ag-rules]: Antigravity, „Rules“: <https://antigravity.google/docs/rules/>
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Die Antwort nennt die Regeln mit eigenen Worten: Das ist in Ordnung.

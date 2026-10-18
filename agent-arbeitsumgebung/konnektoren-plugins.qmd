@@ -57,7 +57,12 @@ Die drei Begriffe aus diesem Teil im Vergleich:
 | Wie es eingerichtet wird | Konfigurationsdatei oder Einstellungen | Anmeldung im Browser | Einschalten als Ganzes |
 | Was es mitbringt | Werkzeuge | Werkzeuge eines Dienstes | Skills, Regeln, Server, Automatismen |
 
-Die Namen unterscheiden sich je Werkzeug. Manche Agenten kennen nur Plugins, manche sprechen von Erweiterungen. Welche Pakete das eigene Werkzeug anbietet und wie es sie nennt, steht in der [Übersicht nach Werkzeug](chat-oder-agent.qmd#uebersicht-nach-werkzeug).
+Die Namen unterscheiden sich je Werkzeug. Manche Agenten kennen nur Plugins, manche sprechen von Erweiterungen. Stand 18. Oktober 2026: Claude Code bietet Plugins aus Marketplaces[^cc-plugins] und Konnektoren (Connectors) in den Claude-Apps, je Werkzeug freigebbar[^cc-connectors]; Codex bietet Plugins, die Skills und MCP-Server bündeln[^cx-plugins]; Antigravity bietet Plugins mit einem Marketplace in der App[^ag-plugins]. Was beim eigenen Agenten aktiv ist, zeigt die Antwort aus Schritt 1.
+
+[^cc-plugins]: Claude Code, „Plugins“: <https://code.claude.com/docs/en/plugins>
+[^cc-connectors]: Claude Help Center, „Use connectors to extend Claude's capabilities“: <https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities>
+[^cx-plugins]: Codex, „Plugins“: <https://learn.chatgpt.com/docs/plugins>
+[^ag-plugins]: Antigravity, „Plugins“: <https://antigravity.google/docs/plugins/>
 
 ::: {.callout-note title="Wenn es anders aussieht"}
 - Kein Paket aktiv: Das ist ein gültiges Ergebnis. Schritt 2 gehen wir dann für ein Paket durch, das das eigene Werkzeug anbietet.
@@ -102,6 +107,17 @@ Die drei Fragen gelten für jedes Paket, bevor wir es einschalten, und für jede
 - Die Rechte sind unklar: „Darf dieses Paket nur lesen, oder auch schreiben, löschen oder senden? Nur antworten.“
 - Ein Paket gehört dem Unternehmen: vor dem Abschalten die IT fragen.
 :::
+
+## Wer ausführt und wer fragt: Modell und App
+
+Ein Paket mit Senderecht gibt dem Agenten ein neues Werkzeug. Wer es ausführt und wer vorher fragt, entscheidet über das Risiko. Dafür lohnt ein Blick in das Innere der Schleife aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd). Dort kamen zwei Arten von Zeilen vor: Sätze des Agenten und kurze Meldungen wie „› liest …“. Dahinter stehen die zwei Teile eines Agenten.
+
+Das **Sprachmodell** (das KI-Modell, das den Text erzeugt) liest den bisherigen Verlauf und schreibt Text. Mehr kann es nicht. Will es ein Werkzeug nutzen, schreibt es diesen Wunsch als Text auf. Der Wunsch „Mail an test@example.com senden“ ist zunächst nur ein Satz des Modells; im Chat erscheint er meist als kurze Zeile wie „› sendet …“. Der **Rahmen** (englisch: Agent Harness) ist die Software um das Modell herum, beim eigenen Agenten die App. Sie erkennt den Werkzeugwunsch, führt ihn aus, legt das Ergebnis dem Modell wieder vor und startet die nächste Runde. Vor Änderungen und Befehlen hält sie an und fragt uns. Die Rückfrage „E-Mail an test@example.com senden?“ stellt also der Rahmen, nicht das Modell. Ein Agent ist Modell plus Werkzeuge plus Schleife, dazu alles, was das Modell gerade vorliegen hat (der Kontext aus dem Kapitel [Kontext bereitstellen](kontext-bereitstellen.qmd)).[^anthropic-agents] Der Fachbegriff für diesen Wechsel aus Überlegen und Handeln lautet ReAct (kurz für Reasoning and Acting).[^react]
+
+Für Konnektoren und Plugins heißt das: Ein Paket erweitert den Rahmen um Werkzeuge. Welche Werkzeuge das Modell nutzen kann und wann wir gefragt werden, legt der Rahmen fest. Darum gehören die Rechte eines Pakets zu den drei Fragen aus Schritt 2, und darum ist die Rückfrage vor dem Senden unsere letzte Schranke.
+
+[^anthropic-agents]: Anthropic, Building effective agents, 19.12.2024: <https://www.anthropic.com/engineering/building-effective-agents>
+[^react]: Yao et al., ReAct: Synergizing Reasoning and Acting in Language Models (2023): <https://arxiv.org/abs/2210.03629>
 
 ::: {.callout-warning title="Rechte und fremde Inhalte"}
 - Pakete mit Senderecht nur mit Rückfrage vor jedem Senden betreiben.

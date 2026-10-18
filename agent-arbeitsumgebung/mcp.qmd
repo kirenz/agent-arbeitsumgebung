@@ -82,8 +82,8 @@ MCP ist eine offene Spezifikation, die jeder Hersteller umsetzen darf. Seit Deze
    ```
 
 2. Prüfen: Der Agent nennt einen Pfad zu einer Datei oder einen Bereich in den Einstellungen.
-3. Den genannten Ort mit der [Übersicht nach Werkzeug](chat-oder-agent.qmd#uebersicht-nach-werkzeug) vergleichen.
-4. Prüfen: Der Ort passt zum eigenen Werkzeug in der Übersicht.
+3. Den genannten Ort mit der Tabelle unter „Was gerade passiert ist“ vergleichen.
+4. Prüfen: Der Ort passt zum eigenen Werkzeug.
 
 ### Das sollten wir jetzt sehen
 
@@ -106,10 +106,22 @@ Zwei typische Antworten in eigenen Worten. Der eigene Agent nennt den genauen Pf
 
 Der Agent hat gesagt, wo seine Verbindungen eingetragen sind, ohne etwas zu öffnen. Manche Agenten lesen die Liste ihrer MCP-Server aus einer **Konfigurationsdatei** (einer Datei mit Einstellungen), oft eine für das Projekt im Projektordner und eine für alle Projekte im Benutzerordner. Andere verwalten sie in einem Bereich der Einstellungen.
 
+| Werkzeug | Wo die MCP-Server eingetragen sind |
+|---|---|
+| Claude Code | Datei `.mcp.json` im Projektordner.[^cc-mcp] |
+| Codex | Datei `.codex/config.toml` im Projektordner oder `~/.codex/config.toml`.[^cx-mcp] |
+| Antigravity | MCP Store in der App, Datei `mcp_config.json`.[^ag-mcp] |
+
+: Stand: 18. Oktober 2026. Ein Pfad mit `~` liegt im eigenen Benutzerordner. Weicht der eigene Agent ab, gilt seine Selbstauskunft.
+
+[^cc-mcp]: Claude Code, „MCP“: <https://code.claude.com/docs/en/mcp>
+[^cx-mcp]: Codex, „MCP“: <https://learn.chatgpt.com/docs/extend/mcp>
+[^ag-mcp]: Antigravity, „MCP“: <https://antigravity.google/docs/mcp/>
+
 Dieses Buch richtet keinen Server ein. Der Weg dahin ist je Werkzeug anders, und viele Anbindungen brauchen außerdem Zugangsdaten und im Unternehmen eine Freigabe der IT. Ob sich eine Anbindung lohnt, entscheiden wir in Schritt 3. Vorher zeigt ein Nachbau, wie ein Werkzeugaufruf abläuft.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
-- Der Agent weiß den Ort nicht: in der [Übersicht nach Werkzeug](chat-oder-agent.qmd#uebersicht-nach-werkzeug) nachsehen.
+- Der Agent weiß den Ort nicht: in der Tabelle oben nachsehen.
 - Der Agent bietet an, die Datei zu öffnen oder zu ändern: ablehnen. Die Frage verlangt nur den Ort.
 :::
 
