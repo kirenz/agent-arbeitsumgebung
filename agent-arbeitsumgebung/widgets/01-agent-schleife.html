@@ -1,0 +1,105 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><style>:root { --paper: oklch(0.985 0.004 85); --paper-deep: oklch(0.965 0.007 85); --ink: oklch(0.18 0.02 255); --ink-soft: oklch(0.42 0.018 255); --rule: oklch(0.88 0.008 85); --ochre: oklch(0.72 0.13 70); --terracotta: oklch(0.6 0.15 35); --primary: oklch(0.32 0.12 258) } body { margin: 0; background: transparent; color: var(--ink); font-family: ui-sans-serif, system-ui, sans-serif; }</style><script>(function(){var post=function(){parent.postMessage({type:'claude-widget-height',height:document.body.scrollHeight},'*')};window.addEventListener('load',post);document.addEventListener('DOMContentLoaded',function(){new ResizeObserver(post).observe(document.body);post();});})();</script></head><body>
+<style>
+.sl{max-width:880px;margin:0 auto;color:var(--ink);font-size:14px;line-height:1.45}
+.sl *{box-sizing:border-box}
+.sl-kopf{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 10px;font-size:12.5px;color:var(--ink-soft)}
+.sl-kopf b{color:var(--ink);font-weight:600}
+.sl-bahn{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 12px}
+.sl-st{border:1px solid var(--rule);border-radius:12px;background:var(--paper);padding:10px 6px 8px;text-align:center;min-width:0;transition:border-color .3s,background .3s;opacity:.55}
+.sl-st svg{width:40px;height:40px;display:block;margin:0 auto 6px}
+.sl-st span{display:block;font-size:12.5px;font-weight:600;overflow-wrap:anywhere}
+.sl-st.war{opacity:1}
+.sl-st.aktiv{opacity:1;border-color:var(--primary);background:color-mix(in oklch,var(--primary) 10%,var(--paper));box-shadow:0 0 0 2px color-mix(in oklch,var(--primary) 30%,transparent)}
+.sl-st .ic-a{stroke:var(--primary)}.sl-st .ic-b{stroke:var(--ochre)}.sl-st .ic-f{fill:var(--ochre)}
+.sl-log{border:1px solid var(--rule);border-radius:12px;background:var(--paper);overflow:hidden}
+.sl-bar{padding:6px 12px;background:var(--paper-deep);border-bottom:1px solid var(--rule);font-size:12px;color:var(--ink-soft)}
+.sl-chat{padding:10px;display:flex;flex-direction:column;gap:8px;min-height:150px;max-height:260px;overflow:auto}
+.sl-msg{border-radius:10px;padding:8px 11px;max-width:92%;white-space:pre-wrap;animation:sl-rein .3s ease-out}
+@keyframes sl-rein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.sl-msg.sie{align-self:flex-end;background:var(--primary);color:var(--paper)}
+.sl-msg.modell{align-self:flex-start;background:var(--paper-deep);border:1px solid var(--rule)}
+.sl-msg.app{align-self:flex-start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--ink-soft);padding:2px 4px}
+.sl-msg.app::before{content:"› ";color:var(--ochre);font-weight:700}
+.sl-wer{display:block;font-size:11px;opacity:.75;margin-bottom:2px}
+.sl-frage{align-self:stretch;border:1px solid var(--ochre);border-radius:10px;padding:10px;background:color-mix(in oklch,var(--ochre) 10%,var(--paper));animation:sl-rein .3s ease-out}
+.sl-frage p{margin:0 0 8px}
+.sl-frage .kn{display:flex;gap:8px;flex-wrap:wrap}
+.sl button{font:inherit;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer}
+.sl button.prim{background:var(--ink);color:var(--paper);border-color:var(--ink);font-weight:600}
+.sl button:disabled{opacity:.4;cursor:default}
+.sl button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.sl-steuer{display:flex;align-items:flex-start;gap:12px;margin-top:12px}
+.sl-erkl{flex:1;margin:0;padding:10px 14px;border-left:3px solid var(--primary);background:var(--paper-deep);border-radius:0 8px 8px 0;min-height:44px}
+.sl-erkl small{display:block;color:var(--ink-soft);font-size:12px;margin-bottom:2px}
+.sl-kn{display:flex;gap:8px}
+@media (max-width:640px){
+.sl-bahn{grid-template-columns:repeat(5,1fr);gap:4px}
+.sl-st{padding:8px 2px 6px;border-radius:10px}
+.sl-st svg{width:28px;height:28px}
+.sl-st span{font-size:10.5px}
+.sl-steuer{flex-direction:column;align-items:stretch}
+.sl-kn button{flex:1}
+}
+@media (prefers-reduced-motion:reduce){.sl *{animation:none!important;transition:none!important}}
+</style>
+<div class="sl">
+<div class="sl-kopf"><span>Nachbau einer Agentensitzung, kein echtes Produkt</span><span id="sl-runde"></span></div>
+<div class="sl-bahn" role="list" aria-label="Fünf Stationen eines Agenten">
+<div class="sl-st" data-s="ziel" role="listitem"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round"><circle class="ic-a" cx="18" cy="22" r="13"/><circle class="ic-a" cx="18" cy="22" r="7"/><circle class="ic-f" cx="18" cy="22" r="2.5"/><path class="ic-b" d="M18 22L33 7M33 7h-6M33 7v6"/></svg><span>Ziel</span></div>
+<div class="sl-st" data-s="beobachten" role="listitem"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path class="ic-a" d="M6 20h8l3 4h6l3-4h8v12H6z"/><path class="ic-b" d="M13 6v8M20 4v10M27 6v8"/><path class="ic-b" d="M10 11l3 3 3-3M17 11l3 3 3-3M24 11l3 3 3-3"/></svg><span>Beobachten</span></div>
+<div class="sl-st" data-s="ueberlegen" role="listitem"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle class="ic-a" cx="20" cy="8" r="4"/><path class="ic-a" d="M20 12v6M20 18H9v5M20 18h11v5M20 18v5"/><path class="ic-a" d="M9 23l-4 4 4 4 4-4zM31 23l-4 4 4 4 4-4z"/><path class="ic-b" d="M20 23l-4 4 4 4 4-4z"/></svg><span>Überlegen</span></div>
+<div class="sl-st" data-s="handeln" role="listitem"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect class="ic-a" x="4" y="10" width="18" height="20" rx="3"/><path class="ic-b" d="M9 18l3 3-3 3M14 24h4"/><path class="ic-b" d="M24 20h10M31 16l4 4-4 4"/></svg><span>Handeln</span></div>
+<div class="sl-st" data-s="wiederholen" role="listitem"><svg viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path class="ic-a" d="M8 20a12 12 0 0 1 21-8"/><path class="ic-a" d="M29 6v6h-6"/><path class="ic-b" d="M32 20a12 12 0 0 1-21 8"/><path class="ic-b" d="M11 34v-6h6"/><path class="ic-b" d="M15 20l3 3 7-7"/></svg><span>Wiederholen</span></div>
+</div>
+<div class="sl-log"><div class="sl-bar">Chat mit dem Agenten</div><div class="sl-chat" id="sl-chat" aria-live="polite"></div></div>
+<div class="sl-steuer">
+<p class="sl-erkl" id="sl-erkl" aria-live="polite"></p>
+<div class="sl-kn"><button type="button" id="sl-neu">Neu starten</button><button type="button" class="prim" id="sl-weiter">Weiter</button></div>
+</div>
+</div>
+<script type="application/json" id="sl-szene">[
+{"station":"ziel","runde":"","erkl":"Der Auftrag setzt das Ziel. Ab hier arbeitet der Agent selbst weiter. Klicken Sie auf „Weiter“.","log":[{"sie":"Lies die Beschwerde in anfragen/ und lege einen Antwortentwurf in antworten/ ab."}]},
+{"station":"beobachten","runde":"Runde 1","erkl":"Der Agent nimmt auf, was er für das Ziel braucht. Hier öffnet die App die Datei und reicht den Inhalt an das Modell.","log":[{"app":"liest anfragen/2026-10-07-beschwerde.md"},{"modell":"Gelesen: Die Reparatur war für Freitag zugesagt, bis heute keine Nachricht."}]},
+{"station":"ueberlegen","runde":"Runde 1","erkl":"Das Modell plant den nächsten Schritt. Für den Entwurf fehlt der Stand der Reparatur. Es beschließt, zuerst im Ordner danach zu suchen.","log":[{"modell":"Für die Antwort brauche ich den Stand der Reparatur. Ich suche im Ordner nach dem Auftrag."}]},
+{"station":"handeln","runde":"Runde 1","erkl":"Handeln heißt: ein Werkzeug nutzen. Das Modell schreibt den Wunsch „Ordner durchsuchen“ auf, die App führt ihn aus und gibt das Ergebnis zurück.","log":[{"app":"durchsucht den Ordner nach „Reparatur“ und „Freitag“"},{"app":"Ergebnis: kein passender Auftrag im Ordner"}]},
+{"station":"wiederholen","runde":"Runde 2","erkl":"Das Ergebnis geht zurück an das Modell, und die Schleife beginnt von vorn. Das Modell überlegt neu: Der Entwurf bekommt eine Lücke für den Stand, den Sie nachtragen.","log":[{"modell":"Kein Auftrag gefunden. Ich schreibe den Entwurf mit einer Lücke für den Stand und lege ihn in antworten/ ab."}]},
+{"station":"handeln","runde":"Runde 2","erkl":"Vor dem Anlegen einer Datei hält die App an und fragt Sie. Entscheiden Sie: Erlauben oder Ablehnen.","log":[{"frage":"antworten/2026-10-07-beschwerde-antwort.md anlegen?","erlaubt":"legt an antworten/2026-10-07-beschwerde-antwort.md","abgelehnt":"In Ordnung, ich lege keine Datei an. Den Entwurf zeige ich Ihnen hier im Chat."}]},
+{"station":"ziel","runde":"Ziel erreicht","erkl":"Das Ziel ist erreicht, die Schleife endet. Der Agent meldet, was er getan hat. Hätte die Suche den Auftrag gefunden, wäre der Entwurf ohne Lücke entstanden.","log":[{"modell":"Fertig. Eine Datei angelegt (antworten/2026-10-07-beschwerde-antwort.md), keine geändert. Bitte den Stand der Reparatur ergänzen."}]}
+]</script>
+<script>
+(function(){
+var S=JSON.parse(document.getElementById('sl-szene').textContent);
+var el=function(id){return document.getElementById(id)};
+var chat=el('sl-chat'),erkl=el('sl-erkl'),weiter=el('sl-weiter'),neu=el('sl-neu'),runde=el('sl-runde');
+var stationen=Array.prototype.slice.call(document.querySelectorAll('.sl-st'));
+var schritt,wartet;
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function msg(klasse,wer,text){var d=document.createElement('div');d.className='sl-msg '+klasse;d.innerHTML=(wer?'<span class="sl-wer">'+esc(wer)+'</span>':'')+esc(text);chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d}
+function markiere(name,i){stationen.forEach(function(s){s.classList.remove('aktiv');if(i===0)s.classList.remove('war')});var akt=stationen.filter(function(s){return s.getAttribute('data-s')===name})[0];if(akt){akt.classList.add('aktiv');akt.classList.add('war')}}
+function aktion(a){
+if(a.sie)msg('sie','Sie',a.sie);
+if(a.modell)msg('modell','Agent',a.modell);
+if(a.app)msg('app','',a.app);
+if(a.frage){wartet=true;var box=document.createElement('div');box.className='sl-frage';
+box.innerHTML='<p><span class="sl-wer">App</span>'+esc(a.frage)+'</p><div class="kn"><button type="button" class="prim" data-j="1">Erlauben</button><button type="button" data-j="0">Ablehnen</button></div>';
+chat.appendChild(box);chat.scrollTop=chat.scrollHeight;weiter.disabled=true;
+box.addEventListener('click',function(e){var j=e.target.getAttribute&&e.target.getAttribute('data-j');if(j===null||!wartet)return;wartet=false;
+box.querySelector('.kn').outerHTML='<p style="margin:0;color:var(--ink-soft)">'+(j==='1'?'✓ Erlaubt':'✕ Abgelehnt')+'</p>';
+if(j==='1'){msg('app','',a.erlaubt);weiter.disabled=false;weiter.focus()}
+else{msg('modell','Agent',a.abgelehnt);schritt=S.length;markiere('ziel',1);runde.textContent='Ende ohne Datei';erkl.innerHTML='<small>Ende</small>Ohne Ihre Freigabe ändert der Agent nichts im Ordner. Mit „Neu starten“ sehen Sie den anderen Weg.';weiter.disabled=true}
+});
+var k=box.querySelector('button');if(k)k.focus()}
+}
+function los(i){schritt=i;var s=S[i];markiere(s.station,i);runde.innerHTML=s.runde?'<b>'+esc(s.runde)+'</b>':'';
+erkl.innerHTML='<small>Schritt '+(i+1)+' von '+S.length+'</small>'+esc(s.erkl);
+s.log.forEach(aktion);
+if(!wartet)weiter.disabled=i>=S.length-1;
+weiter.textContent=i>=S.length-1?'Fertig':'Weiter'}
+function start(){wartet=false;chat.innerHTML='';los(0)}
+weiter.addEventListener('click',function(){if(!wartet&&schritt<S.length-1)los(schritt+1)});
+neu.addEventListener('click',start);
+start();
+})();
+</script>
+
+</body></html>
