@@ -11,6 +11,7 @@ project:
     - "agent-arbeitsumgebung/widgets/*"
     - "agent-arbeitsumgebung/downloads/*"
     - "agent-arbeitsumgebung/images/*"
+    - "agent-arbeitsumgebung/images/lektionen/*/*"
 
 lang: de
 

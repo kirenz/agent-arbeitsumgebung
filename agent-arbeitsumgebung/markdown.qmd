@@ -64,6 +64,8 @@ Wir haben dem Agenten nur Überschrift und Liste genannt. Die Zeichen `#` und `-
 
 Der Inhalt der Datei genau so, wie er gespeichert ist, heißt **Rohtext**. `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile `- Kanal: E-Mail` und antwortet „E-Mail“. Die **Vorschau** ist die formatierte Ansicht desselben Textes: Die Zeichen `#` und `-` verschwinden, übrig bleiben Überschrift und Liste. Der Chat zeigt Markdown meist so an. Darum ist die zweite Antwort die Vorschau unserer Datei.
 
+![Rohtext und Vorschau derselben Datei. Der Agent liest links, der Chat zeigt rechts.](images/lektionen/l02-markdown/rohtext-und-vorschau.svg){fig-alt="Links der Rohtext der Datei terminwunsch.md mit den Zeichen # und - am Zeilenanfang, rechts dieselbe Datei als Vorschau mit Überschrift und drei Listenpunkten. Pfeile zeigen: # wird Überschrift, - wird Listenpunkt. Die drei Listenzeilen Datum, Kanal und Anliegen bilden den festen Kopf."}
+
 Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen Aufbau nutzen alle Anfragen in den folgenden Kapiteln, weil der Agent die drei Angaben so direkt abliest.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
@@ -118,6 +120,8 @@ Zeile 4 ist die Trennzeile. Sie erscheint in der formatierten Ansicht nicht, mac
 ### Was gerade passiert ist
 
 Der Agent hat aus dem Satz im Auftrag vier Zeilen mit Strichen gemacht. Eine **Tabelle** besteht aus Zeilen mit senkrechten Strichen `|` zwischen den Spalten. Die erste Zeile ist der Kopf, danach folgt eine Zeile je Eintrag. Die **Trennzeile** aus Strichen, `|---|---|`, steht direkt unter dem Kopf und trennt ihn vom Inhalt. In der Vorschau erscheint sie nicht. Fehlt sie, zeigen die meisten Vorschauen keine Tabelle, sondern den Rohtext mit Strichen.
+
+![Aufbau einer Markdown-Tabelle: Kopfzeile, Trennzeile, eine Zeile je Eintrag.](images/lektionen/l02-markdown/tabelle-aufbau.svg){fig-alt="Vier Zeilen einer Markdown-Tabelle mit senkrechten Strichen, nummeriert: 1 Kopfzeile mit den Spaltennamen Datei und Anliegen, 2 Trennzeile aus Strichen, 3 eine Zeile je Eintrag für hallo.md und terminwunsch.md. Jede Zeile hat zwei Spalten."}
 
 Die Striche müssen nicht untereinander stehen. Wichtig ist, dass jede Zeile gleich viele Spalten hat. Tabellen eignen sich für Übersichten mit wenigen, kurzen Spalten: Datei und Anliegen, Datei und Stand, Regel und Prüfung. Für längere Texte je Eintrag ist eine Liste mit Unterüberschriften besser lesbar.
 
@@ -184,6 +188,8 @@ Die Änderung, wie der Agent sie vor dem Speichern zeigt, und die Datei danach:
 Zwei Aufträge, zwei Änderungen an derselben Datei. Beim zweiten haben wir vor dem Speichern genau die eine Zeile gesehen, die sich ändert.
 
 Der **Zeilenvergleich** zeigt eine Änderung als alte und neue Zeile, oft mit `-` und `+` davor. So prüfen wir vor der Freigabe genau die Zeile, die sich ändert, und sehen, dass die übrigen bleiben: `- Kanal: E-Mail` wird zu `- Kanal: Telefon`, die Zeile `- Rückruf: ja` bleibt. Die **Änderungsansicht** ist der Bereich der App, der alle geänderten Zeilen einer Datei zeigt, meist erreichbar über eine Anzeige wie „+1 -1“ im Chat. Je nach App ersetzt sie die Rückfrage: Wir prüfen die Zeilen dort und nehmen die Änderung an oder lehnen sie ab.
+
+![Einen Zeilenvergleich lesen: eine Zeile fällt weg, eine kommt hinzu, der Rest bleibt. Vor der Freigabe prüfen wir, dass nur diese Zeile markiert ist.](images/lektionen/l02-markdown/zeilenvergleich-lesen.svg){fig-alt="Zeilenvergleich der Datei terminwunsch.md: Die alte Zeile Kanal: E-Mail ist mit Minus markiert und fällt weg, die neue Zeile Kanal: Telefon ist mit Plus markiert, die Zeilen Datum, Anliegen und Rückruf bleiben unverändert. Prüffrage vor der Freigabe: Ist nur die eine Zeile markiert? Ja: Erlauben. Mehr Zeilen: Ablehnen und Auftrag wiederholen."}
 
 Das funktioniert, weil Markdown reiner Text ist: Eine Zeile in der Datei ist eine Zeile im Zeilenvergleich. Wir können die Datei auch selbst ändern. Ein Klick auf den Dateipfad im Chat öffnet sie in vielen Apps zum Bearbeiten; unsere Zeile sieht der Agent beim nächsten Lesen.
 
@@ -253,5 +259,7 @@ Eine Word- oder Google-Datei ist ein gepacktes Paket aus Text und Formatierungsa
 PDFs bleiben trotzdem wichtig, weil viele Quellen nur so vorliegen. Wie wir sie in Markdown umwandeln und prüfen, zeigt das Kapitel [PDFs als Quellen](pdf-als-quelle.qmd).
 
 Zwei weitere Zeichen kommen in den folgenden Kapiteln vor: `**fett**` hebt ein Wort hervor, `[Text](Ziel)` setzt einen Link. Der Link kann auf eine Website zeigen oder auf eine andere Datei im Ordner, etwa `[Preisliste](preisliste-2026.md)`. Der zweite Fall ist für uns der wichtigere: Eine Übersicht verlinkt auf die Anfragen, eine Antwort auf die Quelle, aus der ein Betrag stammt. Der Agent folgt solchen Verweisen und öffnet die genannte Datei.
+
+![Fünf Zeichen reichen für alle Dateien in diesem Buch: Überschrift, Liste, Tabelle, Hervorhebung, Link.](images/lektionen/l02-markdown/fuenf-zeichen.svg){fig-alt="Fünf Markdown-Zeichen mit Rohtext und Vorschau: # macht eine Überschrift, - einen Listenpunkt, senkrechte Striche eine Tabelle, zwei Sternchen um ein Wort machen es fett, eckige und runde Klammern setzen einen Link, hier auf die Datei preisliste-2026.md."}
 
 Die Dateien in `agent-test` brauchen wir später nicht mehr. Im nächsten Kapitel legt der Agent den eigentlichen Projektordner `kundenanfragen` an.
