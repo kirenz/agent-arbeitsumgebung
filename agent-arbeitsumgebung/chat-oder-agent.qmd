@@ -45,7 +45,7 @@ Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugre
 
 Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse.
 
-Für den Einstieg empfiehlt sich das Werkzeug, das im vorhandenen Abo bereits enthalten ist: Codex gehört zu ChatGPT Plus und höher, Claude Code zu Claude Pro und höher. Ohne Abo bietet sich Antigravity an, das Google mit einem privaten Google-Konto kostenlos bereitstellt, mit begrenztem Kontingent. Wer bereits mit Cursor arbeitet, kann dabei bleiben.
+Codex ist in ChatGPT Plus und höher enthalten, Claude Code in Claude Pro und höher. Antigravity stellt Google kostenlos bereit; dafür genügt ein privates Google-Konto, das Kontingent ist begrenzt.
 
 | Werkzeug | Anbieter | Zugang | App | Anleitung |
 |---|---|---|---|---|
@@ -66,7 +66,7 @@ Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das so
 
 ## Schritt 1: App installieren und Ordner öffnen
 
-**Voraussetzung:** Ein Werkzeug nach dem eigenen Abo gewählt (Tabelle oben).
+**Voraussetzung:** Zugang zu einem der Werkzeuge aus der Tabelle oben.
 
 1. Die App des eigenen Werkzeugs aus der Tabelle oben herunterladen.
 2. Die App installieren und sich anmelden. Die Anleitung des Herstellers steht in der Tabelle.
