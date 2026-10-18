@@ -43,14 +43,18 @@ Agenten unterscheiden sich vor allem darin, wo sie arbeiten und worauf sie zugre
 2. In einem Workflow (etwa in n8n): Der Agent übernimmt einen festen Schritt in einem automatischen Ablauf.
 3. Auf dem eigenen Rechner in einem Ordner: Das ist der **Coding-Agent**. Seine Werkzeuge lesen, anlegen und ändern Dateien in diesem Ordner und führen Befehle aus. Die Ergebnisse liegen als Dateien im Ordner.
 
-Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse. Bekannte Beispiele:
+Dieses Buch behandelt die dritte Form. Gebaut wurden Coding-Agenten für Programmcode. Sie arbeiten aber mit jeder Textdatei, also auch mit Kundenanfragen, Protokollen oder Konzepten, und wir brauchen dafür keine Programmierkenntnisse.
 
-| Werkzeug | Anbieter | App | Anleitung |
-|---|---|---|---|
-| Claude Code | Anthropic | [Claude-Desktop-App](https://claude.com/download), Bereich „Code“ | [Claude Code in der Desktop-App](https://code.claude.com/docs/en/desktop) |
-| Codex | OpenAI | [Codex-App](https://learn.chatgpt.com/docs/app) | [Codex-Dokumentation](https://learn.chatgpt.com/docs) |
-| Antigravity | Google | [Antigravity-App](https://antigravity.google/download) | [Antigravity-Dokumentation](https://antigravity.google/docs) |
-| Cursor | Anysphere | [Cursor-App](https://cursor.com/download) | [Cursor-Dokumentation](https://cursor.com/docs) |
+Welches Werkzeug wir nutzen, hängt am einfachsten an dem Abo, das wir schon haben. Mit einem ChatGPT-Abo nehmen wir Codex, mit einem Claude-Abo Claude Code; beide sind im Abo enthalten. Ohne Abo nehmen wir Antigravity von Google: Die Anmeldung mit einem privaten Google-Konto genügt, und die Nutzung ist kostenlos, mit Nutzungsgrenzen. Wer schon mit Cursor arbeitet, bleibt dabei.
+
+| Werkzeug | Anbieter | Zugang | App | Anleitung |
+|---|---|---|---|---|
+| Codex | OpenAI | im ChatGPT-Abo (Plus oder höher) | [Codex-App](https://learn.chatgpt.com/docs/app) | [Codex-Dokumentation](https://learn.chatgpt.com/docs) |
+| Claude Code | Anthropic | im Claude-Abo (Pro oder höher) | [Claude-Desktop-App](https://claude.com/download), Bereich „Code“ | [Claude Code in der Desktop-App](https://code.claude.com/docs/en/desktop) |
+| Antigravity | Google | kostenlos mit privatem Google-Konto, mit Nutzungsgrenzen | [Antigravity-App](https://antigravity.google/download) | [Antigravity-Dokumentation](https://antigravity.google/docs) |
+| Cursor | Anysphere | eigenes Abo, kostenloser Einstieg | [Cursor-App](https://cursor.com/download) | [Cursor-Dokumentation](https://cursor.com/docs) |
+
+: Stand: 18.10.2026. Abos und Grenzen ändern sich, maßgeblich sind die Seiten der Anbieter.
 
 Wir arbeiten in der **App** des jeweiligen Werkzeugs, dem Programm auf dem Rechner. Die Bedienung unterscheidet sich von Werkzeug zu Werkzeug und ändert sich oft. Das Buch zeigt deshalb keine bestimmte Oberfläche. Was sich je Werkzeug unterscheidet, etwa Dateinamen und Speicherorte, steht gesammelt in der [Übersicht nach Werkzeug](#uebersicht-nach-werkzeug).
 
@@ -62,7 +66,7 @@ Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das so
 
 ## Schritt 1: App installieren und Ordner öffnen
 
-**Voraussetzung:** Ein Konto bei einem der Anbieter.
+**Voraussetzung:** Ein Werkzeug nach dem eigenen Abo gewählt (Tabelle oben).
 
 1. Die App des eigenen Werkzeugs aus der Tabelle oben herunterladen.
 2. Die App installieren und sich anmelden. Die Anleitung des Herstellers steht in der Tabelle.
@@ -100,6 +104,7 @@ Schritt 2 prüft die ersten beiden Punkte, Schritt 3 den dritten.
 - Die App fragt nach einem Projekt oder Arbeitsbereich: den Ordner `agent-test` wählen.
 - Die Claude-Desktop-App zeigt nur einen Chat ohne Ordner: in den Bereich „Code“ wechseln und dort den Ordner wählen.
 - Die App zeigt keinen Dateibaum: Viele Apps blenden ihn erst auf Klick ein. Der Agent arbeitet trotzdem im geöffneten Ordner.
+- Die App verlangt ein Abo, das wir nicht haben: Antigravity mit einem privaten Google-Konto nutzen.
 :::
 
 ## Schritt 2: Der erste Auftrag
