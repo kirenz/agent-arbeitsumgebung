@@ -466,28 +466,31 @@ def ordner_fig(name, titel, steps, check):
 
 def fig_ordner_claude():
     def s1(x, y):
-        # Umschalter oben rechts: Sprechblase (Chat) und Code-Symbol, nur Icons
-        bx, by = x + 112, y - 14
-        bubble = (f'<path d="M{bx + 18},{by + 12} h18 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-10 l-6,5 v-5 h-2 '
-                  f'a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="#ffffff" stroke="{INK}" stroke-width="1.6"/>')
-        return (box(bx, by, 60, 44, "#ffffff", RULE, 10) + bubble
-                + box(bx + 66, by, 60, 44, LIGHT, BLUE, 10, 2.2)
-                + T(bx + 96, by + 28, "</>", 18, 700, BLUE, "middle", mono=True)
-                + T(bx + 96, by + 68, "Code", 16, 600, BLUE, "middle"))
+        # oben rechts der Umschalter (Code hervorgehoben), unten Eingabefeld mit Umgebungsfeld
+        bx, by = x + 172, y - 49
+        out = (box(bx, by, 30, 21, "#ffffff", RULE, 6) + box(bx + 34, by, 30, 21, LIGHT, BLUE, 6, 2)
+               + T(bx + 49, by + 15, "</>", 12, 700, BLUE, "middle", mono=True))
+        out += box(x, y + 8, 236, 40, PAPER, RULE, 10) + T(x + 12, y + 33, "Beschreibe eine Aufgabe …", 16, 400, MUTED)
+        out += ui_chip(x, y + 56, "Dieser Computer", hl=True, w=180)
+        return out
 
     def s2(x, y):
-        return (T(x, y, "Project folder", 16, 400, MUTED)
-                + ui_chip(x, y + 14, "agent-test", hl=True, icon="folder", w=200))
+        return (T(x, y - 4, "Lokal", 16, 400, MUTED) + T(x, y + 20, "Dieser Computer", 16, 400, INK)
+                + f'<line x1="{x}" y1="{y + 34}" x2="{x + 236}" y2="{y + 34}" stroke="{RULE}" stroke-width="1.2"/>'
+                + ui_chip(x, y + 46, "Neue Umgebung", hl=True, icon="plus", w=186))
 
     def s3(x, y):
-        return (T(x, y, "Environment", 16, 400, MUTED)
-                + ui_chip(x, y + 14, "Local", hl=True, w=90))
+        return (ui_chip(x, y - 28, "Lokal", w=66) + T(x + 76, y - 5, "Cloud  SSH", 16, 400, MUTED)
+                + ui_chip(x, y + 10, "agent-test", w=236)
+                + ui_chip(x, y + 48, "Hinzufügen", hl=True, icon="plus", w=146)
+                + T(x + 154, y + 71, "Auswählen …", 14, 600, BLUE)
+                + ui_chip(x + 46, y + 86, "Umgebung erstellen", hl=True, w=190))
 
-    return ordner_fig("ordner-claude", "Claude-Desktop-App: Ordner wählen", [
-        ("Code-Symbol klicken", s1, "oben rechts, oder Button in der Lektion"),
-        ("Ordner wählen", s2, "im Fenster Dokumente, dann agent-test"),
-        ("„Local“ wählen", s3, "der Agent arbeitet auf diesem Rechner"),
-    ], "Prüfen: Unter „Project folder“ steht agent-test. Erst dann die erste Nachricht senden.")
+    return ordner_fig("ordner-claude", "Claude-Desktop-App: Ordner als Umgebung wählen", [
+        ("Umgebung öffnen", s1, "Code-Symbol oben rechts, dann Feld unter der Eingabe"),
+        ("„Neue Umgebung“", s2, "unten im Menü"),
+        ("Ordner hinzufügen", s3, "Reiter Lokal, Name und Ordner: agent-test"),
+    ], "Prüfen: Unter dem Eingabefeld steht agent-test. Erst dann die erste Nachricht senden.")
 
 
 def fig_ordner_codex():
