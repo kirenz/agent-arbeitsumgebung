@@ -39,6 +39,7 @@ book:
         - agent-arbeitsumgebung/chat-oder-agent.qmd
         - agent-arbeitsumgebung/markdown.qmd
         - agent-arbeitsumgebung/projektordner.qmd
+        - agent-arbeitsumgebung/erstes-material.qmd
         - agent-arbeitsumgebung/agents-md.qmd
         - agent-arbeitsumgebung/kontext-bereitstellen.qmd
         - agent-arbeitsumgebung/pdf-als-quelle.qmd

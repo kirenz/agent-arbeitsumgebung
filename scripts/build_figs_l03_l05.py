@@ -118,7 +118,7 @@ def file_card(x, y, w, h, name):
 
 def fig_projektordner_arbeitsplatz():
     W, H = 1000, 470
-    b = [heading(500, "Der Projektordner: Arbeitsplatz mit Ablage")]
+    b = [heading(500, "Beispielfall: der Projektordner als Arbeitsplatz mit Ablage")]
     # Ordnerrahmen mit Reiter
     b.append(box(30, 70, 620, 330, LIGHT, BLUE, 14))
     b.append(box(30, 54, 200, 32, BLUE, BLUE, 8))
@@ -398,7 +398,80 @@ def fig_kontext_drei_teile():
     return save(f"{L5}/kontext-drei-teile.svg", svg(W, H, b))
 
 
-FIGS = [fig_projektordner_arbeitsplatz, fig_dateiname_aufbau, fig_zwei_sitzungen,
+# ---------------------------------------------------------------- Interview (Umbau 2026-10-21)
+
+def fig_was_in_den_ordner_darf():
+    W, H = 1000, 470
+    b = [heading(500, "Was in den Projektordner darf")]
+    gut = ["eigene Vorlagen", "Preislisten, Produktbeschreibungen", "Abläufe und Checklisten",
+           "Kopien von Anfragen ohne Namen"]
+    nein = ["Personendaten (Namen, Adressen, Telefon)", "Zugangsdaten, Verträge",
+            "Gesundheits- und Finanzdaten von Personen", "vertraulich gekennzeichnete Dokumente"]
+    for x, head, items, col, fill in ((30, "Geeignet", gut, GREEN, "#f0fdf4"),
+                                       (515, "Nicht in den Ordner", nein, RED, "#fef2f2")):
+        b.append(box(x, 62, 455, 250, fill, col, 12))
+        b.append(T(x + 24, 96, head, 18, 700, col))
+        for i, it in enumerate(items):
+            y = 140 + i * 42
+            if col == GREEN:
+                b.append(f'<path d="M{x + 26},{y - 6} l6,7 l12,-13" stroke="{GREEN}" stroke-width="3" fill="none"/>')
+            else:
+                b.append(cross(x + 34, y - 6))
+            b.append(T(x + 56, y, it))
+    # Fluss zum Anbieter
+    b.append(hs_box(30, 336, 300, 64, "Projektordner", "auf Ihrem Rechner"))
+    b.append(arrow(340, 368, 650, 368, color=BLUE))
+    b.append(T(495, 356, "Agent liest und sendet", 16, 600, BLUE, "middle"))
+    b.append(hs_box(660, 336, 310, 64, "Anbieter des Sprachmodells", "verarbeitet den Inhalt"))
+    b.append(note16(30, 414, 940, "Was der Agent liest, geht an den Anbieter. Namen vorher durch Rollen ersetzen."))
+    return save(f"{L3}/was-in-den-ordner-darf.svg", svg(W, H, b))
+
+
+def fig_interview_vorschlag_freigabe():
+    W, H = 1000, 380
+    b = [heading(500, "Interview, Vorschlag, Freigabe, Anlegen")]
+    st = [("Interview", "eine Frage nach der anderen, höchstens sechs"),
+          ("Vorschlag", "Liste: Ordner, Unterordner, README.md"),
+          ("Freigabe", "Sie prüfen, ändern oder stimmen zu"),
+          ("Anlegen", "nur Ordner, Unterordner und README.md")]
+    w, gap = 214, 28
+    for i, (hd, sb) in enumerate(st):
+        x = 30 + i * (w + gap)
+        hl = i == 2
+        b.append(box(x, 70, w, 170, LIGHT if hl else "#ffffff", BLUE if hl else RULE, 12, 2 if hl else 1.5))
+        b.append(badge16(x + 28, 100, str(i + 1)))
+        b.append(T(x + 54, 106, hd, 18, 700, BLUE if hl else INK))
+        b.append(multiline(x + 18, 150, sb, w - 36, 16, 400, MUTED))
+        if i < 3:
+            b.append(arrow(x + w + 2, 155, x + w + gap - 2, 155))
+    b.append(T(30 + 2 * (w + gap) + w / 2, 272, "Ohne Freigabe entsteht nichts.", 16, 600, BLUE, "middle"))
+    b.append(note16(30, 310, 940, "Ein Vorschlag lässt sich leichter korrigieren als ein fertiger Ordner."))
+    return save(f"{L3}/interview-vorschlag-freigabe.svg", svg(W, H, b))
+
+
+def fig_readme_fuenf_abschnitte():
+    W, H = 1000, 500
+    b = [heading(500, "Die README.md und wer sie weiter nutzt")]
+    b.append(box(30, 62, 400, 360, "#ffffff", RULE, 12))
+    b.append(glyph("doc", 62, 96))
+    b.append(T(92, 102, "README.md", 18, 700, mono=True))
+    rows = [("Zweck", "AGENTS.md: die Hausordnung"),
+            ("Beteiligte", "MCP: Zugänge zu anderen Systemen"),
+            ("Material", "Kontext, PDFs, Excel"),
+            ("Wiederkehrende Aufgaben", "Skills: Abläufe, die bleiben"),
+            ("Vorgesehene Regeln", "AGENTS.md: Projektregeln")]
+    for i, (sec, les) in enumerate(rows):
+        y = 140 + i * 56
+        b.append(box(50, y, 360, 42, PAPER, PAPER, 8))
+        b.append(mono_rich(66, y + 27, [("## ", BLUE, 700), (sec, INK, 600)]))
+        b.append(arrow(418, y + 21, 560, y + 21, color=BLUE))
+        b.append(hs_box(570, y, 400, 42, les, fill=LIGHT, stroke=BLUE, hcol=BLUE))
+    b.append(note16(30, 438, 940, "Spätere Aufträge sagen „laut README.md“, deshalb passen sie zu jedem Vorhaben."))
+    return save(f"{L3}/readme-fuenf-abschnitte.svg", svg(W, H, b))
+
+
+FIGS = [fig_was_in_den_ordner_darf, fig_interview_vorschlag_freigabe, fig_readme_fuenf_abschnitte,
+        fig_projektordner_arbeitsplatz, fig_dateiname_aufbau, fig_zwei_sitzungen,
         fig_hausordnung_aufbau, fig_eine_hausordnung, fig_annahme_statt_erfinden, fig_geltungsbereich,
         fig_ablageplan, fig_kontext_drei_teile]
 
