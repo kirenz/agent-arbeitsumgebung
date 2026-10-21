@@ -191,11 +191,11 @@ def fig_drei_anforderungen():
     b = [heading(500, "Drei Anforderungen an das Werkzeug, drei Prüfungen")]
     rows = [
         ("Dateien lesen, anlegen und ändern", "in einem Ordner auf dem eigenen Rechner",
-         "Prüfung: Schritt 2", "Der Agent legt hallo.md an und zeigt sie."),
+         "Prüfung: erster Auftrag", "Der Agent legt hallo.md an und zeigt sie."),
         ("Vor Änderungen nachfragen", "oder die Änderung zur Prüfung zeigen",
-         "Prüfung: Schritt 2", "Rückfrage vor dem Anlegen"),
+         "Prüfung: erster Auftrag", "Rückfrage vor dem Anlegen"),
         ("Eine Anweisungsdatei lesen", "eine Datei mit Regeln im Ordner",
-         "Prüfung: Schritt 3", "Der Agent nennt den Dateinamen."),
+         "Prüfung: Selbstauskunft", "Der Agent nennt den Dateinamen."),
     ]
     h = 84
     for i, (h1, s1, h2, s2) in enumerate(rows):

@@ -52,7 +52,7 @@ Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das so
 
 [^kaggle-agents]: Wiesinger, Marlow und Vuskovic, Agents, Kaggle-Whitepaper (2025): <https://www.kaggle.com/whitepaper-agents>
 
-## Schritt 1: App installieren und Ordner wählen
+## Schritt 1: App installieren und Ordner wählen {#app-einrichten}
 
 **Voraussetzung:** Zugang zu einem der Werkzeuge aus der Tabelle oben.
 
@@ -104,10 +104,9 @@ Welches Werkzeug wir nutzen, ist für dieses Buch unerheblich. Es muss drei Ding
 
 Schritt 2 prüft die ersten beiden Punkte, Schritt 3 den dritten.
 
-![Drei Anforderungen an das Werkzeug. Schritt 2 prüft die ersten beiden, Schritt 3 die dritte.](images/lektionen/l01-chat-oder-agent/drei-anforderungen.svg){fig-alt="Drei nummerierte Anforderungen mit Pfeil zur jeweiligen Prüfung: Dateien in einem Ordner lesen, anlegen und ändern (Schritt 2); vor Änderungen nachfragen oder die Änderung zeigen (Schritt 2); eine Anweisungsdatei im Ordner lesen (Schritt 3)."}
+![Drei Anforderungen an das Werkzeug. Schritt 2 prüft die ersten beiden, Schritt 3 die dritte.](images/lektionen/l01-chat-oder-agent/drei-anforderungen.svg){fig-alt="Drei nummerierte Anforderungen mit Pfeil zur jeweiligen Prüfung: Dateien in einem Ordner lesen, anlegen und ändern (erster Auftrag); vor Änderungen nachfragen oder die Änderung zeigen (erster Auftrag); eine Anweisungsdatei im Ordner lesen (Selbstauskunft)."}
 
 ::: {.callout-note title="Wenn es anders aussieht"}
-- Alles in der App ist auf Englisch: Das ist normal. Die Begriffe aus Schritt 5 stehen so in der App. Der Agent selbst antwortet auf Deutsch, wenn wir auf Deutsch schreiben.
 - Der Rechner fragt, ob die App auf den Ordner „Dokumente“ oder „Dateien und Ordner“ zugreifen darf: den Zugriff erlauben. Ohne ihn sieht der Agent den Ordner nicht.
 - Die Anmeldung öffnet den Browser, und danach passiert in der App nichts: zurück zur App wechseln. Je nach App dauert es einen Moment, bis sie die Anmeldung übernimmt.
 - Die Anmeldung bei Antigravity mit einem Firmen- oder Hochschulkonto schlägt fehl: Ein solches Konto kann für Antigravity gesperrt sein. Ein privates Google-Konto nutzen.
@@ -117,7 +116,7 @@ Schritt 2 prüft die ersten beiden Punkte, Schritt 3 den dritten.
 - Die App verlangt ein Abo, das wir nicht haben: Antigravity mit einem privaten Google-Konto nutzen.
 :::
 
-## Schritt 2: Der erste Auftrag
+## Schritt 2: Der erste Auftrag {#erster-auftrag}
 
 Mit diesem Selbsttest prüfen wir, ob das eigene Werkzeug die ersten beiden Anforderungen erfüllt. Den Ordner `agent-test` nutzen wir im Kapitel [Markdown](markdown.qmd) weiter.
 
@@ -243,7 +242,7 @@ Die Begrüßung für die Website klingt nach Arbeit an einer Datei. Sie ist aber
 
 ![Zwei Fragen entscheiden: Liegt Material als Dateien vor oder soll eine Datei entstehen, nehmen wir den Agenten.](images/lektionen/l01-chat-oder-agent/wann-agent-wann-chat.svg){fig-alt="Zwei Fragen: Liegt das Material schon als Dateien vor? Soll das Ergebnis als Datei entstehen? Bei Ja führt der Pfeil zum Agenten im Ordner, der Dateien selbst liest, vor Änderungen fragt und das Ergebnis ablegt. Bei zweimal Nein führt der Pfeil zum Chat für eine kurze Frage ohne Material."}
 
-## Schritt 3: Den Agenten nach sich selbst fragen
+## Schritt 3: Den Agenten nach sich selbst fragen {#selbstauskunft}
 
 Einige Details hängen vom Werkzeug ab, etwa der Name der Anweisungsdatei. Statt sie nachzuschlagen, fragen wir den Agenten selbst.
 
