@@ -413,7 +413,121 @@ def fig_fuenf_zeichen():
     return save(f"{L2}/fuenf-zeichen.svg", svg(W, H, b))
 
 
-FIGS = [fig_chat_oder_agent, fig_drei_orte, fig_drei_anforderungen, fig_weg_eines_auftrags, fig_wann_agent,
+# ---------------------------------------------------------------- Lektion 1: Ordner wählen je App
+# Vereinfachte Nachzeichnungen der App-Oberflächen (Stand 2026-10-21), je drei Schritte.
+
+def folder_icon(cx, cy, col=INK):
+    return (f'<path d="M{cx - 10},{cy - 7} L{cx - 3},{cy - 7} L{cx},{cy - 4} L{cx + 10},{cy - 4} '
+            f'L{cx + 10},{cy + 8} L{cx - 10},{cy + 8} Z" fill="#ffffff" stroke="{col}" stroke-width="1.6"/>')
+
+
+def ui_chip(x, y, label, hl=False, w=None, icon=None):
+    """Bedienelement der App; hl hebt das anzuklickende Element hervor."""
+    fill, stroke, col, sw = (LIGHT, BLUE, BLUE, 2.2) if hl else ("#ffffff", RULE, INK, 1.5)
+    w = w or text_width(label, 16, 600) + (44 if icon else 24)
+    out = box(x, y, w, 34, fill, stroke, 8, sw)
+    tx = x + 12
+    if icon == "folder":
+        out += folder_icon(x + 20, y + 17, col)
+        tx = x + 36
+    elif icon == "plus":
+        out += T(x + 20, y + 23, "+", 18, 700, col, "middle")
+        tx = x + 34
+    if label:
+        out += T(tx, y + 23, label, 16, 600, col)
+    return out
+
+
+def app_frame(x, y, w, h):
+    """Angedeutetes App-Fenster mit Titelleiste."""
+    dots = "".join(f'<circle cx="{x + 16 + i * 14}" cy="{y + 14}" r="4" fill="{RULE}"/>' for i in range(3))
+    return (box(x, y, w, h, "#ffffff", RULE, 10)
+            + f'<line x1="{x}" y1="{y + 28}" x2="{x + w}" y2="{y + 28}" stroke="{RULE}" stroke-width="1.2"/>' + dots)
+
+
+def ordner_fig(name, titel, steps, check):
+    """Drei Schritt-Felder nebeneinander; steps = [(Kopf, Zeichenfunktion(x, y), Hinweis)]."""
+    W, H = 1000, 452
+    b = [heading(500, titel)]
+    pw, ph, top = 300, 310, 60
+    for i, (head, draw, hint) in enumerate(steps):
+        x = 30 + i * (pw + 20)
+        b.append(box(x, top, pw, ph, "#ffffff", RULE, 12))
+        b.append(badge16(x + 28, top + 30, str(i + 1)))
+        b.append(T(x + 54, top + 36, head, 16, 600))
+        b.append(app_frame(x + 16, top + 60, pw - 32, 180))
+        b.append(draw(x + 32, top + 112))
+        b.append(multiline(x + pw / 2, top + 268, hint, pw - 32, 16, 400, MUTED, "middle"))
+        if i < 2:
+            b.append(arrow(x + pw + 2, top + ph / 2, x + pw + 18, top + ph / 2))
+    b.append(note16(30, 392, 940, check))
+    return save(f"{L1}/{name}.svg", svg(W, H, b))
+
+
+def fig_ordner_claude():
+    def s1(x, y):
+        return (ui_chip(x, y, "Chat", w=70) + ui_chip(x + 76, y, "Cowork", w=84)
+                + ui_chip(x + 166, y, "Code", hl=True, w=70))
+
+    def s2(x, y):
+        return (T(x, y, "Project folder", 16, 400, MUTED)
+                + ui_chip(x, y + 14, "agent-test", hl=True, icon="folder", w=200))
+
+    def s3(x, y):
+        return (T(x, y, "Environment", 16, 400, MUTED)
+                + ui_chip(x, y + 14, "Local", hl=True, w=90))
+
+    return ordner_fig("ordner-claude", "Claude-Desktop-App: Ordner wählen", [
+        ("Bereich „Code“ öffnen", s1, "oder Button „Claude Code öffnen“ in der Lektion"),
+        ("Ordner wählen", s2, "im Fenster Dokumente, dann agent-test"),
+        ("„Local“ wählen", s3, "der Agent arbeitet auf diesem Rechner"),
+    ], "Prüfen: Unter „Project folder“ steht agent-test. Erst dann die erste Nachricht senden.")
+
+
+def fig_ordner_codex():
+    def s1(x, y):
+        return (ui_chip(x, y - 10, "Projekt auswählen", hl=True, icon="folder", w=200)
+                + box(x, y + 34, 236, 44, PAPER, RULE, 10) + T(x + 12, y + 62, "Leg einfach los", 16, 400, MUTED))
+
+    def s2(x, y):
+        return (T(x, y - 4, "rechnung-pdf", 16, 400, MUTED) + T(x, y + 20, "notes", 16, 400, MUTED)
+                + f'<line x1="{x}" y1="{y + 34}" x2="{x + 236}" y2="{y + 34}" stroke="{RULE}" stroke-width="1.2"/>'
+                + ui_chip(x, y + 46, "Neues Projekt", hl=True, icon="plus", w=170))
+
+    def s3(x, y):
+        return (ui_chip(x, y - 14, "agent-test", icon="folder", w=236)
+                + ui_chip(x, y + 28, "Hinzufügen", hl=True, icon="folder", w=150)
+                + ui_chip(x + 66, y + 70, "Projekt erstellen", hl=True, w=170))
+
+    return ordner_fig("ordner-codex", "Codex-App: Ordner als Projekt wählen", [
+        ("„Projekt auswählen“", s1, "über dem Eingabefeld; oder Button „Codex öffnen“"),
+        ("„Neues Projekt“", s2, "unten in der Liste der Projekte"),
+        ("Ordner hinzufügen", s3, "Projektname und Ordner: agent-test"),
+    ], "Prüfen: In der Seitenleiste steht unter „Projekte“ der Eintrag agent-test.")
+
+
+def fig_ordner_antigravity():
+    def s1(x, y):
+        return (box(x - 16, y - 23, 64, 150, PAPER, RULE, 0, 1)
+                + ui_chip(x - 6, y - 10, "", hl=True, icon="folder", w=44)
+                + T(x + 20, y + 4, "+", 14, 700, BLUE, "middle")
+                + T(x + 60, y + 13, "New Project", 16, 600, BLUE))
+
+    def s2(x, y):
+        return (ui_chip(x, y - 10, "Add Folder", hl=True, icon="folder", w=150)
+                + T(x, y + 56, "dann agent-test wählen", 16, 400, MUTED))
+
+    def s3(x, y):
+        return ui_chip(x, y - 14, "agent-test", icon="folder", w=236) + ui_chip(x + 136, y + 44, "Create", hl=True, w=100)
+
+    return ordner_fig("ordner-antigravity", "Antigravity-App: Ordner als Projekt wählen", [
+        ("„New Project“", s1, "Ordner mit Plus in der linken Seitenleiste"),
+        ("„Add Folder“", s2, "im Fenster Dokumente, dann agent-test"),
+        ("„Create“", s3, "legt das Projekt an"),
+    ], "Prüfen: Die Seitenleiste zeigt das Projekt agent-test.")
+
+
+FIGS = [fig_ordner_claude, fig_ordner_codex, fig_ordner_antigravity, fig_chat_oder_agent, fig_drei_orte, fig_drei_anforderungen, fig_weg_eines_auftrags, fig_wann_agent,
         fig_rohtext_vorschau, fig_tabelle_aufbau, fig_zeilenvergleich, fig_fuenf_zeichen]
 
 if __name__ == "__main__":
