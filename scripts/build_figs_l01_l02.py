@@ -466,8 +466,14 @@ def ordner_fig(name, titel, steps, check):
 
 def fig_ordner_claude():
     def s1(x, y):
-        return (ui_chip(x, y, "Chat", w=70) + ui_chip(x + 76, y, "Cowork", w=84)
-                + ui_chip(x + 166, y, "Code", hl=True, w=70))
+        # Umschalter oben rechts: Sprechblase (Chat) und Code-Symbol, nur Icons
+        bx, by = x + 112, y - 14
+        bubble = (f'<path d="M{bx + 18},{by + 12} h18 a5,5 0 0 1 5,5 v8 a5,5 0 0 1 -5,5 h-10 l-6,5 v-5 h-2 '
+                  f'a5,5 0 0 1 -5,-5 v-8 a5,5 0 0 1 5,-5 z" fill="#ffffff" stroke="{INK}" stroke-width="1.6"/>')
+        return (box(bx, by, 60, 44, "#ffffff", RULE, 10) + bubble
+                + box(bx + 66, by, 60, 44, LIGHT, BLUE, 10, 2.2)
+                + T(bx + 96, by + 28, "</>", 18, 700, BLUE, "middle", mono=True)
+                + T(bx + 96, by + 68, "Code", 16, 600, BLUE, "middle"))
 
     def s2(x, y):
         return (T(x, y, "Project folder", 16, 400, MUTED)
@@ -478,7 +484,7 @@ def fig_ordner_claude():
                 + ui_chip(x, y + 14, "Local", hl=True, w=90))
 
     return ordner_fig("ordner-claude", "Claude-Desktop-App: Ordner wählen", [
-        ("Bereich „Code“ öffnen", s1, "oder Button „Claude Code öffnen“ in der Lektion"),
+        ("Code-Symbol klicken", s1, "oben rechts, oder Button in der Lektion"),
         ("Ordner wählen", s2, "im Fenster Dokumente, dann agent-test"),
         ("„Local“ wählen", s3, "der Agent arbeitet auf diesem Rechner"),
     ], "Prüfen: Unter „Project folder“ steht agent-test. Erst dann die erste Nachricht senden.")

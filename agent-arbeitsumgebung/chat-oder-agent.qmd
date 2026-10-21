@@ -61,9 +61,9 @@ Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das so
 3. In der App anmelden. Je nach App öffnet sich dafür der Browser. Nach der Anmeldung zurück zur App wechseln.
 4. Im Ordner `Dokumente` einen leeren Ordner `agent-test` anlegen. Finder: Menü „Ablage“, dann „Neuer Ordner“. Windows-Explorer: „Neu“, dann „Ordner“.
 5. Den Ordner `agent-test` in der App wählen. Je App geht das so (die Beschriftungen hängen von der Sprache der App ab):
-   - **Claude-Desktop-App:** auf [Claude Code öffnen](claude://code/new) klicken. Fragt der Browser, ob er die App öffnen darf: erlauben. Die App öffnet den Bereich „Code“. Vor der ersten Nachricht unter „Project folder“ den Ordner `agent-test` wählen und unter „Environment“ den Eintrag „Local“.
+   - **Claude-Desktop-App:** auf [Claude Code öffnen](claude://code/new) klicken. Fragt der Browser, ob er die App öffnen darf: erlauben. Die App öffnet den Bereich „Code“. Ohne Link: oben rechts auf das Code-Symbol (`</>`) klicken, links daneben liegt die Sprechblase für den Chat. Vor der ersten Nachricht unter „Project folder“ den Ordner `agent-test` wählen und unter „Environment“ den Eintrag „Local“.
 
-     ![Claude-Desktop-App: Bereich „Code“, Ordner, „Local“.](images/lektionen/l01-chat-oder-agent/ordner-claude.svg){fig-alt="Drei Schritte in der Claude-Desktop-App. 1: Oben zwischen Chat, Cowork und Code den Bereich Code wählen, alternativ über den Button in der Lektion. 2: Unter Project folder den Ordner agent-test aus Dokumente wählen. 3: Unter Environment den Eintrag Local wählen. Prüfen: Unter Project folder steht agent-test."}
+     ![Claude-Desktop-App: Code-Symbol, Ordner, „Local“.](images/lektionen/l01-chat-oder-agent/ordner-claude.svg){fig-alt="Drei Schritte in der Claude-Desktop-App. 1: Oben rechts neben der Sprechblase für den Chat auf das Code-Symbol klicken, alternativ über den Button in der Lektion. 2: Unter Project folder den Ordner agent-test aus Dokumente wählen. 3: Unter Environment den Eintrag Local wählen. Prüfen: Unter Project folder steht agent-test."}
    - **Codex-App:** auf [Codex öffnen](codex://threads/new) klicken. Fragt der Browser, ob er die App öffnen darf: erlauben. Die App öffnet einen neuen Thread. Über dem Eingabefeld auf „Projekt auswählen“ klicken, dann auf „Neues Projekt“. Als Projektname `agent-test` eintragen. Unter „Quellordner“ auf „Hinzufügen“ klicken, `agent-test` wählen und auf „Projekt erstellen“ klicken.
 
      ![Codex-App: „Projekt auswählen“, „Neues Projekt“, Ordner hinzufügen.](images/lektionen/l01-chat-oder-agent/ordner-codex.svg){fig-alt="Drei Schritte in der Codex-App. 1: Über dem Eingabefeld auf Projekt auswählen klicken. 2: Unten in der Liste der Projekte auf Neues Projekt klicken. 3: Projektname agent-test eintragen, mit Hinzufügen den Ordner agent-test wählen und auf Projekt erstellen klicken. Prüfen: In der Seitenleiste steht unter Projekte der Eintrag agent-test."}
@@ -111,7 +111,7 @@ Schritt 2 prüft die ersten beiden Punkte, Schritt 3 den dritten.
 - Der Rechner fragt, ob die App auf den Ordner „Dokumente“ oder „Dateien und Ordner“ zugreifen darf: den Zugriff erlauben. Ohne ihn sieht der Agent den Ordner nicht.
 - Die Anmeldung öffnet den Browser, und danach passiert in der App nichts: zurück zur App wechseln. Je nach App dauert es einen Moment, bis sie die Anmeldung übernimmt.
 - Die Anmeldung bei Antigravity mit einem Firmen- oder Hochschulkonto schlägt fehl: Ein solches Konto kann für Antigravity gesperrt sein. Ein privates Google-Konto nutzen.
-- Die Claude-Desktop-App zeigt nur einen Chat ohne Ordnerwahl: Das ist der normale Chat. In den Bereich „Code“ wechseln.
+- Die Claude-Desktop-App zeigt nur einen Chat ohne Ordnerwahl: Das ist der normale Chat. Oben rechts auf das Code-Symbol (`</>`) klicken.
 - Die App zeigt neben dem Chat weitere Bereiche, etwa Dateien oder Änderungen: unbeachtet lassen. Für das Buch genügt der Chat.
 - Die App fragt nach einem Projekt oder Arbeitsbereich: Gemeint ist der Ordner. `agent-test` wählen.
 - Die App verlangt ein Abo, das wir nicht haben: Antigravity mit einem privaten Google-Konto nutzen.
