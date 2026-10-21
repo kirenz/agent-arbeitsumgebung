@@ -436,13 +436,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div></li>
 </ul></li>
 <li>Fragt der Rechner, ob die App auf den Ordner „Dokumente“ zugreifen darf: den Zugriff erlauben.</li>
-<li>Prüfen: Die App zeigt den Namen <code>agent-test</code>, etwa in der Kopfzeile oder bei der Ordnerwahl. Der Chat ist leer.</li>
+<li>Prüfen: Die App zeigt den Namen <code>agent-test</code>, in Claude unter dem Eingabefeld, in Codex und Antigravity in der Seitenleiste. Der Chat ist leer.</li>
 </ol>
 <section id="das-sollten-wir-jetzt-sehen" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen"><span class="header-section-number">1.3.1</span> Das sollten wir jetzt sehen</h3>
 <p>Schema einer App, kein echtes Produkt:</p>
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="color:#5b6170;font-size:13px;padding:18px 0;text-align:center">Noch keine Nachrichten</div>
 </div>
@@ -509,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen-1"><span class="header-section-number">1.4.1</span> Das sollten wir jetzt sehen</h3>
 <p>Der Verlauf im Chat, sinngemäß; das Datum ist das eigene:</p>
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege in diesem Ordner die Datei hallo.md an. Inhalt: eine Überschrift „Test“ und ein Satz, welches Datum heute ist. Frage vorher, ob du die Datei anlegen darfst.</div>
 <div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege die Datei <code>hallo.md</code> mit einer Überschrift und dem heutigen Datum an. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
@@ -558,7 +558,7 @@ Heute ist der 18. Oktober 2026.</pre></div>
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="so-sieht-es-mit-echtem-material-aus"><span class="header-section-number">1.4.3</span> So sieht es mit echtem Material aus</h3>
 <p>Der folgende Nachbau zeigt dasselbe Prinzip mit drei Kundenanfragen im Ordner <code>kundenanfragen</code>, den wir im Kapitel <a href="../agent-arbeitsumgebung/projektordner.html">Der Projektordner</a> selbst anlegen. Er stellt einen Chatverlauf nach, kein echtes Produkt: Der Agent liest die Anfragen selbst, fragt vor dem Anlegen und zeigt die fertige Übersicht auf Nachfrage im Chat.</p>
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Sortiere die Anfragen im Ordner anfragen nach Dringlichkeit und schreibe das Ergebnis in die Datei UEBERSICHT.md.</div>
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest anfragen/2026-10-05-terminwunsch.md</div>
