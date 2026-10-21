@@ -71,7 +71,7 @@ Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das so
 
      ![Antigravity-App: „New Project“, „Add Folder“, „Create“.](images/lektionen/l01-chat-oder-agent/ordner-antigravity.svg){fig-alt="Drei Schritte in der Antigravity-App. 1: In der linken Seitenleiste auf das Ordnersymbol mit Plus, New Project, klicken. 2: Auf Add Folder klicken und agent-test aus Dokumente wählen. 3: Auf Create klicken. Prüfen: Die Seitenleiste zeigt das Projekt agent-test."}
 6. Fragt der Rechner, ob die App auf den Ordner „Dokumente“ zugreifen darf: den Zugriff erlauben.
-7. Prüfen: Die App zeigt den Namen `agent-test`, etwa in der Kopfzeile oder bei der Ordnerwahl. Der Chat ist leer.
+7. Prüfen: Die App zeigt den Namen `agent-test`, in Claude unter dem Eingabefeld, in Codex und Antigravity in der Seitenleiste. Der Chat ist leer.
 
 ### Das sollten wir jetzt sehen
 
@@ -79,7 +79,7 @@ Schema einer App, kein echtes Produkt:
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="color:#5b6170;font-size:13px;padding:18px 0;text-align:center">Noch keine Nachrichten</div>
 </div>
@@ -146,7 +146,7 @@ Der Verlauf im Chat, sinngemäß; das Datum ist das eigene:
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">agent-test</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege in diesem Ordner die Datei hallo.md an. Inhalt: eine Überschrift „Test“ und ein Satz, welches Datum heute ist. Frage vorher, ob du die Datei anlegen darfst.</div>
 <div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege die Datei <code>hallo.md</code> mit einer Überschrift und dem heutigen Datum an. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
@@ -187,7 +187,7 @@ Der folgende Nachbau zeigt dasselbe Prinzip mit drei Kundenanfragen im Ordner `k
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Sortiere die Anfragen im Ordner anfragen nach Dringlichkeit und schreibe das Ergebnis in die Datei UEBERSICHT.md.</div>
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>liest anfragen/2026-10-05-terminwunsch.md</div>

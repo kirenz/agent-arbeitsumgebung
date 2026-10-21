@@ -30,7 +30,7 @@ Der Verlauf im Chat, sinngemäß:
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45" role="group" aria-label="Chat: Plan, Freigabe, Anlegen des Projektordners und Inhalt der README.md">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Dokumente</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege den Projektordner kundenanfragen an. Darin die Ordner anfragen und antworten und eine Datei README.md mit drei Sätzen: Der Ordner sammelt Kundenanfragen eines kleinen Betriebs, Antworten entstehen als Entwürfe in antworten, Anfragen liegen als Markdown in anfragen. Zeige mir vorher den Plan und frage, bevor du etwas anlegst.</div>
 <div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Plan: Ich lege im Ordner <code>Dokumente</code> den Ordner <code>kundenanfragen</code> an. Darin die leeren Ordner <code>anfragen</code> und <code>antworten</code> und die Datei <code>README.md</code> mit drei Sätzen. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
@@ -125,7 +125,7 @@ Die **README.md** beschreibt für Menschen in wenigen Sätzen, wozu der Ordner d
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45" role="group" aria-label="Chat: drei Anfragen angelegt, Dateiliste und Inhalt der Beschwerde">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Dokumente</b><span style="margin-left:auto">Chat</span></div>
+
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>anfragen/2026-10-05-terminwunsch.md angelegt</div>
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>anfragen/2026-10-06-preisfrage.md angelegt</div>
@@ -211,7 +211,7 @@ Beispielantworten; Wortlaut und Zugriffsregeln unterscheiden sich je Werkzeug un
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45" role="group" aria-label="Beispielantworten des Agenten in der neuen Sitzung">
-<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Ordner: <b style="color:#1f2430;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kundenanfragen</b><span style="margin-left:auto">Chat, neue Sitzung</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Neue Sitzung</div>
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Was liegt in diesem Ordner?</div>
 <div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Im Ordner liegen <code>README.md</code> und zwei Unterordner. In <code>anfragen</code> liegen drei Anfragen: <code>2026-10-05-terminwunsch.md</code>, <code>2026-10-06-preisfrage.md</code> und <code>2026-10-07-beschwerde.md</code>. <code>antworten</code> ist leer.</div>
