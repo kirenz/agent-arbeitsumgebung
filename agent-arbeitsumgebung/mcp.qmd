@@ -1,10 +1,10 @@
 # MCP: Zugänge zu anderen Systemen
 
-Ein Agent im Projektordner kennt nur die Dateien in diesem Ordner. Der Terminwunsch vom 5. Oktober liegt als Datei in `anfragen/`, die freien Zeiten im Teamkalender liegen dort nicht. Damit der Agent sie trotzdem nachsehen kann, braucht er einen Zugang zum Kalender. MCP regelt solche Zugänge, und zwar genormt: Ein Agent, der MCP beherrscht, kann jedes System erreichen, das ebenfalls MCP anbietet.
+Ein Agent im Projektordner kennt nur die Dateien in diesem Ordner. Im Beispielfall liegt der Terminwunsch vom 5. Oktober als Datei in `anfragen/`, die freien Zeiten im Teamkalender liegen dort nicht. Damit der Agent sie trotzdem nachsehen kann, braucht er einen Zugang zum Kalender. MCP regelt solche Zugänge, und zwar genormt: Ein Agent, der MCP beherrscht, kann jedes System erreichen, das ebenfalls MCP anbietet.
 
-Eingerichtet wird hier nichts. Wir fragen den eigenen Agenten, welche Zugänge er hat, und entscheiden, ob wir einen brauchen. Die Erklärung folgt jeweils am eigenen Ergebnis. Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
+Eingerichtet wird hier nichts. Wir fragen den eigenen Agenten, welche Zugänge er hat, und entscheiden, ob wir einen brauchen. Die Erklärung folgt jeweils am eigenen Ergebnis. Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „So sieht es im Beispielfall aus“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
-**Voraussetzung:** Der Ordner `kundenanfragen` mit dem Stand nach dem Kapitel [Skills: Abläufe, die bleiben](skills.qmd) ist in der App des Agenten gewählt.
+**Voraussetzung:** Der eigene Projektordner mit dem Stand nach dem Kapitel [Skills: Abläufe, die bleiben](skills.qmd) ist in der App des Agenten gewählt (Beispielfall: `kundenanfragen`).
 
 ::: {.callout-warning title="Fragen zu Verbindungen"}
 - Die Aufträge in diesem Kapitel betreffen Verbindungen und Einstellungen außerhalb des Projektordners. Darum beginnt jeder Auftrag mit „Nur lesen und auflisten, nichts ändern“.
@@ -24,9 +24,9 @@ Eingerichtet wird hier nichts. Wir fragen den eigenen Agenten, welche Zugänge e
 3. Prüfen: Die Antwort nennt Server mit Werkzeugen, oder sie stellt fest, dass keiner verbunden ist. Beide Ergebnisse sind gültig.
 4. Prüfen: Bei jedem genannten Werkzeug steht, ob es nur liest oder etwas ändert.
 
-### Das sollten wir jetzt sehen
+### So sieht es im Beispielfall aus
 
-Eine von zwei Antworten. Namen und Zahl der Server hängen vom Werkzeug und den eigenen Einstellungen ab.
+Unsere Namen weichen ab, die Prüfpunkte gelten. Eine von zwei Antworten. Namen und Zahl der Server hängen vom Werkzeug und den eigenen Einstellungen ab.
 
 ```{=html}
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin:0 0 1rem">
@@ -49,11 +49,11 @@ Eine von zwei Antworten. Namen und Zahl der Server hängen vom Werkzeug und den 
 
 ### Was gerade passiert ist
 
-Der Agent hat aufgelistet, welche Systeme außerhalb des Ordners er erreicht. **MCP** steht für Model Context Protocol. Ein Protokoll ist eine feste Vereinbarung, wie zwei Programme miteinander sprechen. MCP ist ein offener Standard, über den ein Agent Werkzeuge und Daten anderer Systeme nutzt: Dateien in einer Cloud-Ablage suchen, Termine lesen, Tickets anlegen. Für den Agenten als neuen Mitarbeiter sind das seine Zugänge zu anderen Systemen. MCP funktioniert dabei wie ein genormtes Schließsystem: Eine Karte öffnet viele Türen, aber nur die, für die sie freigeschaltet ist.
+Der Agent hat aufgelistet, welche Systeme außerhalb des Ordners er erreicht: bei uns die Server aus der Antwort in Schritt 1, oder keiner. **MCP** steht für Model Context Protocol. Ein Protokoll ist eine feste Vereinbarung, wie zwei Programme miteinander sprechen. MCP ist ein offener Standard, über den ein Agent Werkzeuge und Daten anderer Systeme nutzt: Dateien in einer Cloud-Ablage suchen, Termine lesen, Tickets anlegen. Für den Agenten als neuen Mitarbeiter sind das seine Zugänge zu anderen Systemen. MCP funktioniert dabei wie ein genormtes Schließsystem: Eine Karte öffnet viele Türen, aber nur die, für die sie freigeschaltet ist.
 
 **MCP-Server** heißt das Programm hinter einer dieser Türen. Ein Server ist hier einfach ein Programm, das auf Anfragen antwortet; es kann auf dem eigenen Rechner laufen oder bei einem Anbieter im Internet. Der MCP-Server stellt Werkzeuge bereit (englisch Tools), die der Agent aufrufen darf. Ein Werkzeug ist eine einzelne Fähigkeit mit einem festen Namen, etwa `termine_lesen`. Hier hinkt der Vergleich von Karte und Tür: Der Agent betritt das andere System nicht, er ruft einzelne Werkzeuge auf und bekommt das Ergebnis zurück.
 
-![Mit der Zugangskarte MCP erreicht der Agent im Ordner `kundenanfragen` drei freigeschaltete Server mit ihren Werkzeugen. Die Tür zur Buchhaltung bleibt zu.](images/09-mcp-zugaenge.svg){fig-alt="Schema: links der Agent im Ordner kundenanfragen, in der Mitte eine Zugangskarte mit der Aufschrift MCP, rechts vier Türen zu anderen Systemen. Offen, weil die Karte dafür freigeschaltet ist: Kalender-Server mit termine_lesen (liest) und termin_anlegen (ändert), Ablage-Server mit dateien_suchen (liest), Ticket-Server mit ticket_anlegen (ändert). Verschlossen: Buchhaltung, nicht freigeschaltet."}
+![Im Beispielfall erreicht der Agent im Ordner `kundenanfragen` mit der Zugangskarte MCP drei freigeschaltete Server mit ihren Werkzeugen. Die Tür zur Buchhaltung bleibt zu.](images/09-mcp-zugaenge.svg){fig-alt="Schema: links der Agent im Ordner kundenanfragen, in der Mitte eine Zugangskarte mit der Aufschrift MCP, rechts vier Türen zu anderen Systemen. Offen, weil die Karte dafür freigeschaltet ist: Kalender-Server mit termine_lesen (liest) und termin_anlegen (ändert), Ablage-Server mit dateien_suchen (liest), Ticket-Server mit ticket_anlegen (ändert). Verschlossen: Buchhaltung, nicht freigeschaltet."}
 
 Jedes Werkzeug liest nur, oder es ändert etwas im anderen System. Deshalb haben wir diese Markierung verlangt. Für die Abbildung oben sieht das so aus:
 
@@ -91,9 +91,9 @@ MCP ist eine offene Spezifikation, die jeder Hersteller umsetzen darf. Seit Deze
 3. Den genannten Ort mit der Tabelle unter „Was gerade passiert ist“ vergleichen.
 4. Prüfen: Der Ort passt zum eigenen Werkzeug.
 
-### Das sollten wir jetzt sehen
+### So sieht es im Beispielfall aus
 
-Zwei typische Antworten in eigenen Worten. Der eigene Agent nennt den genauen Pfad oder den Namen des Bereichs in seiner App.
+Unsere Namen weichen ab, die Prüfpunkte gelten. Zwei typische Antworten in eigenen Worten. Der eigene Agent nennt den genauen Pfad oder den Namen des Bereichs in seiner App.
 
 ```{=html}
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin:0 0 1rem">
@@ -135,7 +135,7 @@ Dieses Buch richtet keinen Server ein. Der Weg dahin ist je Werkzeug anders, und
 
 ## Im Nachbau: ein Werkzeugaufruf
 
-Wie ein Werkzeugaufruf im Alltag aussieht, zeigt die folgende Szene. Der Ordner `kundenanfragen` hat den Stand nach dem Kapitel [Skills: Abläufe, die bleiben](skills.qmd). Neu ist eine Verbindung zu einem Kalender-Server. Mit „Weiter“ klicken wir uns Schritt für Schritt durch die Sitzung.
+Wie ein Werkzeugaufruf im Alltag aussieht, zeigt die folgende Szene am Beispielfall. Der Ordner `kundenanfragen` hat den Stand nach dem Kapitel [Skills: Abläufe, die bleiben](skills.qmd). Neu ist eine Verbindung zu einem Kalender-Server. Mit „Weiter“ klicken wir uns Schritt für Schritt durch die Sitzung.
 
 ```{=html}
 <iframe class="muster-agent" src="widgets/09-steckdose.html" title="Nachbau eines Agenten: Termin über den Kalender-Server" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
@@ -146,7 +146,7 @@ Drei Stellen in der Szene sind wichtig.
 
 **Die Rückfrage vor dem Aufruf.** Bevor der Agent den Kalender abfragt, fragt er, wie er es auch vor dem Anlegen einer Datei tut. Die Rückfrage nennt den Server (`kalender`), das Werkzeug (`termine_lesen`) und den Hinweis, dass es nur liest. Die Zeile mit „› ruft auf“ im Chat zeigt danach den eigentlichen Aufruf.
 
-**Was wo entsteht.** Die Anfrage zeigt der Chat gekürzt: nur die markierte Zeile mit dem Terminwunsch und ihre Nachbarzeilen. Die drei freien Zeiten kommen aus dem Kalender, nicht aus einer Datei. Im Projektordner entsteht nur der Antwortentwurf in `antworten/`, den der Chat formatiert zeigt. Für die neue Zeile in `UEBERSICHT.md` zeigt er nur die Zeile „› ändert UEBERSICHT.md“. Der Kalender selbst bleibt unverändert.
+**Was wo entsteht.** Die Anfrage zeigt der Chat gekürzt: nur die markierte Zeile mit dem Terminwunsch und ihre Nachbarzeilen. Die drei freien Zeiten kommen aus dem Kalender, nicht aus einer Datei. Im Projektordner entsteht nur der Antwortentwurf (Beispielfall: `antworten/`), den der Chat formatiert zeigt. Für die neue Zeile in `UEBERSICHT.md` zeigt er nur die Zeile „› ändert UEBERSICHT.md“. Der Kalender selbst bleibt unverändert.
 
 **Was der Agent nicht tut.** `termin_anlegen` würde den Kalender ändern. Der Agent ruft es nicht auf, weil der Auftrag einen Entwurf verlangt. Ein Entwurf bietet drei Zeiten an; einen Termin trägt erst ein Mensch ein, wenn die Zusage der Kundin oder des Kunden da ist.
 
@@ -164,25 +164,27 @@ Hintergrund zu den Risiken: [Security Best Practices der MCP-Spezifikation](http
 
 ## Schritt 3: Brauchen wir eine Anbindung?
 
-Zum Abschluss entscheiden wir für die eigenen Anfragen, ob der Agent ein anderes System erreichen muss.
+Zum Abschluss entscheiden wir für das eigene Vorhaben, ob der Agent ein anderes System erreichen muss.
 
-**Voraussetzung:** Die Antworten aus Schritt 1 und 2 liegen vor.
+**Voraussetzung:** Die Antworten aus Schritt 1 und 2 liegen vor. Die `README.md` des eigenen Projektordners hat die Abschnitte Beteiligte und Material.
 
-1. Beantworten: Welches System müsste der Agent für die eigenen Anfragen erreichen, etwa Kalender, Ablage oder Ticket-System?
-2. Beantworten: Gibt es dafür einen offiziellen Server des Anbieters?
-3. Beantworten: Wer gibt die Anbindung frei?
-4. Prüfen: Für jede der drei Fragen liegt eine Antwort vor.
+1. `README.md` im eigenen Projektordner öffnen.
+2. Die Abschnitte Beteiligte und Material lesen.
+3. Beantworten: Welches System aus der README müsste der Agent erreichen, etwa Kalender, Ablage oder Ticket-System?
+4. Beantworten: Gibt es dafür einen offiziellen Server des Anbieters?
+5. Beantworten: Wer gibt die Anbindung frei?
+6. Prüfen: Für jede der drei Fragen liegt eine Antwort vor. Auch „kein System nötig“ ist eine gültige Antwort (Beispielfall: Teamkalender).
 
-### So kann die Antwort aussehen
+### So sieht es im Beispielfall aus
 
-Ein Beispiel für den Ordner `kundenanfragen`. Auch „kein System nötig“ ist eine gültige Antwort.
+Unsere Namen weichen ab, die Prüfpunkte gelten. Die Antworten hängen von den Abschnitten Beteiligte und Material der eigenen `README.md` ab.
 
 ```{=html}
 <div style="max-width:560px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem">
 <table style="border-collapse:collapse;font-size:.9rem;width:100%">
-<thead><tr style="background:#f4f2ed;border-bottom:1px solid #dcd9d2;text-align:left"><th style="padding:6px 10px">Frage</th><th style="padding:6px 10px">Beispiel für <code>kundenanfragen</code></th></tr></thead>
+<thead><tr style="background:#f4f2ed;border-bottom:1px solid #dcd9d2;text-align:left"><th style="padding:6px 10px">Frage</th><th style="padding:6px 10px">Beispielfall: Ordner <code>kundenanfragen</code></th></tr></thead>
 <tbody>
-<tr style="border-bottom:1px solid #dcd9d2"><td style="padding:6px 10px">Welches System?</td><td style="padding:6px 10px">Teamkalender, für Rückfragen zu Terminwünschen</td></tr>
+<tr style="border-bottom:1px solid #dcd9d2"><td style="padding:6px 10px">Welches System?</td><td style="padding:6px 10px">Teamkalender: Die Anfragen (Material) enthalten Terminwünsche der Kundschaft (Beteiligte).</td></tr>
 <tr style="border-bottom:1px solid #dcd9d2"><td style="padding:6px 10px">Offizieller Server des Anbieters?</td><td style="padding:6px 10px">ja, der Anbieter des Kalenders stellt einen bereit</td></tr>
 <tr><td style="padding:6px 10px">Wer gibt frei?</td><td style="padding:6px 10px">die IT; beim eigenen Konto die Person, der das Konto gehört</td></tr>
 </tbody></table>
@@ -191,13 +193,13 @@ Ein Beispiel für den Ordner `kundenanfragen`. Auch „kein System nötig“ ist
 
 ### Was die drei Schritte gezeigt haben
 
-Wir haben die Zugänge des eigenen Agenten erkundet, ohne etwas zu ändern, und eine Entscheidung vorbereitet. Ein MCP-Server bringt dem Agenten Werkzeuge, aber kein besseres Sprachmodell, kein Gedächtnis für frühere Unterhaltungen und keine Kopie der Daten in den Projektordner. Die Daten bleiben im Kalender oder im Ticket-System; der Agent holt sich bei jedem Aufruf nur das Ergebnis.
+Wir haben die Zugänge des eigenen Agenten erkundet, ohne etwas zu ändern, und eine Entscheidung vorbereitet: bei uns die drei Antworten aus Schritt 3, abgeleitet aus Beteiligte und Material der eigenen `README.md`. Ein MCP-Server bringt dem Agenten Werkzeuge, aber kein besseres Sprachmodell, kein Gedächtnis für frühere Unterhaltungen und keine Kopie der Daten in den Projektordner. Die Daten bleiben im Kalender oder im Ticket-System; der Agent holt sich bei jedem Aufruf nur das Ergebnis.
 
 Daraus folgt eine Faustregel. Eine Anbindung lohnt sich, wenn ein Auftrag Daten aus einem anderen System braucht, die nicht als Datei im Ordner liegen, etwa Dokumente in der Cloud-Ablage, die das Team laufend ändert. Für alles, was als Datei vorliegt, reicht der Projektordner. Der offizielle Server des Anbieters ist die erste Wahl vor Servern von Dritten. Im Unternehmen gibt meist die IT frei, bei einem eigenen Konto die Person, der das Konto gehört.
 
 ![Die Faustregel als Frage: Liegen die Daten als Datei im Ordner, reicht der Projektordner. Sonst braucht es eine Anbindung über einen MCP-Server.](images/lektionen/l09-mcp/wann-anbindung.svg){fig-alt="Eine Frage entscheidet: Liegen die Daten für den Auftrag als Datei im Ordner? Bei ja reicht der Projektordner, Beispiel: das Protokoll der Teambesprechung, als Datei abgelegt; ohne MCP-Server läuft alles, was bisher im Ordner lief. Bei nein braucht es eine Anbindung über einen MCP-Server, Beispiel: Dokumente in der Cloud-Ablage, die das Team laufend ändert; erste Wahl ist der offizielle Server des Anbieters. Unten: Im Unternehmen gibt meist die IT eine Anbindung frei, beim eigenen Konto die Person, der es gehört."}
 
-Vier Aufträge an den Agenten im Ordner `kundenanfragen` zeigen die Faustregel im Einsatz:
+Vier Aufträge an den Agenten im Beispielfall, Ordner `kundenanfragen`, zeigen die Faustregel im Einsatz:
 
 | Auftrag | Braucht MCP? | Warum |
 |---|---|---|
@@ -206,4 +208,4 @@ Vier Aufträge an den Agenten im Ordner `kundenanfragen` zeigen die Faustregel i
 | Einen Antwortentwurf mit dem Betrag aus der Preisliste in `quellen/` schreiben | nein | Preisliste und Entwurf sind Dateien; gesendet wird der Entwurf erst durch einen Menschen. |
 | Zu einer Beschwerde ein Ticket im Service-System anlegen | ja | Das Ticket-System liegt außerhalb des Ordners. |
 
-Der Antwortentwurf wirkt auf den ersten Blick wie ein Fall für eine Anbindung, weil er am Ende nach außen geht. Er entsteht aber als Datei in `antworten/`. Erst der Mensch, der ihn liest und abschickt, bringt ihn nach außen.
+Der Antwortentwurf wirkt auf den ersten Blick wie ein Fall für eine Anbindung, weil er am Ende nach außen geht. Er entsteht aber als Datei im Projektordner (Beispielfall: `antworten/`). Erst der Mensch, der ihn liest und abschickt, bringt ihn nach außen.

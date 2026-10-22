@@ -2,13 +2,13 @@
 
 Ein **KI-Agent** verfolgt ein Ziel: Er beobachtet seine Umgebung, überlegt den nächsten Schritt, handelt mit Werkzeugen und wiederholt das, bis das Ziel erreicht ist. Was das genau heißt und wer dabei die Werkzeuge bedient, erklärt das erste Kapitel. Dieser Teil behandelt **Coding-Agenten** wie Claude Code, Codex oder Antigravity, die in einem Ordner auf unserem Rechner mitarbeiten. Programmieren müssen wir dafür nicht.
 
-In diesem Teil entsteht der Projektordner `kundenanfragen`, in dem ein Agent verlässlich für uns arbeitet. Wir beginnen mit einem leeren Testordner und einer einfachen Prüfung des eigenen Werkzeugs. Kapitel für Kapitel kommen Material, Regeln und Abläufe hinzu. Wir richten damit den Arbeitsplatz eines neuen Mitarbeiters ein und schreiben seine Einarbeitung auf. Am Ende liegt ein Ordner vor, den jeder Agent mit einer Anweisungsdatei sofort versteht: mit Anfragen und Antwortentwürfen, einer Hausordnung, einer Übersichtsdatei, geprüften Quellen, einem Eingangsordner und einem ersten Skill.
+In diesem Teil entsteht ein Projektordner für unser eigenes Vorhaben, in dem ein Agent verlässlich für uns arbeitet. Wir beginnen mit einem leeren Testordner und einer einfachen Prüfung des eigenen Werkzeugs. Dann interviewt uns der Agent zu unserem Vorhaben und schlägt den Ordner vor. Kapitel für Kapitel kommen Material, Regeln und Abläufe hinzu. Wer kein eigenes Vorhaben mitbringt, arbeitet mit dem Beispielfall: den Kundenanfragen eines kleinen Betriebs. Wir richten damit den Arbeitsplatz eines neuen Mitarbeiters ein und schreiben seine Einarbeitung auf. Am Ende liegt ein Ordner vor, den jeder Agent mit einer Anweisungsdatei sofort versteht: mit dem eigenen Material, einer Hausordnung, einer Übersichtsdatei, geprüften Quellen, einem Eingangsordner und einem ersten Skill.
 
 Wir werden:
 
 - Erkennen, wann ein Agent im Ordner dem Chat überlegen ist, und das eigene Werkzeug mit einem Selbsttest prüfen
 - Markdown-Dateien mit Überschriften, Listen, Tabellen und Links lesen und schreiben lassen
-- Einen Projektordner mit sprechenden Datei- und Ordnernamen anlegen lassen
+- Den Agenten per Interview einen Projektordner für das eigene Vorhaben vorschlagen und nach Freigabe anlegen lassen
 - Eine `AGENTS.md` mit prüfbaren Regeln schreiben und prüfen, ob der Agent sie ohne Erwähnung liest
 - Material so ablegen, dass der Agent es findet: relevant, aktuell und mit Verweisen statt Kopien
 - PDFs als Quellen aufnehmen, in Markdown umwandeln und stichprobenartig prüfen

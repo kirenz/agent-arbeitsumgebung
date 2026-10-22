@@ -3,7 +3,7 @@
 > **Gilt für dieses Repo zuerst:** Es gibt nur das Buch, keine Slides. Der
 > Buchteil liegt komplett in `agent-arbeitsumgebung/` und wird per Subtree in
 > Kursbücher eingebunden (README). Dort nur relative Pfade verwenden.
-> Werkzeugneutral schreiben: Produktnamen nur als Beispiele im Einstieg (Startseite, Teilseite, Abschnitt „Welcher Agent hier gemeint ist“). Produktdetails (Dateinamen, Speicherorte, Bedienung) stehen jeweils in dem Kapitel, in dem sie gebraucht werden, als kleine Tabelle mit Stand-Datum und Fußnoten; Kapitel 1 enthält nur App, Zugang, Ordnerwahl und Rückfrage. Inhaltliche Vorgaben:
+> Werkzeugneutral schreiben: Produktnamen nur als Beispiele im Einstieg (Startseite, Teilseite, Abschnitt „Welcher Agent hier gemeint ist“). Produktdetails (Dateinamen, Speicherorte, Bedienung) stehen jeweils in dem Kapitel, in dem sie gebraucht werden, als kleine Tabelle mit Stand-Datum und Fußnoten; Kapitel 1 enthält nur App, Zugang, Ordnerwahl und Rückfrage. Die Kapitel ab „Der Projektordner: das Interview“ arbeiten am eigenen Vorhaben der Lesenden (Aufträge „laut README.md“, Prüfkriterien ohne feste Namen); der Fall „Kundenanfragen eines kleinen Betriebs“ bleibt als Beispielfall (Variante B) und in den Kästen „So sieht es im Beispielfall aus“. Inhaltliche Vorgaben:
 > `~/code/hdm/lernplattform/docs/agent-arbeitsumgebung-konzept.md`. Die
 > allgemeinen Buch-Stilregeln unten (aus der Schablone) gelten weiter;
 > Abschnitte zu Slides entfallen.

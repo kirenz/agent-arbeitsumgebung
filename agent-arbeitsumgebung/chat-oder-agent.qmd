@@ -182,7 +182,7 @@ Das war die Schleife aus dem Abschnitt [Was ein KI-Agent tut](#was-ein-ki-agent-
 
 ### So sieht es mit echtem Material aus
 
-Der folgende Nachbau zeigt dasselbe Prinzip mit drei Kundenanfragen im Ordner `kundenanfragen`, den wir im Kapitel [Der Projektordner](projektordner.qmd) selbst anlegen. Er stellt einen Chatverlauf nach, kein echtes Produkt: Der Agent liest die Anfragen selbst, fragt vor dem Anlegen und zeigt die fertige Übersicht auf Nachfrage im Chat.
+Der folgende Nachbau zeigt dasselbe Prinzip im Beispielfall dieses Buchs: drei Kundenanfragen im Ordner `kundenanfragen`. Den Ordner für unser eigenes Vorhaben legt der Agent im Kapitel [Der Projektordner: das Interview](projektordner.qmd) an. Er stellt einen Chatverlauf nach, kein echtes Produkt: Der Agent liest die Anfragen selbst, fragt vor dem Anlegen und zeigt die fertige Übersicht auf Nachfrage im Chat.
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">

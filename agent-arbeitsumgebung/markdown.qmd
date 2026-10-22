@@ -262,4 +262,4 @@ Zwei weitere Zeichen kommen in den folgenden Kapiteln vor: `**fett**` hebt ein W
 
 ![Fünf Zeichen reichen für alle Dateien in diesem Buch: Überschrift, Liste, Tabelle, Hervorhebung, Link.](images/lektionen/l02-markdown/fuenf-zeichen.svg){fig-alt="Fünf Markdown-Zeichen mit Rohtext und Vorschau: # macht eine Überschrift, - einen Listenpunkt, senkrechte Striche eine Tabelle, zwei Sternchen um ein Wort machen es fett, eckige und runde Klammern setzen einen Link, hier auf die Datei preisliste-2026.md."}
 
-Die Dateien in `agent-test` brauchen wir später nicht mehr. Im nächsten Kapitel legt der Agent den eigentlichen Projektordner `kundenanfragen` an.
+Die Dateien in `agent-test` brauchen wir später nicht mehr. Im nächsten Kapitel legt der Agent per Interview den Projektordner für unser eigenes Vorhaben an.
