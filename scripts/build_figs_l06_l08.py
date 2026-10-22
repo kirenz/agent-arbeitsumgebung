@@ -234,13 +234,13 @@ def fig_stichprobe_vier_augen():
 
 def fig_quellenliste_regel2():
     W, H = 1000, 410
-    b = [heading(500, "Regel 2, Quellenliste, Antwort")]
+    b = [heading(500, "Grundregel 2, Quellenliste, Antwort")]
     cw, ch, cy = 290, 260, 66
     xs = [30, 355, 680]
     # 1 Regel 2
     b.append(box(xs[0], cy, cw, ch, "#ffffff", RULE, 12))
     b.append(badge16(xs[0] + 30, cy + 32, "1"))
-    b.append(T(xs[0] + 56, cy + 38, "Regel 2 der AGENTS.md", 17, 700))
+    b.append(T(xs[0] + 56, cy + 38, "Grundregel 2 der AGENTS.md", 17, 700))
     b.append(multiline(xs[0] + 20, cy + 80, "Fakten nur aus Dateien in diesem Ordner", cw - 40, 16, 400, MUTED))
     b.append(pill16(xs[0] + 20, cy + ch - 34, "woher Fakten kommen", PAPER, RULE, INK)[0])
     # 2 Quellenliste
@@ -266,7 +266,7 @@ def fig_quellenliste_regel2():
     b.append(pill16(x + 20, cy + ch - 34, "nachprüfbar", PAPER, RULE, INK)[0])
     for i in range(2):
         b.append(arrow(xs[i] + cw + 4, cy + ch / 2, xs[i + 1] - 4, cy + ch / 2, color=BLUE))
-    b.append(note16(30, 346, 940, "Regel 2 sagt, woher Fakten kommen. Die Quellenliste sagt, welchen Dateien wir trauen."))
+    b.append(note16(30, 346, 940, "Grundregel 2 sagt, woher Fakten kommen. Die Quellenliste sagt, welchen Dateien wir trauen."))
     return save(f"{L6}/quellenliste-und-regel-2.svg", svg(W, H, b))
 
 
@@ -380,7 +380,7 @@ def fig_regel_und_pruefung():
     b = [heading(500, "Regel plus Prüfung")]
     b.append(box(30, 62, 940, 120, "#ffffff", RULE, 12))
     b.append(T(54, 96, "Regel", 18, 700))
-    b.append(T(54, 124, "Regel 4 der AGENTS.md:", 16, 600))
+    b.append(T(54, 124, "Grundregel 4 der AGENTS.md:", 16, 600))
     b.append(T(54, 150, "Ergebnisse als neue Datei, bestehende Dateien nur nach Rückfrage", 16, 400, MUTED))
     b.append(pill16(690, 82, "senkt das Risiko, meist", PAPER, RULE, INK)[0])
     b.append(arrow(500, 186, 500, 214))
