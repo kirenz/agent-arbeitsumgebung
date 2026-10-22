@@ -230,18 +230,24 @@ def fig_zwei_sitzungen():
 # ---------------------------------------------------------------- Lektion 4
 
 def fig_hausordnung_aufbau():
-    W, H = 1000, 490
-    b = [heading(500, "AGENTS.md: die Hausordnung in zwei Teilen")]
-    b.append(file_card(30, 64, 490, 350, "AGENTS.md"))
-    b.append(pill16(50, 114, "Teil 1: Zweck"))
-    b.append(mono_rich(50, 172, [("#", BLUE, 700), (" Kundenanfragen", INK, 400)]))
-    b.append(T(50, 198, "Zwei Sätze, worum es im Ordner geht.", 16, 400, MUTED))
-    b.append(pill16(50, 218, "Teil 2: Regeln"))
-    b.append(mono_rich(50, 276, [("##", BLUE, 700), (" Regeln", INK, 400)]))
+    W, H = 1000, 620
+    b = [heading(500, "AGENTS.md: Grundregeln und Projektregeln")]
+    b.append(file_card(30, 64, 490, 476, "AGENTS.md"))
+    b.append(pill16(50, 110, "Teil 1: Zweck"))
+    b.append(T(50, 164, "Zwei Sätze aus README.md, Abschnitt Zweck.", 16, 400, MUTED))
+    b.append(pill16(50, 182, "Teil 2: Grundregeln, kursweit gleich"))
+    b.append(mono_rich(50, 236, [("##", BLUE, 700), (" Grundregeln", INK, 400)]))
     rules = ["Antworte auf Deutsch.", "Nur Fakten aus dem Ordner.", "Keine Personennamen.",
              "Ergebnisse als neue Datei.", "Geänderte Dateien nennen."]
     for i, r in enumerate(rules):
-        b.append(mono_rich(50, 306 + i * 24, [(f"{i + 1}.", BLUE, 700), (f" {r}", INK, 400)]))
+        b.append(mono_rich(50, 262 + i * 24, [(f"{i + 1}.", BLUE, 700), (f" {r}", INK, 400)]))
+    b.append(pill16(50, 376, "Teil 3: Projektregeln, aus dem Interview"))
+    b.append(mono_rich(50, 430, [("##", BLUE, 700), (" Projektregeln", INK, 400)]))
+    b.append(T(222, 430, "(Beispielfall)", 16, 400, MUTED))
+    prules = ["Beträge in EUR mit Komma.", "Entwürfe höchstens 120 Wörter.",
+              "Termine mit Datum und Uhrzeit."]
+    for i, r in enumerate(prules):
+        b.append(mono_rich(50, 456 + i * 24, [(f"P{i + 1}.", BLUE, 700), (f" {r}", INK, 400)]))
     # rechts oben
     b.append(box(550, 64, 420, 120, LIGHT, BLUE))
     b.append(glyph("agent", 588, 124, BLUE))
@@ -249,16 +255,21 @@ def fig_hausordnung_aufbau():
     b.append(T(620, 126, "jeder Sitzung", 16, 600, BLUE))
     b.append(T(620, 152, "wie ein neuer Mitarbeiter", 16, 400, MUTED))
     b.append(T(620, 174, "die Hausordnung jeden Morgen", 16, 400, MUTED))
-    # rechts unten: prüfbar oder nicht (untereinander)
+    # rechts Mitte: prüfbar oder nicht (untereinander)
     b.append(box(550, 206, 420, 208, "#ffffff", RULE))
     b.append(T(570, 236, "Prüfbare Regel?", 16, 600))
     b.append(glyph("check", 586, 284))
-    b.append(T(614, 280, "Beträge in EUR mit Komma", 16, 600, GREEN))
+    b.append(T(614, 280, "P1: Beträge in EUR mit Komma", 16, 600, GREEN))
     b.append(T(614, 302, "am Ergebnis kontrollierbar", 16, 400, MUTED))
     b.append(cross(586, 362))
     b.append(T(614, 358, "Schreibe sorgfältig", 16, 600, RED))
     b.append(T(614, 380, "niemand kann es prüfen", 16, 400, MUTED))
-    b.append(note16(30, 432, 940, "Fünf bis zehn kurze Regeln, nummeriert: Dann genügt im Gespräch „Regel 2“."))
+    # rechts unten: zwei Nummernkreise
+    b.append(box(550, 436, 420, 104, PAPER, PAPER, 8))
+    b.append(T(570, 466, "Zwei Nummernkreise", 16, 600))
+    b.append(T(570, 492, "„Regel 2“ meint eine Grundregel.", 16, 400, MUTED))
+    b.append(T(570, 516, "„P1“ meint eine Projektregel.", 16, 400, MUTED))
+    b.append(note16(30, 560, 940, "Regeln stehen nur in AGENTS.md. README.md verweist im Abschnitt Vorgesehene Regeln dorthin."))
     return save(f"{L4}/hausordnung-aufbau.svg", svg(W, H, b))
 
 

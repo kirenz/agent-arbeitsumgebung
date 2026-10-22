@@ -653,10 +653,61 @@ def fig_hausordnung_regal():
     return save(f"{L8}/hausordnung-und-regal.svg", svg(W, H, b))
 
 
+def fig_eigener_skill_aus_readme():
+    """Schritt 3: Aufgabe aus README.md, Vorschlag einer SKILL.md, Freigabe, Ordner <name>/SKILL.md."""
+    W, H = 1000, 452
+    b = [heading(500, "Aus der README.md wird ein eigener Skill")]
+    y, h = 66, 300
+    cols = [(30, 200), (262, 330), (624, 150), (806, 164)]
+    heads = ["README.md", "Vorschlag", "Freigabe", "Anlegen"]
+    fills = [("#ffffff", RULE), (LIGHT, BLUE), (AMBER_BG, AMBER_LINE), ("#ffffff", RULE)]
+    for i, ((x, w), hd, (fl, st)) in enumerate(zip(cols, heads, fills)):
+        b.append(box(x, y, w, h, fl, st, 12))
+        b.append(badge16(x + 26, y + 30, str(i + 1), r=14))
+        b.append(T(x + 48, y + 36, hd, 16, 700, BLUE if i == 1 else INK, mono=(i == 0)))
+        if i < 3:
+            nx = cols[i + 1][0]
+            b.append(arrow(x + w + 4, y + 150, nx - 4, y + 150, color=BLUE))
+    # 1 README.md: Abschnitt Wiederkehrende Aufgaben (Beispielfall)
+    x, w = cols[0]
+    b.append(multiline(x + 16, y + 76, "Wiederkehrende Aufgaben", w - 32, 16, 700))
+    b.append(multiline(x + 16, y + 132, "• neue Anfragen einsortieren", w - 32, 16, 400, MUTED))
+    b.append(T(x + 16, y + 176, "(schon ein Skill)", 16, 400, MUTED))
+    b.append(box(x + 12, y + 196, w - 24, 40, "#ffffff", BLUE, 8))
+    b.append(T(x + 24, y + 222, "• Wochenbericht", 16, 700, BLUE))
+    b.append(multiline(x + 16, y + 266, "erste Aufgabe ohne Skill", w - 32, 16, 600, BLUE))
+    # 2 Vorschlag einer SKILL.md im Chat
+    x, w = cols[1]
+    b.append(T(x + w - 16, y + 36, "noch nicht angelegt", 16, 400, MUTED, "end"))
+    b.append(box(x + 12, y + 56, w - 24, 134, "#ffffff", RULE, 8))
+    b.append(M(x + 24, y + 78, "---", 16, BLUE, 700))
+    b.append(mono_rich(x + 24, y + 103, [("name: ", INK, 700), ("wochenbericht", INK, 400)]))
+    b.append(mono_rich(x + 24, y + 128, [("description:", INK, 700)]))
+    b.append(M(x + 24, y + 153, "Verwenden, wenn …", 16, INK))
+    b.append(M(x + 24, y + 178, "---", 16, BLUE, 700))
+    for j, s in enumerate(["1. Lies alle Dateien …", "…", "6. Ergänze UEBERSICHT.md."]):
+        b.append(M(x + 24, y + 206 + j * 22, s, 16, INK))
+    b.append(pill16(x + 16, y + 268, "höchstens sechs Schritte", "#ffffff", BLUE, BLUE)[0])
+    # 3 Freigabe
+    x, w = cols[2]
+    b.append(multiline(x + 14, y + 80, "Sie prüfen den Vorschlag und stimmen zu oder bitten um Änderung.",
+                       w - 28, 16, 400))
+    # 4 Anlegen: Ordner <name>/SKILL.md
+    x, w = cols[3]
+    b.append(folder(x + 8, y + 64, w - 16, 52, "wochenbericht/", "#ffffff", BLUE, BLUE, 700))
+    b.append(vline(x + 30, y + 118, y + 144, MUTED, 1.5))
+    b.append(hline(x + 30, x + 46, y + 144, MUTED, 1.5))
+    b.append(M(x + 52, y + 150, "SKILL.md", 16, INK, 700))
+    b.append(multiline(x + 14, y + 196, "im Ordner für Skills, neben dem ersten Skill", w - 28, 16, 400, MUTED))
+    b.append(note16(30, 388, 940, "Ohne Freigabe entsteht nichts. Der Ordnername ist gleich dem name im Kopf."))
+    return save(f"{L8}/eigener-skill-aus-readme.svg", svg(W, H, b))
+
+
 FIGS = [fig_pdf_fuer_den_druck, fig_textebene, fig_original_textfassung, fig_stichprobe_vier_augen,
         fig_quellenliste_regel2, fig_excel_paket, fig_blatt_wird_csv, fig_stichprobe_tabellen,
         fig_regel_und_pruefung, fig_auswertung_neue_datei, fig_eingangsordner, fig_fester_ablauf_name,
-        fig_sechs_schritte, fig_skill_aufbau, fig_laden_in_stufen, fig_hausordnung_regal]
+        fig_sechs_schritte, fig_skill_aufbau, fig_laden_in_stufen, fig_hausordnung_regal,
+        fig_eigener_skill_aus_readme]
 
 if __name__ == "__main__":
     for fn in FIGS:
