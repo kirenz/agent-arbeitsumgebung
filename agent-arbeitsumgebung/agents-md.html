@@ -217,17 +217,17 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#schritt-1-die-hausordnung-anlegen" id="toc-schritt-1-die-hausordnung-anlegen" class="nav-link active" data-scroll-target="#schritt-1-die-hausordnung-anlegen"><span class="header-section-number">5.1</span> Schritt 1: Die Hausordnung anlegen</a>
   <ul class="collapse">
-  <li><a href="#das-sollten-wir-jetzt-sehen" id="toc-das-sollten-wir-jetzt-sehen" class="nav-link" data-scroll-target="#das-sollten-wir-jetzt-sehen"><span class="header-section-number">5.1.1</span> Das sollten wir jetzt sehen</a></li>
+  <li><a href="#so-sieht-es-im-beispielfall-aus" id="toc-so-sieht-es-im-beispielfall-aus" class="nav-link" data-scroll-target="#so-sieht-es-im-beispielfall-aus"><span class="header-section-number">5.1.1</span> So sieht es im Beispielfall aus</a></li>
   <li><a href="#was-gerade-passiert-ist" id="toc-was-gerade-passiert-ist" class="nav-link" data-scroll-target="#was-gerade-passiert-ist"><span class="header-section-number">5.1.2</span> Was gerade passiert ist</a></li>
   </ul></li>
   <li><a href="#schritt-2-in-einer-neuen-sitzung-prüfen" id="toc-schritt-2-in-einer-neuen-sitzung-prüfen" class="nav-link" data-scroll-target="#schritt-2-in-einer-neuen-sitzung-prüfen"><span class="header-section-number">5.2</span> Schritt 2: In einer neuen Sitzung prüfen</a>
   <ul class="collapse">
-  <li><a href="#das-sollten-wir-jetzt-sehen-1" id="toc-das-sollten-wir-jetzt-sehen-1" class="nav-link" data-scroll-target="#das-sollten-wir-jetzt-sehen-1"><span class="header-section-number">5.2.1</span> Das sollten wir jetzt sehen</a></li>
+  <li><a href="#so-sieht-es-im-beispielfall-aus-1" id="toc-so-sieht-es-im-beispielfall-aus-1" class="nav-link" data-scroll-target="#so-sieht-es-im-beispielfall-aus-1"><span class="header-section-number">5.2.1</span> So sieht es im Beispielfall aus</a></li>
   <li><a href="#was-gerade-passiert-ist-1" id="toc-was-gerade-passiert-ist-1" class="nav-link" data-scroll-target="#was-gerade-passiert-ist-1"><span class="header-section-number">5.2.2</span> Was gerade passiert ist</a></li>
   </ul></li>
   <li><a href="#schritt-3-eine-frage-ohne-antwort-im-ordner" id="toc-schritt-3-eine-frage-ohne-antwort-im-ordner" class="nav-link" data-scroll-target="#schritt-3-eine-frage-ohne-antwort-im-ordner"><span class="header-section-number">5.3</span> Schritt 3: Eine Frage ohne Antwort im Ordner</a>
   <ul class="collapse">
-  <li><a href="#das-sollten-wir-jetzt-sehen-2" id="toc-das-sollten-wir-jetzt-sehen-2" class="nav-link" data-scroll-target="#das-sollten-wir-jetzt-sehen-2"><span class="header-section-number">5.3.1</span> Das sollten wir jetzt sehen</a></li>
+  <li><a href="#so-sieht-es-im-beispielfall-aus-2" id="toc-so-sieht-es-im-beispielfall-aus-2" class="nav-link" data-scroll-target="#so-sieht-es-im-beispielfall-aus-2"><span class="header-section-number">5.3.1</span> So sieht es im Beispielfall aus</a></li>
   <li><a href="#was-gerade-passiert-ist-2" id="toc-was-gerade-passiert-ist-2" class="nav-link" data-scroll-target="#was-gerade-passiert-ist-2"><span class="header-section-number">5.3.2</span> Was gerade passiert ist</a></li>
   </ul></li>
   <li><a href="#was-die-drei-schritte-gezeigt-haben" id="toc-was-die-drei-schritte-gezeigt-haben" class="nav-link" data-scroll-target="#was-die-drei-schritte-gezeigt-haben"><span class="header-section-number">5.4</span> Was die drei Schritte gezeigt haben</a></li>
@@ -256,67 +256,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Jede neue Sitzung beginnt ohne Erinnerung an die vorige. Was wir dem Agenten gestern im Chat gesagt haben, weiß er heute nicht mehr. Dauerhafte Regeln schreiben wir deshalb in eine Datei, die der Agent zu Beginn jeder Sitzung von selbst liest: die <code>AGENTS.md</code>. Der Agent legt sie mit fünf Regeln an; danach prüfen wir in einer neuen Sitzung, ob er sie von selbst liest und befolgt. Die Erklärung folgt jeweils am eigenen Ergebnis.</p>
-<p><strong>Voraussetzung:</strong> Der Ordner <code>kundenanfragen</code> ist in der App gewählt, mit dem Stand aus dem Kapitel <a href="../agent-arbeitsumgebung/projektordner.html">Der Projektordner</a>: <code>README.md</code>, <code>anfragen</code> mit drei Anfragen und <code>antworten</code>.</p>
+<p>Jede neue Sitzung beginnt ohne Erinnerung an die vorige. Was wir dem Agenten gestern im Chat gesagt haben, weiß er heute nicht mehr. Dauerhafte Regeln schreiben wir deshalb in eine Datei, die der Agent zu Beginn jeder Sitzung von selbst liest: die <code>AGENTS.md</code>. Der Agent legt sie aus der <code>README.md</code> an: mit fünf Grundregeln, die in diesem Buch für alle Projektordner gleich sind, und mit den eigenen Projektregeln aus dem Interview. Danach prüfen wir in einer neuen Sitzung, ob er sie von selbst liest und befolgt. Die Erklärung folgt jeweils am eigenen Ergebnis.</p>
+<p><strong>Voraussetzung:</strong> In der App ist der eigene Projektordner gewählt, mit dem Stand aus dem Kapitel <a href="../agent-arbeitsumgebung/erstes-material.html">Erstes Material und neue Sitzung</a>. Die <code>README.md</code> enthält den Abschnitt Vorgesehene Regeln. Im Beispielfall ist es der Ordner <code>kundenanfragen</code>; seine <code>README.md</code> nennt drei Vorgesehene Regeln.</p>
 <section id="schritt-1-die-hausordnung-anlegen" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="schritt-1-die-hausordnung-anlegen"><span class="header-section-number">5.1</span> Schritt 1: Die Hausordnung anlegen</h2>
 <ol type="1">
 <li><p>Diesen Auftrag senden:</p>
-<pre class="text"><code>Lege die Datei AGENTS.md an. Teil 1: zwei Sätze, worum es in diesem Ordner geht (siehe README.md). Teil 2: die Überschrift „Regeln“ und diese fünf Regeln, wörtlich:
+<pre class="text"><code>Lege die Datei AGENTS.md mit drei Teilen an.
+
+Teil 1: zwei Sätze, worum es in diesem Ordner geht. Nimm sie aus dem Abschnitt Zweck der README.md.
+
+Teil 2: die Überschrift „## Grundregeln“ und diese fünf Regeln, wörtlich:
 1. Antworte auf Deutsch.
 2. Nutze nur Fakten aus Dateien in diesem Ordner. Schreibe „Annahme:“ vor jede Angabe, die nicht daraus stammt.
 3. Schreibe keine Personennamen in neue Dateien.
 4. Lege Ergebnisse als neue Datei an. Ändere bestehende Dateien nur nach Rückfrage.
 5. Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.
-Zeige mir die Datei, bevor du sie speicherst.</code></pre></li>
-<li><p>Prüfen: Der Agent zeigt die Datei, bevor er sie speichert.</p></li>
+
+Teil 3: die Überschrift „## Projektregeln“ und die Regeln aus dem Abschnitt Vorgesehene Regeln der README.md. Nummeriere sie mit P1, P2, P3. Formuliere jede so, dass man am Ergebnis prüfen kann, ob sie eingehalten wurde. Erfinde keine Regeln dazu. Steht dort keine Regel, frag mich nach einer.
+
+Ersetze danach in README.md den Inhalt des Abschnitts Vorgesehene Regeln durch den Satz „Siehe AGENTS.md, Abschnitt Projektregeln.“
+
+Zeige mir AGENTS.md und die Änderung an README.md, bevor du speicherst.</code></pre></li>
+<li><p>Prüfen: Der Agent zeigt <code>AGENTS.md</code> und die Änderung an <code>README.md</code>, bevor er speichert.</p></li>
 <li><p>Das Speichern freigeben.</p></li>
 <li><p>Diese Frage senden:</p>
-<pre class="text"><code>Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von AGENTS.md genau so, wie er in der Datei steht, mit allen Zeichen.</code></pre></li>
-<li><p>Prüfen: Die Liste nennt <code>AGENTS.md</code> neben <code>README.md</code>. Der Inhalt enthält fünf nummerierte Regeln.</p></li>
+<pre class="text"><code>Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von AGENTS.md genau so, wie er in der Datei steht, mit allen Zeichen. Zeig mir zuletzt den Abschnitt Vorgesehene Regeln aus README.md.</code></pre></li>
+<li><p>Prüfen: Die Liste nennt <code>AGENTS.md</code> neben <code>README.md</code>.</p></li>
+<li><p>Prüfen: <code>AGENTS.md</code> hat den Abschnitt <code>## Grundregeln</code> mit fünf nummerierten Regeln und den Abschnitt <code>## Projektregeln</code> mit mindestens einer Regel, die mit <code>P1</code> beginnt (Beispielfall: P1 bis P3).</p></li>
+<li><p>Prüfen: Keine Projektregel enthält die Wörter „sorgfältig“, „hilfreich“ oder „gründlich“.</p></li>
+<li><p>Prüfen: Der Abschnitt Vorgesehene Regeln in <code>README.md</code> enthält nur noch den Verweis auf <code>AGENTS.md</code>.</p></li>
 </ol>
-<section id="das-sollten-wir-jetzt-sehen" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen"><span class="header-section-number">5.1.1</span> Das sollten wir jetzt sehen</h3>
+<p>Der Verweis ersetzt die Regeln in der <code>README.md</code>, statt den Abschnitt zu löschen. So behält die <code>README.md</code> ihre fünf Abschnitte, und die Regeln stehen nur noch in der <code>AGENTS.md</code>.</p>
+<section id="so-sieht-es-im-beispielfall-aus" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="so-sieht-es-im-beispielfall-aus"><span class="header-section-number">5.1.1</span> So sieht es im Beispielfall aus</h3>
 <p>Der Verlauf im Chat, sinngemäß:</p>
-<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45" role="group" aria-label="Chat: Auftrag, Datei zur Freigabe, Anlegen und Inhalt der AGENTS.md">
+<div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45" role="group" aria-label="Chat: Auftrag, Datei zur Freigabe, Anlegen der AGENTS.md, Änderung der README.md und Inhalt beider Dateien">
 
 <div style="padding:12px;display:grid;gap:8px">
-<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege die Datei AGENTS.md an. Teil 1: zwei Sätze, worum es in diesem Ordner geht (siehe README.md). Teil 2: die Überschrift „Regeln“ und diese fünf Regeln, wörtlich:<br>1. Antworte auf Deutsch.<br>2. Nutze nur Fakten aus Dateien in diesem Ordner. Schreibe „Annahme:“ vor jede Angabe, die nicht daraus stammt.<br>3. Schreibe keine Personennamen in neue Dateien.<br>4. Lege Ergebnisse als neue Datei an. Ändere bestehende Dateien nur nach Rückfrage.<br>5. Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.<br>Zeige mir die Datei, bevor du sie speicherst.</div>
-<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>So sieht <code>AGENTS.md</code> aus. Darf ich speichern?<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Kundenanfragen
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege die Datei AGENTS.md mit drei Teilen an. Teil 1: zwei Sätze, worum es in diesem Ordner geht … (Auftrag aus Schritt 1)</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>So sieht <code>AGENTS.md</code> aus. In <code>README.md</code> ersetze ich den Inhalt des Abschnitts Vorgesehene Regeln durch den Verweis. Darf ich speichern?<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Kundenanfragen
 
-Dieser Ordner sammelt Kundenanfragen eines kleinen Betriebs.
-Antworten entstehen als Entwürfe in antworten.
+Der Ordner sammelt Kundenanfragen eines kleinen Betriebs.
+Zu jeder Anfrage entsteht ein Antwortentwurf. Gesendet wird nichts.
 
-<i style="color:#23417a;font-style:normal;font-weight:700">##</i> Regeln
+<i style="color:#23417a;font-style:normal;font-weight:700">##</i> Grundregeln
 
 <i style="color:#23417a;font-style:normal;font-weight:700">1.</i> Antworte auf Deutsch.
 <i style="color:#23417a;font-style:normal;font-weight:700">2.</i> Nutze nur Fakten aus Dateien in diesem Ordner. Schreibe „Annahme:“ vor jede Angabe, die nicht daraus stammt.
 <i style="color:#23417a;font-style:normal;font-weight:700">3.</i> Schreibe keine Personennamen in neue Dateien.
 <i style="color:#23417a;font-style:normal;font-weight:700">4.</i> Lege Ergebnisse als neue Datei an. Ändere bestehende Dateien nur nach Rückfrage.
-<i style="color:#23417a;font-style:normal;font-weight:700">5.</i> Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.</pre><br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<i style="color:#23417a;font-style:normal;font-weight:700">5.</i> Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.
+
+<i style="color:#23417a;font-style:normal;font-weight:700">##</i> Projektregeln
+
+<i style="color:#23417a;font-style:normal;font-weight:700">P1.</i> Schreibe Beträge in EUR mit Komma, etwa 45,00 EUR.
+<i style="color:#23417a;font-style:normal;font-weight:700">P2.</i> Ein Antwortentwurf hat höchstens 120 Wörter.
+<i style="color:#23417a;font-style:normal;font-weight:700">P3.</i> Nenne Terminvorschläge immer mit Datum und Uhrzeit.</pre><pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">##</i> Vorgesehene Regeln
+
+<span style="display:block;background:#f3e3c3;text-decoration:line-through;text-decoration-color:#5b6170">- Beträge in EUR mit Komma, etwa 45,00 EUR
+- Antwortentwürfe höchstens 120 Wörter
+- Terminvorschläge immer mit Datum und Uhrzeit</span><span style="display:block;background:#dfe6f3">Siehe AGENTS.md, Abschnitt Projektregeln.</span></pre><br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
 <div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>AGENTS.md angelegt</div>
-<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Eine Datei angelegt (<code>AGENTS.md</code>), keine geändert.</div>
-<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von AGENTS.md genau so, wie er in der Datei steht, mit allen Zeichen.</div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>README.md geändert</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Angelegt: <code>AGENTS.md</code>. Geändert: <code>README.md</code>.</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von AGENTS.md genau so, wie er in der Datei steht, mit allen Zeichen. Zeig mir zuletzt den Abschnitt Vorgesehene Regeln aus README.md.</div>
 <div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Im Ordner liegen <code>AGENTS.md</code>, <code>README.md</code> und die Ordner <code>anfragen</code> (drei Dateien) und <code>antworten</code> (leer). Inhalt von <code>AGENTS.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Kundenanfragen
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span>Dieser Ordner sammelt Kundenanfragen eines kleinen Betriebs.
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span>Antworten entstehen als Entwürfe in antworten.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span>Der Ordner sammelt Kundenanfragen eines kleinen Betriebs.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span>Zu jeder Anfrage entsteht ein Antwortentwurf. Gesendet wird nichts.
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span>
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span><i style="color:#23417a;font-style:normal;font-weight:700">##</i> Regeln
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span><i style="color:#23417a;font-style:normal;font-weight:700">##</i> Grundregeln
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">7</span>
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">8</span><i style="color:#23417a;font-style:normal;font-weight:700">1.</i> Antworte auf Deutsch.
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">9</span><i style="color:#23417a;font-style:normal;font-weight:700">2.</i> Nutze nur Fakten aus Dateien in diesem Ordner. Schreibe „Annahme:“ vor jede Angabe, die nicht daraus stammt.
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">10</span><i style="color:#23417a;font-style:normal;font-weight:700">3.</i> Schreibe keine Personennamen in neue Dateien.
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">11</span><i style="color:#23417a;font-style:normal;font-weight:700">4.</i> Lege Ergebnisse als neue Datei an. Ändere bestehende Dateien nur nach Rückfrage.
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">12</span><i style="color:#23417a;font-style:normal;font-weight:700">5.</i> Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.</pre></div>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">12</span><i style="color:#23417a;font-style:normal;font-weight:700">5.</i> Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">13</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">14</span><i style="color:#23417a;font-style:normal;font-weight:700">##</i> Projektregeln
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">15</span>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">16</span><i style="color:#23417a;font-style:normal;font-weight:700">P1.</i> Schreibe Beträge in EUR mit Komma, etwa 45,00 EUR.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">17</span><i style="color:#23417a;font-style:normal;font-weight:700">P2.</i> Ein Antwortentwurf hat höchstens 120 Wörter.
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">18</span><i style="color:#23417a;font-style:normal;font-weight:700">P3.</i> Nenne Terminvorschläge immer mit Datum und Uhrzeit.</pre>Abschnitt Vorgesehene Regeln in <code>README.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">##</i> Vorgesehene Regeln
+
+Siehe AGENTS.md, Abschnitt Projektregeln.</pre></div>
 </div>
 </div>
-<p>Die beiden Sätze in Teil 1 kann der Agent anders formulieren. Die fünf Regeln stehen wörtlich darin.</p>
+<p>Unsere Namen weichen ab, die Prüfpunkte gelten. Teil 1 und die Projektregeln kann der Agent anders formulieren. Die fünf Grundregeln stehen wörtlich darin.</p>
 </section>
 <section id="was-gerade-passiert-ist" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="was-gerade-passiert-ist"><span class="header-section-number">5.1.2</span> Was gerade passiert ist</h3>
-<p>Die <strong>AGENTS.md</strong> ist eine Markdown-Datei im Projektordner mit dauerhaften Regeln für den Agenten. Sie ist die Hausordnung des Projektordners: Wie ein neuer Mitarbeiter liest der Agent sie jeden Morgen zuerst, also zu Beginn jeder Sitzung. Sie hat zwei Teile: eine Projektbeschreibung in zwei bis drei Sätzen und fünf bis zehn Regeln. Die Projektbeschreibung gibt dem Agenten den Zusammenhang, ähnlich wie die <code>README.md</code> für Menschen. Die Regeln sagen, was in jeder Sitzung gilt.</p>
-<p>Eine <strong>prüfbare Regel</strong> sagt, was genau gilt, und lässt sich am Ergebnis kontrollieren. „Beträge in EUR mit Komma“ ist prüfbar: Jeder Betrag hat die Form <code>45,00 EUR</code>, oder er hat sie nicht. „Schreibe sorgfältig“ ist es nicht, weil niemand sagen kann, woran Sorgfalt im Ergebnis zu erkennen ist. Jede der fünf Regeln hat einen klaren Zweck und ein Prüfmerkmal:</p>
+<p>Die <strong>AGENTS.md</strong> ist eine Markdown-Datei im Projektordner mit dauerhaften Regeln für den Agenten. Sie ist die Hausordnung des Projektordners: Wie ein neuer Mitarbeiter liest der Agent sie jeden Morgen zuerst, also zu Beginn jeder Sitzung. Sie hat drei Teile: eine Projektbeschreibung in zwei Sätzen, die Grundregeln und die Projektregeln. Die Projektbeschreibung gibt dem Agenten den Zusammenhang, ähnlich wie die <code>README.md</code> für Menschen. Die Grundregeln sind in diesem Buch für jeden Projektordner gleich; spätere Kapitel ergänzen sie um Regel 6 und Regel 7. Die Projektregeln stammen aus dem Interview und gelten nur für dieses Vorhaben. Die <code>README.md</code> verweist jetzt auf die <code>AGENTS.md</code>, damit Regeln nur an einem Ort stehen.</p>
+<p>Eine <strong>prüfbare Regel</strong> sagt, was genau gilt, und lässt sich am Ergebnis kontrollieren. Den Test machen wir an der eigenen Regel P1: Könnte eine Kollegin am Ergebnis sehen, ob sie eingehalten wurde? Wenn nicht, lassen wir P1 genauer formulieren. Im Beispielfall lautet P1 „Beträge in EUR mit Komma, etwa 45,00 EUR“. Das ist prüfbar: Jeder Betrag hat die Form <code>45,00 EUR</code>, oder er hat sie nicht. „Schreibe sorgfältig“ ist es nicht, weil niemand sagen kann, woran Sorgfalt im Ergebnis zu erkennen ist.</p>
+<p>Jede der fünf Grundregeln hat einen klaren Zweck und ein Prüfmerkmal:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -333,7 +366,7 @@ Antworten entstehen als Entwürfe in antworten.
 <tbody>
 <tr class="odd">
 <td>1. Antworte auf Deutsch.</td>
-<td>Antworten und Entwürfe passen zur Kundschaft.</td>
+<td>Antworten und Entwürfe haben eine feste Sprache.</td>
 <td>Jede Antwort ist deutsch.</td>
 </tr>
 <tr class="even">
@@ -360,11 +393,11 @@ Antworten entstehen als Entwürfe in antworten.
 </table>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/lektionen/l04-agents-md/hausordnung-aufbau.svg" class="img-fluid figure-img" alt="Links die Datei AGENTS.md mit zwei Teilen: Teil 1 zwei Sätze zum Zweck des Ordners, Teil 2 die Überschrift Regeln mit fünf nummerierten Regeln. Rechts oben: Der Agent liest die Datei zu Beginn jeder Sitzung, wie ein neuer Mitarbeiter die Hausordnung jeden Morgen. Rechts unten der Vergleich prüfbarer Regeln: „Beträge in EUR mit Komma“ ist am Ergebnis kontrollierbar, „Schreibe sorgfältig“ nicht."></p>
-<figcaption>Die Hausordnung in zwei Teilen: Zweck des Ordners und nummerierte Regeln. Der Agent liest sie zu Beginn jeder Sitzung; prüfbar ist eine Regel, wenn das Ergebnis zeigt, ob sie eingehalten wurde.</figcaption>
+<p><img src="images/lektionen/l04-agents-md/hausordnung-aufbau.svg" class="img-fluid figure-img" alt="Links die Datei AGENTS.md in drei Teilen: Teil 1 zwei Sätze aus dem Abschnitt Zweck der README.md, Teil 2 der Abschnitt Grundregeln mit den fünf nummerierten Regeln, kursweit gleich, Teil 3 der Abschnitt Projektregeln mit P1 bis P3 aus dem Interview, hier aus dem Beispielfall. Rechts oben: Der Agent liest die Datei zu Beginn jeder Sitzung, wie ein neuer Mitarbeiter die Hausordnung jeden Morgen. Rechts in der Mitte der Vergleich prüfbarer Regeln: „P1 Beträge in EUR mit Komma“ ist am Ergebnis kontrollierbar, „Schreibe sorgfältig“ nicht. Rechts unten zwei Nummernkreise: „Regel 2“ meint eine Grundregel, „P1“ eine Projektregel. Merksatz: Regeln stehen nur in AGENTS.md, README.md verweist dorthin."></p>
+<figcaption>Die Hausordnung in drei Teilen: Zweck des Ordners, Grundregeln und Projektregeln. Der Agent liest sie zu Beginn jeder Sitzung; prüfbar ist eine Regel, wenn das Ergebnis zeigt, ob sie eingehalten wurde.</figcaption>
 </figure>
 </div>
-<p>Die Regeln sind in Befehlsform und in der Du-Form geschrieben, so wie wir auch Aufträge an den Agenten formulieren. Sie stehen als nummerierte Liste, damit wir uns im Gespräch auf „Regel 2“ beziehen können.</p>
+<p>Die Regeln sind in Befehlsform und in der Du-Form geschrieben, so wie wir auch Aufträge an den Agenten formulieren. Sie stehen als nummerierte Listen, damit wir uns im Gespräch auf sie beziehen können: „Regel 2“ meint immer eine Grundregel, „P1“ die erste Projektregel.</p>
 <div class="callout callout-style-simple callout-note callout-titled" title="Wenn es anders aussieht">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -376,8 +409,10 @@ Antworten entstehen als Entwürfe in antworten.
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Der Agent formuliert die Regeln um oder ergänzt eigene: ablehnen und „Übernimm die fünf Regeln wörtlich, ohne Ergänzungen.“ senden.</li>
-<li>Die Regeln stehen ohne Nummern oder als Fließtext: den Agenten eine nummerierte Liste daraus machen lassen.</li>
+<li>Der Agent formuliert die Grundregeln um oder ergänzt eigene: ablehnen und „Übernimm die fünf Grundregeln wörtlich, ohne Ergänzungen.“ senden.</li>
+<li>Der Agent erfindet Projektregeln, die nicht in der <code>README.md</code> stehen: ablehnen und „Übernimm nur die Regeln aus README.md.“ senden.</li>
+<li>Eine Projektregel enthält „sorgfältig“, „hilfreich“ oder „gründlich“: „Formuliere P2 so, dass man am Ergebnis prüfen kann, ob sie eingehalten wurde.“ senden, mit der Nummer der betroffenen Regel.</li>
+<li>Die Regeln stehen ohne Nummern oder als Fließtext: den Agenten nummerierte Listen daraus machen lassen, 1 bis 5 und P1 bis P3.</li>
 <li>Die Datei heißt anders, etwa <code>agents.md</code> in Kleinbuchstaben: den Agenten die Datei in <code>AGENTS.md</code> umbenennen lassen.</li>
 </ul>
 </div>
@@ -386,24 +421,24 @@ Antworten entstehen als Entwürfe in antworten.
 </section>
 <section id="schritt-2-in-einer-neuen-sitzung-prüfen" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="schritt-2-in-einer-neuen-sitzung-prüfen"><span class="header-section-number">5.2</span> Schritt 2: In einer neuen Sitzung prüfen</h2>
-<p><strong>Voraussetzung:</strong> <code>AGENTS.md</code> liegt im Ordner <code>kundenanfragen</code>.</p>
+<p><strong>Voraussetzung:</strong> <code>AGENTS.md</code> liegt im eigenen Projektordner (Beispielfall: <code>kundenanfragen</code>).</p>
 <ol type="1">
-<li><p>Eine neue Sitzung starten: in der App einen neuen Chat im Ordner <code>kundenanfragen</code> beginnen.</p></li>
+<li><p>Eine neue Sitzung starten: in der App einen neuen Chat im Projektordner beginnen.</p></li>
 <li><p>Diese Frage senden:</p>
 <pre class="text"><code>Welche Regeln gelten in diesem Ordner?</code></pre></li>
-<li><p>Prüfen: Die Antwort nennt die fünf Regeln, ohne dass sie im Chat genannt wurden.</p></li>
+<li><p>Prüfen: Die Antwort nennt die fünf Grundregeln und die Projektregeln, ohne dass sie im Chat genannt wurden.</p></li>
 </ol>
 <p>Besteht die Prüfung in Schritt 3 nicht, liest das Werkzeug die <code>AGENTS.md</code> wahrscheinlich nicht automatisch. Dann diese Frage senden:</p>
 <pre class="text"><code>Liest du die Datei AGENTS.md in diesem Ordner automatisch? Wenn nein: Welchen Dateinamen erwartest du stattdessen, und kann ich von dort auf AGENTS.md verweisen?</code></pre>
 <p>Nennt der Agent einen anderen Dateinamen, legt er auf Auftrag eine Datei mit diesem Namen an, die auf <code>AGENTS.md</code> verweist. Danach die Schritte 1 bis 3 wiederholen. Die Dateinamen der verbreiteten Werkzeuge stehen in der Tabelle unter „Was gerade passiert ist“.</p>
-<section id="das-sollten-wir-jetzt-sehen-1" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen-1"><span class="header-section-number">5.2.1</span> Das sollten wir jetzt sehen</h3>
-<p>Eine Beispielantwort; der Agent nennt die Regeln vielleicht mit eigenen Worten:</p>
+<section id="so-sieht-es-im-beispielfall-aus-1" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="so-sieht-es-im-beispielfall-aus-1"><span class="header-section-number">5.2.1</span> So sieht es im Beispielfall aus</h3>
+<p>Unsere Namen weichen ab, die Prüfpunkte gelten. Eine Beispielantwort; der Agent nennt die Regeln vielleicht mit eigenen Worten:</p>
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45" role="group" aria-label="Beispielantwort des Agenten in der neuen Sitzung">
 <div style="display:flex;align-items:center;gap:8px;padding:7px 12px;background:#f4f2ed;border-bottom:1px solid #dcd9d2;font-size:12px;color:#5b6170">Neue Sitzung</div>
 <div style="padding:12px;display:grid;gap:8px">
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Welche Regeln gelten in diesem Ordner?</div>
-<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Laut <code>AGENTS.md</code> gelten fünf Regeln:<ol style="margin:2px 0 4px;padding-left:20px"><li>Antworte auf Deutsch.</li><li>Nutze nur Fakten aus Dateien in diesem Ordner. Schreibe „Annahme:“ vor jede Angabe, die nicht daraus stammt.</li><li>Schreibe keine Personennamen in neue Dateien.</li><li>Lege Ergebnisse als neue Datei an. Ändere bestehende Dateien nur nach Rückfrage.</li><li>Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.</li></ol></div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Laut <code>AGENTS.md</code> gelten fünf Grundregeln:<ol style="margin:2px 0 4px;padding-left:20px"><li>Antworte auf Deutsch.</li><li>Nutze nur Fakten aus Dateien in diesem Ordner. Schreibe „Annahme:“ vor jede Angabe, die nicht daraus stammt.</li><li>Schreibe keine Personennamen in neue Dateien.</li><li>Lege Ergebnisse als neue Datei an. Ändere bestehende Dateien nur nach Rückfrage.</li><li>Nenne am Ende jedes Auftrags, welche Dateien du angelegt oder geändert hast.</li></ol>Dazu drei Projektregeln:<ul style="margin:2px 0 4px;padding-left:20px"><li>P1: Schreibe Beträge in EUR mit Komma, etwa 45,00 EUR.</li><li>P2: Ein Antwortentwurf hat höchstens 120 Wörter.</li><li>P3: Nenne Terminvorschläge immer mit Datum und Uhrzeit.</li></ul></div>
 </div>
 </div>
 </section>
@@ -454,7 +489,8 @@ Antworten entstehen als Entwürfe in antworten.
 <ul>
 <li>Die Antwort nennt die Regeln mit eigenen Worten: Das ist in Ordnung.</li>
 <li>Die Antwort nennt Regeln aus einer anderen Datei, etwa <code>CLAUDE.md</code>: Das Werkzeug liest diese Datei statt der <code>AGENTS.md</code>. Die Frage oben nach dem erwarteten Dateinamen senden.</li>
-<li>Der Agent kennt keine Regeln: „In welchem Ordner arbeitest du gerade?“ Nennt er den übergeordneten Ordner, in der App <code>kundenanfragen</code> wählen und einen neuen Chat beginnen.</li>
+<li>Die Antwort nennt nur die Grundregeln: „Und die Projektregeln?“ Fehlen sie dann noch, in Schritt 1 prüfen, ob die <code>AGENTS.md</code> den Abschnitt Projektregeln enthält.</li>
+<li>Der Agent kennt keine Regeln: „In welchem Ordner arbeitest du gerade?“ Nennt er den übergeordneten Ordner, in der App den Projektordner wählen und einen neuen Chat beginnen.</li>
 </ul>
 </div>
 </div>
@@ -462,16 +498,16 @@ Antworten entstehen als Entwürfe in antworten.
 </section>
 <section id="schritt-3-eine-frage-ohne-antwort-im-ordner" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="schritt-3-eine-frage-ohne-antwort-im-ordner"><span class="header-section-number">5.3</span> Schritt 3: Eine Frage ohne Antwort im Ordner</h2>
-<p><strong>Voraussetzung:</strong> Die Sitzung aus Schritt 2 ist offen. Im Ordner liegt noch keine Preisliste.</p>
+<p><strong>Voraussetzung:</strong> Die Sitzung aus Schritt 2 ist offen. Wir überlegen eine Frage zum eigenen Vorhaben, deren Antwort in keiner Datei im Ordner steht. Gut eignen sich ein Preis, eine Frist oder eine Menge. Im Beispielfall liegt noch keine Preisliste im Ordner.</p>
 <ol type="1">
-<li><p>Diese Frage senden:</p>
+<li><p>Die eigene Frage senden. Im Beispielfall diese Frage senden:</p>
 <pre class="text"><code>Wie teuer ist eine Reparatur bei uns?</code></pre></li>
 <li><p>Prüfen: Die Antwort ist auf Deutsch und enthält „Annahme:“.</p></li>
 </ol>
 <p><strong>Prüfkriterium:</strong> Die Prüfungen in Schritt 2 und Schritt 3 bestehen in einer neuen Sitzung. Dann liest der Agent die Hausordnung von selbst. Dass er sich bei jedem späteren Auftrag daran hält, zeigt der Test nicht; das prüfen wir am jeweiligen Ergebnis.</p>
-<section id="das-sollten-wir-jetzt-sehen-2" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="das-sollten-wir-jetzt-sehen-2"><span class="header-section-number">5.3.1</span> Das sollten wir jetzt sehen</h3>
-<p>Eine Beispielantwort; der Wortlaut weicht ab:</p>
+<section id="so-sieht-es-im-beispielfall-aus-2" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="so-sieht-es-im-beispielfall-aus-2"><span class="header-section-number">5.3.1</span> So sieht es im Beispielfall aus</h3>
+<p>Unsere Namen weichen ab, die Prüfpunkte gelten. Eine Beispielantwort; der Wortlaut weicht ab:</p>
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45" role="group" aria-label="Beispielantwort des Agenten auf die Preisfrage">
 
 <div style="padding:12px;display:grid;gap:8px">
@@ -482,14 +518,14 @@ Antworten entstehen als Entwürfe in antworten.
 </section>
 <section id="was-gerade-passiert-ist-2" class="level3" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="was-gerade-passiert-ist-2"><span class="header-section-number">5.3.2</span> Was gerade passiert ist</h3>
-<p>In keiner Datei steht ein Preis. Der Agent hat keinen Betrag genannt und die Lücke gekennzeichnet. Für diese Frage greifen Regel 1 (Deutsch) und Regel 2 (nur Fakten aus dem Ordner). Der letzte Satz folgt aus Regel 5. Er zeigt bei jedem Auftrag auf einen Blick, ob sich im Ordner etwas verändert hat.</p>
+<p>In keiner Datei steht die gefragte Angabe, im Beispielfall der Preis. Der Agent hat keinen Wert genannt und die Lücke gekennzeichnet. Für diese Frage greifen Regel 1 (Deutsch) und Regel 2 (nur Fakten aus dem Ordner). Der letzte Satz folgt aus Regel 5. Er zeigt bei jedem Auftrag auf einen Blick, ob sich im Ordner etwas verändert hat.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lektionen/l04-agents-md/annahme-statt-erfinden.svg" class="img-fluid figure-img" alt="Ablauf in vier Schritten: Frage im Chat „Wie teuer ist eine Reparatur?“, der Agent sucht im Ordner und findet keine Preisliste, Regel 2 verlangt nur Fakten aus Dateien und sonst „Annahme:“, die Antwort lautet „Annahme: Preisliste fehlt“. Darunter die drei Regeln, die gegriffen haben: Regel 1 Deutsch, Regel 2 Annahme, Regel 5 Liste der geänderten Dateien. Merksatz: Regeln senken das Risiko, Preise, Termine und Zusagen weiter gegen die Quelle prüfen."></p>
 <figcaption>Eine Frage ohne Antwort im Ordner: Der Agent findet keine Preisliste, Regel 2 verlangt „Annahme:“ statt eines erfundenen Betrags.</figcaption>
 </figure>
 </div>
-<p>Zum Vergleich zeigt der folgende Nachbau denselben Ordner ohne <code>AGENTS.md</code> mit derselben Frage. Zuerst lässt er sich die Dateien auflisten, dann stellt er die Frage. Mit „Weiter“ klicken wir durch die Sitzung.</p>
+<p>Zum Vergleich zeigt der folgende Nachbau den Ordner des Beispielfalls ohne <code>AGENTS.md</code> mit der Frage nach dem Reparaturpreis. Zuerst lässt er sich die Dateien auflisten, dann stellt er die Frage. Mit „Weiter“ klicken wir durch die Sitzung.</p>
 <iframe class="muster-agent" src="widgets/04-agents-md-ohne.html" title="Nachbau eines Agenten: Antwort ohne AGENTS.md" loading="lazy" style="width:100%;height:600px;border:0"></iframe>
 <script>if(!window.__maResize){window.__maResize=1;addEventListener('message',function(e){if(!e.data||e.data.type!=='claude-widget-height')return;document.querySelectorAll('iframe.muster-agent').forEach(function(f){if(f.contentWindow===e.source)f.style.height=(e.data.height+8)+'px';});});}</script>
 <p>Die Dateiliste im Chat nennt keine Hausordnung. Ohne Regeln antwortet der Agent nach eigenem Ermessen: auf Englisch und mit einem Betrag von 80 bis 120 Euro, der in keiner Datei steht. Er klingt sicher, hat den Betrag aber erfunden.</p>
@@ -517,7 +553,8 @@ Antworten entstehen als Entwürfe in antworten.
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Die Antwort nennt einen Betrag ohne „Annahme:“: Regel 2 hat nicht gegriffen. „Aus welcher Datei stammt dieser Betrag?“ Nennt der Agent keine Datei, ist der Betrag erfunden.</li>
+<li>Die Antwort nennt einen Wert ohne „Annahme:“: Regel 2 hat nicht gegriffen. „Aus welcher Datei stammt diese Angabe?“ Nennt der Agent keine Datei, ist die Angabe erfunden.</li>
+<li>Die Antwort nennt eine Datei als Quelle, und die Angabe steht dort: Die Frage hat eine Antwort im Ordner. Eine andere Frage stellen.</li>
 <li>Die Liste der angelegten oder geänderten Dateien fehlt: Regel 5 hat in dieser Antwort nicht gegriffen. „Beachte Regel 5.“</li>
 </ul>
 </div>
@@ -527,7 +564,7 @@ Antworten entstehen als Entwürfe in antworten.
 <section id="was-die-drei-schritte-gezeigt-haben" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="was-die-drei-schritte-gezeigt-haben"><span class="header-section-number">5.4</span> Was die drei Schritte gezeigt haben</h2>
 <p>Wir haben eine Hausordnung angelegt, in einer neuen Sitzung geprüft und an einer offenen Frage gesehen, wie die Regeln wirken. Drei Punkte helfen beim Schreiben eigener Regeln.</p>
-<p><strong>Prüfbar formulieren.</strong> Ein guter Test für jede neue Regel lautet: Könnte eine Kollegin nach einem Blick auf das Ergebnis sagen, ob die Regel eingehalten wurde?</p>
+<p><strong>Prüfbar formulieren.</strong> Ein guter Test für jede neue Regel lautet: Könnte eine Kollegin nach einem Blick auf das Ergebnis sagen, ob die Regel eingehalten wurde? Vier Regeln aus dem Beispielfall:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -565,7 +602,7 @@ Antworten entstehen als Entwürfe in antworten.
 </tbody>
 </table>
 <p>Die Termin-Regel wirkt kleinlich, ist aber genau die Art Regel, die im Alltag hilft. Allgemeine Wünsche wie „hilfreich und gründlich“ kann der Agent nicht gezielt befolgen, und wir können sie nicht kontrollieren.</p>
-<p><strong>Geltungsbereich kennen.</strong> Eine <code>AGENTS.md</code> gilt für ihren Ordner und alle Unterordner. Die Regeln in <code>kundenanfragen/AGENTS.md</code> gelten also auch, wenn der Agent einen Entwurf in <code>kundenanfragen/antworten/</code> schreibt. Eine Kopie in jedem Unterordner ist nicht nötig. Eine zweite <code>AGENTS.md</code> in einem Unterordner ergänzt dort Regeln, die nur für diesen Teil gelten:</p>
+<p><strong>Geltungsbereich kennen.</strong> Eine <code>AGENTS.md</code> gilt für ihren Ordner und alle Unterordner. Im Beispielfall gelten die Regeln in <code>kundenanfragen/AGENTS.md</code> also auch, wenn der Agent einen Entwurf in <code>kundenanfragen/antworten/</code> schreibt. Eine Kopie in jedem Unterordner ist nicht nötig. Eine zweite <code>AGENTS.md</code> in einem Unterordner ergänzt dort Regeln, die nur für diesen Teil gelten:</p>
 <pre class="text"><code>kundenanfragen/
 ├── AGENTS.md          Regel: Schreibe keine Personennamen in neue Dateien.
 └── antworten/
