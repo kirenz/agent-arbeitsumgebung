@@ -128,6 +128,8 @@ Für Konnektoren und Plugins heißt das: Ein Paket erweitert den Rahmen um Werkz
 [^anthropic-agents]: Anthropic, Building effective agents, 19.12.2024: <https://www.anthropic.com/engineering/building-effective-agents>
 [^react]: Yao et al., ReAct: Synergizing Reasoning and Acting in Language Models (2023): <https://arxiv.org/abs/2210.03629>
 
+[]{#fremde-inhalte}
+
 ::: {.callout-warning title="Rechte und fremde Inhalte"}
 - Pakete mit Senderecht nur mit Rückfrage vor jedem Senden betreiben.
 - Konnektoren zuerst mit einem Konto ohne vertrauliche Daten testen.

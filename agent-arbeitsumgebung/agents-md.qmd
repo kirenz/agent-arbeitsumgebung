@@ -196,7 +196,7 @@ Einige Werkzeuge erwarten einen eigenen Dateinamen oder lesen die `AGENTS.md` nu
 - Der Agent kennt keine Regeln: „In welchem Ordner arbeitest du gerade?“ Nennt er den übergeordneten Ordner, in der App den Projektordner wählen und einen neuen Chat beginnen.
 :::
 
-## Schritt 3: Eine Frage ohne Antwort im Ordner
+## Schritt 3: Eine Frage ohne Antwort im Ordner {#frage-ohne-antwort}
 
 **Voraussetzung:** Die Sitzung aus Schritt 2 ist offen. Wir überlegen eine Frage zum eigenen Vorhaben, deren Antwort in keiner Datei im Ordner steht. Gut eignen sich ein Preis, eine Frist oder eine Menge. Im Beispielfall liegt noch keine Preisliste im Ordner.
 
