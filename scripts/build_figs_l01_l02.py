@@ -191,7 +191,7 @@ def fig_drei_anforderungen():
     b = [heading(500, "Drei Anforderungen an das Werkzeug, drei Prüfungen")]
     rows = [
         ("Dateien lesen, anlegen und ändern", "in einem Ordner auf dem eigenen Rechner",
-         "Prüfung: erster Auftrag", "Der Agent legt hallo.md an und zeigt sie."),
+         "Prüfung: erster Auftrag", "Der Agent legt terminwunsch.md an und zeigt sie."),
         ("Vor Änderungen nachfragen", "oder die Änderung zur Prüfung zeigen",
          "Prüfung: erster Auftrag", "Rückfrage vor dem Anlegen"),
         ("Eine Anweisungsdatei lesen", "eine Datei mit Regeln im Ordner",
@@ -210,7 +210,7 @@ def fig_drei_anforderungen():
 
 def fig_weg_eines_auftrags():
     W, H = 1000, 960
-    b = [heading(500, "Der Weg eines Auftrags: von einem Satz zur Datei")]
+    b = [heading(500, "Der Weg eines Auftrags: vom Auftrag zur Datei")]
     cols = {"chat": 180, "agent": 500, "app": 820}
     heads = [("chat", "Chat", "Auftrag und Freigabe", PAPER, RULE, INK),
              ("agent", "Agent", "überlegt und wählt", LIGHT, BLUE, BLUE),
@@ -222,13 +222,13 @@ def fig_weg_eines_auftrags():
         b.append(T(cx, 103, sb, 16, 400, MUTED, "middle"))
         b.append(f'<line x1="{cx}" y1="120" x2="{cx}" y2="886" stroke="{RULE}" stroke-width="1" stroke-dasharray="4 5"/>')
     steps = [
-        ("chat", "Ziel", "Auftrag: hallo.md anlegen, vorher fragen", "#ffffff", RULE),
+        ("chat", "Ziel", "Auftrag: terminwunsch.md anlegen, vorher fragen", "#ffffff", RULE),
         ("agent", "Beobachten", "Der Ordner ist leer.", "#ffffff", RULE),
-        ("agent", "Überlegen", "Inhalt: Überschrift „Test“ und Datum", "#ffffff", RULE),
+        ("agent", "Überlegen", "Inhalt: Überschrift und Liste mit drei Angaben", "#ffffff", RULE),
         ("agent", "Handeln", "wählt das Werkzeug „Datei anlegen“", "#ffffff", RULE),
         ("app", None, "fragt: Datei anlegen? Erlauben / Ablehnen", AMBER_BG, AMBER_LINE),
         ("chat", None, "Freigabe: Erlauben", "#ffffff", RULE),
-        ("app", None, "legt hallo.md an, meldet „hallo.md angelegt“", "#ffffff", BLUE),
+        ("app", None, "legt terminwunsch.md an und meldet es", "#ffffff", BLUE),
         ("agent", "Ziel erreicht", "Fertig. Eine Datei angelegt, keine geändert.", "#ffffff", RULE),
     ]
     bw, bh, y0, step = 270, 66, 140, 96
@@ -321,17 +321,18 @@ def fig_rohtext_vorschau():
 
 
 def fig_tabelle_aufbau():
-    W, H = 1000, 420
+    W, H = 1000, 476
     b = [heading(500, "Aufbau einer Markdown-Tabelle")]
-    b.append(box(30, 66, 570, 260, PAPER, RULE))
-    rows = ["| Datei | Anliegen |", "|---|---|", "| hallo.md | Test |", "| terminwunsch.md | Termin für eine Reparatur |"]
-    for i, (ln, bd) in enumerate(zip(rows, ["1", "2", "3", "3"])):
+    b.append(box(30, 66, 570, 316, PAPER, RULE))
+    rows = ["| Angabe | Wert |", "|---|---|", "| Datum | 2026-10-05 |", "| Kanal | E-Mail |",
+            "| Anliegen | Termin für eine Reparatur |"]
+    for i, (ln, bd) in enumerate(zip(rows, ["1", "2", "3", "3", "3"])):
         y = 120 + i * 56
         b.append(badge16(62, y - 6, bd, r=15))
         b.append(mono_md(92, y, ln, "|", 17))
     cards = [("Kopfzeile", "Spaltennamen"),
              ("Trennzeile", "trennt Kopf und Inhalt; fehlt sie, keine Tabelle"),
-             ("Eine Zeile je Eintrag", "hier zwei Einträge")]
+             ("Eine Zeile je Eintrag", "hier drei Einträge")]
     for i, (hd, sb) in enumerate(cards):
         y = 66 + i * 94
         b.append(box(630, y, 340, 80, "#ffffff", RULE))
@@ -341,7 +342,7 @@ def fig_tabelle_aufbau():
         b.append(T(684, top, hd, 16, 600))
         for j, s in enumerate(subs):
             b.append(T(684, top + (j + 1) * 21 + 1, s, 16, 400, MUTED))
-    b.append(note16(30, 350, 940, "Jede Zeile hat gleich viele Spalten, hier zwei. Die Striche müssen nicht untereinander stehen."))
+    b.append(note16(30, 406, 940, "Jede Zeile hat gleich viele Spalten, hier zwei. Die Striche müssen nicht untereinander stehen."))
     return save(f"{L2}/tabelle-aufbau.svg", svg(W, H, b))
 
 

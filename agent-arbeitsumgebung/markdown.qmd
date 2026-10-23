@@ -1,56 +1,38 @@
 # Markdown: Text, den Mensch und Agent lesen
 
-Agenten lesen und schreiben Markdown ohne Umweg. Fast alle Dateien, die in den folgenden Kapiteln entstehen, sind Markdown-Dateien: die Anfragen, die Antwortentwürfe, die Übersicht und die Hausordnung des Agenten. In diesem Kapitel legen wir mit dem eigenen Agenten Schritt für Schritt solche Dateien an. Die Erklärung folgt jeweils am eigenen Ergebnis.
+Agenten lesen und schreiben Markdown ohne Umweg. Fast alle Dateien, die in den folgenden Kapiteln entstehen, sind Markdown-Dateien: die Anfragen, die Antwortentwürfe, die Übersicht und die Hausordnung des Agenten. In diesem Kapitel arbeiten wir mit dem eigenen Agenten Schritt für Schritt an solchen Dateien. Die Erklärung folgt jeweils am eigenen Ergebnis.
 
 Jeder Schritt hat denselben Aufbau: ein Auftrag zum Kopieren, ein Kasten „Das sollten wir jetzt sehen“, eine kurze Erklärung und ein Abschnitt „Wenn es anders aussieht“.
 
-**Voraussetzung:** Der Ordner `agent-test` aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd) ist in der App des Agenten gewählt. Darin liegt die Datei `hallo.md` aus dem Selbsttest. Alle Aufträge und Prüfungen laufen im Chat; eine Datei zeigt uns der Agent auf Nachfrage einmal mit allen Zeichen und einmal formatiert.
+**Voraussetzung:** Der Ordner `agent-test` aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd) ist in der App des Agenten gewählt. Darin liegt die Datei `terminwunsch.md` aus dem ersten Auftrag. Alle Aufträge und Prüfungen laufen im Chat; eine Datei zeigt uns der Agent auf Nachfrage mit allen Zeichen oder formatiert.
 
-## Schritt 1: Die erste Datei
+## Schritt 1: Dieselbe Datei als Vorschau
 
-1. Diesen Auftrag senden:
+`terminwunsch.md` mit allen Zeichen haben wir im ersten Auftrag gesehen. Jetzt lassen wir dieselbe Datei formatiert zeigen.
 
-   ```text
-   Lege in diesem Ordner die Datei terminwunsch.md an. Inhalt: die Überschrift „Terminwunsch“, darunter eine Liste mit drei Punkten: Datum: 2026-10-05, Kanal: E-Mail, Anliegen: Termin für eine Reparatur. Frage, bevor du die Datei anlegst.
-   ```
-
-2. Das Anlegen freigeben.
-3. Diese Frage senden:
-
-   ```text
-   Zeig mir den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.
-   ```
-
-4. Prüfen: Zeile 1 beginnt mit `#`. Drei Zeilen beginnen mit `-`.
-5. Diese Frage senden:
+1. Diese Frage senden:
 
    ```text
    Gib den Inhalt von terminwunsch.md jetzt formatiert wieder, so wie ein Leser ihn sehen soll.
    ```
 
-6. Prüfen: Die Antwort zeigt eine Überschrift und drei Listenpunkte. Die Zeichen `#` und `-` sind nicht zu sehen.
-7. Diese Frage senden:
+2. Prüfen: Die Antwort zeigt eine Überschrift und drei Listenpunkte. Die Zeichen `#` und `-` sind nicht zu sehen.
+3. Diese Frage senden:
 
    ```text
    Über welchen Kanal kam der Terminwunsch in terminwunsch.md? Nur antworten.
    ```
 
-8. Prüfen: Die Antwort lautet „E-Mail“.
+4. Prüfen: Die Antwort lautet „E-Mail“.
 
 ### Das sollten wir jetzt sehen
 
-Dieselbe Datei zweimal im Chat, einmal mit allen Zeichen, einmal formatiert:
+Dieselbe Datei formatiert, ohne die Zeichen `#` und `-`:
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
 
 <div style="padding:12px;display:grid;gap:8px">
-<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.</div>
-<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Inhalt von <code>terminwunsch.md</code>:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Terminwunsch
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Datum: 2026-10-05
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Kanal: E-Mail
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span><i style="color:#23417a;font-style:normal;font-weight:700">-</i> Anliegen: Termin für eine Reparatur</pre></div>
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Gib den Inhalt von terminwunsch.md jetzt formatiert wieder, so wie ein Leser ihn sehen soll.</div>
 <div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Terminwunsch</div><ul style="margin:0;padding-left:20px"><li>Datum: 2026-10-05</li><li>Kanal: E-Mail</li><li>Anliegen: Termin für eine Reparatur</li></ul></div>
 </div>
@@ -60,9 +42,9 @@ Dieselbe Datei zweimal im Chat, einmal mit allen Zeichen, einmal formatiert:
 
 ### Was gerade passiert ist
 
-Wir haben dem Agenten nur Überschrift und Liste genannt. Die Zeichen `#` und `-` hat er von selbst gesetzt. Das ist Markdown, das Dateiformat aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd).
+Im ersten Auftrag haben wir dem Agenten nur Überschrift und Liste genannt. Die Zeichen `#` und `-` hat er von selbst gesetzt. Das ist Markdown, das Dateiformat aus dem Kapitel [Chat oder Agent?](chat-oder-agent.qmd).
 
-Der Inhalt der Datei genau so, wie er gespeichert ist, heißt **Rohtext**. `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile `- Kanal: E-Mail` und antwortet „E-Mail“. Die **Vorschau** ist die formatierte Ansicht desselben Textes: Die Zeichen `#` und `-` verschwinden, übrig bleiben Überschrift und Liste. Der Chat zeigt Markdown meist so an. Darum ist die zweite Antwort die Vorschau unserer Datei.
+Der Inhalt der Datei genau so, wie er gespeichert ist, heißt **Rohtext**. `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Der Agent liest immer den Rohtext: Für die Frage nach dem Kanal findet er die Zeile `- Kanal: E-Mail` und antwortet „E-Mail“. Die **Vorschau** ist die formatierte Ansicht desselben Textes: Die Zeichen `#` und `-` verschwinden, übrig bleiben Überschrift und Liste. Der Chat zeigt Markdown meist so an. Darum zeigt die Antwort die Vorschau unserer Datei.
 
 ![Rohtext und Vorschau derselben Datei. Der Agent liest links, der Chat zeigt rechts.](images/lektionen/l02-markdown/rohtext-und-vorschau.svg){fig-alt="Links der Rohtext der Datei terminwunsch.md mit den Zeichen # und - am Zeilenanfang, rechts dieselbe Datei als Vorschau mit Überschrift und drei Listenpunkten. Pfeile zeigen: # wird Überschrift, - wird Listenpunkt. Die drei Listenzeilen Datum, Kanal und Anliegen bilden den festen Kopf."}
 
@@ -71,20 +53,18 @@ Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen A
 ::: {.callout-note title="Wenn es anders aussieht"}
 - `*` statt `-` am Zeilenanfang: Beide Zeichen machen einen Listenpunkt. Die Vorschau zeigt dasselbe.
 - Eine Leerzeile mehr oder weniger: In der Vorschau ändert sich meist nichts. Erst zwei Zeilenumbrüche hintereinander trennen Absätze.
-- Beide Antworten zeigen die Zeichen: „Gib den Text ohne Codeblock wieder, damit der Chat ihn formatiert.“ Ein Codeblock ist ein Kasten im Chat, der Text unverändert mit allen Zeichen zeigt.
-- Beide Antworten sind formatiert: „Zeig mir den Inhalt in einem Codeblock, Zeile für Zeile.“
-- Die Datei heißt `terminwunsch.txt` oder liegt in einem Unterordner: „Benenne die Datei in terminwunsch.md um und lege sie direkt in diesen Ordner.“
+- Die Antwort zeigt die Zeichen: „Gib den Text ohne Codeblock wieder, damit der Chat ihn formatiert.“ Ein Codeblock ist ein Kasten im Chat, der Text unverändert mit allen Zeichen zeigt.
 - Wer die Datei selbst sehen will: im Chat auf den Dateipfad klicken oder den Ordner `agent-test` im Finder oder Explorer öffnen.
 :::
 
 ## Schritt 2: Eine Tabelle
 
-**Voraussetzung:** Im Ordner `agent-test` liegen `hallo.md` und `terminwunsch.md`.
+**Voraussetzung:** Im Ordner `agent-test` liegt `terminwunsch.md`.
 
 1. Diesen Auftrag senden:
 
    ```text
-   Lege in diesem Ordner die Datei uebersicht-test.md an. Inhalt: die Überschrift „Übersicht“, darunter eine Tabelle mit den Spalten „Datei“ und „Anliegen“ und zwei Zeilen: hallo.md mit dem Anliegen „Test“, terminwunsch.md mit dem Anliegen „Termin für eine Reparatur“. Frage, bevor du die Datei anlegst.
+   Lege in diesem Ordner die Datei uebersicht-test.md an. Inhalt: die Überschrift „Übersicht“, darunter eine Tabelle mit den Spalten „Angabe“ und „Wert“. Übernimm die drei Angaben aus terminwunsch.md als Zeilen. Frage, bevor du die Datei anlegst.
    ```
 
 2. Das Anlegen freigeben.
@@ -94,8 +74,8 @@ Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen A
    Zeig mir den Inhalt von uebersicht-test.md zuerst mit allen Zeichen, so wie er in der Datei steht, und danach formatiert.
    ```
 
-4. Prüfen: In der ersten Ansicht enthalten vier Zeilen senkrechte Striche `|`. Die zweite davon besteht aus Strichen wie `|---|---|`.
-5. Prüfen: Die zweite Ansicht zeigt eine Tabelle mit Kopfzeile und zwei Zeilen.
+4. Prüfen: In der ersten Ansicht enthalten fünf Zeilen senkrechte Striche `|`. Die zweite davon besteht aus Strichen wie `|---|---|`.
+5. Prüfen: Die zweite Ansicht zeigt eine Tabelle mit Kopfzeile und drei Zeilen.
 
 ### Das sollten wir jetzt sehen
 
@@ -106,10 +86,11 @@ Die drei Listenzeilen bilden einen festen Kopf: Datum, Kanal, Anliegen. Diesen A
 <div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Zeig mir den Inhalt von uebersicht-test.md zuerst mit allen Zeichen, so wie er in der Datei steht, und danach formatiert.</div>
 <div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Mit allen Zeichen:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">1</span><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Übersicht
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">2</span>
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> Datei <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Anliegen <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">3</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> Angabe <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Wert <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
 <span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">4</span><i style="color:#23417a;font-style:normal;font-weight:700">|---|---|</i>
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> hallo.md <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Test <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
-<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> terminwunsch.md <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Termin für eine Reparatur <i style="color:#23417a;font-style:normal;font-weight:700">|</i></pre><p style="margin-top:10px">Formatiert:</p><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Übersicht</div><table style="border-collapse:collapse;font-size:.9rem;margin-top:4px"><thead><tr><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Datei</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Anliegen</th></tr></thead><tbody><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">hallo.md</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Test</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">terminwunsch.md</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Termin für eine Reparatur</td></tr></tbody></table></div>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">5</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> Datum <i style="color:#23417a;font-style:normal;font-weight:700">|</i> 2026-10-05 <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">6</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> Kanal <i style="color:#23417a;font-style:normal;font-weight:700">|</i> E-Mail <i style="color:#23417a;font-style:normal;font-weight:700">|</i>
+<span style="color:#5b6170;opacity:.6;display:inline-block;width:22px">7</span><i style="color:#23417a;font-style:normal;font-weight:700">|</i> Anliegen <i style="color:#23417a;font-style:normal;font-weight:700">|</i> Termin für eine Reparatur <i style="color:#23417a;font-style:normal;font-weight:700">|</i></pre><p style="margin-top:10px">Formatiert:</p><div style="font-size:1.2rem;font-weight:700;margin:4px 0 6px">Übersicht</div><table style="border-collapse:collapse;font-size:.9rem;margin-top:4px"><thead><tr><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Angabe</th><th style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left;background:#f4f2ed">Wert</th></tr></thead><tbody><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Datum</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">2026-10-05</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Kanal</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">E-Mail</td></tr><tr><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Anliegen</td><td style="border:1px solid #dcd9d2;padding:4px 8px;text-align:left">Termin für eine Reparatur</td></tr></tbody></table></div>
 </div>
 </div>
 ```
@@ -119,9 +100,9 @@ Zeile 4 ist die Trennzeile. Sie erscheint in der formatierten Ansicht nicht, mac
 
 ### Was gerade passiert ist
 
-Der Agent hat aus dem Satz im Auftrag vier Zeilen mit Strichen gemacht. Eine **Tabelle** besteht aus Zeilen mit senkrechten Strichen `|` zwischen den Spalten. Die erste Zeile ist der Kopf, danach folgt eine Zeile je Eintrag. Die **Trennzeile** aus Strichen, `|---|---|`, steht direkt unter dem Kopf und trennt ihn vom Inhalt. In der Vorschau erscheint sie nicht. Fehlt sie, zeigen die meisten Vorschauen keine Tabelle, sondern den Rohtext mit Strichen.
+Der Agent hat aus der Liste in `terminwunsch.md` fünf Zeilen mit Strichen gemacht. Eine **Tabelle** besteht aus Zeilen mit senkrechten Strichen `|` zwischen den Spalten. Die erste Zeile ist der Kopf, danach folgt eine Zeile je Eintrag. Die **Trennzeile** aus Strichen, `|---|---|`, steht direkt unter dem Kopf und trennt ihn vom Inhalt. In der Vorschau erscheint sie nicht. Fehlt sie, zeigen die meisten Vorschauen keine Tabelle, sondern den Rohtext mit Strichen.
 
-![Aufbau einer Markdown-Tabelle: Kopfzeile, Trennzeile, eine Zeile je Eintrag.](images/lektionen/l02-markdown/tabelle-aufbau.svg){fig-alt="Vier Zeilen einer Markdown-Tabelle mit senkrechten Strichen, nummeriert: 1 Kopfzeile mit den Spaltennamen Datei und Anliegen, 2 Trennzeile aus Strichen, 3 eine Zeile je Eintrag für hallo.md und terminwunsch.md. Jede Zeile hat zwei Spalten."}
+![Aufbau einer Markdown-Tabelle: Kopfzeile, Trennzeile, eine Zeile je Eintrag.](images/lektionen/l02-markdown/tabelle-aufbau.svg){fig-alt="Fünf Zeilen einer Markdown-Tabelle mit senkrechten Strichen, nummeriert: 1 Kopfzeile mit den Spaltennamen Angabe und Wert, 2 Trennzeile aus Strichen, 3 eine Zeile je Eintrag für Datum, Kanal und Anliegen. Jede Zeile hat zwei Spalten."}
 
 Die Striche müssen nicht untereinander stehen. Wichtig ist, dass jede Zeile gleich viele Spalten hat. Tabellen eignen sich für Übersichten mit wenigen, kurzen Spalten: Datei und Anliegen, Datei und Stand, Regel und Prüfung. Für längere Texte je Eintrag ist eine Liste mit Unterüberschriften besser lesbar.
 
@@ -133,7 +114,7 @@ Die Striche müssen nicht untereinander stehen. Wichtig ist, dass jede Zeile gle
 
 ## Schritt 3: Ändern lassen und die Änderung prüfen
 
-**Voraussetzung:** `terminwunsch.md` aus Schritt 1 liegt im Ordner `agent-test`.
+**Voraussetzung:** `terminwunsch.md` liegt im Ordner `agent-test`.
 
 1. Diesen Auftrag senden:
 

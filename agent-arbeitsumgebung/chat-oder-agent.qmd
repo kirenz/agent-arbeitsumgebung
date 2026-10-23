@@ -57,7 +57,7 @@ Jeder Schritt hat ab hier denselben Aufbau: eine Anleitung, ein Kasten „Das so
 **Voraussetzung:** Zugang zu einem der Werkzeuge aus der Tabelle oben.
 
 1. Die App des eigenen Werkzeugs aus der Tabelle oben herunterladen.
-2. Die App wie jedes andere Programm installieren. Bei Fragen hilft die Anleitung des Herstellers aus der Tabelle.
+2. Die App wie jedes andere Programm installieren. Bei Fragen hilft die Anleitung des Anbieters aus der Tabelle.
 3. In der App anmelden. Je nach App öffnet sich dafür der Browser. Nach der Anmeldung zurück zur App wechseln.
 4. Im Ordner `Dokumente` einen leeren Ordner `agent-test` anlegen. Finder: Menü „Ablage“, dann „Neuer Ordner“. Windows-Explorer: „Neu“, dann „Ordner“.
 5. Den Ordner `agent-test` in der App wählen. Je App geht das so (die Beschriftungen hängen von der Sprache der App ab):
@@ -125,59 +125,62 @@ Mit diesem Selbsttest prüfen wir, ob das eigene Werkzeug die ersten beiden Anfo
 1. Diesen Auftrag senden:
 
    ```text
-   Lege in diesem Ordner die Datei hallo.md an. Inhalt: eine Überschrift „Test“ und ein Satz, welches Datum heute ist. Frage vorher, ob du die Datei anlegen darfst.
+   Lege in diesem Ordner die Datei terminwunsch.md an. Inhalt: die Überschrift „Terminwunsch“, darunter eine Liste mit drei Punkten: Datum: 2026-10-05, Kanal: E-Mail, Anliegen: Termin für eine Reparatur. Frage vorher, ob du die Datei anlegen darfst.
    ```
 
 2. Prüfen: Der Agent fragt vor dem Anlegen nach oder zeigt die Änderung zur Freigabe.
 3. Das Anlegen freigeben.
-4. Prüfen: Der Chat meldet die neue Datei, etwa mit einer Zeile „hallo.md angelegt“ oder einer Anzeige wie „+3“ für drei neue Zeilen.
+4. Prüfen: Der Chat meldet die neue Datei, etwa mit einer Zeile „terminwunsch.md angelegt“ oder einer Anzeige wie „+5“ für fünf neue Zeilen.
 5. Diese Frage senden:
 
    ```text
-   Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von hallo.md genau so, wie er in der Datei steht, mit allen Zeichen.
+   Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.
    ```
 
-6. Prüfen: Die Liste nennt `hallo.md`. Zeile 1 des Inhalts beginnt mit `#`. Darunter steht ein Satz mit dem heutigen Datum.
+6. Prüfen: Die Liste nennt `terminwunsch.md`. Zeile 1 des Inhalts beginnt mit `#`. Drei Zeilen beginnen mit `-`.
 
 ### Das sollten wir jetzt sehen
 
-Der Verlauf im Chat, sinngemäß; das Datum ist das eigene:
+Der Verlauf im Chat, sinngemäß:
 
 ```{=html}
 <div style="max-width:620px;border:1px solid #dcd9d2;border-radius:12px;overflow:hidden;background:#fbfaf7;color:#1f2430;margin:0 0 1rem;line-height:1.45">
 
 <div style="padding:12px;display:grid;gap:8px">
-<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege in diesem Ordner die Datei hallo.md an. Inhalt: eine Überschrift „Test“ und ein Satz, welches Datum heute ist. Frage vorher, ob du die Datei anlegen darfst.</div>
-<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege die Datei <code>hallo.md</code> mit einer Überschrift und dem heutigen Datum an. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
-<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>hallo.md angelegt</div>
-<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Eine Datei angelegt (<code>hallo.md</code>), keine geändert.</div>
-<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von hallo.md genau so, wie er in der Datei steht, mit allen Zeichen.</div>
-<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Im Ordner liegt eine Datei: <code>hallo.md</code>. Inhalt:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Test
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Lege in diesem Ordner die Datei terminwunsch.md an. Inhalt: die Überschrift „Terminwunsch“, darunter eine Liste mit drei Punkten: Datum: 2026-10-05, Kanal: E-Mail, Anliegen: Termin für eine Reparatur. Frage vorher, ob du die Datei anlegen darfst.</div>
+<div style="justify-self:stretch;border:1px solid #d9b26a;border-radius:10px;padding:8px 11px;background:#fbf3e3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Ich lege die Datei <code>terminwunsch.md</code> mit der Überschrift und einer Liste mit drei Punkten an. Darf ich?<br><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #23417a;color:#23417a;border-radius:999px;font-size:12.5px;font-weight:600">Erlauben</span><span style="display:inline-block;margin:6px 6px 0 0;padding:2px 10px;border:1px solid #dcd9d2;border-radius:999px;font-size:12.5px">Ablehnen</span></div>
+<div style="justify-self:start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5b6170;padding:0 4px"><span style="color:#b8862b;font-weight:700">› </span>terminwunsch.md angelegt</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Fertig. Eine Datei angelegt (<code>terminwunsch.md</code>), keine geändert.</div>
+<div style="justify-self:end;max-width:94%;border-radius:10px;padding:8px 11px;background:#dfe6f3"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Wir</span>Liste die Dateien in diesem Ordner auf. Zeig mir dann den Inhalt von terminwunsch.md genau so, wie er in der Datei steht, mit allen Zeichen.</div>
+<div style="justify-self:start;max-width:94%;border-radius:10px;padding:8px 11px;background:#f4f2ed;border:1px solid #dcd9d2"><span style="display:block;font-size:11.5px;color:#5b6170;margin-bottom:2px">Agent</span>Im Ordner liegt eine Datei: <code>terminwunsch.md</code>. Inhalt:<pre style="margin:6px 0 0;padding:8px 10px;border:1px solid #dcd9d2;border-radius:8px;background:#fbfaf7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-word"><i style="color:#23417a;font-style:normal;font-weight:700">#</i> Terminwunsch
 
-Heute ist der 18. Oktober 2026.</pre></div>
+<i style="color:#23417a;font-style:normal;font-weight:700">-</i> Datum: 2026-10-05
+<i style="color:#23417a;font-style:normal;font-weight:700">-</i> Kanal: E-Mail
+<i style="color:#23417a;font-style:normal;font-weight:700">-</i> Anliegen: Termin für eine Reparatur</pre></div>
 </div>
 </div>
 ```
 
 
-Wortlaut, Datum und Beschriftung der Buttons unterscheiden sich je App. Manche Apps zeigen die Freigabe als Änderungsansicht statt als Frage.
+Wortlaut und Beschriftung der Buttons unterscheiden sich je App. Manche Apps zeigen die Freigabe als Änderungsansicht statt als Frage.
 
 ### Was gerade passiert ist
 
-Wir haben einen Satz geschrieben. Der Agent hat nachgefragt und dann die Datei `hallo.md` in unserem Ordner angelegt. Das Ergebnis liegt als Datei auf unserem Rechner, und der Agent hat es uns auf Nachfrage im Chat gezeigt.
+Wir haben dem Agenten eine Aufgabe gegeben. Er hat nachgefragt und dann die Datei `terminwunsch.md` in unserem Ordner angelegt. Das Ergebnis liegt als Datei auf unserem Rechner, und der Agent hat es uns auf Nachfrage im Chat gezeigt.
 
-Das war die Schleife aus dem Abschnitt [Was ein KI-Agent tut](#was-ein-ki-agent-tut) am eigenen Ergebnis. Unser Auftrag war das Ziel. Der Agent hat den leeren Ordner beobachtet, den Inhalt überlegt und mit dem Werkzeug „Datei anlegen“ gehandelt. Den Text hat der Agent geschrieben. Angelegt hat die Datei die App, und sie hat uns vorher gefragt. Eine Zeile wie „hallo.md angelegt“ im Chat zeigt das ausgeführte Werkzeug. Mit einem Chat-Assistenten hätten wir den Text erhalten und `hallo.md` selbst angelegt.
+Das war die Schleife aus dem Abschnitt [Was ein KI-Agent tut](#was-ein-ki-agent-tut) am eigenen Ergebnis. Unser Auftrag war das Ziel. Der Agent hat den leeren Ordner beobachtet, den Inhalt überlegt und mit dem Werkzeug „Datei anlegen“ gehandelt. Den Text hat der Agent geschrieben. Angelegt hat die Datei die App, und sie hat uns vorher gefragt. Eine Zeile wie „terminwunsch.md angelegt“ im Chat zeigt das ausgeführte Werkzeug. Mit einem Chat-Assistenten hätten wir den Text erhalten und `terminwunsch.md` selbst angelegt.
 
-![Der Weg unseres ersten Auftrags: Der Agent überlegt und wählt das Werkzeug, die App fragt und legt die Datei an.](images/lektionen/l01-chat-oder-agent/weg-eines-auftrags.svg){fig-alt="Drei Bahnen Chat, Agent und App. Der Auftrag im Chat setzt das Ziel. Der Agent beobachtet den leeren Ordner, überlegt den Inhalt und wählt das Werkzeug Datei anlegen. Die App fragt um Erlaubnis, im Chat wird freigegeben, die App legt hallo.md an und meldet es. Der Agent meldet: Fertig, eine Datei angelegt."}
+![Der Weg unseres ersten Auftrags: Der Agent überlegt und wählt das Werkzeug, die App fragt und legt die Datei an.](images/lektionen/l01-chat-oder-agent/weg-eines-auftrags.svg){fig-alt="Drei Bahnen Chat, Agent und App. Der Auftrag im Chat setzt das Ziel. Der Agent beobachtet den leeren Ordner, überlegt den Inhalt und wählt das Werkzeug Datei anlegen. Die App fragt um Erlaubnis, im Chat wird freigegeben, die App legt terminwunsch.md an und meldet es. Der Agent meldet: Fertig, eine Datei angelegt."}
 
-`hallo.md` ist eine **Markdown**-Datei. Markdown ist reiner Text mit wenigen Zeichen für die Gliederung: `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Die Dateien enden auf `.md`. Fast alle Dateien in diesem Buch sind Markdown-Dateien, weil Mensch und Agent dieselbe Datei ohne Spezialprogramm lesen und jede geänderte Zeile sichtbar ist. Im Kapitel [Markdown: Text, den Mensch und Agent lesen](markdown.qmd) legen wir Schritt für Schritt weitere Markdown-Dateien an und sehen dort auch, was eine Word-Datei davon unterscheidet.
+`terminwunsch.md` ist eine **Markdown**-Datei. Markdown ist reiner Text mit wenigen Zeichen für die Gliederung: `#` am Zeilenanfang macht eine Überschrift, `-` einen Listenpunkt. Die Dateien enden auf `.md`. Fast alle Dateien in diesem Buch sind Markdown-Dateien, weil Mensch und Agent dieselbe Datei ohne Spezialprogramm lesen und jede geänderte Zeile sichtbar ist. Im Kapitel [Markdown: Text, den Mensch und Agent lesen](markdown.qmd) arbeiten wir mit dieser Datei weiter und sehen dort auch, was eine Word-Datei davon unterscheidet.
 
 ::: {.callout-note title="Wenn es anders aussieht"}
-- Der Agent legt die Datei ohne Rückfrage an: Die App läuft in einem Modus ohne Rückfragen. In der Claude-Desktop-App neben dem Senden-Button den Modus „Manual“ wählen. In anderen Apps steht die Einstellung in der Anleitung des Herstellers. Erst weiterarbeiten, wenn der Agent vor Änderungen fragt.
+- Der Agent legt die Datei ohne Rückfrage an: Die App läuft in einem Modus ohne Rückfragen. In der Claude-Desktop-App neben dem Senden-Button den Modus „Manual“ wählen. In anderen Apps steht die Einstellung in der Anleitung des Anbieters. Erst weiterarbeiten, wenn der Agent vor Änderungen fragt.
 - Statt einer Frage erscheint eine Änderungsansicht: links die Dateiliste, rechts die neuen Zeilen, dazu Buttons zum Annehmen oder Ablehnen. Das ist die Freigabe. Die Zeilen prüfen und annehmen.
 - Der Agent fragt auch vor dem Lesen oder vor einem Befehl: Das ist in Ordnung. Freigeben, was zum Auftrag passt.
 - Der Agent antwortet nur mit Text und legt nichts an: prüfen, ob der Ordner `agent-test` gewählt ist (Schritt 1). Manche Apps haben zusätzlich einen Umschalter für den Arbeitsmodus, etwa „Chat“ / „Work“ über dem Eingabefeld der Codex-App.
-- Die Liste in Schritt 5 nennt `hallo.md` nicht: „Wo hast du hallo.md angelegt? Nenne den vollständigen Pfad.“
+- Die Liste in Schritt 5 nennt `terminwunsch.md` nicht: „Wo hast du terminwunsch.md angelegt? Nenne den vollständigen Pfad.“
+- Die Datei heißt `terminwunsch.txt` oder liegt in einem Unterordner: „Benenne die Datei in terminwunsch.md um und lege sie direkt in diesen Ordner.“
 :::
 
 ### So sieht es mit echtem Material aus
@@ -293,7 +296,7 @@ Die Tabelle nennt für drei verbreitete Agenten, was wir für den Einstieg brauc
 | **App** | [Claude-Desktop-App](https://claude.com/download), Bereich „Code“ | [Codex-App](https://learn.chatgpt.com/docs/app) | [Antigravity-App](https://antigravity.google/download) |
 | **Zugang** | Claude-Abo, Pro oder höher | ChatGPT-Abo, Plus oder höher | privates Google-Konto, begrenztes Kontingent kostenlos |
 | **Ordner wählen** | Im Bereich „Code“ unter dem Eingabefeld die Umgebung anklicken, „Neue Umgebung“: Reiter „Lokal“, Ordner hinzufügen, „Umgebung erstellen“.[^cc-desktop] | „Projekt auswählen“, dann „Neues Projekt“: Ordner hinzufügen und „Projekt erstellen“.[^cx-app] | Seitenleiste „New Project“, dann „Add Folder“ und „Create“.[^ag-start] |
-| **Rückfrage und Änderungen** | Modus „Manual“ neben dem Senden-Button fragt vor Änderungen. Eine Anzeige wie „+12 -1“ öffnet die Änderungsansicht.[^cc-desktop] | Rückfrage im Chat. Einstellungen zu Berechtigungen laut Anleitung des Herstellers.[^cx-app] | Änderungen erscheinen zur Prüfung, Zeile für Zeile. „Local mode“ arbeitet direkt im Ordner.[^ag-start] |
+| **Rückfrage und Änderungen** | Modus „Manual“ neben dem Senden-Button fragt vor Änderungen. Eine Anzeige wie „+12 -1“ öffnet die Änderungsansicht.[^cc-desktop] | Rückfrage im Chat. Einstellungen zu Berechtigungen laut Anleitung des Anbieters.[^cx-app] | Änderungen erscheinen zur Prüfung, Zeile für Zeile. „Local mode“ arbeitet direkt im Ordner.[^ag-start] |
 
 [^cc-desktop]: Claude Code, „Claude Code on desktop“: <https://code.claude.com/docs/en/desktop>
 [^cx-app]: Codex, „Codex app“: <https://learn.chatgpt.com/docs/app>
