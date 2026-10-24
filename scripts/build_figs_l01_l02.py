@@ -482,7 +482,7 @@ def fig_ordner_claude():
 
     def s3(x, y):
         return (ui_chip(x, y - 28, "Lokal", w=66) + T(x + 76, y - 5, "Cloud  SSH", 16, 400, MUTED)
-                + ui_chip(x, y + 10, "agent-test", w=236)
+                + ui_chip(x, y + 10, "mein-projekt", w=236)
                 + ui_chip(x, y + 48, "Hinzufügen", hl=True, icon="plus", w=146)
                 + T(x + 154, y + 71, "Auswählen …", 14, 600, BLUE)
                 + ui_chip(x + 46, y + 86, "Umgebung erstellen", hl=True, w=190))
@@ -490,8 +490,8 @@ def fig_ordner_claude():
     return ordner_fig("ordner-claude", "Claude-Desktop-App: Ordner als Umgebung wählen", [
         ("Umgebung öffnen", s1, "Code-Symbol oben rechts, dann Feld unter der Eingabe"),
         ("„Neue Umgebung“", s2, "unten im Menü"),
-        ("Ordner hinzufügen", s3, "Reiter Lokal, Name und Ordner: agent-test"),
-    ], "Prüfen: Unter dem Eingabefeld steht agent-test. Erst dann die erste Nachricht senden.")
+        ("Ordner hinzufügen", s3, "Reiter Lokal, Name und Ordner: mein-projekt"),
+    ], "Prüfen: Unter dem Eingabefeld steht mein-projekt. Erst dann die erste Nachricht senden.")
 
 
 def fig_ordner_codex():
@@ -505,15 +505,15 @@ def fig_ordner_codex():
                 + ui_chip(x, y + 46, "Neues Projekt", hl=True, icon="plus", w=170))
 
     def s3(x, y):
-        return (ui_chip(x, y - 14, "agent-test", icon="folder", w=236)
+        return (ui_chip(x, y - 14, "mein-projekt", icon="folder", w=236)
                 + ui_chip(x, y + 28, "Hinzufügen", hl=True, icon="folder", w=150)
                 + ui_chip(x + 66, y + 70, "Projekt erstellen", hl=True, w=170))
 
     return ordner_fig("ordner-codex", "Codex-App: Ordner als Projekt wählen", [
         ("„Projekt auswählen“", s1, "über dem Eingabefeld; oder Button „Codex öffnen“"),
         ("„Neues Projekt“", s2, "unten in der Liste der Projekte"),
-        ("Ordner hinzufügen", s3, "Projektname und Ordner: agent-test"),
-    ], "Prüfen: In der Seitenleiste steht unter „Projekte“ der Eintrag agent-test.")
+        ("Ordner hinzufügen", s3, "Projektname und Ordner: mein-projekt"),
+    ], "Prüfen: In der Seitenleiste steht unter „Projekte“ der Eintrag mein-projekt.")
 
 
 def fig_ordner_antigravity():
@@ -525,16 +525,16 @@ def fig_ordner_antigravity():
 
     def s2(x, y):
         return (ui_chip(x, y - 10, "Add Folder", hl=True, icon="folder", w=150)
-                + T(x, y + 56, "dann agent-test wählen", 16, 400, MUTED))
+                + T(x, y + 56, "dann mein-projekt wählen", 16, 400, MUTED))
 
     def s3(x, y):
-        return ui_chip(x, y - 14, "agent-test", icon="folder", w=236) + ui_chip(x + 136, y + 44, "Create", hl=True, w=100)
+        return ui_chip(x, y - 14, "mein-projekt", icon="folder", w=236) + ui_chip(x + 136, y + 44, "Create", hl=True, w=100)
 
     return ordner_fig("ordner-antigravity", "Antigravity-App: Ordner als Projekt wählen", [
         ("„New Project“", s1, "Ordner mit Plus in der linken Seitenleiste"),
-        ("„Add Folder“", s2, "im Fenster Dokumente, dann agent-test"),
+        ("„Add Folder“", s2, "im Fenster Dokumente, dann mein-projekt"),
         ("„Create“", s3, "legt das Projekt an"),
-    ], "Prüfen: Die Seitenleiste zeigt das Projekt agent-test.")
+    ], "Prüfen: Die Seitenleiste zeigt das Projekt mein-projekt.")
 
 
 FIGS = [fig_ordner_claude, fig_ordner_codex, fig_ordner_antigravity, fig_chat_oder_agent, fig_drei_orte, fig_drei_anforderungen, fig_weg_eines_auftrags, fig_wann_agent,
